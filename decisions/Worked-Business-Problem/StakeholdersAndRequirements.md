@@ -1,3 +1,8 @@
+# STAKEHOLDERS AND REQUIREMENTS
+
+<br>
+<br>
+
 # Step 1: Extract facts about the current situation
 
 | Ref | Evidence from the scenario | What the evidence tells you
@@ -43,15 +48,7 @@
 <br>
 
 # Step 3: Worked Business Problem Statement
-<!---
-    Strong Problem Statement
-    ------------------------
-    1. Identifies the organisation and current process.
-    2. Identifies the principal difficulties.
-    3. Describes operational consequences.
-    4. Does not prescribe a database, application framework, or screen design.
-    5. Identifies key stakeholders
--->
+
 Kerry College Placement Office currently manages student placement opportunities, applications, decisions, agreements, supervisor allocations, and progress reviews across separate files, email threads, notes, messages, and spreadsheets **(P1S2, P4S1)**. Due to placement information being spread across several records with no single shared record showing a placement's full position  **(P1S2, P4S1)**, records may become duplicated or conflicting, and staff may waste time searching across records. 
 
 Placement requests arrive through multiple channels rather than a single route and are not always complete when received **(P2S3)**. This may cause processing delays or result in requests being lost. This means that students could miss out on opportunities. Furthermore, decisions on priorities and exceptions are not made consistently **(P2S5)**, which means students in similar situations may have their applications treated differently. When third parties assist with a request **(P2S6)**, staff have no clear basis for deciding who can receive detailed information or decisions **(P2S7)**. This creates risks of improper data sharing or delaying legitimate helpers.
@@ -66,13 +63,7 @@ These issues increase operational difficulties, placing an extra burden on staff
 <br>
 
 # Step 4: Worked System-Purpose Statement
-<!---
-    Strong Purpose Statement
-    ------------------------
-    Says why the system exists, who it serves and what outcomes it should achieve.
 
-    The proposed Sports Centre Management System will support membership records, facility availability, facility bookings, class registration, waiting-list management and basic operational reporting.
--->
 The proposed Student Work Placement Coordination Service will support placement staff, students, employers, and third-party representatives, as well as administrators and managers, in coordinating placement opportunities, applications, decisions, agreements, supervisor allocations, and progress reviews. 
 
 The service will provide a single, shared record showing a placement's full status **(PR1)**, and make request completeness and submission progress clearly visible across all incoming channels **(PR2)**. It will support the consistent application of agreed placement rules **(PR3)** and provide a clear framework for authorisation, reducing the risk of improper data sharing and helping prevent unnecessary delays for legitimate third-party helpers **(PR4)**. 
@@ -84,7 +75,60 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 <br>
 
-# Step 4: Worked system-purpose statement
-| In Scope for the Inital Release | Out of Scope for the Initial Release |
-| :-- | :-- |
-|  |  |
+# Step 5: Worked Scope
+| ID | In Scope for the Initial Release | Ref | ID |  Out of Scope for the Initial Release | Ref |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| **IS1** | Placement Record Management | PR1 | **OS1** | Specialist Professional Systems | P5S6 |
+| **IS2** | Request Tracking | PR2 | **OS2** | Financial Accounting | P5S6 | 
+| **IS3** | Priority Management | PR3 | **OS3** | Public Website Functions | P5S6 |
+| **IS4** | Authorisation Management | PR4 | **OS4** | Negotiating Employer Legal Contracts | A1 |
+| **IS5** | Approval Decision Tracking | P3S2 | **OS5** | External Recruitment System Integration | A2 | 
+| **IS6** | Capacity and Provisional Allocation Management | PR5, PR6 | **OS6** | Student Academic Record Maintenance | A3 |
+| **IS7** | Linked Arrangements Tracking | PR8 |  | |
+| **IS8** | Status and Ownership Tracking | PR7 |  |  |
+| **IS9** | Off-Site Progress Recording | PR9 |  |  |
+
+<br>
+<br>
+
+# Step 6: Worked Stakeholder Analysis
+<!--
+    Stakeholder Observations
+    ------------------------
+    1. Not every stakeholder is a daily user.
+    2. Influencial stakeholders may set policy or reject the solution.
+    3. Stakeholder goals can conflict.
+    4. Stakeholders are sources of requirements, rules, constraints, and clarification questions.
+
+
+    Stakeholder
+    ------------
+    Uses, Affected, Supplies, Receives, Governs, Supports
+
+    Direct users, Indirect users, External users
+-->
+
+<br>
+<br>
+
+# Step 7: Worked Functional Requirements
+
+<br>
+<br>
+
+# Step 8: Worked Non-Functional Requirements
+
+<br>
+<br>
+
+# Step 9: Rules, Assumptions, Constraints, and Risks
+
+<br>
+<br>
+
+# Step 10: MoSCoW Priority
+
+<br>
+<br>
+
+# Step 11: Stakeholder Clarification Questions
