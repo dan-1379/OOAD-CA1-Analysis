@@ -61,3 +61,30 @@ Matching and capacity management are affected by provisional information. Advert
 Teams also do not share a common meaning for each status, making next steps and ownership unclear **(P4S2)**. This may lead to outstanding actions being missed or delayed. Off-site staff may also lack a reliable connection **(P5S4)**, which can delay record updates and require details to be re-entered later.
 
 These issues increase operational difficulties, placing an extra burden on staff, causing unnecessary delays in processing, creating uncertainty around capacity, and risking an inconsistent experience for students seeking placements.
+
+<br>
+<br>
+
+# Step 4: Worked System-Purpose Statement
+<!---
+    Strong Purpose Statement
+    ------------------------
+    Says why the system exists, who it serves and what outcomes it should achieve.
+
+    The proposed Sports Centre Management System will support membership records, facility availability, facility bookings, class registration, waiting-list management and basic operational reporting.
+-->
+The proposed Student Work Placement Coordination Service will support placement staff, students, employers, and third-party representatives, as well as administrators and managers, in coordinating placement opportunities, applications, decisions, agreements, supervisor allocations, and progress reviews. 
+
+The service will provide a single, shared record showing a placement's full status **(PR1)**, and make request completeness and submission progress clearly visible across all incoming channels **(PR2)**. It will support the consistent application of agreed placement rules **(PR3)** and provide a clear framework for authorisation, reducing the risk of improper data sharing and helping prevent unnecessary delays for legitimate third-party helpers **(PR4)**. 
+
+To improve capacity and allocation management, the service will provide visibility over provisional opportunities and allocations, helping to prevent stalled requests from blocking capacity **(PR5, PR6)**, and minimising knock-on impacts across linked arrangements by making the links between arrangements visible, so the effect of a change can be seen prior to being made **(PR8)**. 
+
+The service will apply standardised status definitions across teams, helping ensure that actions and task ownership are clearly defined **(PR7)**. The service will also allow off-site staff to record updates when connectivity is unreliable **(PR9)**.
+
+<br>
+<br>
+
+# Step 4: Worked system-purpose statement
+| In Scope for the Inital Release | Out of Scope for the Initial Release |
+| :-- | :-- |
+|  |  |
