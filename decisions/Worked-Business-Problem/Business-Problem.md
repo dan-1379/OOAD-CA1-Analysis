@@ -50,5 +50,14 @@
     2. Identifies the principal difficulties.
     3. Describes operational consequences.
     4. Does not prescribe a database, application framework, or screen design.
+    5. Identifies key stakeholders
 -->
-Kerry College Placement Office currently manages placement opportunities, applications, employer decisions, agreements, supervisor allocations, and progress reviews using separate files, email threads, notes, messages, and spreadsheets.
+Kerry College Placement Office currently manages student placement opportunities, applications, decisions, agreements, supervisor allocations, and progress reviews across separate files, email threads, notes, messages, and spreadsheets **(P1S2, P4S1)**. Due to placement information being spread across several records with no single shared record showing a placement's full position  **(P1S2, P4S1)**, records may become duplicated or conflicting, and staff may waste time searching across records. 
+
+Placement requests arrive through multiple channels rather than a single route and are not always complete when received **(P2S3)**. This may cause processing delays or result in requests being lost. This means that students could miss out on opportunities. Furthermore, decisions on priorities and exceptions are not made consistently **(P2S5)**, which means students in similar situations may have their applications treated differently. When third parties assist with a request **(P2S6)**, staff have no clear basis for deciding who can receive detailed information or decisions **(P2S7)**. This creates risks of improper data sharing or delaying legitimate helpers.
+
+Matching and capacity management are affected by provisional information. Advertised opportunities are not always final **(P2S2)**, so a visible vacancy does not confirm that a placement can proceed **(P3S4)**. Additionally, provisional allocations are sometimes held without being confirmed or released **(P3S5)**. As the administrator notes, these provisional arrangements can block capacity long after an original request has stalled **(P6S3)**, which can reduce the number of places available to other students **(P3S5)**. As placement arrangements are connected, a change to one may have a domino effect on others **(P3S6)** and could potentially disrupt other planned placements.
+
+Teams also do not share a common meaning for each status, making next steps and ownership unclear **(P4S2)**. This may lead to outstanding actions being missed or delayed. Off-site staff may also lack a reliable connection **(P5S4)**, which can delay record updates and require details to be re-entered later.
+
+These issues increase operational difficulties, placing an extra burden on staff, causing unnecessary delays in processing, creating uncertainty around capacity, and risking an inconsistent experience for students seeking placements.
