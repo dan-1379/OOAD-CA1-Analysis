@@ -35,7 +35,7 @@
 | PR ID | Ref | Observation or Symptom | Underlying Problem | Likely Consequence |
 | :-- | :-- | :-- | :-- | :-- |
 | **PR1** | P1S2, P4S1 | Placement information and progress are recorded in separate files, email threads, notes, and spreadsheets. | No single shared record of a placement. | Duplicated or conflicting information, time consuming searching across records.| 
-|**PR2** | P2S3 (P2S1) | Requests arrive through several channels and are often complete. | No single intake route. | Delayed or lost requests meaning students miss out on opportunities.|
+|**PR2** | P2S3 (P2S1) | Requests arrive through several channels and may be incomplete. | No single intake route. | Delayed or lost requests meaning students miss out on opportunities.|
 | **PR3** | P2S5 | Priorities and exceptions are applied inconsistently | There are no agreed, documented rules for prioritising and granting exceptions. | Students in similar situations are treated differently, leading to potential complaints, appeals, and reputational risk. |
 | **PR4** | P2S7 (P2S6) | Staff are unsure what authority is needed before sharing information or decisions. | There are no defined authorisation rules, especially for third parties acting on behalf of the student. | Data could be disclosed (GDPR breach), or a legitimate party may be refused causing a delay |
 | **PR5** | P3S5, P6S3 | Provisional allocations stay in place while essential information is missing, long after the request stalls. | Provisional allocations have no time limit, review or release rule. | Capacity is blocked, meaning other students miss places and the available supply is overstated. |
@@ -92,36 +92,70 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 
 # Step 6: Worked Stakeholder Analysis
-<!--
-    Stakeholder Observations
-    ------------------------
-    1. Not every stakeholder is a daily user.
-    2. Influencial stakeholders may set policy or reject the solution.
-    3. Stakeholder goals can conflict.
-    4. Stakeholders are sources of requirements, rules, constraints, and clarification questions.
 
-
-    Stakeholder
-    ------------
-    Uses, Affected, Supplies, Receives, Governs, Supports
-
-    Direct users, Indirect users, External users
--->
+| ID | Ref | Stakeholder | Goals | Concerns | Influence | Expected Interactions |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **SH1** | P2S1, P2S3, P2S5, P6S2 | **Student** | Know what their request is waiting on and track application progress. | Delayed or lost applications and inconsistent decision-making across similar cases. | Medium | Submit placement preferences and programme evidence, and view request status. |
+| **SH2** | P2S4, P2S7, P3S7, P4S1  | **Placement Staff** | Process requests smoothly, verify student evidence without searching separate files, and maintain evidence of current and earlier decisions and versions. | Spending time searching across separate records, uncertainty over third-party authority, and loss of earlier decisions or versions. | High | Record placement details, check student evidence completeness, and apply agreed priority rules. |
+| **SH3** | P2S6, P2S7 | **Third-Party Representative** | Help students with applications and get updates on their progress. | Being refused information or delayed due to unclear permissions. | Medium | Submit supporting information on behalf of a student and receive updates on request progress. |
+| **SH4** | P2S2, P3S2, P3S6 | **Employer** | Select suitable students for placement openings and confirm placement duties. | Changing opportunity details or unmanaged changes to linked arrangements. | High | Review student applications, select candidates, and confirm placement duties alongside college approval. |
+| **SH5** | P3S5, P3S6, P5S1 | **Placement Coordinator** | Keep track of unallocated requests, provisional arrangements, capacity conflicts, overdue actions, and incomplete records. | Held provisional capacity and unmanaged knock-on effects from changes. | High | Check unallocated requests, resolve matching conflicts, and track overdue actions. |
+| **SH6** | P5S2, P6S4 | **External Partners** | Receive information needed for their role without receiving unnecessary details. | Seeing inappropriate or extra information outside their role. | Medium | Access placement information and status updates relevant strictly to their role. |
+| **SH7** | P4S1, P5S3 | **Management** | Access summary information about overall placement activity. | Fragmented progress records making summary views difficult to gather. | High | View summary reporting on placement activity, capacity levels, and overall outcomes. |
+| **SH8** | P5S3 | **Funders** | Receive high-level summary reports about placement activity without sensitive data. | Receiving unnecessary personal or commercially sensitive information **(A4)**. | Medium | Receive high-level summary reports on placement numbers and outcomes. |
+| **SH9** | P3S5, P6S3 | **Administrator** | Identify and release stalled provisional arrangements to free up capacity. | Stalled provisional allocations blocking capacity needed by other students. | Medium | Monitor provisional allocations and release stalled capacity. |
+| **SH10** | P4S4, P6S5 | **Reviewer** | Add new information and decisions without erasing the basis of earlier decisions. | Losing the original record or reasons behind earlier decisions when new information is added. | Medium | Review historical decisions, add new notes, and record revised arrangements. |
 
 <br>
 <br>
 
 # Step 7: Worked Functional Requirements
 
+| ID | Functional Requirement | MoSCoW | Source / Rationale |
+| :--- | :--- | :--- | :--- |
+| **FR01** | The system shall allow a student to view the current status of their placement request. | Must | Student |
+| **FR02** | The system shall allow a student to submit placement preferences and programme evidence. | Must | Student |
+| **FR03** | The system shall maintain a single shared record for each placement. | Must | Placement Staff |
+| **FR04** | The system shallow allow placement staff to record placement opportunity details. | Must | Placement Staff |
+| **FR05** | The system shall allow placement staff to record placement application details. | Must | Placement Staff |
+| **FR06**| The system shall allow placement staff to record progress reviews for a placement. | Should | Placement Staff |
+| **FR07** | The system shall allow placement staff to view evidence completeness for a placement request. | Must | Placement Staff |
+| **FR08** | The system shall allow placement staff to apply agreed priority rules for student placement applications. | Must | Placement Staff |
+| **FR09** | The system shall allow placement staff to record exceptions for student placement applications. | Should | Placement Staff |
+| **FR10** | The system shall allow placement staff to verify third-party authorisation permissions before disclosing placement information. | Must | Placement Staff |
+| **FR10** | The system shall allow third-party representatives to submit supporting information on behalf of a student. | Must | Third-Party Representative |
+| **FR11** | The system shall allow
+
+
+
+SH4	P2S2, P3S2, P3S6	
+
+Employer	
+
+Select suitable students for placement openings and confirm placement duties.	
+
+Changing opportunity details or unmanaged changes to linked arrangements.	
+
+High	
+
+Review student applications, select candidates, and confirm placement duties alongside college approval.
+
+
 <br>
 <br>
 
 # Step 8: Worked Non-Functional Requirements
 
+| ID | Quality Category | Measurable Requirement | Rationale |
+| :--- | :--- | :--- | :--- |
+
 <br>
 <br>
 
 # Step 9: Rules, Assumptions, Constraints, and Risks
+
+| Category | Statement |
+| :--- | :--- |
 
 <br>
 <br>
@@ -132,3 +166,5 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 
 # Step 11: Stakeholder Clarification Questions
+
+
