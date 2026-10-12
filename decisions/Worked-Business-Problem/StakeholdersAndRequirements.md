@@ -113,49 +113,65 @@ The service will apply standardised status definitions across teams, helping ens
 
 | ID | Functional Requirement | MoSCoW | Source / Rationale |
 | :--- | :--- | :--- | :--- |
-| **FR01** | The system shall allow a student to view the current status of their placement request. | Must | Student |
-| **FR02** | The system shall allow a student to submit placement preferences and programme evidence. | Must | Student |
+| **FR01** | The system shall allow a student to submit placement preferences and programme evidence. | Must | Student |
+| **FR02** | The system shall allow a student to view the current status of their placement request. | Must | Student |
 | **FR03** | The system shall maintain a single shared record for each placement. | Must | Placement Staff |
-| **FR04** | The system shallow allow placement staff to record placement opportunity details. | Must | Placement Staff |
-| **FR05** | The system shall allow placement staff to record placement application details. | Must | Placement Staff |
-| **FR06**| The system shall allow placement staff to record progress reviews for a placement. | Should | Placement Staff |
-| **FR07** | The system shall allow placement staff to view evidence completeness for a placement request. | Must | Placement Staff |
-| **FR08** | The system shall allow placement staff to apply agreed priority rules for student placement applications. | Must | Placement Staff |
-| **FR09** | The system shall allow placement staff to record exceptions for student placement applications. | Should | Placement Staff |
-| **FR10** | The system shall allow placement staff to verify third-party authorisation permissions before disclosing placement information. | Must | Placement Staff |
-| **FR10** | The system shall allow third-party representatives to submit supporting information on behalf of a student. | Must | Third-Party Representative |
-| **FR11** | The system shall allow
-
-
-
-SH4	P2S2, P3S2, P3S6	
-
-Employer	
-
-Select suitable students for placement openings and confirm placement duties.	
-
-Changing opportunity details or unmanaged changes to linked arrangements.	
-
-High	
-
-Review student applications, select candidates, and confirm placement duties alongside college approval.
-
+| **FR04** | The system shall allow placement staff to apply agreed priority rules for student placement applications. | Must | Placement Staff |
+| **FR05** | The system shall allow placement staff to verify third-party authorisation permissions before disclosing placement information. | Must | Placement Staff, Third-Party Representative |
+| **FR06** | The system shall allow employers to record selection decisions for student applicants. | Must | Employer |
+| **FR07** | The system shall allow placement staff to record college academic approval decisions for placements. | Must | Placement Staff |
+| **FR08** | The system shall allow the administrator to release stalled provisional allocations. | Must | Administrator |
+| **FR09** | The system shall allow placement staff and the placement coordinator to view provisional placement opportunities. | Must | Placement Staff, Placement Coordinator |
+| **FR10** | The system shall allow placement staff to set an activity status from the agreed set of standardised values. | Must | Placement Staff |
+| **FR11** | The system shall display dependencies between connected placement arrangements. | Should | Employer, Placement Coordinator |
+| **FR12** | The system shall allow off-site staff to record progress updates when connectivity is unreliable. | Must | Placement Staff |
 
 <br>
 <br>
 
 # Step 8: Worked Non-Functional Requirements
 
-| ID | Quality Category | Measurable Requirement | Rationale |
-| :--- | :--- | :--- | :--- |
+| ID | Ref | Quality Category | Measurable Requirement | Rationale |
+| :--- | :--- | :--- | :--- | :--- |
+| **NFR01** | P5S2, P5S3 | Privacy | The system shall ensure that external partners and funders can access only placement data permitted by their role, with no restricted details visible. | Protects sensitive information |
+| **NFR02** | P2S7 | Security | The system shall prevent student data from being disclosed to a third party unless the required authorisation permissions are recorded, with every access attempt without the required permissions refused. | Prevents wrongful disclosure |
+| **NFR03** | P5S4 | Reliability | The system shall ensure that 100% of updates recorded by off-site staff without a reliable connection reach the shared record once the connection returns, with no lost updates. | Prevents lost or re-entered updates |
+| **NFR04** | P6S5 | Integrity | The system shall preserve the history and basis of earlier decisions so that none can be overwritten when new information is added. | Preserve records of earlier decisions. |
+
 
 <br>
 <br>
 
 # Step 9: Rules, Assumptions, Constraints, and Risks
 
-| Category | Statement |
-| :--- | :--- |
+## Business Rule
+| ID | Ref | Category | Statement |
+| :--- | :--- |  :--- | :--- |
+| BR01 | P2S1, P2S4 | Rule | A request needs evidence before it is ready for a decision. |
+| BR02 | P2S5 | Rule  | Priority and exception handling for applications must follow agreed, documented guidelines rather than inconsistent practice. |
+| BR03 | P2S7 | Rule | Staff must verify and record third-party permissions prior to the disclosure of any detailed student placement information or decisions. |
+| BR04 | P3S1, P3S4, P6S1 | Rule | A vacancy is not a match unless all of the important requirements are satisfied. |
+| BR05 | P3S2 | Rule | A placement cannot proceed unless both employer selection and academic approval are recorded. |
+| BR06 | P3S7, P4S6, P6S5 | Rule |  |
+| BR07 | P4S4 |   |  |
+| BR08 | P5S2, P5S3 |   |  |
+| BR09 | P4S5 |   |  |
+| BR10 | P6S3 |   |  |
+
+## Assumptions
+| ID | Ref | Category | Statement |
+| :--- | :--- |  :--- | :--- |
+| AS1 |  |   |  |
+
+## Constraints
+| ID | Ref | Category | Statement |
+| :--- | :--- |  :--- | :--- |
+| CS1 |  |   |  |
+
+## Risks
+| ID | Ref | Category | Statement |
+| :--- | :--- |  :--- | :--- |
+| RS1 |  |   |  |
 
 <br>
 <br>
