@@ -8,7 +8,7 @@
 | Ref | Evidence from the scenario | What the evidence tells you
 | :-- | :------------------------- | :-------------------------- |
 | **P1S2** | Opportunities, applications, decisions, agreements, supervisor allocation and progress reviews are recorded in separate files and email threads. | Placement information is spread across several records and channels, with no single place showing a placement's full position. |
-| **P2S1** | Students express preferences and provide evidence required by their programme. | Requests begin with the student, who supplies both their placement preferences and supporting evidence. Assuming each programme sets its own evidence requirements, what a complete request looks like may differ between students.
+| **P2S1** | Students express preferences and provide evidence required by their programme. | Requests begin with the student, who supplies both their placement preferences and supporting evidence. Assuming each programme sets its own evidence requirements, what a complete request looks like may differ between students *(A5)*.
 | **P2S2** | An opportunity may be advertised while dates, duties or approval remain provisional | Advertised opportunities are not always final, meaning dates, duties or approval may still change after students have expressed interest or applied. |
 | **P2S3** | Requests arrive through several channels and may be incomplete. | Requests come in through multiple channels rather than a single route, and they are not always complete when staff receive them.
 | **P2S5** | Priorities and exceptions are not applied consistently. | Decisions are not made consistently, meaning students in similar situations may have their applications treated differently, possibly because there are no clear guidelines.
@@ -23,7 +23,7 @@
 | **P4S1** | Staff record progress, decisions and outstanding actions using notes, messages, and spreadsheets. | Progress is tracked in informal, separate records, rather than a singular shared record.|
 | **P4S2** |  Different teams use status terms differently, making it difficult to identify what is awaiting action and who is responsible. | Teams do not share a common meaning for each status, so next steps and ownership are often unclear.|
 | **P4S3** | A planned activity may be changed, partially completed, paused, or withdrawn. | Activities do not always proceed as planned, so an activity may be in several states other than completed or not started.
-| **P4S4** | Reviews may generate new actions, revised arrangements, and escalation. | A review is not always the end. It may lead to further work, changed arrangements, or escalation.
+| **P4S5** | Reviews may generate new actions, revised arrangements, and escalation. | A review is not always the end. It may lead to further work, changed arrangements, or escalation.
 | **P5S4** | Connectivity may be unreliable during off-site work. | Some work takes place off-site, where staff may not always have a reliable connection.|
 | **P6S3** | Administrator: Provisional arrangements can block capacity long after the original request has stalled. | Some allocations are held without being confirmed or released, and these can decrease the amount of places that may be needed by other students.
 
@@ -104,7 +104,7 @@ The service will apply standardised status definitions across teams, helping ens
 | **SH7** | P4S1, P5S3 | **Management** | Access summary information about overall placement activity. | Fragmented progress records making summary views difficult to gather. | High | View summary reporting on placement activity, capacity levels, and overall outcomes. |
 | **SH8** | P5S3 | **Funders** | Receive high-level summary reports about placement activity without sensitive data. | Receiving unnecessary personal or commercially sensitive information **(A4)**. | Medium | Receive high-level summary reports on placement numbers and outcomes. |
 | **SH9** | P3S5, P6S3 | **Administrator** | Identify and release stalled provisional arrangements to free up capacity. | Stalled provisional allocations blocking capacity needed by other students. | Medium | Monitor provisional allocations and release stalled capacity. |
-| **SH10** | P4S4, P6S5 | **Reviewer** | Add new information and decisions without erasing the basis of earlier decisions. | Losing the original record or reasons behind earlier decisions when new information is added. | Medium | Review historical decisions, add new notes, and record revised arrangements. |
+| **SH10** | P4S5, P6S5 | **Reviewer** | Add new information and decisions without erasing the basis of earlier decisions. | Losing the original record or reasons behind earlier decisions when new information is added. | Medium | Review historical decisions, add new notes, and record revised arrangements. |
 
 <br>
 <br>
@@ -113,18 +113,18 @@ The service will apply standardised status definitions across teams, helping ens
 
 | ID | Functional Requirement | MoSCoW | Source / Rationale |
 | :--- | :--- | :--- | :--- |
-| **FR01** | The system shall allow a student to submit placement preferences and programme evidence. | Must | Student |
-| **FR02** | The system shall allow a student to view the current status of their placement request. | Must | Student |
-| **FR03** | The system shall maintain a single shared record for each placement. | Must | Placement Staff |
-| **FR04** | The system shall allow placement staff to apply agreed priority rules for student placement applications. | Must | Placement Staff |
-| **FR05** | The system shall allow placement staff to verify third-party authorisation permissions before disclosing placement information. | Must | Placement Staff, Third-Party Representative |
-| **FR06** | The system shall allow employers to record selection decisions for student applicants. | Must | Employer |
-| **FR07** | The system shall allow placement staff to record college academic approval decisions for placements. | Must | Placement Staff |
-| **FR08** | The system shall allow the administrator to release stalled provisional allocations. | Must | Administrator |
-| **FR09** | The system shall allow placement staff and the placement coordinator to view provisional placement opportunities. | Must | Placement Staff, Placement Coordinator |
-| **FR10** | The system shall allow placement staff to set an activity status from the agreed set of standardised values. | Must | Placement Staff |
-| **FR11** | The system shall display dependencies between connected placement arrangements. | Should | Employer, Placement Coordinator |
-| **FR12** | The system shall allow off-site staff to record progress updates when connectivity is unreliable. | Must | Placement Staff |
+| **FR01** | The system shall allow a student to submit placement preferences and programme evidence. | Must | Student (SH1), IS2 |
+| **FR02** | The system shall allow a student to view the current status of their placement request. | Must | Student (SH1), IS2 |
+| **FR03** | The system shall maintain a single shared record for each placement. | Must | Placement Staff (SH2), IS1 |
+| **FR04** | The system shall allow placement staff to apply agreed priority rules for student placement applications. | Should | Placement Staff (SH2), IS3 |
+| **FR05** | The system shall allow placement staff to verify third-party authorisation permissions before disclosing placement information. | Must | Placement Staff (SH2), Third-Party Representative (SH3), IS4 |
+| **FR06** | The system shall allow employers to record selection decisions for student applicants. | Must | Employer (SH4), IS5 |
+| **FR07** | The system shall allow placement staff to record college academic approval decisions for placements. | Must | Placement Staff (SH2), IS5 |
+| **FR08** | The system shall allow the administrator to release stalled provisional allocations. | Must | Administrator (SH9), IS6 |
+| **FR09** | The system shall allow placement staff and the placement coordinator to view provisional placement opportunities. | Could | Placement Staff (SH2), Placement Coordinator (SH5), IS6 |
+| **FR10** | The system shall allow placement staff to set an activity status from the agreed set of standardised values. | Must | Placement Staff (SH2), IS8 |
+| **FR11** | The system shall display dependencies between connected placement arrangements. | Should | Employer (SH4), Placement Coordinator (SH5), IS7 |
+| **FR12** | The system shall allow off-site staff to record progress updates when connectivity is unreliable. | Must | Placement Staff (SH2), IS9 |
 
 <br>
 <br>
@@ -136,8 +136,7 @@ The service will apply standardised status definitions across teams, helping ens
 | **NFR01** | P5S2, P5S3 | Privacy | The system shall ensure that external partners and funders can access only placement data permitted by their role, with no restricted details visible. | Protects sensitive information |
 | **NFR02** | P2S7 | Security | The system shall prevent student data from being disclosed to a third party unless the required authorisation permissions are recorded, with every access attempt without the required permissions refused. | Prevents wrongful disclosure |
 | **NFR03** | P5S4 | Reliability | The system shall ensure that 100% of updates recorded by off-site staff without a reliable connection reach the shared record once the connection returns, with no lost updates. | Prevents lost or re-entered updates |
-| **NFR04** | P6S5 | Integrity | The system shall preserve the history and basis of earlier decisions so that none can be overwritten when new information is added. | Preserve records of earlier decisions. |
-
+| **NFR04** | P6S5 | Integrity | The system shall preserve the history and basis of earlier decisions so that none can be overwritten when new information is added. | Preserves the record of earlier decisions. |
 
 <br>
 <br>
@@ -147,40 +146,51 @@ The service will apply standardised status definitions across teams, helping ens
 ## Business Rule
 | ID | Ref | Category | Statement |
 | :--- | :--- |  :--- | :--- |
-| BR01 | P2S1, P2S4 | Rule | A request needs evidence before it is ready for a decision. |
-| BR02 | P2S5 | Rule  | Priority and exception handling for applications must follow agreed, documented guidelines rather than inconsistent practice. |
-| BR03 | P2S7 | Rule | Staff must verify and record third-party permissions prior to the disclosure of any detailed student placement information or decisions. |
-| BR04 | P3S1, P3S4, P6S1 | Rule | A vacancy is not a match unless all of the important requirements are satisfied. |
-| BR05 | P3S2 | Rule | A placement cannot proceed unless both employer selection and academic approval are recorded. |
-| BR06 | P3S7, P4S6, P6S5 | Rule |  |
-| BR07 | P4S4 |   |  |
-| BR08 | P5S2, P5S3 |   |  |
-| BR09 | P4S5 |   |  |
-| BR10 | P6S3 |   |  |
+| **BR01** | P2S1, P2S4 | Rule | A request must include the evidence required by the students programme before it is ready for a decision. *(Q1)* |
+| **BR02** | P2S5 | Rule  | Priority and exception handling for applications must follow agreed, documented guidelines rather than inconsistent practice. *(Q2)* |
+| **BR03** | P2S7 | Rule | Staff must verify and record third-party permissions prior to the disclosure of any detailed student placement information or decisions. *(Q3)* |
+| **BR04** | P3S1, P3S4, P6S1 | Rule | A vacancy must not be treated as a match unless programme outcomes, student interests, employer requirements, location, capacity, and potential requirements have all been satisfied. |
+| **BR05** | P3S2 | Rule | A placement cannot proceed unless both employer selection and academic approval are recorded. |
+| **BR06** | P3S7, P4S6, P6S5 | Rule | Staff must preserve the current confirmed position, while retaining evidence of earlier decision making. |
+| **BR07** | P4S4 | Rule  | A formal decision must be distinguished from an operational change, with silence not taken as approval. |
+| **BR08** | P3S5, P6S3, FR08 | Rule | Provisional allocations that remain stalled past the agreed threshold must be reviewed and released. *(Q4)* |
 
 ## Assumptions
 | ID | Ref | Category | Statement |
 | :--- | :--- |  :--- | :--- |
-| AS1 |  |   |  |
+| **A1** | OS4 | Assumption  | Employer legal contracts are negotiated outside of the system. Only the resulting placement agreements are recorded. |
+| **A2** | OS5 | Assumption  | The initial release can operate without integration with external recruitment systems. |
+| **A3** | OS6 | Assumption  | Student academic records continue to be maintained in existing academic systems, with the service only holding placement-related information. |
+| **A4** | SH8 | Assumption  | Placement funders do not need to receive unnecessary personal or commercially sensitive information. |
+| **A5** | P2S1 | Assumption | Each programme sets its own evidence requirements, so what counts as a complete request may differ between students. |
+| **A6** | P6S2 | Assumption | The service user is a student. |
+| **A7** | P6S4 | Assumption | The partner representative is an external partner. |
+
 
 ## Constraints
 | ID | Ref | Category | Statement |
 | :--- | :--- |  :--- | :--- |
-| CS1 |  |   |  |
+| **CS1** | P5S5, IS1-IS9 | Constraint | The initial release is limited to service coordination and records. |
+| **CS2** | P5S4 | Constraint | The service must accomodate off-site staff operations. |
+| **CS3** | P5S2, P5S3 | Constraint | External partners and funders must access only placement information relevant to their role, excluding unnecessary personal or commercially sensitive details. |
+| **CS4** | P1S2, P4S1 | Constraint | The service starts from records currently held in separate files. |
 
 ## Risks
 | ID | Ref | Category | Statement |
 | :--- | :--- |  :--- | :--- |
-| RS1 |  |   |  |
+| **RS1** | P1S2, P4S1 | Risk | Historical placement records may conflict or be incomplete when moved into the new single shared record. |
+| **RS2** | P2S5, P2S7 | Risk | Staff may continue handling cases inconsistently without agreed priority criteria and third-party authorisation rules. |
+| **RS3** | P4S2 | Risk | Task ownership may remain unclear without adopting standardised status definitions. |
+| **RS4** | P5S4 | Risk | If connectivity fails during off-site work, progress updates recorded may not reach the shared record. |
 
 <br>
 <br>
 
-# Step 10: MoSCoW Priority
-
-<br>
-<br>
-
-# Step 11: Stakeholder Clarification Questions
-
-
+# Step 10: Stakeholder Clarification Questions
+1. What information is required before a request is ready for decision? ()
+2. How eligibility, priority and exceptions should be applied?
+3. What authority is required when another person acts for the requester?
+4. When provisional allocations should expire or become confirmed?
+5. Who may approve changes, substitutions or withdrawal
+6. How versions, reviews and outstanding actions should be related
+7. Which information may be shared with staff, partners and funders
