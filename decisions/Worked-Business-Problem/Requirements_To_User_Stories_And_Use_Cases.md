@@ -69,7 +69,7 @@ And the student has placement preferences and the programme evidence required fo
 When the student submits the request
 Then the request is recorded against the student in the placement record
 And the student is shown that the request has been received
-And the student can view the current status of the request.
+And the student can view the current status of the request
 ```
 
 ### Questions Revealed
@@ -103,7 +103,7 @@ And the request is awaiting the programme evidence required for a decision
 When the student views the status of their request
 Then the request status is shown as awaiting evidence
 And the student can see that the request is waiting on information
-And the request is not shown as ready for a decision
+And the request is no shown as ready for a decision
 ```
 
 ### Questions Revealed
@@ -189,10 +189,10 @@ And the rule applied is recorded against the application
 
 | ID | Observable Acceptance Condition |
 | :--- | :--- |
-| **AS1** | A third party is acting on behalf of a student for a placement request. |
-| **AS2** | Placement staff can see whether permission is recorded for a third party. |
-| **AS3** | Detailed placement information or decisions are not disclosed to a third party without recorded permission. |
-| **AS4** | Each disclosure to a third-party is recorded against the students request. |
+| **AC1** | A third party is acting on behalf of a student for a placement request. |
+| **AC2** | Placement staff can see whether permission is recorded for a third party. |
+| **AC3** | Detailed placement information or decisions are not disclosed to a third party without recorded permission. |
+| **AC4** | Each disclosure to a third-party is recorded against the students request. |
 
 ### Given-When-Then
 
@@ -241,7 +241,7 @@ And the placement is shown as awaiting academic approval
 
 ### Questions Revealed
 
-1. Can an employer change or withdraw a selection decision after is has been recorded.
+1. Can an employer change or withdraw a selection decision after is has been recorded?
 2. Should academic approval happen before employer approval, after it, or can vice versa?
 3. Do employers record decisions themselves, or do placement staff record them on the employers behalf?
 4. How long can an application wait for an employer decision before it is followed up?
@@ -357,17 +357,68 @@ And the placement is shown as awaiting academic approval
 
 # Task 3: Identify Actors and Use Cases
 
+## Stakeholder Analysis
+
+| ID  | Stakeholder | Goals |
+| :--- | :--- | :--- |
+| **SH1** | **Student** | Know what their request is waiting on and track application progress. |
+| **SH2** | **Placement Staff** | Process requests smoothly, verify student evidence without searching separate files, and maintain evidence of current and earlier decisions and versions. |
+| **SH3** | **Third-Party Representative** | Help students with applications and get updates on their progress. |
+| **SH4** | **Employer** | Select suitable students for placement openings and confirm placement duties. |
+| **SH5** | **Placement Coordinator** | Keep track of unallocated requests, provisional arrangements, capacity conflicts, overdue actions, and incomplete records. |
+| **SH6** | **External Partners** | Receive information needed for their role without receiving unnecessary details. |
+| **SH7** | **Management** | Access summary information about overall placement activity. |
+| **SH8** | **Funders** | Receive high-level summary reports about placement activity without sensitive data. |
+| **SH9** | **Administrator** | Identify and release stalled provisional arrangements to free up capacity. |
+| **SH10** | **Reviewer** | Add new information and decisions without erasing the basis of earlier decisions. |
+| **SH11** | **Data-Protection Officer** | Ensure placement information is shared only with authorised parties and only as much as each role requires. | Detailed student information or decisions being disclosed without the required authority, or summary reporting exposing unnecessary personal or commercially sensitive information. |
+| **SH12** | **Supervisor** | Know which placements they are allocated to and be informed when an allocation changes. |
+
 ## Actor or Stakeholder Catalogue
 
 | Actor or Stakeholder | Type | Goal or Interest | Direct Interaction |
 | :--- | :--- | :--- | :--- |
+| Student | Primary Actor | Submit placement preferences and programme evidence, and view the current status of their placement request. | Yes |
+| Placement Staff | Primary Actor | View the shared placement record, apply priority rules, verify third-party permissions, record academic approval decisions, set activity status, and record progress updates off-site. | Yes |
+| Employer | Primary Actor | Record selection decisions for student applications. | Yes |
+| Placement Coordinator | Primary Actor | View provisional placement opportunities and the dependencies between connected arrangements. | Yes |
+| Administrator | Primary Actor | Release stalled provisional allocations to free capacity for other students. | Yes |
+| Third-Party Representative | Offstage Stakeholder | Ensure legitimate helpers are not refused or delayed when acting for a student. | No |
+| External Partners | Offstage Stakeholder | Ensure partners receive only the information required for their role. | No |
+| Management | Offstage Stakeholder | Ensure reliable summary information on placement activity is available. | No |
+| Funders | Offstage Stakeholder | Ensure summary reporting does not expose unnecessary personal or commercially sensitive information. | No |
+| Reviewer | Offstage Stakeholder | Ensure the basis of earlier decisions is preserved when new information is added. | No |
+| Data-Protection Officer *(A8)* | Offstage Stakeholder | Ensure placement information is shared only with authorised parties and only as much as their role requires | No |
+| Supervisor *(A9)* | Offstage Stakeholder | Ensure supervisor allocations are recorded accurately and that changes affecting them are visible | No |
 
 
 ## Actor Decisions
 
+### Student and Service User
+An assumption was made that the service user is a student *(A6)*. A quote from the service user (*"I need to know whether I am waiting for information, a decision, or an outside organisation"*) *(P6S2)* suggests an individual whose own placement request is in progress, which describes the student. Therefore, a single Student actor will cover both terms. 
+
+### Placement Staff, Coordinator, Administrator
+Placement staff, coordinators, and administrators all work within the placement office, but have different goals. The staff process records *(P4S1)*, the coordinator oversees provisional opportunities and dependencies *(P5S1, P3S6)*, and the administrator releases stalled allocations *(P6S3)*. They are therefore kept as separate actors, each with its own goals and use cases matching the user stories.
+
+### Third-Party Representative
+Placement staff verify permissions and the third-party contacts staff not the service *(US05, FR05)*. Therefore, third-party representatives are designated as offstage stakeholders. Their interest in not being wrongly refused or delayed, and in student information not being disclosed without authority is still protected *(BR03, NFR02)*.
+
+### Management and Funders
+
+### External Partners
+
+### Reviewer
+
+### Data-Protection Officer and Supervisor
+
+
 
 ## Use-Case Catalogue
+| Use Case | Primary Actor | Meaningful Outcome | Source Requirement |
+| :--- | :--- | :--- | :--- |
 
+<br>
+<br>
 
 # Task 4: Use-Case Diagram
 ```uml

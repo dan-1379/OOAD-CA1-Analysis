@@ -64,7 +64,7 @@ These issues increase operational difficulties, placing an extra burden on staff
 
 # Step 4: Worked System-Purpose Statement
 
-The proposed Student Work Placement Coordination Service will support placement staff, students, employers, and third-party representatives, as well as administrators and managers, in coordinating placement opportunities, applications, decisions, agreements, supervisor allocations, and progress reviews. 
+The proposed Student Work Placement Coordination Service will support placement staff, students, placement staff, employers, coordinators, and administrators, while protecting the interests of third-party representatives and managers, in coordinating placement opportunities, applications, decisions, agreements, supervisor allocations, and progress reviews. 
 
 The service will provide a single, shared record showing a placement's full status **(PR1)**, and make request completeness and submission progress clearly visible across all incoming channels **(PR2)**. It will support the consistent application of agreed placement rules **(PR3)** and provide a clear framework for authorisation, reducing the risk of improper data sharing and helping prevent unnecessary delays for legitimate third-party helpers **(PR4)**. 
 
@@ -105,6 +105,9 @@ The service will apply standardised status definitions across teams, helping ens
 | **SH8** | P5S3 | **Funders** | Receive high-level summary reports about placement activity without sensitive data. | Receiving unnecessary personal or commercially sensitive information **(A4)**. | Medium | Receive high-level summary reports on placement numbers and outcomes. |
 | **SH9** | P3S5, P6S3 | **Administrator** | Identify and release stalled provisional arrangements to free up capacity. | Stalled provisional allocations blocking capacity needed by other students. | Medium | Monitor provisional allocations and release stalled capacity. |
 | **SH10** | P4S5, P6S5 | **Reviewer** | Add new information and decisions without erasing the basis of earlier decisions. | Losing the original record or reasons behind earlier decisions when new information is added. | Medium | Review historical decisions, add new notes, and record revised arrangements. |
+| **SH11** | P2S7, P5S2, P5S3, A8 | **Data-Protection Officer** | Ensure placement information is shared only with authorised parties and only as much as each role requires. | Detailed student information or decisions being disclosed without the required authority, or summary reporting exposing unnecessary personal or commercially sensitive information. | High | No direct use of the service, sets or approves the rules on what information may be shared and with whom. |
+| **SH12** | P1S2, P3S3, P3S6, A9 | **Supervisor** | Know which placements they are allocated to and be informed when an allocation changes. | Being allocated to clashing placements, or changes to linked arrangements altering their allocation without notice. | Medium | No direct use of the service,  allocated to placements by placement staff. |
+
 
 <br>
 <br>
@@ -165,6 +168,8 @@ The service will apply standardised status definitions across teams, helping ens
 | **A5** | P2S1 | Assumption | Each programme sets its own evidence requirements, so what counts as a complete request may differ between students. |
 | **A6** | P6S2 | Assumption | The service user is a student. |
 | **A7** | P6S4 | Assumption | The partner representative is an external partner. |
+| **A8** | P2S7, P5S2, P5S3 | Assumption | The college has a data-protection role responsible for decisions on what placement information may be shared, and with whom. |
+| **A9** | P1S2 | Assumption | Each placement has an allocated supervisor whose allocation is recorded and managed by placement staff. |
 
 
 ## Constraints
@@ -187,7 +192,8 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 
 # Step 10: Stakeholder Clarification Questions
-1. What information is required before a request is ready for decision? ()
+
+1. What information is required before a request is ready for decision?
 2. How eligibility, priority and exceptions should be applied?
 3. What authority is required when another person acts for the requester?
 4. When provisional allocations should expire or become confirmed?
