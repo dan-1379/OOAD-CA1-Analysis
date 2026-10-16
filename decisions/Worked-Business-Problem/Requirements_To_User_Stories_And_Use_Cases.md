@@ -220,21 +220,31 @@ And the decision is not disclosed to the third party
 
 | ID | Observable Acceptance Condition |
 | :--- | :--- |
+| **AC1** | The employer is offering the placement opportunity. |
+| **AC2** | The employer can view only the applicant information required for decision making. |
+| **AC3** | The selection decision is recorded against the application. |
+| **AC4** | A placement with an employer selection but no academic approval is shown as not able to proceed. |
+| **AC5** | Once the employer selection and academic approval are granted, the placement is shown as able to proceed. |
+| **AC6** | An application with no recorded employer decision is not treated as selected. |
 
 ### Given-When-Then
 
 ```gherkin
-Given 
-And
-When
-Then
-And
-And
+Given the employer is offering a placement opportunity
+And a student has applied for that placement
+And no academic approval has been recorded for the placement
+When the employer records a decision selecting the student
+Then the selection decision is recorded against the application
+And the placement is not shown as able to proceed
+And the placement is shown as awaiting academic approval
 ```
 
 ### Questions Revealed
 
-1. 
+1. Can an employer change or withdraw a selection decision after is has been recorded.
+2. Should academic approval happen before employer approval, after it, or can vice versa?
+3. Do employers record decisions themselves, or do placement staff record them on the employers behalf?
+4. How long can an application wait for an employer decision before it is followed up?
 
 <br>
 
@@ -245,21 +255,14 @@ And
 
 | ID | Observable Acceptance Condition |
 | :--- | :--- |
-
-### Given-When-Then
-
-```gherkin
-Given 
-And
-When
-Then
-And
-And
-```
+| **AC1** | The academic approval decision is recorded against the placement. |
+| **AC2** | A placement with academic approval but no employer selection is not shown as able to proceed. |
+| **AC3** | A placement whose academic approval is refused is not shown as able to proceed. |
+| **AC4** | A placement with no recorded academic decision is not treated as approved. |
 
 ### Questions Revealed
 
-1. 
+1. Who has the authority to give academic approval for placement?
 
 <br>
 
@@ -270,21 +273,12 @@ And
 
 | ID | Observable Acceptance Condition |
 | :--- | :--- |
-
-### Given-When-Then
-
-```gherkin
-Given 
-And
-When
-Then
-And
-And
-```
+| **AC1** | The administrator can see which provisional allocations have stalled. |
+| **AC2** | Once a stalled provisional allocation is released, the placement is shown as available for other students. |
 
 ### Questions Revealed
 
-1. 
+1. Should the student be warned before their provisional allocation is released, and given a chance to supply missing information?
 
 <br>
 
@@ -295,21 +289,14 @@ And
 
 | ID | Observable Acceptance Condition |
 | :--- | :--- |
-
-### Given-When-Then
-
-```gherkin
-Given 
-And
-When
-Then
-And
-And
-```
+| **AC1** | Each placement opportunity is shown as provisional or confirmed. |
+| **AC2** | A provisional opportunity shows which details are provisional. |
+| **AC3** | Provisional opportunities are not counted as confirmed capacity. |
+| **AC4** | When an opportunity is confirmed, it is shown as confirmed and counted as available capacity. |
 
 ### Questions Revealed
 
-1. 
+1. Can students be matched to a provisional opportunity, or only express interest until it is confirmed?
 
 <br>
 
@@ -320,21 +307,14 @@ And
 
 | ID | Observable Acceptance Condition |
 | :--- | :--- |
-
-### Given-When-Then
-
-```gherkin
-Given 
-And
-When
-Then
-And
-And
-```
+| **AC1** | An activity status can only be set from the agreed set of status values. |
+| **AC2** | Each activity shows the current status and the person responsible for the next action. |
+| **AC3** | A status change records the date and the staff member who made it. |
+| **AC4** | A status change on its own is not recorded as a formal decision. |
 
 ### Questions Revealed
 
-1. 
+1. Should a reason be recorded when an activity is set to a status, and should those reasons come from an agreed list?
 
 <br>
 
@@ -345,21 +325,14 @@ And
 
 | ID | Observable Acceptance Condition |
 | :--- | :--- |
-
-### Given-When-Then
-
-```gherkin
-Given 
-And
-When
-Then
-And
-And
-```
+| **AC1** | Each placement arrangement shows the other arrangements linked to it. |
+| **AC2** | Before a change is recorded, the coordinator can see which linked arrangements it would affect. |
+| **AC3** | After a change is recorded, the affected linked arrangements are marked for review. |
+| **AC4** | An arrangement with no linked arrangements is shown as having none. |
 
 ### Questions Revealed
 
-1. 
+1. What links arrangements, a shared supervisor, location, resource, or time for example?
 
 <br>
 
@@ -370,21 +343,14 @@ And
 
 | ID | Observable Acceptance Condition |
 | :--- | :--- |
-
-### Given-When-Then
-
-```gherkin
-Given 
-And
-When
-Then
-And
-And
-```
+| **AC1** | A placement staff member can record progress updates while off-site without a reliable connection |
+| **AC2** | Once a connection returns, every update recorded off-site appears in the shared placement record. |
+| **AC3** | The staff member can see which of their updates have not yet reached the shared record. |
+| **AC4** | An off-site update does not overwrite a change made to the same record by another staff member. |
 
 ### Questions Revealed
 
-1. 
+1. If two staff members update the same placement while one is off-site, how should the conflict be resolved, and who decides this?
 
 <br>
 <br>
