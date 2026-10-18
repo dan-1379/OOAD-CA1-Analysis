@@ -3,37 +3,17 @@
 <br>
 <br>
 
-# Supplied Requirements
-
-| ID | Functional Requirement |
-| :--- | :--- |
-| **FR01** | The system shall allow a student to submit placement preferences and programme evidence. | 
-| **FR02** | The system shall allow a student to view the current status of their placement request. | 
-| **FR03** | The system shall maintain a single shared record for each placement. | 
-| **FR04** | The system shall allow placement staff to apply agreed priority rules for student placement applications. |
-| **FR05** | The system shall allow placement staff to verify third-party authorisation permissions before disclosing placement information. |
-| **FR06** | The system shall allow employers to record selection decisions for student applicants. |
-| **FR07** | The system shall allow placement staff to record college academic approval decisions for placements. | 
-| **FR08** | The system shall allow the administrator to release stalled provisional allocations. |
-| **FR09** | The system shall allow placement staff and the placement coordinator to view provisional placement opportunities. |
-| **FR10** | The system shall allow placement staff to set an activity status from the agreed set of standardised values. |
-| **FR11** | The system shall display dependencies between connected placement arrangements. |
-| **FR12** | The system shall allow off-site staff to record progress updates when connectivity is unreliable. |
-
-<br>
-<br>
-
 # Task 1: Develop User Stories
 
 | Story ID | Requirement | Role-Goal-Benefit User Story |
 | :--- | :--- | :--- |
 | **US01** | FR01 | As a student, I want to submit my placement preferences and programme evidence so that my request can be assessed for a placement decision. |
-| **US02** | FR02 | As a student, I want to view the current status of my placement request so that I know whether my application is waiting on information, a decision, or an outside organisation. |
+| **US02** | FR02 | As a student, I want to view the current status of my placement request so that I know whether my request is waiting on information, a decision, or an outside organisation. |
 | **US03** | FR03 | As a placement staff member, I want to view a single shared record for each placement so that I do not have to search across separate records. |
 | **US04** | FR04 | As a placement staff member, I want to apply priority rules for student placement applications so that I treat each student application consistently. |
 | **US05** | FR05 | As a placement staff member, I want to verify third-party authorisation permissions so that I do not accidentally disclose any sensitive placement information. |
 | **US06** | FR06 | As an employer, I want to record selection decisions for student applications so that the placement application can proceed once academic approval is also recorded. |
-| **US07** | FR07 | As a placement staff member, I want to record academic approval decisions for placement so that a placement application can proceed once the employer's selection is also recorded. |
+| **US07** | FR07 | As a placement staff member, I want to record academic approval decisions for a placement so that a placement application can proceed once the employer's selection is also recorded. |
 | **US08** | FR08 | As an administrator, I want to release stalled provisional allocations so that a placement is free for other students.  |
 | **US09** | FR09 | As a placement coordinator, I want to view provisional placement opportunities so that I don't count provisional places as confirmed capacity, overstating what is available.  |
 | **US10** | FR10 | As a placement staff member, I want to set an agreed activity status so that everyone can see what's awaiting action and who is responsible. |
@@ -103,13 +83,13 @@ And the request is awaiting the programme evidence required for a decision
 When the student views the status of their request
 Then the request status is shown as awaiting evidence
 And the student can see that the request is waiting on information
-And the request is no shown as ready for a decision
+And the request is not shown as ready for a decision
 ```
 
 ### Questions Revealed
 
 1. What status values will students see, and are they the same as the ones for internal staff?
-2. How much details should a student see when their request is waiting on an outside organisation?
+2. How much detail should a student see when their request is waiting on an outside organisation?
 3. Should a student be told when their status changes, or only when they check it themselves?
 4. Can a third-party rep acting on behalf of the student view the same status?
 
@@ -122,10 +102,10 @@ And the request is no shown as ready for a decision
 
 | ID | Observable Acceptance Condition |
 | :--- | :--- |
-| **AC1** | The placement staff member is authorised to view placment records. | 
+| **AC1** | The placement staff member is authorised to view placement records. | 
 | **AC2** | Each placement has one record, with no duplicates or split records for the same placement. | 
-| **AC3** | The record shows the placements opportunity, application, decisions, agreement, supervisor allocation, and progress reviews. | 
-| **AC4** | The record shows the placements current status and who is responsible for the next action. | 
+| **AC3** | The record shows the placement's opportunity, application, decisions, agreement, supervisor allocation, and progress reviews. | 
+| **AC4** | The record shows the placement's current status and who is responsible for the next action. | 
 | **AC5** | An update made by a staff member is visible to other staff members viewing the same record. | 
 | **AC6** | Historical decisions remain visible in the record when new information is added. | 
 
@@ -138,7 +118,7 @@ And the placement has a supervisor allocated
 When a placement staff member views the record for that placement 
 Then both decisions are shown in the same record
 And the supervisor allocation is shown in the same record
-And the placements current status and owner are displayed
+And the placement's current status and owner are displayed
 ```
 
 ### Questions Revealed
@@ -146,7 +126,7 @@ And the placements current status and owner are displayed
 1. What minimum information must every placement record contain?
 2. Does a record exist from the minute a student submits a request, or only once a placement is allocated?
 3. Which staff roles can update the record, and who can only view it?
-4. How will existing record held in separate files and spreadsheets be brought into the single record, and who verifies this?
+4. How will existing records held in separate files and spreadsheets be brought into the single record, and who verifies this?
 
 <br>
 
@@ -177,7 +157,7 @@ And the rule applied is recorded against the application
 
 1. What circumstances should give an application priority?
 2. Who is allowed to grant an exception to a priority rule?
-3. Can an applications priority change after it has been set?
+3. Can an application's priority change after it has been set?
 4. Should students be told what priority their application has been given?
 
 <br>
@@ -192,14 +172,14 @@ And the rule applied is recorded against the application
 | **AC1** | A third party is acting on behalf of a student for a placement request. |
 | **AC2** | Placement staff can see whether permission is recorded for a third party. |
 | **AC3** | Detailed placement information or decisions are not disclosed to a third party without recorded permission. |
-| **AC4** | Each disclosure to a third-party is recorded against the students request. |
+| **AC4** | Each disclosure to a third party is recorded against the students' request. |
 
 ### Given-When-Then
 
 ```gherkin
 Given a third party is acting on behalf of a student
 And no permission is recorded for that third party
-When the third party asks placement staff for a decision on the students request
+When the third party asks placement staff for a decision on the student's' request
 Then placement staff can see that no permission is recorded
 And the decision is not disclosed to the third party
 ```
@@ -224,7 +204,7 @@ And the decision is not disclosed to the third party
 | **AC2** | The employer can view only the applicant information required for decision making. |
 | **AC3** | The selection decision is recorded against the application. |
 | **AC4** | A placement with an employer selection but no academic approval is shown as not able to proceed. |
-| **AC5** | Once the employer selection and academic approval are granted, the placement is shown as able to proceed. |
+| **AC5** | Once the employer selection and academic approval are recorded, the placement is shown as able to proceed. |
 | **AC6** | An application with no recorded employer decision is not treated as selected. |
 
 ### Given-When-Then
@@ -241,9 +221,9 @@ And the placement is shown as awaiting academic approval
 
 ### Questions Revealed
 
-1. Can an employer change or withdraw a selection decision after is has been recorded?
-2. Should academic approval happen before employer approval, after it, or can vice versa?
-3. Do employers record decisions themselves, or do placement staff record them on the employers behalf?
+1. Can an employer change or withdraw a selection decision after it has been recorded?
+2. Should academic approval happen before employer approval, after it, or can it happen in either order?
+3. Do employers record decisions themselves, or do placement staff record them on the employer's behalf?
 4. How long can an application wait for an employer decision before it is followed up?
 
 <br>
@@ -401,34 +381,119 @@ An assumption was made that the service user is a student *(A6)*. A quote from t
 Placement staff, coordinators, and administrators all work within the placement office, but have different goals. The staff process records *(P4S1)*, the coordinator oversees provisional opportunities and dependencies *(P5S1, P3S6)*, and the administrator releases stalled allocations *(P6S3)*. They are therefore kept as separate actors, each with its own goals and use cases matching the user stories.
 
 ### Third-Party Representative
-Placement staff verify permissions and the third-party contacts staff not the service *(US05, FR05)*. Therefore, third-party representatives are designated as offstage stakeholders. Their interest in not being wrongly refused or delayed, and in student information not being disclosed without authority is still protected *(BR03, NFR02)*.
+Placement staff verify permissions and the third party contacts staff not the service *(US05, FR05)*. Therefore, third-party representatives are designated as offstage stakeholders. Their interest in not being wrongly refused or delayed, and in student information not being disclosed without authority is still protected *(BR03, NFR02)*.
 
 ### Management and Funders
+Summary reporting for management and funders is a recognised need *(P5S3)*, with Manager stating: "We need consistent reasons for delay, withdrawal and incomplete outcomes." *(P6S6)*. Reporting was not prioritised within the functional requirements for the initial release, so no user story has either party using the service directly.
+
+Therefore, both the management and funders are designated as offstage stakeholders. Their interest in reliable reporting is still protected through *(NFR01)* and *(CS3)*.
 
 ### External Partners
+External partners should receive only the information required for their role *(P5S2)*, with the partner representative stating: "I need the information required for my role, not the complete case history." *(P6S4)*. 
+
+The partner representative is assumed to be an external partner *(A7)*. As no user story in the initial release has external partners using the service directly, they are designated offstage stakeholders. Their interest in receiving role-relevant information is still protected through *(NFR01)* and *(CS3)*
 
 ### Reviewer
+The reviewer's concern is that: "New information should be added without erasing the basis of earlier decision." *(P6S5)*. However, no user story in the initial release has the reviewer using the service directly. Therefore, the reviewer is designated as an offstage stakeholder.
 
-### Data-Protection Officer and Supervisor
+Their interest in preserving earlier decisions is still protected through *(BR06)* and *(NFR04)*, which apply to every update made by placement staff.
 
+### Data-Protection Officer
+The scenario does not name a data-protection role, but raises several concerns about who may receive information and how much *(P2S7, P5S2, P5S3)*, which no listed stakeholder is responsible for.
 
+A data-protection officer is therefore assumed to exist *(A8)*, who will set or approve the rules on information sharing rather than using the service themselves. Therefore, they will be designated as an offstage stakeholder.
+
+Their interest is protected through *(NFR01, NFR02, BR03, CS3)*, with the question of what information can be shared and to who *(Q7)* directed to them.
+
+### Supervisor
+The scenario mentions supervisor allocation as part of each placement *(P1S2)*, and capacity depends on the people involved *(P3S3)*. Supervisors are assumed to be allocated to placements by placement staff *(A9)*.
+
+No user story in the initial release has them using the service directly. Therefore, they are designated as offstage stakeholders. Whether or not a supervisor is a college staff member or an employer contact is unresolved *(Q8)*, and will impact the domain model.
 
 ## Use-Case Catalogue
-| Use Case | Primary Actor | Meaningful Outcome | Source Requirement |
-| :--- | :--- | :--- | :--- |
+
+| ID | Use Case | Primary Actor | Meaningful Outcome | Source Requirement |
+| :--- | :--- | :--- | :--- | :--- |
+| UC01 | **Submit Placement Request** | Student | A placement request with preferences and programme evidence is recorded. | FR01 |
+| UC02 | **View Request Status** | Student | The student sees the current status of their request, including whether it is waiting on information, a decision, or an outside organisation. | FR02 |
+| UC03 | **View Placement Record** | Placement Staff | A single placement record is displayed showing all associated details without searching across separate records. | FR03 |
+| UC04 | **Apply Priority Rules** | Placement Staff | Student applications are prioritised consistently, using agreed guidelines, and with the applied rule recorded. | FR04 |
+| UC05 | **Verify Third-Party Permission** | Placement Staff | Placement information is disclosed to a third-party only where the required permission is recorded. | FR05 |
+| UC06 | **Record Selection Decision** | Employer | The employer selection decision for a student application is recorded. | FR06 |
+| UC07 | **Record Academic Approval** | Placement Staff | The college academic approval decision is recorded for a placement. | FR07 |
+| UC08 | **Release Stalled Allocation** | Administrator | A stalled provisional allocation is cleared, freeing up capacity for other students. | FR08 |
+| UC09 | **View Provisional Opportunities** | Placement Coordinator | Provisional opportunities are identified and not counted as confirmed capacity. | FR09 |
+| UC10 | **Set Activity Status** | Placement Staff | The status of a placement activity is updated using an agreed, standardised term. | FR10 |
+| UC11 | **Evaluate Change Dependencies** | Placement Coordinator | Connected arrangements are viewed to assess knock-on impacts before making changes. | FR11 |
+| UC12 | **Record Off-Site Progress Updates** | Placement Staff | Progress updates recorded without a reliable connection reach the shared record once the connection returns. | FR12 |
 
 <br>
 <br>
 
 # Task 4: Use-Case Diagram
-```uml
-    @startuml
+<details>
+    <summary>PlantUML Source Code</summary>
+
+```plantuml
+@startuml
     left to right direction
-    
-    @enduml
+    actor Student
+    actor "Placement Staff" as Staff
+    actor Employer
+    actor Administrator
+    actor "Placement Coordinator" as Coordinator
+
+    rectangle "Student Work Placement Coordination Service" {
+        usecase "Submit Placement Request" as UC01
+        usecase "View Request Status" as UC02
+        usecase "View Placement Record" as UC03
+        usecase "Apply Priority Rules" as UC04
+        usecase "Verify Third-Party Permission" as UC05
+        usecase "Record Selection Decision" as UC06
+        usecase "Record Academic Approval" as UC07
+        usecase "Release Stalled Allocation" as UC08
+        usecase "View Provisional Opportunities" as UC09
+        usecase "Set Activity Status" as UC10
+        usecase "Evaluate Change Dependencies" as UC11
+        usecase "Record Off-Site Progress Updates" as UC12
+    }
+
+    Student -- UC01
+    Student -- UC02
+
+    Staff -- UC03
+    Staff -- UC04
+    Staff -- UC05
+    Staff -- UC07
+    Staff -- UC10
+    Staff -- UC12
+
+    Employer -- UC06
+
+    Administrator -- UC08
+
+    Coordinator -- UC09
+    Coordinator -- UC11
+@enduml
 ```
+</details>
+
+![Use-case Diagram](../../diagrams/Student-Work-Placement-Coordination.png)
+
 
 # Task 5: Traceability
 
 | Business Problem or Stakeholder Goal | Requirement | User Story | Acceptance Evidence | Use Case |
 | :--- | :--- | :--- | :--- | :--- |
+| Students need to record preferences and evidence. | FR01 | US01 | Placement request is recorded against student record. | Submit Placement Request |
+| Students are uncertain about request progress and what their request is waiting on. | FR02 | US02 | Current request status displayed, showing whether it is waiting on information, a decison, or an outside organisation. | View Request Status |
+| Placement information is fragmented across separate files, spreadsheets, and email threads. | FR03 | US03 | Single record displays linked opportunities, applications, decisions, agreements, supervisor allocations, and progress reviews. | View Placement Record |
+| Priorities and exceptions are applied inconsistently without agreed guidelines. | FR04 | US04 | Applications with the same circumstances receive the same priority. | Apply Priority Rules |
+| Staff are uncertain about authority required before disclosing details to third parties. | FR05 | US05 | Placement information is disclosed to a third party only where required authorisation permissions are recorded. | Verify Third-Party Permission |
+| Placement decisions require separate employer selection and acdemic approval. | FR06 | US06 | Placement shown as not able to proceed without college academic approval, even when an employer selection is recorded. | Record Selection Decision |
+| Academic approval must be recorded independently alongside employer selection. | FR07 | US07 | With academic approval but no employer selection, the placement is not shown as able to proceed. | Record Academic Approval |
+| Stalled provisional allocations blick capacity needed by other students. | FR08 | US08 | Stalled provisional allocation released, showing placement available for other students. | Release Stalled Allocation |
+| Advertised opportunities remain provisional and visible vacancies do not confirm placement feasibility. | FR09 | US09 | Provisional opportunities identified and distinguished from confirmed capacity. | View Provisional Opportunities |
+| Unstandardised status terms cause confusion over task ownership and pending actions. | FR10 | US10 | Each activity shows the current status and the person responsible. | Set Activity Status |
+| Unrecorded dependencies across linked arrangements cause knock-on effects when changes occur. | FR11 | US11 | Coordinator sees which linked arrangements a change would affect. | Evaluate Change Dependencies |
+| Unreliable connectivity during off-site work causes delayed or lost progress updates | FR12 | US12 | Progress updates recorded without a reliable connection reach the shared record once connection returns. | Record Off-Site Progress Updates |
