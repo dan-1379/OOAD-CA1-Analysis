@@ -7,9 +7,9 @@
 
 ## Organisation and Current Service
 
-*Kerry College Placement Office coordinates work-placement opportunities for students across several programmes.*
-
-*Opportunities, applications, employer decisions, agreements, supervisor allocation and progress reviews are recorded in separate files and email threads.*
+> [!NOTE]
+> *Kerry College Placement Office coordinates work-placement opportunities for students across several programmes.* <br><br>
+> *Opportunities, applications, employer decisions, agreements, supervisor allocation and progress reviews are recorded in separate files and email threads.*
 
 | Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
@@ -34,11 +34,10 @@
 
 ## Requests, Eligibility, and Preparation
 
-*Students express preferences and provide evidence required by their programme. An opportunity may be advertised while dates, duties or approval remain provisional.*
-
-*Requests arrive through several channels and may be incomplete. Staff need to distinguish an initial expression of interest, a request awaiting evidence and a request ready for a decision. Priorities and exceptions are not applied consistently.*
-
-*Another person or organisation may assist with a request. Staff are uncertain what authority is required before detailed information or decisions can be shared.*
+> [!NOTE]
+> *Students express preferences and provide evidence required by their programme. An opportunity may be advertised while dates, duties or approval remain provisional.* <br><br>
+>*Requests arrive through several channels and may be incomplete. Staff need to distinguish an initial expression of interest, a request awaiting evidence and a request ready for a decision. Priorities and exceptions are not applied consistently.*<br><br>
+>*Another person or organisation may assist with a request. Staff are uncertain what authority is required before detailed information or decisions can be shared.*
 
 | Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
@@ -78,11 +77,10 @@
 
 ## Allocation and Coordination
 
-*Matching considers programme outcomes, student interests, employer requirements, location, capacity and potential conflicts. Employer selection and academic approval are separate decisions.*
-
-*Capacity depends on a combination of people, places, resources and timing. A visible vacancy does not necessarily mean that every requirement is satisfied. Provisional allocations sometimes remain in place while essential information is still missing.*
-
-*Changes can affect several linked arrangements. Staff need to preserve the current confirmed position while retaining evidence of earlier decisions and versions.*
+> [!NOTE]
+>*Matching considers programme outcomes, student interests, employer requirements, location, capacity and potential conflicts. Employer selection and academic approval are separate decisions.* <br><br>
+>*Capacity depends on a combination of people, places, resources and timing. A visible vacancy does not necessarily mean that every requirement is satisfied. Provisional allocations sometimes remain in place while essential information is still missing.* <br><br>
+>*Changes can affect several linked arrangements. Staff need to preserve the current confirmed position while retaining evidence of earlier decisions and versions.*
 
 | Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
@@ -119,11 +117,11 @@
 <br>
 
 ## Progress, Review, and Exceptions
-*Staff record progress, decisions and outstanding actions using notes, messages and spreadsheets. Different teams use status terms differently, making it difficult to identify what is awaiting action and who is responsible.*
 
-*A planned activity may be changed, partially completed, paused or withdrawn. Staff need to distinguish an operational change from a formal decision and avoid treating silence as approval.*
-
-*Reviews may generate new actions, revised arrangements or escalation. Earlier evidence should not be overwritten when circumstances change.*
+> [!NOTE]
+> *Staff record progress, decisions and outstanding actions using notes, messages and spreadsheets. Different teams use status terms differently, making it difficult to identify what is awaiting action and who is responsible.* <br><br>
+> *A planned activity may be changed, partially completed, paused or withdrawn. Staff need to distinguish an operational change from a formal decision and avoid treating silence as approval.* <br><br>
+> *Reviews may generate new actions, revised arrangements or escalation. Earlier evidence should not be overwritten when circumstances change.* <br><br>
 
 | Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
@@ -161,11 +159,11 @@
 <br>
 
 ## Information, Reporting, and Scope
-*The coordinator needs information about unallocated requests, provisional arrangements, capacity conflicts, overdue actions and incomplete records. External partners should receive only the information required for their role.*
 
-*Summary reporting is needed for management and funders without exposing unnecessary personal or commercially sensitive information. Connectivity may be unreliable during off-site work.*
-
-*The initial scope covers service coordination and records. Specialist professional systems, financial accounting and unrelated public website functions are outside scope.*
+> [!NOTE]
+> *The coordinator needs information about unallocated requests, provisional arrangements, capacity conflicts, overdue actions and incomplete records. External partners should receive only the information required for their role.* <br><br>
+> *Summary reporting is needed for management and funders without exposing unnecessary personal or commercially sensitive information. Connectivity may be unreliable during off-site work.* <br><br>
+> *The initial scope covers service coordination and records. Specialist professional systems, financial accounting and unrelated public website functions are outside scope.* <br><br>
 
 | Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
@@ -201,12 +199,14 @@
 <br>
 
 ## Stakeholder Evidence
-- **Coordinator:** “A vacancy is not a match unless all of the important requirements are satisfied.”
-- **Service user:** “I need to know whether I am waiting for information, a decision or an outside organisation.”
-- **Administrator:** “Provisional arrangements can block capacity long after the original request has stalled.”
-- **Partner representative:** “I need the information required for my role, not the complete case history.”
-- **Reviewer:** “New information should be added without erasing the basis of the earlier decision.”
-- **Manager:** “We need consistent reasons for delay, withdrawal and incomplete outcomes.”
+
+> [!NOTE]
+> - **Coordinator:** “A vacancy is not a match unless all of the important requirements are satisfied.”
+> - **Service user:** “I need to know whether I am waiting for information, a decision or an outside organisation.”
+> - **Administrator:** “Provisional arrangements can block capacity long after the original request has stalled.”
+> - **Partner representative:** “I need the information required for my role, not the complete case history.”
+> - **Reviewer:** “New information should be added without erasing the basis of the earlier decision.”
+> - **Manager:** “We need consistent reasons for delay, withdrawal and incomplete outcomes.”
 
 | Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
@@ -219,7 +219,7 @@
 | Need | Scenario | Expressing requirement for request status |
 | Know | Scenario | Indicating student awareness of request status or waiting condition |
 | Waiting | Scenario | State condition of a request awaiting information, a decision, or an outside organisation |
-| Information | Scenario | www Whatever details the request is waiting on |
+| Information | Scenario | Whatever details the request is waiting on |
 | Decision | Scenario | *See Organisation and Current Service*, what decisions do the student wait on? |
 | Outside Organisation | Scenario | Employer, or an assisting organisation? |
 | Administrator | Scenario | Primary actor responsible for monitoring and releasing provisional allocations |
@@ -248,43 +248,43 @@
 <br>
 
 ## Unresolved Matters
-The scenario does not confirm every policy or decision. Clarification may be required about:
 
-- what information is required before a request is ready for decision;
-- how eligibility, priority and exceptions should be applied;
-- what authority is required when another person acts for the requester;
-- when provisional allocations should expire or become confirmed;
-- who may approve changes, substitutions or withdrawal;
-- how versions, reviews and outstanding actions should be related;
-- which information may be shared with staff, partners and funders.
+> [!NOTE]
+> The scenario does not confirm every policy or decision. Clarification may be required about:
+> - what information is required before a request is ready for decision;
+> - how eligibility, priority and exceptions should be applied;
+> - what authority is required when another person acts for the requester;
+> - when provisional allocations should expire or become confirmed;
+> - who may approve changes, substitutions or withdrawal;
+> - how versions, reviews and outstanding actions should be related;
+> - which information may be shared with staff, partners and funders.
 
-| Candidate Term | Evidence Scenario | Initial Question or Observation |
+| Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
-| Policy or Decision | Scenario |  |
-| Clarification Required | Scenario |  |
-| Information Required | Scenario |  |
-| Request | Scenario |  |
-| Ready for Decision | Scenario |  |
-| Eligibility | Scenario |  |
-| Priority | Scenario |  |
-| Exceptions | Scenario |  |
-| Applied | Scenario |  |
-| Authority Required | Scenario |  |
-| Acts for Requester | Scenario |  |
-| Provisional Allocations | Scenario |  |
-| Expire | Scenario |  |
-| Become Confirmed | Scenario |  |
-| Approve Changes | Scenario |  |
-| Substitutions | Scenario |  |
-| Withdrawal | Scenario |  |
-| Versions | Scenario |  |
-| Reviews | Scenario |  |
-| Outstanding Actions | Scenario |  |
-| Related | Scenario |  |
-| Shared | Scenario |  |
-| Staff | Scenario |  |
-| Partners | Scenario |  |
-| Funders | Scenario |  |
+| Policy or Decision | Scenario | Concept covering business rules, requests, allocations, and approvals. |
+| Clarification Required | Scenario | Concept covering open questions requiring stakeholder confirmation |
+| Information Required | Scenario | *See Stakeholder Evidence* |
+| Ready for Decision | Scenario | *See Requests, eligibility and preparation* |
+| Eligibility | Scenario | Business rule for who may apply, not agreed |
+| Priority | Scenario | Ranking rule when ordering requests, not agreed |
+| Exceptions | Scenario | *See Requests, Eligibility, and Preparation* |
+| Applied | Scenario | *See Requests, Eligibility, and Preparation* |
+| Authority Required | Scenario | *See Requests, Eligibility, and Preparation* |
+| Acts for Requester | Scenario | Third party submitting or managing on student's behalf, same as another person or organisation? |
+| Provisional Allocations | Scenario | *See Allocation and Coordination* |
+| Expire | Scenario | Not agreed, requires clarification. Possible state change of an allocation |
+| Become Confirmed | Scenario | Not agreed, requires clarification. Transition from provisional hold to finalised allocation? |
+| Approve Changes | Scenario | Not agreed, requires clarification. Who has authority to approve modifications? |
+| Substitutions | Scenario | Not agreed, requires clarification. Possible change to a placement or request? |
+| Withdrawal | Scenario | *See Unresolved Matters* |
+| Versions | Scenario | Historical revisions of placement records, not agreed how these link |
+| Reviews | Scenario | *See Progress, Review, and Exceptions* |
+| Outstanding Actions | Scenario | *See Progress, Review, and Exceptions*, are these the same as overdue actions? |
+| Related | Scenario | Not agreed, how do versions, reviews, and actions link? |
+| Shared | Scenario | *See Requests, Eligibility, and Preparation* |
+| Staff | Scenario | *See Requests, Eligibility, and Preparation* |
+| Partners | Scenario | *See Information, Reporting, and Scope* |
+| Funders | Scenario | *See Information, Reporting, and Scope* |
 
 <br>
 <br>
