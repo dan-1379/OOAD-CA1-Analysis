@@ -292,9 +292,257 @@
 
 # Task 2: Classify the Candidates
 
+## Classification Guide
+
+| Classification | Question | Examples |
+| :--- | :--- | :--- |
+| Conceptual Class | Does the domain need to remember identity, facts, relationships, or lifecycle? | Student, Activity, Registration |
+| Attribute or Value | Is it a simple descriptive value of another concept | capacity, status, sessionDate |
+| Actor | Does the external role interact with the system boundary? | Student, Organiser, Manager |
+| Operation or Event | Is it an action that may reveal a tranaction concept? | register, cancel, attend |
+| Out of scope / Implementation | Is it a screen, database, framework, service layer, or unsupported detail? | form, table, controller |
+
+<br>
+<br>
+
+## Organisation and Current Service
+
 | Candidate | Classification | Reason |
 | :--- | :--- | :--- |
+| Kerry College Placement Office | System Boundary | It names the overarching organisation defining the business. |
+| Coordinates | Operation or Event | Describes business process activities. |
+| Work-placement opportunities | Conceptual Class |  |
+| Students | Actor & Conceptual Class | Primary actor submitting requests. |
+| Programmes | Attribute or Value |  | 
+| Opportunities | Conceptual Class |  | 
+| Applications | Conceptual Class |  |
+| Employer | Actor & Conceptual Class |  | 
+| Employer decisions | Operation or Event |  | 
+| Agreements | Conceptual Class |  | 
+| Supervisor | Conceptual Class |  |
+| Supervisor allocation | Operation or Event |  | 
+| Progress reviews | Conceptual Class |  |
+| Recorded | Operation or Event |  |
+| Files | Out of Scope / Implementation |  |
+| Email threads | Out of Scope / Implementation |  |
 
+<br>
+
+## Requests, Eligibility, and Preparation
+
+| Candidate | Classification | Reason |
+| :--- | :--- | :--- |
+| Students |
+| Express | 
+| Provide |
+| Preferences | 
+| Evidence | 
+| Programme | 
+| Opportunity |
+| Advertised | 
+| Dates | 
+| Duties | 
+| Approval |
+| Provisional | 
+| Requests |
+| Arrive |
+| Several Channels |
+| Incomplete |
+| Staff |
+| Distinguish |
+| Initial Expression of Interest |
+| Request Awaiting Evidence |
+| Request Ready for a Decision |
+| Priorities |
+| Exceptions | 
+| Applied | 
+| Another Person or Organisation |
+| Assist | 
+| Request |
+| Authority |
+| Detailed Information |
+| Decisions |
+| Shared |
+
+<br>
+
+## Allocation and Coordination
+
+| Candidate | Classification | Reason |
+| :--- | :--- | :--- |
+| Matching |
+| Considers |
+| Programme Outcomes |
+| Student Interests |
+| Employer Requirements |
+| Location |
+| Capacity |
+| Potential Conflicts |
+| Employer Selection |
+| Academic Approval |
+| Separate Decisions |
+| Depends on |
+| People |
+| Places |
+| Resources |
+| Timing |
+| Visible Vacancy |
+| Satisfied |
+| Provisional Allocations |
+| Essential Information |
+| Missing |
+| Changes |
+| Affect |
+| Linked Arrangements |
+| Staff |
+| Preserve |
+| Current Confirmed Position |
+| Retaining Evidence |
+| Earlier Decisions and Versions |
+
+<br>
+
+## Progress, Review, and Exceptions
+
+| Candidate | Classification | Reason |
+| :--- | :--- | :--- |
+| Staff |
+| Record |
+| Progress |
+| Decisions |
+| Outstanding Actions |
+| Notes |
+| Messages |
+| Spreadsheets |
+| Teams |
+| Status Terms |
+| Awaiting Action |
+| Responsible |
+| Planned Activity |
+| Changed |
+| Partially Completed |
+| Paused |
+| Withdrawn |
+| Distinguish |
+| Operational Change |
+| Formal Decision |
+| Silence |
+| Approval |
+| Reviews |
+| Generate |
+| New Actions |
+| Revised Arrangements |
+| Escalation |
+| Earlier Evidence |
+| Overwritten |
+| Circumstances Change |
+
+<br>
+
+## Information, Reporting, and Scope
+
+| Candidate Term | Evidence Source | Initial Question or Observation |
+| :--- | :--- | :--- |
+| Coordinator |
+| Needs |
+| Information |
+| Unallocated Requests |
+| Provisional Arrangements |
+| Capacity Conflicts |
+| Overdue Actions |
+| Incomplete Records |
+| External Partners |
+| Receive |
+| Role |
+| Summary Reporting |
+| Needed |
+| Management |
+| Funders |
+| Exposing |
+| Unnecessary |
+| Personal or Commercially Sensitive Information |
+| Connectivity |
+| Unreliable |
+| Off-site work |
+| Initial Scope |
+| Service Coordination |
+| Records |
+| Specialist Professional Systems |
+| Financial Accounting |
+| Unrelated Public Website Functions |
+| Outside Scope |
+
+<br>
+
+## Stakeholder Evidence
+
+| Candidate Term | Evidence Source | Initial Question or Observation |
+| :--- | :--- | :--- |
+| Coordinator |
+| Vacancy |
+| Match |
+| Important Requirements |
+| Satisfied |
+| Service User |
+| Need |
+| Know |
+| Waiting |
+| Information |
+| Decision |
+| Outside Organisation |
+| Administrator |
+| Provisional Arrangements |
+| Block | Scenario |
+| Capacity | Scenario |
+| Original Request |
+| Stalled |
+| Partner Representative |
+| Required |
+| Role |
+| Complete Case History |
+| Reviewer |
+| New Information |
+| Added |
+| Erasing |
+| Basis |
+| Earlier Decision |
+| Manager |
+| Need |
+| Consistent Reasons |
+| Delay |
+| Withdrawal |
+| Incomplete Outcomes |
+
+<br>
+
+## Unresolved Matters
+
+| Candidate Term | Evidence Source | Initial Question or Observation |
+| :--- | :--- | :--- |
+| Policy or Decision |
+| Clarification Required |
+| Information Required |
+| Ready for Decision |
+| Eligibility |
+| Priority |
+| Exceptions |
+| Applied |
+| Authority Required |
+| Acts for Requester |
+| Provisional Allocations |
+| Expire |
+| Become Confirmed |
+| Approve Changes |
+| Substitutions |
+| Withdrawal |
+| Versions |
+| Reviews |
+| Outstanding Actions |
+| Related |
+| Shared |
+| Staff |
+| Partners |
+| Funders |
 
 <br>
 <br>
