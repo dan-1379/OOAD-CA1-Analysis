@@ -210,41 +210,40 @@
 
 | Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
-| Coordinator | Scenario |  |
-| Vacancy | Scenario |  |
-| Match | Scenario |  |
-| Important Requirements | Scenario |  |
-| Satisfied | Scenario |  |
-| Service User | Scenario |  |
-| Need | Scenario |  |
-| Know | Scenario |  |
-| Waiting | Scenario |  |
-| Information | Scenario |  |
-| Decision | Scenario |  |
-| Outside Organisation | Scenario |  |
-| Administrator | Scenario |  |
-| Provisional Arrangements | Scenario |  |
-| Block | Scenario |  |
-| Capacity | Scenario |  |
-| Original Request | Scenario |  |
-| Stalled | Scenario |  |
-| Partner Representative | Scenario |  |
-| Information | Scenario |  |
-| Required | Scenario |  |
-| Role | Scenario |  |
-| Complete Case History | Scenario |  |
-| Reviewer | Scenario |  |
-| New Information | Scenario |  |
-| Added | Scenario |  |
-| Erasing | Scenario |  |
-| Basis | Scenario |  |
-| Earlier Decision | Scenario |  |
-| Manager | Scenario |  |
-| Need | Scenario |  |
-| Consistent Reasons | Scenario |  |
-| Delay | Scenario |  |
-| Withdrawal | Scenario |  |
-| Incomplete Outcomes | Scenario |  |
+| Coordinator | Scenario | Primary actor |
+| Vacancy | Scenario | Open place, same as a work placement opportunity *(Organisation and Current Service)*? |
+| Match | Scenario | Placement where all important requirements are satisfied |
+| Important Requirements | Scenario | Criteria that must be met before a vacancy becomes a match |
+| Satisfied | Scenario | State condition indicating all matching requirements are met |
+| Service User | Scenario | Stakeholder term for requester, same as student *(A6)*? |
+| Need | Scenario | Expressing requirement for request status |
+| Know | Scenario | Indicating student awareness of request status or waiting condition |
+| Waiting | Scenario | State condition of a request awaiting information, a decision, or an outside organisation |
+| Information | Scenario | www Whatever details the request is waiting on |
+| Decision | Scenario | *See Organisation and Current Service*, what decisions do the student wait on? |
+| Outside Organisation | Scenario | Employer, or an assisting organisation? |
+| Administrator | Scenario | Primary actor responsible for monitoring and releasing provisional allocations |
+| Provisional Arrangements | Scenario | Holds on capacity, same as provisional allocations *(Allocation and Coordination)*? |
+| Block | Scenario | Unreleased provisional allocations prevent other students from accessing capacity |
+| Capacity | Scenario | *See Allocation and Coordination* |
+| Original Request | Scenario | Initial submission made by a student |
+| Stalled | Scenario | Request or allocation that has stopped progressing |
+| Partner Representative | Scenario | Offstage stakeholder, same as external partners *(A7)* |
+| Required | Scenario | State conidtion defining information necessary for a specific role |
+| Role | Scenario | Defines information access boundaries |
+| Complete Case History | Scenario | Full history of a placement |
+| Reviewer | Scenario | Offstage stakeholder, concerned that new information does not release earlier decisions |
+| New Information | Scenario | Added during reviews or at any time? |
+| Added | Scenario | Recording of new review notes without removing earlier information |
+| Erasing | Scenario | Removing earlier information, prohibited to preserve decision history |
+| Basis | Scenario | Reason supporting earlier decisions |
+| Earlier Decision | Scenario | *See Progress, Review, and Exceptions*, is this the same concept? |
+| Manager | Scenario | Offstage stakeholder, requiring summary information on activity. Same as management? |
+| Need | Scenario | Express management requirement for tracking delay, withdrawal, and incomplete outcomes |
+| Consistent Reasons | Scenario | Agreed list of reasons for outcomes and delays |
+| Delay | Scenario | Reason category the manager wants recorded |
+| Withdrawal | Scenario | Possible status value of an activity request |
+| Incomplete Outcomes | Scenario | Result state where required details or steps are missing, same as incomplete records *(Information, Reporting, and Scope)*? |
 
 <br>
 
@@ -261,41 +260,35 @@ The scenario does not confirm every policy or decision. Clarification may be req
 
 | Candidate Term | Evidence Scenario | Initial Question or Observation |
 | :--- | :--- | :--- |
+| Policy or Decision | Scenario |  |
+| Clarification Required | Scenario |  |
+| Information Required | Scenario |  |
+| Request | Scenario |  |
+| Ready for Decision | Scenario |  |
+| Eligibility | Scenario |  |
+| Priority | Scenario |  |
+| Exceptions | Scenario |  |
+| Applied | Scenario |  |
+| Authority Required | Scenario |  |
+| Acts for Requester | Scenario |  |
+| Provisional Allocations | Scenario |  |
+| Expire | Scenario |  |
+| Become Confirmed | Scenario |  |
+| Approve Changes | Scenario |  |
+| Substitutions | Scenario |  |
+| Withdrawal | Scenario |  |
+| Versions | Scenario |  |
+| Reviews | Scenario |  |
+| Outstanding Actions | Scenario |  |
+| Related | Scenario |  |
+| Shared | Scenario |  |
+| Staff | Scenario |  |
+| Partners | Scenario |  |
+| Funders | Scenario |  |
 
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 
 # Task 2: Classify the Candidates
 
