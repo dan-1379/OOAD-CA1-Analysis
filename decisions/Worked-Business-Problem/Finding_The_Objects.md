@@ -131,32 +131,32 @@
 | Record | Scenario | Retention of progress, decisions, and actions. *See Organisation and Current Service* |
 | Progress | Scenario | Activity status and history |
 | Decisions | Scenario | *See Organisation and Current Service* |
-| Outstanding Actions | Scenario |  |
-| Notes | Scenario |  |
-| Messages | Scenario |  |
-| Spreadsheets | Scenario |  |
-| Teams | Scenario |  |
-| Status Terms | Scenario |  |
-| Awaiting Action | Scenario |  |
-| Responsible | Scenario |  |
-| Planned Activity | Scenario |  |
-| Changed | Scenario |  |
-| Partially Completed | Scenario |  |
-| Paused | Scenario |  |
-| Withdrawn | Scenario |  |
-| Distinguish | Scenario |  |
-| Operational Change | Scenario |  |
-| Formal Decision | Scenario |  |
-| Silence | Scenario |  |
-| Approval | Scenario |  |
-| Reviews | Scenario |  |
-| Generate | Scenario |  |
-| New Actions | Scenario |  |
-| Revised Arrangements | Scenario |  |
-| Escalation | Scenario |  |
-| Earlier Evidence | Scenario |  |
-| Overwritten | Scenario |  |
-| Circumstances Change | Scenario |  |
+| Outstanding Actions | Scenario | Tasks awaiting action, requires clear ownership and status |
+| Notes | Scenario | Current informal recording method, may be kept when reviewing |
+| Messages | Scenario | Current communication channel, process detail |
+| Spreadsheets | Scenario | Current tracking mechanism, replacement |
+| Teams | Scenario | Organisational groups using status terms differently, is this a candidate concept? |
+| Status Terms | Scenario | Values describing activity states, requiring agreed standardised definitions across teams |
+| Awaiting Action | Scenario | State condition indicating an outstanding task requires attention |
+| Responsible | Scenario | Task ownership, requiring clear assignment to a team or staff member |
+| Planned Activity | Scenario | Work placement activity or task within a placement setup |
+| Changed | Scenario | State value altered |
+| Partially Completed | Scenario | State value alteration |
+| Paused | Scenario | State value alteration |
+| Withdrawn | Scenario | State value alteration |
+| Distinguish | Scenario | Need to separate activity  |
+| Operational Change | Scenario | Change to planned arrangements, separate from a formal decision |
+| Formal Decision | Scenario | Employer selection and academic approval |
+| Silence | Scenario | No response, must not be treated as approval |
+| Approval | Scenario | *See Requests, Eligibility, and Preparation* |
+| Reviews | Scenario | *See Organisation and Current Service* |
+| Generate | Scenario | Shows progress reviews create actions, arrangements, or escalation |
+| New Actions | Scenario | Tasks created as an outcome of a review |
+| Revised Arrangements | Scenario | Updated placement conditions resulting from a review |
+| Escalation | Scenario | Outcome of a review, to who and when does this occur? |
+| Earlier Evidence | Scenario | Evidence of earlier decision making |
+| Overwritten | Scenario | Replacing existing records |
+| Circumstances Change | Scenario | Event triggering revisions to placement arrangements without erasing history |
 
 <br>
 
@@ -167,8 +167,36 @@
 
 *The initial scope covers service coordination and records. Specialist professional systems, financial accounting and unrelated public website functions are outside scope.*
 
-| Candidate Term | Evidence Scenario | Initial Question or Observation |
+| Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
+| Coordinator | Scenario | Actor reponsible for tracking unalloacted requests and capacity |
+| Needs | Scenario | Expressing oversight and reporting requirements for coordination |
+| Information | Scenario | Broad concept, what placement details are visible to each role? |
+| Unallocated Requests | Scenario | A request state, similar to stages in *(Request, Eligibility, and Preparation)*? |
+| Provisional Arrangements | Scenario | Same as provisional allocations *(Allocation and Coordination)*? |
+| Capacity Conflicts | Scenario | Same as potential conflicts *(Allocation and Coordination)*? |
+| Overdue Actions | Scenario | Same as outstanding actions *(Progress, Review, and Exceptions)*? |
+| Incomplete Records | Scenario | Same as incomplete requests *(Requests, Eligibility, and Preparation)*? |
+| External Partners | Scenario | Offstage stakeholders, receives role-restricted placement updates |
+| Receive | Scenario | Describes access to role-restrictred placement information |
+| Role | Scenario | Defines what information each role may receive |
+| Summary Reporting | Scenario | Summary information on activity and outcomes |
+| Needed | Scenario | Express management and funder requirements for summary reporting |
+| Management | Scenario | Offstage stakeholder requiring summary information on placement activity |
+| Funders | Scenario | Offstage stakeholder requiring summary information on placement numbers *(A4)* |
+| Exposing | Scenario | Disclosing sensitive details |
+| Unnecessary | Scenario | Information beyond what a role or summary report requires |
+| Personal or Commercially Sensitive Information | Scenario | Confidential student or placement information, not included in summaries |
+| Connectivity | Scenario | Off-site connection affecting recording |
+| Unreliable | Scenario | State of connection during off-site operations |
+| Off-site work | Scenario | Operational context where staff record updates away from the main office |
+| Initial Scope | Scenario | Defines initial system deliverables |
+| Service Coordination | Scenario | Functional boundary in initial release |
+| Records | Scenario | Same as the single placement record? |
+| Specialist Professional Systems | Scenario | Out of Scope |
+| Financial Accounting | Scenario | Out of Scope |
+| Unrelated Public Website Functions | Scenario | Out of Scope |
+| Outside Scope | Scenario | Defines classification of excluded areas |
 
 <br>
 
@@ -180,8 +208,43 @@
 - **Reviewer:** “New information should be added without erasing the basis of the earlier decision.”
 - **Manager:** “We need consistent reasons for delay, withdrawal and incomplete outcomes.”
 
-| Candidate Term | Evidence Scenario | Initial Question or Observation |
+| Candidate Term | Evidence Source | Initial Question or Observation |
 | :--- | :--- | :--- |
+| Coordinator | Scenario |  |
+| Vacancy | Scenario |  |
+| Match | Scenario |  |
+| Important Requirements | Scenario |  |
+| Satisfied | Scenario |  |
+| Service User | Scenario |  |
+| Need | Scenario |  |
+| Know | Scenario |  |
+| Waiting | Scenario |  |
+| Information | Scenario |  |
+| Decision | Scenario |  |
+| Outside Organisation | Scenario |  |
+| Administrator | Scenario |  |
+| Provisional Arrangements | Scenario |  |
+| Block | Scenario |  |
+| Capacity | Scenario |  |
+| Original Request | Scenario |  |
+| Stalled | Scenario |  |
+| Partner Representative | Scenario |  |
+| Information | Scenario |  |
+| Required | Scenario |  |
+| Role | Scenario |  |
+| Complete Case History | Scenario |  |
+| Reviewer | Scenario |  |
+| New Information | Scenario |  |
+| Added | Scenario |  |
+| Erasing | Scenario |  |
+| Basis | Scenario |  |
+| Earlier Decision | Scenario |  |
+| Manager | Scenario |  |
+| Need | Scenario |  |
+| Consistent Reasons | Scenario |  |
+| Delay | Scenario |  |
+| Withdrawal | Scenario |  |
+| Incomplete Outcomes | Scenario |  |
 
 <br>
 
