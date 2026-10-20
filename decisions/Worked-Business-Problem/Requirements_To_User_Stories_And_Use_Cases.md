@@ -172,7 +172,7 @@ And the rule applied is recorded against the application
 | **AC1** | A third party is acting on behalf of a student for a placement request. |
 | **AC2** | Placement staff can see whether permission is recorded for a third party. |
 | **AC3** | Detailed placement information or decisions are not disclosed to a third party without recorded permission. |
-| **AC4** | Each disclosure to a third party is recorded against the students' request. |
+| **AC4** | Each disclosure to a third party is recorded against the student's request. |
 
 ### Given-When-Then
 
@@ -189,7 +189,7 @@ And the decision is not disclosed to the third party
 1. What evidence counts as valid permission for a third party to act for a student?
 2. Can a student withdraw permission, or does this permission expire?
 3. Can permission cover only some information e.g. progress updates and not decisions?
-4. What information can be shared with the third-party before permission is required?
+4. What information can be shared with the third party before permission is required?
 
 <br>
 
@@ -386,7 +386,7 @@ Placement staff verify permissions and the third party contacts staff not the se
 ### Management and Funders
 Summary reporting for management and funders is a recognised need *(P5S3)*, with Manager stating: "We need consistent reasons for delay, withdrawal and incomplete outcomes." *(P6S6)*. Reporting was not prioritised within the functional requirements for the initial release, so no user story has either party using the service directly.
 
-Therefore, both the management and funders are designated as offstage stakeholders. Their interest in reliable reporting is still protected through *(NFR01)* and *(CS3)*.
+Therefore, both the management and funders are designated as offstage stakeholders. Their interest in reliable reporting is still protected through *(NFR01, CS3, P6S6, FR10)*.
 
 ### External Partners
 External partners should receive only the information required for their role *(P5S2)*, with the partner representative stating: "I need the information required for my role, not the complete case history." *(P6S4)*. 

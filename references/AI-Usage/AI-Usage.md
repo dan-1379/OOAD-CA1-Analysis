@@ -112,3 +112,14 @@ Close. Work from your Step 1 table rather than the annotations, because Step 1 h
 3. Name the underlying problem for each group. This is the “why”, in business terms with no technology.
 
 4. Write the likely consequence. This is the “so what” for the organisation or the people affected. It’s where your inferences and held-back points finally go. Use the stakeholder quotes as support here.
+
+# Finding the Objects, Step 3: Readability Key
+**PROMPT** Is there a way to make a coloured key in Markdown — green for keep, orange for merge, orange yellow for convert, red for remove, and blue for requires clarification.
+
+> [!NOTE]
+> For readability, the following key is used for decisions in the tables:
+> - 🟢 Keep
+> - 🟠 Merge
+> - 🟡 Convert
+> - 🔴 Remove
+> - 🔵 Requires Clarification
