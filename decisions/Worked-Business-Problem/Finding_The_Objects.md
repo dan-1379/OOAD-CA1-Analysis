@@ -564,20 +564,20 @@
 | :--- | :---: | :--- | :--- |
 | Kerry College Placement Office | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Names the overarching organisation and defines the business and system boundary. Not a domain object. |
 | Coordinates | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing business process activities rather than a domain entity. |
-| Work-placement opportunities | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Stakeholder wording for work-placement openings. Merged into `Opportunity` to maintain a single, agreed tearm. |
-| Students | 🟢 $\color{green}{\textsf{Keep}}$ | Student | Core primary actor submitting requests |
-| Programmes |  |  |  |
-| Opportunities |  |  |  |
-| Applications |  |  |  |
-| Employer |  |  |  |
-| Employer decisions |  |  |  |
-| Agreements |  |  |  |
-| Supervisor |  |  |  |
-| Supervisor allocation |  |  |  |
-| Progress reviews |  |  |  |
-| Recorded |  |  |  |
-| Files |  |  |  |
-| Email threads |  |  |  |
+| Work-placement opportunities | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Stakeholder wording for work-placement openings. Merged into `Opportunity` to maintain a single, agreed term. |
+| Students | 🟢 $\color{green}{\textsf{Keep}}$ | Student | Core primary actor submitting requests *(FR01)* |
+| Programmes | 🟢 $\color{green}{\textsf{Keep}}$ | Programme | Domain class holding evidence requirements and outcomes *(A5, BR01, P3S1)*. Academic records remain external *(A3)* |
+| Opportunities | 🟢 $\color{green}{\textsf{Keep}}$ | Opportunity | Core domain class representing work placement offers from employers *(P1S1, P2S2)*. |
+| Applications | 🟠 $\color{orange}{\textsf{Merge}}$ | Request | Alternative term for student submissions, merged into `Request` as *(FR01, FR02, US01, UC01)* use the term request. |
+| Employer | 🟢 $\color{green}{\textsf{Keep}}$ | Employer | Primary actor offering placements and recording selection decisions *(UC06)*. |
+| Employer decisions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Selection outcome recorded by employers merged into `Decision`, distinguished by decision type *(BR05)* |
+| Agreements | 🟢 $\color{green}{\textsf{Keep}}$ | Agreement | Confirmed placement terms and conditions maintained separately from formal legal contracts *(A1)*. |
+| Supervisor | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Supervisor | Role assigned to a placement. Requires policy clarification to determine if the supervisor is college staff, employer, or either *(Q8)* |
+| Supervisor allocation | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Placement | Assignment linking a supervisor to a placement, converted to an attribute of `Placement` as there is typically one supervisor per placement *(A9, Q8)* |
+| Progress reviews | 🟠 $\color{orange}{\textsf{Merge}}$ | Review | Review activity, capturing new information without erasing history. Merged into `Review` |
+| Recorded | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb indicating history preservation rules rather than a standalone concept. |
+| Files | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal tracking mechanism used in manual processes. |
+| Email threads | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal communication channel causing fragmented tracking. |
 
 <br>
 
@@ -585,36 +585,36 @@
 
 | Candidate | Decision | Final Term or Destination | Justification |
 | :--- | :--- | :--- | :--- |
-| Students |
-| Express |
-| Preferences |
-| Provide |
-| Evidence |
-| Programme |
-| Opportunity |
-| Advertised |
-| Dates |
-| Duties |
-| Approval |
-| Provisional |
-| Requests |
-| Arrive |
-| Several Channels |
-| Incomplete |
-| Staff |
-| Distinguish |
-| Initial Expression of Interest |
-| Request Awaiting Evidence |
-| Request Ready for a Decision |
-| Priorities |
-| Exceptions |
-| Applied |
-| Another Person or Organisation |
-| Assist |
-| Authority |
-| Detailed Information |
-| Decisions |
-| Shared |
+| Students | 🔴 $\color{red}{\textsf{Remove}}$ | Student | Duplicate entry, see `Student` *(P1S1)* |
+| Express | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing student submission behaviour. |
+| Preferences | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Request`. | Student choices and personal interests. Converted to an attribute used when matching. |
+| Provide | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing student submission actions. |
+| Evidence | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Documentation supplied by students, converted to an attribute tracking requirements. |
+| Programme | 🔴 $\color{red}{\textsf{Remove}}$ | Programme | Duplicate entry, see `Programme` *(P1S1)* |
+| Opportunity | 🔴 $\color{red}{\textsf{Remove}}$ | Opportunity | Duplicate entry, see `Opportunity` *(P1S1)* |
+| Advertised | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Status value indicating opportunity visibility. |
+| Dates | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Timeline associated with opportunities of placements. |
+| Duties | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Descriptive attribute detailing opportunity responsibilities. |
+| Approval | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Approval | Approval outcome requires clarification on whether it refers to academic approval or opportunity visibility *(P2S2, P3S2)*. |
+| Provisional | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Descriptive status value indicating terms or holds. |
+| Requests | 🟢 $\color{green}{\textsf{Keep}}$ | Request | Core class representing incoming student submissions *(FR01, FR02)*. |
+| Arrive | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing incoming request submissions. |
+| Several Channels | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Current process detail, the service provides one intake route *(PR2)*. |
+| Incomplete | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating missing details / evidence. |
+| Staff | 🟢 $\color{green}{\textsf{Keep}}$ | Staff | General internal role processing requests and managing placement activities *(SH2)*. |
+| Distinguish | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb describing the difference between an operational change and a formal decison *(BR07)*. |
+| Initial Expression of Interest | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Status of a request before required evidence is supplied. |
+| Request Awaiting Evidence | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Request status indicating required evidence is missing. |
+| Request Ready for a Decision | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Requests status indicating required evidence is submitted *(BR01)*. |
+| Priorities | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Priority | Priority rules when ordering requests, requires clarification on whether it is a class or an attribute *(BR02, Q2)* |
+| Exceptions | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Exception | Approvals requiring recorded reasoning for exceptions require clarification on rule definitions *(BR02, Q2)*. |
+| Applied | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing rule application. |
+| Another Person or Organisation | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder assisting students, not directly interacting with the system boundary. |
+| Assist | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing action. |
+| Authority | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Authority | Rules for third parties requires clarification on required permissions *(FR05, BR03, Q3)* |
+| Detailed Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Placement` | Information restricted by role *(CS3, NFR01)*. |
+| Decisions | 🟢 $\color{green}{\textsf{Keep}}$ | Decision | Core class capturing approval and selection outcomes across placement history *(BR06)*. |
+| Shared | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Action describing information disclosure by role *(CS3)*. |
 
 <br>
 
