@@ -3,11 +3,124 @@
 <br>
 <br>
 
+# Reference Table
+
+> [!NOTE]
+> **Student:** Preferences, Student Interests, Location, Detailed Information, Personal or Commercially Sensitive Information
+>
+> **Programme:** Programme Outcomes
+>
+> **Opportunity:** Advertised, Dates, Timing, Duties, Provisional, Employer Requirements, Location, Places, Capacity
+>
+> **Employer:** *(none)*
+>
+> **Agreement:** *(none)*
+>
+> **Request:** Preferences, Student Interests, Evidence, Incomplete, Initial Expression of Interest, Request Awaiting Evidence, Request Ready for a Decision, Essential Information, Status Terms, Awaiting Action, Unallocated Requests, Incomplete Records, Waiting, Stalled, Information Required, Ready for Decision
+>
+> **Staff:** Teams, Role
+>
+> **Decision:** Basis
+>
+> **Conflict:** *(none)*
+>
+> **Operational Change:** *(none)*
+>
+> **Placement:** Supervisor Allocation, Dates, Timing, Provisional, Location, Places, Resources, Progress, Incomplete, Essential Information, Incomplete Records, Detailed Information, Personal or Commercially Sensitive Information, Status Terms, Responsible, Changed, Partially Completed, Paused, Withdrawn, Waiting, Stalled, Consistent Reasons, Delay, Withdrawal, Incomplete Outcomes
+>
+> **Action:** Status Terms, Awaiting Action, Responsible, Changed, Partially Completed, Paused, Withdrawn, New Information, Consistent Reasons, Delay, Withdrawal, Incomplete Outcomes
+>
+> **Review:** New Information
+>
+> **Match:** Important Requirements, Satisfied
+>
+> **Relationship between Placements:** Linked Arrangements *(association, Session 6)*
+
+<br>
+<br>
+
 # Task 1: Select Essential Attributes
 
 | Concept | Candidate Attributes | Keep / Remove | Reason |
 | :--- | :--- | :--- | :--- |
-
+| **Student** | Preferences |  |  |
+|  | Student Interests |
+|  | Location |
+|  | Detailed Information |
+|  | Personal or Commercially Sensitive Information |
+| **Programme** | Programme Outcomes |  |  |
+| **Opportunity** | Advertised |  |  |
+|  | Dates |
+|  | Timing |
+|  | Duties |
+|  | Provisional |
+|  | Employer Requirements |
+|  | Location |
+|  | Places |
+|  | Capacity |
+| **Employer** | *(none)* |  |  |
+| **Agreement** | *(none)* |  |  |
+| **Request** | Preferences |  |  |
+|  | Student Interests |
+|  | Evidence |
+|  | Incomplete |
+|  | Initial Expression of Interest |
+|  | Request Awaiting Evidence |
+|  | Request Ready for a Decision |
+|  | Essential Information |
+|  | Status Terms |
+|  | Awaiting Action |
+|  | Unallocated Requests |
+|  | Incomplete Records |
+|  | Waiting |
+|  | Stalled |
+|  | Information Required |
+|  | Ready for Decision |
+| **Staff** | Teams |  |  |
+|  | Role |
+| **Decision** | Basis |  |  |
+| **Conflict** | *(none)* |  |  |
+| **Operational Change** | *(none)* |  |  |
+| **Placement** | Supervisor Allocation |  |  |
+|  | Dates |
+|  | Timing |
+|  | Provisional |
+|  | Location |
+|  | Places |
+|  | Resources |
+|  | Progress |
+|  | Incomplete |
+|  | Essential Information |
+|  | Incomplete Records |
+|  | Detailed Information |
+|  | Personal or Commercially Sensitive Information |
+|  | Status Terms |
+|  | Responsible |
+|  | Changed |
+|  | Partially Completed |
+|  | Paused |
+|  | Withdrawn |
+|  | Waiting |
+|  | Stalled |
+|  | Consistent Reasons |
+|  | Delay |
+|  | Withdrawal |
+|  | Incomplete Outcomes |
+| **Action** | Status Terms |  |  |
+|  | Awaiting Action |
+|  | Responsible |
+|  | Changed |
+|  | Partially Completed |
+|  | Paused |
+|  | Withdrawn |
+|  | New Information |
+|  | Consistent Reasons |
+|  | Delay |
+|  | Withdrawal |
+|  | Incomplete Outcomes |
+| **Review** | New Information |  |  |
+| **Match** | Important Requirements |  |  |
+|  | Satisfied |
 
 <br>
 <br>
