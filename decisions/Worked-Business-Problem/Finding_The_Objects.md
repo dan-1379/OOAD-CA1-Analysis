@@ -622,36 +622,36 @@
 
 | Candidate | Decision | Final Term or Destination | Justification |
 | :--- | :--- | :--- | :--- |
-| Matching |
-| Considers |
-| Programme Outcomes |
-| Student Interests |
-| Employer Requirements |
-| Location |
-| Capacity |
-| Potential Conflicts |
-| Employer Selection |
-| Academic Approval |
-| Separate Decisions |
-| Depends on |
-| People |
-| Places |
-| Resources |
-| Timing |
-| Visible Vacancy |
-| Satisfied |
-| Provisional Allocations |
-| Remain |
-| Essential Information |
-| Missing |
-| Changes |
-| Affect |
-| Linked Arrangements |
-| Staff |
-| Preserve |
-| Current Confirmed Position |
-| Retaining Evidence |
-| Earlier Decisions and Versions |
+| Matching | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Core business process evaluated by the system. Evaluation logic rather than a domain class. |
+| Considers | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing matching evaluation. |
+| Programme Outcomes | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Programme` | Academic learning goals used as matching criteria. |
+| Student Interests | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Request` | Student choices used during matching, converted to an attribute associated with student requests. |
+| Employer Requirements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Criteria specified by employrs for open positions. |
+| Location | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` / `Student` | Physical location deatail, converted to an attribute. |
+| Capacity | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Opportunity | Calculated count of available places based on operational factors. |
+| Potential Conflicts | 🟢 $\color{green}{\textsf{Keep}}$ | Conflict | Core class for tracking overlapping placeemnt demands. |
+| Employer Selection | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Employer selection outcome, merged into the core `Decision` class, distinguished by decision type *(BR05, BR06)* |
+| Academic Approval | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | College approval outcome, merged into core `Decision` class distinguished by decision type *(BR05, BR06)* |
+| Separate Decisions | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Statement describing independent decision outcomes *(BR05)* |
+| Depends on | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing capacity depenency. |
+| People | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | General category covering roles (Supervisor, Student, Staff), does not require another identity. |
+| Places | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Physical location, converted to an attribute associated with placement locations. |
+| Resources | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Placement` | Operational facilities required to determine placement capacity. |
+| Timing | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Schedule attribute, merged into date attribute associated with opportunities and placements. |
+| Visible Vacancy | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Stakeholder term for open placement positions, merged into `Opportunity` to maintain a single agreed term. |
+| Satisfied | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | State condition indicating all matching requirements are fulfilled *(BR04)*. |
+| Provisional Allocations | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Capacity hold, merged into core `Placement` class *(BR08, Q4)*. |
+| Remain | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing state duration. |
+| Essential Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Required details missing from an allocation. |
+| Missing | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing missing information. |
+| Changes | 🟢 $\color{green}{\textsf{Keep}}$ | Operational Change | Core class recording revisions and adjustments to planned arrangements affecting dependency links *(FR11)* |
+| Affect | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing knock-on effect. |
+| Linked Arrangements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Relationship between Placements | Association / relationship between placements rather than a class. |
+| Staff | 🔴 $\color{red}{\textsf{Remove}}$ | Staff | Duplicate, see `Staff` *(P2S4)* |
+| Preserve | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb indicating history preservation. |
+| Current Confirmed Position | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Active agreed placement, merged into core `Placement` class *(BR06)*. |
+| Retaining Evidence | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Operation, history kept in `Decision` *(BR06)* |
+| Earlier Decisions and Versions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Historical decision records, merged into `Decision` version history handling *(BR06, NFR04)*. |
 
 <br>
 
@@ -659,36 +659,36 @@
 
 | Candidate | Decision | Final Term or Destination | Justification |
 | :--- | :--- | :--- | :--- |
-| Staff |
-| Record |
-| Progress |
-| Decisions |
-| Outstanding Actions |
-| Notes |
-| Messages |
-| Spreadsheets |
-| Teams |
-| Status Terms |
-| Awaiting Action |
-| Responsible |
-| Planned Activity |
-| Changed |
-| Partially Completed |
-| Paused |
-| Withdrawn |
-| Distinguish |
-| Operational Change |
-| Formal Decision |
-| Silence |
-| Approval |
-| Reviews |
-| Generate |
-| New Actions |
-| Revised Arrangements |
-| Escalation |
-| Earlier Evidence |
-| Overwritten |
-| Circumstances Change |
+| Staff | 🔴 $\color{red}{\textsf{Remove}}$ | Staff | Duplicate, see `Staff` *(P2S4)* |
+| Record | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb indicating history preservation. |
+| Progress | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Placement` | Descriptive tracking status and operational activity details. |
+| Decisions | 🔴 $\color{red}{\textsf{Remove}}$ | Decision | Duplicate, see `Decisions` *(P2S7)* |
+| Outstanding Actions | 🟢 $\color{green}{\textsf{Keep}}$ | Action | Core class representing follow-up tasks and todos requiring tracking and ownership *(PR7)*. |
+| Notes | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal recording method targeted for replacement *(PR1)* |
+| Messages | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal communication method targeted for replacement *(PR1)* |
+| Spreadsheets | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal tracking method targeted for replacement *(PR1)* |
+| Teams | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Staff | Team a staff member belongs to. |
+| Status Terms | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` / `Action` | Descriptive status values indicating current state. |
+| Awaiting Action | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Action` | State condition indicating an outstanding task requires attention. |
+| Responsible | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Task ownership assignment. |
+| Planned Activity | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Work component within a placement, merged into core `Action` class. |
+| Changed | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Partially Completed | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Paused | 🟡 $\color{goldenrod}{\textsf{Convert}}$ |Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Withdrawn | 🟡 $\color{goldenrod}{\textsf{Convert}}$ |Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Distinguish | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb describing distinguishing the difference between operational changes and formal decisons *(BR07)*. |
+| Operational Change | 🔴 $\color{red}{\textsf{Remove}}$ | Operational Change | Duplicate, see `Changes` *(P3S6)* |
+| Formal Decision | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Recorded outcome, merged into `Decision` *(BR07)*. |
+| Silence | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Business rule, silence must not be treated as approval *(BR07)*. |
+| Approval | 🔴 $\color{red}{\textsf{Remove}}$ | Approval | Duplicate, see *(P2S2)* |
+| Reviews | 🟢 $\color{green}{\textsf{Keep}}$ | Review | Core class recording review activity adding new information without erasing history *(BR06)*. |
+| Generate | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb indicating creation of action items. |
+| New Actions | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Tasks created as review outcomes, merged into `Action` class |
+| Revised Arrangements | 🟠 $\color{orange}{\textsf{Merge}}$ | Operational Change | Updated placement conditions resulting from reviews. |
+| Escalation | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Review outcome event referring a matter for further action. |
+| Earlier Evidence | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Evidence of earlier decisions and versions, merged into `Decison` version history alongside earlier decisions *(BR06, NFR04)*. |
+| Overwritten | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb indicating deletion or overwriting. |
+| Circumstances Change | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Operational event triggering updates. |
 
 <br>
 
@@ -696,34 +696,34 @@
 
 | Candidate | Decision | Final Term or Destination | Justification |
 | :--- | :--- | :--- | :--- |
-| Coordinator |
-| Needs |
-| Information |
-| Unallocated Requests |
-| Provisional Arrangements |
-| Capacity Conflicts |
-| Overdue Actions |
-| Incomplete Records |
-| External Partners |
-| Receive |
-| Role |
-| Summary Reporting |
-| Needed |
-| Management |
-| Funders |
-| Exposing |
-| Unnecessary |
-| Personal or Commercially Sensitive Information |
-| Connectivity |
-| Unreliable |
-| Off-site work |
-| Initial Scope |
-| Service Coordination |
-| Records |
-| Specialist Professional Systems |
-| Financial Accounting |
-| Unrelated Public Website Functions |
-| Outside Scope |
+| Coordinator | 🟠 $\color{orange}{\textsf{Merge}}$ | Staff | Staff role tracking unallocated requests and capacity (SH5), merged into `Staff`. |
+| Needs | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb expressing stakeholder requirements. |
+| Information | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Broad domain concept, too general to be a class. |
+| Unallocated Requests | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Status stage representing an unassigned student request. |
+| Provisional Arrangements | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Capacity, merged into core `Placement` state. |
+| Capacity Conflicts | 🟠 $\color{orange}{\textsf{Merge}}$ | Conflict | Overlapping placement demands. |
+| Overdue Actions | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Overdue tasks. |
+| Incomplete Records | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating missing details. |
+| External Partners | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder *(SH6)* classified as out of scope in task 2. |
+| Receive | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing information access. |
+| Role | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Staff | Functional position defining access *(NFR01, CS3)*. |
+| Summary Reporting | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Generated from existing records. |
+| Needed | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing stakeholder requirements. |
+| Management | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder *(SH7)* does not interact directly with the system. |
+| Funders | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder *(SH8)* does not interact directly with the system. |
+| Exposing | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing disclosure. |
+| Unnecessary | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Descriptive term describing redundant details. |
+| Personal or Commercially Sensitive Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Placement` | Specific information restricted by role *(CS3, NFR01)*. |
+| Connectivity | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Condition handled as a quality requirement *(NFR03, CS2)* |
+| Unreliable | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Describes connection state, part of system quality *(NFR03, CS2)* |
+| Off-site work | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Enviornment context affecting record updates. |
+| Initial Scope | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Defines initial release deliverables. |
+| Service Coordination | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Names the scope boundary, not a domain concep. |
+| Records | 🟢 $\color{green}{\textsf{Keep}}$ | Placement | Core placement record capturing details, decisions, and history *(FR03, P1S2)* |
+| Specialist Professional Systems | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Excluded external system. |
+| Financial Accounting | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Excluded external system. |
+| Unrelated Public Website Functions | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Excluded external system. |
+| Outside Scope | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Excluded external system. 
 
 <br>
 
@@ -731,40 +731,40 @@
 
 | Candidate | Decision | Final Term or Destination | Justification |
 | :--- | :--- | :--- | :--- |
-| Coordinator |
-| Vacancy |
-| Match |
-| Important Requirements |
-| Satisfied |
-| Service User |
-| Need |
-| Know |
-| Waiting |
-| Information |
-| Decision |
-| Outside Organisation |
-| Administrator |
-| Provisional Arrangements |
-| Block |
-| Capacity |
-| Original Request |
-| Stalled |
-| Partner Representative |
-| Required |
-| Role |
-| Complete Case History |
-| Reviewer |
-| New Information |
-| Added |
-| Erasing |
-| Basis |
-| Earlier Decision |
-| Manager |
-| Need |
-| Consistent Reasons |
-| Delay |
-| Withdrawal |
-| Incomplete Outcomes |
+| Coordinator | 🔴 $\color{red}{\textsf{Remove}}$ | Staff | Duplicate entry, see `Coordinator` *(P5S1)* |
+| Vacancy | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Coordinator term for open placement positions, merged into `Opportunity` to maintain a single agreed term. |
+| Match | 🟢 $\color{green}{\textsf{Keep}}$ | Match | Core class representing successful placement pairings meeting all requirements *(BR04)*. |
+| Important Requirements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | Critera for a match *(BR04)*. |
+| Satisfied | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | State condition indicating requirements are met *(BR04).* |
+| Service User | 🟠 $\color{orange}{\textsf{Merge}}$ | Student | Stakeholder term for requester, merged into `Student` *(A6)* |
+| Need | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Duplicate, see Needs *(P5S1)* |
+| Know | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing user awareness. |
+| Waiting | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status stage representing progress or waiting condition. |
+| Information | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Duplicate, see `Information` *(P5S1)* |
+| Decision | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Duplicate, see `Decisions` *(P2S7)* |
+| Outside Organisation | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder, does not interact with the system boundary. |
+| Administrator | 🟠 $\color{orange}{\textsf{Merge}}$ | Staff | Primary actor monitoring provisional allocations *(SH9)*|
+| Provisional Arrangements | 🔴 $\color{red}{\textsf{Remove}}$ | Placement | Duplicate, see `Provisional Arrangements` *(P5S1)* |
+| Block | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb indicating unreleased provisional allocations. |
+| Capacity | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Opportunity | Duplicate, see Capacity *(P3S1)* |
+| Original Request | 🟠 $\color{orange}{\textsf{Merge}}$ | Request | Administrator term for student submission. |
+| Stalled | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating stopped progression. |
+| Partner Representative | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder *(SH6)*, does not interact directly within the system boundary. |
+| Required | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing necessity. |
+| Role | 🔴 $\color{red}{\textsf{Remove}}$ | Role | Duplicate, see `Role` *(P5S2)*. |
+| Complete Case History | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Derived output generated from existing records. |
+| Reviewer | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder, does not interact directly with the system boundary. |
+| New Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Review` / `Action` | Notes or details added during reviews. |
+| Added | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing addition of notes. |
+| Erasing | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb indicating deletion or overwriting. |
+| Basis | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Decision` | Reasoning supporting an earlier decision. |
+| Earlier Decision | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Reviewers term referenced during reviews, merged into `Decision` for version history. |
+| Manager | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder, does not interact directly with the system boundary. |
+| Need | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Duplicate, see `Needs` *(P5S1)* |
+| Consistent Reasons | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` |  List of agreed reasons for tracking delays and widthdrawals. |
+| Delay | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category for tracking operational delays. |
+| Withdrawal | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category and status value. |
+| Incomplete Outcomes | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category for tracking incomplete records. |
 
 <br>
 
@@ -772,34 +772,289 @@
 
 | Candidate | Decision | Final Term or Destination | Justification |
 | :--- | :--- | :--- | :--- |
-| Policy or Decision |
-| Clarification Required |
-| Information Required |
-| Ready for Decision |
-| Eligibility |
-| Priority |
-| Exceptions |
-| Applied |
-| Authority Required |
-| Acts for Requester |
-| Provisional Allocations |
-| Expire |
-| Become Confirmed |
-| Approve Changes |
-| Substitutions |
-| Withdrawal |
-| Versions |
-| Reviews |
-| Outstanding Actions |
-| Related |
-| Shared |
-| Staff |
-| Partners |
-| Funders |
+| Policy or Decision | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Section heading, general concept covering rules and approvals. |
+| Clarification Required | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Section heading highlighting open questions. |
+| Information Required | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Details needed before a request moves to a decision state *(Q1, BR01)*. |
+| Ready for Decision | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Request status stage indicating required details are complete *(Q1, BR01)*. |
+| Eligibility | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Eligibility Rule | Business rules determining who may apply *(BR02)*. Requires clarification on rule structure *(Q2)*. |
+| Priority | 🔴 $\color{red}{\textsf{Remove}}$ | Priority | Duplicate, see `Priorities` *(P2S5)*. |
+| Exceptions | 🔴 $\color{red}{\textsf{Remove}}$ | Exception | Duplicate, see `Exceptions` *(P2S5)* |
+| Applied | 🔴 $\color{red}{\textsf{Remove}}$ | Applied | Duplicate, see `Applied` *(P2S5)* |
+| Authority Required | 🔴 $\color{red}{\textsf{Remove}}$ | Authority | Duplicate, see `Authority` *(P2S7)* |
+| Acts for Requester | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage relationship *(SH3)*, does not interact with the system boundary. |
+| Provisional Allocations | 🔴 $\color{red}{\textsf{Remove}}$ | Placement | Duplicate, see `Provisional Allocations` *(P3S5)* |
+| Expire | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | State transition event where a provisional allocation releases *(Q4, BR08)* |
+| Become Confirmed | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | State transition event where a provisional allocation becomes confirmed *(Q4, BR08)* |
+| Approve Changes | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Authorisation approving modifications *(Q5)* |
+| Substitutions | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Substitution | Possible change to a placement or request, requires clarification on policy handling *(Q5)*. |
+| Withdrawal | 🔴 $\color{red}{\textsf{Remove}}$ | Attribute of `Request` / `Placement` | Duplicate, see `Withdrawal` *(P6S6)*. |
+| Versions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Historical revisions linked to placement records, merged into `Decision` version history *(FR03, BR06)* |
+| Reviews | 🔴 $\color{red}{\textsf{Remove}}$ | Review | Duplicate, see `Reviews` *(P4S5)* |
+| Outstanding Actions | 🔴 $\color{red}{\textsf{Remove}}$ | Action | Duplicate, see `Outstanding Actions` *(P4S1)* |
+| Related | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Association linking versions, reviews, and actions *(Q6)* |
+| Shared | 🔴 $\color{red}{\textsf{Remove}}$ | Shared | Duplicate, see `Shared` *(P2S7)* |
+| Staff | 🔴 $\color{red}{\textsf{Remove}}$ | Staff | Duplicate, see `Staff` *(P2S4)* |
+| Partners |🔴 $\color{red}{\textsf{Remove}}$ | Partners | Duplicate, see `External Partners` *(P5S2)* |
+| Funders | 🔴 $\color{red}{\textsf{Remove}}$ | Funders | Duplicate, see `Funders` *(P5S3)* |
 
 <br>
 
 ## Terms Requiring Clarification
+The following terms were marked to be kept provisionally and require further clarification:
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :---: | :--- | :--- |
+| Supervisor | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Supervisor | Role assigned to a placement. Requires policy clarification to determine if the supervisor is college staff, employer, or either *(Q8)* |
+| Approval | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Approval | Approval outcome requires clarification on whether it refers to academic approval or opportunity visibility *(P2S2, P3S2)*. |
+| Priorities | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Priority | Priority rules when ordering requests, requires clarification on whether it is a class or an attribute *(BR02, Q2)* |
+| Exceptions | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Exception | Approvals requiring recorded reasoning for exceptions require clarification on rule definitions *(BR02, Q2)*. |
+| Authority | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Authority | Rules for third parties requires clarification on required permissions *(FR05, BR03, Q3)* |
+| Eligibility | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Eligibility Rule | Business rules determining who may apply *(BR02)*. Requires clarification on rule structure *(Q2)*. |
+| Substitutions | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Substitution | Possible change to a placement or request, requires clarification on policy handling *(Q5)*. |
+
+<br>
+
+- **Supervisor:** The role of **Supervisor** remains ambiguous. Clarification is needed to confirm whether a supervisor is strictly a college staff member, an external employer contact, or either. *(Q8)*
+
+- **Approval:** The term **Approval** appears across multiple contexts (opportunity advertisement, academic placement approval). It requires stakeholder clarification *(P2S2, P3S2)* to determine whether approval is modelled as an attribute status on opportunities and requests or as a separate decision. *(Q9)*
+  
+- **Rules Group (Priority, Eligibility, Exception, Authority, Substitution):** Terms such as *Priorities* *(Q2, BR02)*, *Eligibility* *(Q2, BR02)*, *Exceptions* *(Q2, BR02)*, *Authority* *(Q3, BR03)*, and *Substitutions* *(Q5)* define policy constraints. Clarification is required to determine whether these rules are captured as independent domain policy classes or implemented as attributes and rules on Request and Placement. *(Q2, Q3, Q5)*
+
+<br>
+<br>
+
+Taking the current tables, removing the candidates marked `Remove` and `Keep Provisionally`, and sorted each table from `Keep` to `Merge` to `Convert`:
+
+### Organisation and Current Service
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :---: | :--- | :--- |
+| Students | 🟢 $\color{green}{\textsf{Keep}}$ | Student | Core primary actor submitting requests *(FR01)* |
+| Programmes | 🟢 $\color{green}{\textsf{Keep}}$ | Programme | Domain class holding evidence requirements and outcomes *(A5, BR01, P3S1)*. Academic records remain external *(A3)* |
+| Opportunities | 🟢 $\color{green}{\textsf{Keep}}$ | Opportunity | Core domain class representing work placement offers from employers *(P1S1, P2S2)*. |
+| Employer | 🟢 $\color{green}{\textsf{Keep}}$ | Employer | Primary actor offering placements and recording selection decisions *(UC06)*. |
+| Agreements | 🟢 $\color{green}{\textsf{Keep}}$ | Agreement | Confirmed placement terms and conditions maintained separately from formal legal contracts *(A1)*. |
+| Progress reviews | 🟠 $\color{orange}{\textsf{Merge}}$ | Review | Review activity, capturing new information without erasing history. Merged into `Review` |
+| Work-placement opportunities | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Stakeholder wording for work-placement openings. Merged into `Opportunity` to maintain a single, agreed term. |
+| Applications | 🟠 $\color{orange}{\textsf{Merge}}$ | Request | Alternative term for student submissions, merged into `Request` as *(FR01, FR02, US01, UC01)* use the term request. |
+| Employer decisions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Selection outcome recorded by employers merged into `Decision`, distinguished by decision type *(BR05)* |
+| Supervisor allocation | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Placement | Assignment linking a supervisor to a placement, converted to an attribute of `Placement` as there is typically one supervisor per placement *(A9, Q8)* |
+
+<br>
+
+### Requests, Eligibility, and Preparation
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :--- | :--- | :--- |
+| Requests | 🟢 $\color{green}{\textsf{Keep}}$ | Request | Core class representing incoming student submissions *(FR01, FR02)*. |
+| Staff | 🟢 $\color{green}{\textsf{Keep}}$ | Staff | General internal role processing requests and managing placement activities *(SH2)*. |
+| Decisions | 🟢 $\color{green}{\textsf{Keep}}$ | Decision | Core class capturing approval and selection outcomes across placement history *(BR06)*. |
+| Preferences | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Request`. | Student choices and personal interests. Converted to an attribute used when matching. |
+| Evidence | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Documentation supplied by students, converted to an attribute tracking requirements. |
+| Advertised | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Status value indicating opportunity visibility. |
+| Dates | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Timeline associated with opportunities of placements. |
+| Duties | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Descriptive attribute detailing opportunity responsibilities. |
+| Provisional | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Descriptive status value indicating terms or holds. |
+| Incomplete | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating missing details / evidence. |
+| Initial Expression of Interest | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Status of a request before required evidence is supplied. |
+| Request Awaiting Evidence | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Request status indicating required evidence is missing. |
+| Request Ready for a Decision | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Requests status indicating required evidence is submitted *(BR01)*. |
+| Detailed Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Placement` | Information restricted by role *(CS3, NFR01)*. |
+
+<br>
+
+### Allocation and Coordination
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :--- | :--- | :--- |
+| Potential Conflicts | 🟢 $\color{green}{\textsf{Keep}}$ | Conflict | Core class for tracking overlapping placeemnt demands. |
+| Changes | 🟢 $\color{green}{\textsf{Keep}}$ | Operational Change | Core class recording revisions and adjustments to planned arrangements affecting dependency links *(FR11)* |
+| Employer Selection | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Employer selection outcome, merged into the core `Decision` class, distinguished by decision type *(BR05, BR06)* |
+| Academic Approval | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | College approval outcome, merged into core `Decision` class distinguished by decision type *(BR05, BR06)* |
+| Visible Vacancy | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Stakeholder term for open placement positions, merged into `Opportunity` to maintain a single agreed term. |
+| Provisional Allocations | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Capacity hold, merged into core `Placement` class *(BR08, Q4)*. |
+| Current Confirmed Position | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Active agreed placement, merged into core `Placement` class *(BR06)*. |
+| Earlier Decisions and Versions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Historical decision records, merged into `Decision` version history handling *(BR06, NFR04)*. |
+| Programme Outcomes | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Programme` | Academic learning goals used as matching criteria. |
+| Student Interests | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Request` | Student choices used during matching, converted to an attribute associated with student requests. |
+| Employer Requirements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Criteria specified by employrs for open positions. |
+| Location | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` / `Student` | Physical location deatail, converted to an attribute. |
+| Capacity | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Opportunity | Calculated count of available places based on operational factors. |
+| Places | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Physical location, converted to an attribute associated with placement locations. |
+| Resources | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Placement` | Operational facilities required to determine placement capacity. |
+| Timing | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Schedule attribute, merged into date attribute associated with opportunities and placements. |
+| Satisfied | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | State condition indicating all matching requirements are fulfilled *(BR04)*. |
+| Essential Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Required details missing from an allocation. |
+| Linked Arrangements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Relationship between Placements | Association / relationship between placements rather than a class. |
+
+<br>
+
+### Progress, Review, and Exceptions
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :--- | :--- | :--- |
+| Outstanding Actions | 🟢 $\color{green}{\textsf{Keep}}$ | Action | Core class representing follow-up tasks and todos requiring tracking and ownership *(PR7)*. |
+| Reviews | 🟢 $\color{green}{\textsf{Keep}}$ | Review | Core class recording review activity adding new information without erasing history *(BR06)*. |
+| Planned Activity | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Work component within a placement, merged into core `Action` class. |
+| Formal Decision | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Recorded outcome, merged into `Decision` *(BR07)*. |
+| New Actions | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Tasks created as review outcomes, merged into `Action` class |
+| Revised Arrangements | 🟠 $\color{orange}{\textsf{Merge}}$ | Operational Change | Updated placement conditions resulting from reviews. |
+| Earlier Evidence | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Evidence of earlier decisions and versions, merged into `Decison` version history alongside earlier decisions *(BR06, NFR04)*. |
+| Teams | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Staff | Team a staff member belongs to. |
+| Progress | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Placement` | Descriptive tracking status and operational activity details. |
+| Status Terms | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` / `Action` | Descriptive status values indicating current state. |
+| Awaiting Action | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Action` | State condition indicating an outstanding task requires attention. |
+| Responsible | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Task ownership assignment. |
+| Changed | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Partially Completed | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Paused | 🟡 $\color{goldenrod}{\textsf{Convert}}$ |Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Withdrawn | 🟡 $\color{goldenrod}{\textsf{Convert}}$ |Attribute of `Action` / `Placement` | Status values describing state changes. |
+
+<br>
+
+### Information, Reporting, and Scope
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :--- | :--- | :--- |
+| Records | 🟢 $\color{green}{\textsf{Keep}}$ | Placement | Core placement record capturing details, decisions, and history *(FR03, P1S2)* |
+| Coordinator | 🟠 $\color{orange}{\textsf{Merge}}$ | Staff | Staff role tracking unallocated requests and capacity (SH5), merged into `Staff`. |
+| Provisional Arrangements | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Capacity, merged into core `Placement` state. |
+| Capacity Conflicts | 🟠 $\color{orange}{\textsf{Merge}}$ | Conflict | Overlapping placement demands. |
+| Overdue Actions | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Overdue tasks. |
+| Unallocated Requests | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Status stage representing an unassigned student request. |
+| Incomplete Records | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating missing details. |
+| Role | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Staff | Functional position defining access *(NFR01, CS3)*. |
+| Personal or Commercially Sensitive Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Placement` | Specific information restricted by role *(CS3, NFR01)*. |
+
+<br>
+
+### Stakeholder Evidence
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :--- | :--- | :--- |
+| Match | 🟢 $\color{green}{\textsf{Keep}}$ | Match | Core class representing successful placement pairings meeting all requirements *(BR04)*. |
+| Vacancy | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Coordinator term for open placement positions, merged into `Opportunity` to maintain a single agreed term. |
+| Service User | 🟠 $\color{orange}{\textsf{Merge}}$ | Student | Stakeholder term for requester, merged into `Student` *(A6)* |
+| Administrator | 🟠 $\color{orange}{\textsf{Merge}}$ | Staff | Primary actor monitoring provisional allocations *(SH9)*|
+| Original Request | 🟠 $\color{orange}{\textsf{Merge}}$ | Request | Administrator term for student submission. |
+| Earlier Decision | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Reviewers term referenced during reviews, merged into `Decision` for version history. |
+| Important Requirements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | Critera for a match *(BR04)*. |
+| Satisfied | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | State condition indicating requirements are met *(BR04).* |
+| Waiting | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status stage representing progress or waiting condition. |
+| Capacity | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Opportunity | Duplicate, see Capacity *(P3S1)* |
+| Stalled | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating stopped progression. |
+| New Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Review` / `Action` | Notes or details added during reviews. |
+| Basis | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Decision` | Reasoning supporting an earlier decision. |
+| Consistent Reasons | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` |  List of agreed reasons for tracking delays and widthdrawals. |
+| Delay | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category for tracking operational delays. |
+| Withdrawal | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category and status value. |
+| Incomplete Outcomes | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category for tracking incomplete records. |
+
+<br>
+
+### Unresolved Matters
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :--- | :--- | :--- |
+| Versions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Historical revisions linked to placement records, merged into `Decision` version history *(FR03, BR06)* |
+| Information Required | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Details needed before a request moves to a decision state *(Q1, BR01)*. |
+| Ready for Decision | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Request status stage indicating required details are complete *(Q1, BR01)*. |
+
+<br>
+<br>
+
+## Workings: Single Table
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :---: | :--- | :--- |
+| Students | 🟢 $\color{green}{\textsf{Keep}}$ | Student | Core primary actor submitting requests *(FR01)* |
+| Programmes | 🟢 $\color{green}{\textsf{Keep}}$ | Programme | Domain class holding evidence requirements and outcomes *(A5, BR01, P3S1)*. Academic records remain external *(A3)* |
+| Opportunities | 🟢 $\color{green}{\textsf{Keep}}$ | Opportunity | Core domain class representing work placement offers from employers *(P1S1, P2S2)*. |
+| Employer | 🟢 $\color{green}{\textsf{Keep}}$ | Employer | Primary actor offering placements and recording selection decisions *(UC06)*. |
+| Agreements | 🟢 $\color{green}{\textsf{Keep}}$ | Agreement | Confirmed placement terms and conditions maintained separately from formal legal contracts *(A1)*. |
+| Requests | 🟢 $\color{green}{\textsf{Keep}}$ | Request | Core class representing incoming student submissions *(FR01, FR02)*. |
+| Staff | 🟢 $\color{green}{\textsf{Keep}}$ | Staff | General internal role processing requests and managing placement activities *(SH2)*. |
+| Decisions | 🟢 $\color{green}{\textsf{Keep}}$ | Decision | Core class capturing approval and selection outcomes across placement history *(BR06)*. |
+| Potential Conflicts | 🟢 $\color{green}{\textsf{Keep}}$ | Conflict | Core class for tracking overlapping placeemnt demands. |
+| Changes | 🟢 $\color{green}{\textsf{Keep}}$ | Operational Change | Core class recording revisions and adjustments to planned arrangements affecting dependency links *(FR11)* |
+| Outstanding Actions | 🟢 $\color{green}{\textsf{Keep}}$ | Action | Core class representing follow-up tasks and todos requiring tracking and ownership *(PR7)*. |
+| Reviews | 🟢 $\color{green}{\textsf{Keep}}$ | Review | Core class recording review activity adding new information without erasing history *(BR06)*. |
+| Records | 🟢 $\color{green}{\textsf{Keep}}$ | Placement | Core placement record capturing details, decisions, and history *(FR03, P1S2)* |
+| Match | 🟢 $\color{green}{\textsf{Keep}}$ | Match | Core class representing successful placement pairings meeting all requirements *(BR04)*. |
+| Progress reviews | 🟠 $\color{orange}{\textsf{Merge}}$ | Review | Review activity, capturing new information without erasing history. Merged into `Review` |
+| Work-placement opportunities | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Stakeholder wording for work-placement openings. Merged into `Opportunity` to maintain a single, agreed term. |
+| Applications | 🟠 $\color{orange}{\textsf{Merge}}$ | Request | Alternative term for student submissions, merged into `Request` as *(FR01, FR02, US01, UC01)* use the term request. |
+| Employer decisions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Selection outcome recorded by employers merged into `Decision`, distinguished by decision type *(BR05)* |
+| Employer Selection | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Employer selection outcome, merged into the core `Decision` class, distinguished by decision type *(BR05, BR06)* |
+| Academic Approval | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | College approval outcome, merged into core `Decision` class distinguished by decision type *(BR05, BR06)* |
+| Visible Vacancy | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Stakeholder term for open placement positions, merged into `Opportunity` to maintain a single agreed term. |
+| Provisional Allocations | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Capacity hold, merged into core `Placement` class *(BR08, Q4)*. |
+| Current Confirmed Position | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Active agreed placement, merged into core `Placement` class *(BR06)*. |
+| Earlier Decisions and Versions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Historical decision records, merged into `Decision` version history handling *(BR06, NFR04)*. |
+| Planned Activity | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Work component within a placement, merged into core `Action` class. |
+| Formal Decision | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Recorded outcome, merged into `Decision` *(BR07)*. |
+| New Actions | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Tasks created as review outcomes, merged into `Action` class |
+| Revised Arrangements | 🟠 $\color{orange}{\textsf{Merge}}$ | Operational Change | Updated placement conditions resulting from reviews. |
+| Earlier Evidence | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Evidence of earlier decisions and versions, merged into `Decison` version history alongside earlier decisions *(BR06, NFR04)*. |
+| Coordinator | 🟠 $\color{orange}{\textsf{Merge}}$ | Staff | Staff role tracking unallocated requests and capacity (SH5), merged into `Staff`. |
+| Provisional Arrangements | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Capacity, merged into core `Placement` state. |
+| Capacity Conflicts | 🟠 $\color{orange}{\textsf{Merge}}$ | Conflict | Overlapping placement demands. |
+| Overdue Actions | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Overdue tasks. |
+| Vacancy | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Coordinator term for open placement positions, merged into `Opportunity` to maintain a single agreed term. |
+| Service User | 🟠 $\color{orange}{\textsf{Merge}}$ | Student | Stakeholder term for requester, merged into `Student` *(A6)* |
+| Administrator | 🟠 $\color{orange}{\textsf{Merge}}$ | Staff | Primary actor monitoring provisional allocations *(SH9)*|
+| Original Request | 🟠 $\color{orange}{\textsf{Merge}}$ | Request | Administrator term for student submission. |
+| Earlier Decision | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Reviewers term referenced during reviews, merged into `Decision` for version history. |
+| Versions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Historical revisions linked to placement records, merged into `Decision` version history *(FR03, BR06)* |
+| Supervisor allocation | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Placement | Assignment linking a supervisor to a placement, converted to an attribute of `Placement` as there is typically one supervisor per placement *(A9, Q8)* |
+| Preferences | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Request`. | Student choices and personal interests. Converted to an attribute used when matching. |
+| Evidence | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Documentation supplied by students, converted to an attribute tracking requirements. |
+| Advertised | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Status value indicating opportunity visibility. |
+| Dates | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Timeline associated with opportunities of placements. |
+| Duties | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Descriptive attribute detailing opportunity responsibilities. |
+| Provisional | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Descriptive status value indicating terms or holds. |
+| Incomplete | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating missing details / evidence. |
+| Initial Expression of Interest | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Status of a request before required evidence is supplied. |
+| Request Awaiting Evidence | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Request status indicating required evidence is missing. |
+| Request Ready for a Decision | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Requests status indicating required evidence is submitted *(BR01)*. |
+| Detailed Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Placement` | Information restricted by role *(CS3, NFR01)*. |
+| Programme Outcomes | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Programme` | Academic learning goals used as matching criteria. |
+| Student Interests | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Request` | Student choices used during matching, converted to an attribute associated with student requests. |
+| Employer Requirements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Criteria specified by employrs for open positions. |
+| Location | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` / `Student` | Physical location deatail, converted to an attribute. |
+| Capacity | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Opportunity | Calculated count of available places based on operational factors. |
+| Places | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Physical location, converted to an attribute associated with placement locations. |
+| Resources | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Placement` | Operational facilities required to determine placement capacity. |
+| Timing | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Schedule attribute, merged into date attribute associated with opportunities and placements. |
+| Satisfied | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | State condition indicating all matching requirements are fulfilled *(BR04)*. |
+| Essential Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Required details missing from an allocation. |
+| Linked Arrangements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Relationship between Placements | Association / relationship between placements rather than a class. |
+| Teams | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Staff | Team a staff member belongs to. |
+| Progress | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Placement` | Descriptive tracking status and operational activity details. |
+| Status Terms | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` / `Action` | Descriptive status values indicating current state. |
+| Awaiting Action | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Action` | State condition indicating an outstanding task requires attention. |
+| Responsible | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Task ownership assignment. |
+| Changed | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Partially Completed | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Paused | 🟡 $\color{goldenrod}{\textsf{Convert}}$ |Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Withdrawn | 🟡 $\color{goldenrod}{\textsf{Convert}}$ |Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Unallocated Requests | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Status stage representing an unassigned student request. |
+| Incomplete Records | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating missing details. |
+| Role | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Staff | Functional position defining access *(NFR01, CS3)*. |
+| Personal or Commercially Sensitive Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Placement` | Specific information restricted by role *(CS3, NFR01)*. |
+| Important Requirements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | Critera for a match *(BR04)*. |
+| Satisfied | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | State condition indicating requirements are met *(BR04).* |
+| Waiting | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status stage representing progress or waiting condition. |
+| Capacity | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Opportunity | Duplicate, see Capacity *(P3S1)* |
+| Stalled | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating stopped progression. |
+| New Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Review` / `Action` | Notes or details added during reviews. |
+| Basis | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Decision` | Reasoning supporting an earlier decision. |
+| Consistent Reasons | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` |  List of agreed reasons for tracking delays and widthdrawals. |
+| Delay | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category for tracking operational delays. |
+| Withdrawal | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category and status value. |
+| Incomplete Outcomes | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category for tracking incomplete records. |
+| Information Required | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Details needed before a request moves to a decision state *(Q1, BR01)*. |
+| Ready for Decision | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Request status stage indicating required details are complete *(Q1, BR01)*. |
 
 <br>
 <br>
@@ -808,11 +1063,39 @@
 
 | Concept | Concise Domain Definition | Related Concepts | Evidence |
 | :--- | :--- | :--- | :--- |
+| **Student** | A learner enrolled in a programme who submits placement requests and undertakes work placements. | Programme, Request, Agreement, Placement, Match | FR01, Scenario |
+| **Programme** | An academic course of study that defines specific learning outcomes and evidence requirements for student placements. | Student, Opportunity, Request | A5, BR01, Scenario |
+| **Opportunity** | A work-placement opening offered by an employer that details available duties, dates, and location. | Employer, Programme, Request, Placement, Conflict, Match | Scenario |
+| **Employer** | An external organisation or contact offering work-placement opportunities and making selection decisions. | Opportunity, Decision, Placement, Agreement | UC06, Scenario |
+| **Agreement** | Confirmed placement terms and conditions maintained separately from formal legal contracts. | Placement, Employer, Student | A1 | 
+| **Request** | A student submission of placement preferences and programme evidence that moves through stages from an initial expression of interest to ready for a decision. | Student, Opportunity, Programme, Decision, match | FR01, FR02, Scenario |
+| **Staff** | A member of the placement office responsible for processing student requests, coordinating placements, and managing task ownership, including coordinator and administrator roles. | Decision, Action, Review | SH2, US10 |
+| **Decision** | A recorded outcome capturing employer selection or academic placement approval, retaining a version history of earlier decisions. | Request, Placement, Employer, Staff, Operational Change | BR05, BR06, FR07 |
+| **Conflict** | An identified issue representing overlapping placement demands or capacity constraints. | Placement, Opportunity | Scenario |
+| **Operational Change** | A recorded adjustment to planned arrangements that is distinct from a formal decision. | Placement, Action, Decision | FR11, Scenario, BR07 |
+| **Action** | A tracked task or planned activity assigned to staff for managing placement activities. | Staff, Placement, Review | PR7, Scenario |
+| **Review** | A recorded progress check that captures new information without erasing history and may generate actions, revised arrangements, or escalation. | Placement, Staff, Action | Scenario, BR06 |
+| **Placement** | The allocation of a student to an opportunity, existing in either a provisional or confirmed state. | Student, Opportunity, Employer, Agreement, Decision, Conflict, Operational Change, Action, Review | FR03, Scenario |
+| **Match** | A pairing between a student request and an opportunity where all important requirements are satisfied. | Student, Request, Opportunity | BR04, Scenario |
 
+<br>
 <br>
 
 ## Additional Possible Glossary Concepts
 
+- **Supervisor:** A role assigned to a placement, which may be a college staff member or an employer contact *(Q8)*.
+
+- **Approval:** An approval that may refer to the opportunity itself or academic approval of a placement, meaning not agreed. *(P2S2, P3S2, Q9)*.
+
+- **Priority:** A ranking applied to order student requests during allocation and matching *(BR02, Q2)*
+
+- **Exception:** A non-standard approval granted under specific conditions with a recorded reason *(BR02, Q2)*.
+
+- **Authority:** A defined permission determining whether a third party may act on behalf of a student *(FR05, BR03, Q3)* 
+
+- **Eligibility Rule:** A governing condition defining the criteria a student must satisfy to submit a placement request. Requires clarification on rule structure *(BR02, Q2)*
+
+- **Substitution:** A possible replacement within a placement or request, scope not agreed *(Q5)*.
 
 <br>
 <br>
@@ -821,54 +1104,485 @@
 
 | Retained Concept | Requirement, Rule, Scenario, Phrase, or Use-Case | Why the Concept is Needed
 | :--- | :--- | :--- |
+| **Student** | P2S1, US02 AC2 | Without it, the service cannot identify who is submitting preferences or show each student their own requests (US02 AC2). |
+| **Programme** | A5, BR01, P3S1 | Without it, the service cannot track the evidence requirements each programme sets for requests (A5, BR01) and the outcomes used in matching (P3S1). |
+| **Opportunity** | P1S1, P2S2, P3S4 | Without it, the service cannot represent employer placement openings or track advertised vacancies. |
+| **Employer** | UC06, P3S2 | Without it, the service cannot attribute placement offerings to external hosts or record employer selection choices. |
+| **Agreement** | A1 | Without it, operational terms and conditions cannot be confirmed or maintained separately from formal legal contracts. |
+| **Request** | FR01, FR02, US01, UC01, P2S4 | Without it, staff cannot distinguish request progression stages (P2S4) or show students what their submission is waiting on (FR02, PR2). |
+| **Staff** | SH2, US10 | Without it, task ownership, review execution, and internal administrative responsibilities cannot be assigned to specific individuals. |
+| **Decision** | BR05, BR06, FR07 | Without it, the service cannot distinguish between employer selection and academic approval or keep earlier decisions (BR06). |
+| **Conflict** | P3S1, P5S1 | Without it, potential capacity conflicts and overlapping demands cannot be flagged for the coordinator (P5S1). |
+| **Operational Change** | FR11, P3S6, BR07 | Without it, changes to planned arrangements could not be recorded separately from formal decisions (BR07), or their effect on linked arrangements shown (FR11). |
+| **Placement** | FR03, P1S2, P3S5, BR08 | Without it, the service cannot maintain a single shared record across both provisional allocations and confirmed arrangements (BR08). |
+| **Action** | P4S2, P4S3, P4S5, P5S1, PR7 | Without it, follow-up tasks and planned activities created during reviews cannot be assigned, monitored, or flagged when overdue. |
+| **Review** | P1S2, P4S5, BR06 | Without it, progress checks cannot be captured without erasing earlier information (BR06). |
+| **Match** | BR04, P6S1 | Without it, the service cannot evaluate whether all important requirements are satisfied, though it remains under clarification whether it is a stored object or derived state (Q10). |
 
 <br>
 <br>
 
-# Task 6: Sample Peer Review
-
-| Review Prompt | Sample Feedback | Revision Made |
-| :--- | :--- | :--- |
-
-<br>
-<br>
-
-# Exit Ticket: Sample Responses
-
-<br>
-<br>
-
-# Optional Candidate-Class Scoring
-
-## Candidate 1: ...
-
-| Test | Result | Explanation |
-| :--- | :--- | :--- |
-
-<br>
-<br>
-
-# Suggested Final Candidate List
+# Final Candidate List
 
 ## Retained
-- 
+- Student
+- Programme
+- Opportunity
+- Employer
+- Agreement
+- Request
+- Staff
+- Decision
+- Conflict
+- Operational Change
+- Placement
+- Action
+- Review
+- Match
+
+<br>
+<br>
+
+### Reference Table
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :---: | :--- | :--- |
+| Students | 🟢 $\color{green}{\textsf{Keep}}$ | Student | Core primary actor submitting requests *(FR01)* |
+| Programmes | 🟢 $\color{green}{\textsf{Keep}}$ | Programme | Domain class holding evidence requirements and outcomes *(A5, BR01, P3S1)*. Academic records remain external *(A3)* |
+| Opportunities | 🟢 $\color{green}{\textsf{Keep}}$ | Opportunity | Core domain class representing work placement offers from employers *(P1S1, P2S2)*. |
+| Employer | 🟢 $\color{green}{\textsf{Keep}}$ | Employer | Primary actor offering placements and recording selection decisions *(UC06)*. |
+| Agreements | 🟢 $\color{green}{\textsf{Keep}}$ | Agreement | Confirmed placement terms and conditions maintained separately from formal legal contracts *(A1)*. |
+| Requests | 🟢 $\color{green}{\textsf{Keep}}$ | Request | Core class representing incoming student submissions *(FR01, FR02)*. |
+| Staff | 🟢 $\color{green}{\textsf{Keep}}$ | Staff | General internal role processing requests and managing placement activities *(SH2)*. |
+| Decisions | 🟢 $\color{green}{\textsf{Keep}}$ | Decision | Core class capturing approval and selection outcomes across placement history *(BR06)*. |
+| Potential Conflicts | 🟢 $\color{green}{\textsf{Keep}}$ | Conflict | Core class for tracking overlapping placeemnt demands. |
+| Changes | 🟢 $\color{green}{\textsf{Keep}}$ | Operational Change | Core class recording revisions and adjustments to planned arrangements affecting dependency links *(FR11)* |
+| Outstanding Actions | 🟢 $\color{green}{\textsf{Keep}}$ | Action | Core class representing follow-up tasks and todos requiring tracking and ownership *(PR7)*. |
+| Reviews | 🟢 $\color{green}{\textsf{Keep}}$ | Review | Core class recording review activity adding new information without erasing history *(BR06)*. |
+| Records | 🟢 $\color{green}{\textsf{Keep}}$ | Placement | Core placement record capturing details, decisions, and history *(FR03, P1S2)* |
+| Match | 🟢 $\color{green}{\textsf{Keep}}$ | Match | Core class representing successful placement pairings meeting all requirements *(BR04)*. |
 
 <br>
 
 ## Provisionally Retained
--
+- Supervisor
+- Approval
+- Priority
+- Exception
+- Authority
+- Eligibility Rule
+- Substitution
+
+<br>
+<br>
+
+### Reference Table
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :---: | :--- | :--- |
+| Supervisor | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Supervisor | Role assigned to a placement. Requires policy clarification to determine if the supervisor is college staff, employer, or either *(Q8)* |
+| Approval | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Approval | Approval outcome requires clarification on whether it refers to academic approval or opportunity visibility *(P2S2, P3S2)*. |
+| Priorities | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Priority | Priority rules when ordering requests, requires clarification on whether it is a class or an attribute *(BR02, Q2)* |
+| Exceptions | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Exception | Approvals requiring recorded reasoning for exceptions require clarification on rule definitions *(BR02, Q2)*. |
+| Authority | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Authority | Rules for third parties requires clarification on required permissions *(FR05, BR03, Q3)* |
+| Eligibility | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Eligibility Rule | Business rules determining who may apply *(BR02)*. Requires clarification on rule structure *(Q2)*. |
+| Substitutions | 🔵 $\color{blue}{\textsf{Keep Provisionally}}$ | Substitution | Possible change to a placement or request, requires clarification on policy handling *(Q5)*. |
 
 <br>
 
 ## Converted to Attributes or Values
--
+- Supervisor Allocation
+- Preferences
+- Evidence
+- Advertised
+- Dates
+- Duties
+- Provisional
+- Incomplete
+- Initial Expression of Interest
+- Request Awaiting Evidence
+- Request Ready for a Decision
+- Detailed Information
+- Programme Outcomes
+- Student Interests
+- Employer Requirements
+- Location
+- Capacity
+- Places
+- Resources
+- Timing
+- Satisfied
+- Essential Information
+- Linked Arrangements
+- Progress
+- Teams
+- Status Terms
+- Awaiting Action
+- Responsible
+- Changed
+- Partially Completed
+- Paused
+- Withdrawn
+- Unallocated Requests
+- Incomplete Records
+- Role
+- Personal or Commercially Sensitive Information
+- Important Requirements
+- Satisfied
+- Waiting
+- Capacity
+- Stalled
+- New Information
+- Basis
+- Consistent Reasons
+- Delay
+- Withdrawal
+- Incomplete Outcomes
+- Information Required
+- Ready for Decision
+
+<br>
+
+> [!NOTE]
+> **Student:** Preferences, Student Interests, Location, Detailed Information, Personal or Commercially Sensitive Information
+>
+> **Programme:** Programme Outcomes
+>
+> **Opportunity:** Advertised, Dates, Timing, Duties, Provisional, Employer Requirements, Location, Places, Capacity
+>
+> **Employer:** *(none)*
+>
+> **Agreement:** *(none)*
+>
+> **Request:** Preferences, Student Interests, Evidence, Incomplete, Initial Expression of Interest, Request Awaiting Evidence, Request Ready for a Decision, Essential Information, Status Terms, Awaiting Action, Unallocated Requests, Incomplete Records, Waiting, Stalled, Information Required, Ready for Decision
+>
+> **Staff:** Teams, Role
+>
+> **Decision:** Basis
+>
+> **Conflict:** *(none)*
+>
+> **Operational Change:** *(none)*
+>
+> **Placement:** Supervisor Allocation, Dates, Timing, Provisional, Location, Places, Resources, Progress, Incomplete, Essential Information, Incomplete Records, Detailed Information, Personal or Commercially Sensitive Information, Status Terms, Responsible, Changed, Partially Completed, Paused, Withdrawn, Waiting, Stalled, Consistent Reasons, Delay, Withdrawal, Incomplete Outcomes
+>
+> **Action:** Status Terms, Awaiting Action, Responsible, Changed, Partially Completed, Paused, Withdrawn, New Information, Consistent Reasons, Delay, Withdrawal, Incomplete Outcomes
+>
+> **Review:** New Information
+>
+> **Match:** Important Requirements, Satisfied
+>
+> **Relationship between Placements:** Linked Arrangements *(association, Session 6)*
+
+<br>
+<br>
+
+### Reference Table
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :---: | :--- | :--- |
+| Supervisor allocation | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Placement | Assignment linking a supervisor to a placement, converted to an attribute of `Placement` as there is typically one supervisor per placement *(A9, Q8)* |
+| Preferences | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Request`. | Student choices and personal interests. Converted to an attribute used when matching. |
+| Evidence | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Documentation supplied by students, converted to an attribute tracking requirements. |
+| Advertised | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Status value indicating opportunity visibility. |
+| Dates | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Timeline associated with opportunities of placements. |
+| Duties | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Descriptive attribute detailing opportunity responsibilities. |
+| Provisional | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Descriptive status value indicating terms or holds. |
+| Incomplete | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating missing details / evidence. |
+| Initial Expression of Interest | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Status of a request before required evidence is supplied. |
+| Request Awaiting Evidence | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Request status indicating required evidence is missing. |
+| Request Ready for a Decision | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Requests status indicating required evidence is submitted *(BR01)*. |
+| Detailed Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Placement` | Information restricted by role *(CS3, NFR01)*. |
+| Programme Outcomes | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Programme` | Academic learning goals used as matching criteria. |
+| Student Interests | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Request` | Student choices used during matching, converted to an attribute associated with student requests. |
+| Employer Requirements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` | Criteria specified by employrs for open positions. |
+| Location | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` / `Student` | Physical location deatail, converted to an attribute. |
+| Capacity | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Opportunity | Calculated count of available places based on operational factors. |
+| Places | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Physical location, converted to an attribute associated with placement locations. |
+| Resources | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Placement` | Operational facilities required to determine placement capacity. |
+| Timing | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Opportunity` / `Placement` | Schedule attribute, merged into date attribute associated with opportunities and placements. |
+| Satisfied | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | State condition indicating all matching requirements are fulfilled *(BR04)*. |
+| Essential Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Required details missing from an allocation. |
+| Linked Arrangements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Relationship between Placements | Association / relationship between placements rather than a class. |
+| Progress | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Placement` | Descriptive tracking status and operational activity details. |
+| Teams | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Staff | Team a staff member belongs to. |
+| Status Terms | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` / `Action` | Descriptive status values indicating current state. |
+| Awaiting Action | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Action` | State condition indicating an outstanding task requires attention. |
+| Responsible | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Task ownership assignment. |
+| Changed | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Partially Completed | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Paused | 🟡 $\color{goldenrod}{\textsf{Convert}}$ |Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Withdrawn | 🟡 $\color{goldenrod}{\textsf{Convert}}$ |Attribute of `Action` / `Placement` | Status values describing state changes. |
+| Unallocated Requests | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Status stage representing an unassigned student request. |
+| Incomplete Records | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating missing details. |
+| Role | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Staff | Functional position defining access *(NFR01, CS3)*. |
+| Personal or Commercially Sensitive Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Student` / `Placement` | Specific information restricted by role *(CS3, NFR01)*. |
+| Important Requirements | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | Critera for a match *(BR04)*. |
+| Satisfied | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Match` | State condition indicating requirements are met *(BR04).* |
+| Waiting | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status stage representing progress or waiting condition. |
+| Capacity | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of Opportunity | Duplicate, see Capacity *(P3S1)* |
+| Stalled | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` / `Placement` | Status value indicating stopped progression. |
+| New Information | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Review` / `Action` | Notes or details added during reviews. |
+| Basis | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Decision` | Reasoning supporting an earlier decision. |
+| Consistent Reasons | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` |  List of agreed reasons for tracking delays and widthdrawals. |
+| Delay | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category for tracking operational delays. |
+| Withdrawal | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category and status value. |
+| Incomplete Outcomes | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Action` / `Placement` | Reason category for tracking incomplete records. |
+| Information Required | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Details needed before a request moves to a decision state *(Q1, BR01)*. |
+| Ready for Decision | 🟡 $\color{goldenrod}{\textsf{Convert}}$ | Attribute of `Request` | Request status stage indicating required details are complete *(Q1, BR01)*. |
 
 <br>
 
 ## Merged
-- 
+> [!NOTE]
+> **Opportunity:** Work-placement Opportunities, Visible Vacancy, Vacancy
+>
+> **Request:** Applications, Original Request
+>
+> **Student:** Service User
+>
+> **Decision:** Employer Decisions, Employer Selection, Academic Approval, Formal Decision, Earlier Decision, Earlier Decisions and Versions, Earlier Evidence, Versions
+>
+> **Placement:** Provisional Allocations, Provisional Arrangements, Current Confirmed Position
+>
+> **Action:** Planned Activity, New Actions, Overdue Actions
+>
+> **Review:** Progress Reviews
+>
+> **Operational Change:** Revised Arrangements
+>
+> **Conflict:** Capacity Conflicts
+>
+> **Staff:** Coordinator, Administrator
+
+<br>
+<br>
+
+### Reference Table
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :---: | :--- | :--- |
+| Work-placement opportunities | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Stakeholder wording for work-placement openings. Merged into `Opportunity` to maintain a single, agreed term. |
+| Applications | 🟠 $\color{orange}{\textsf{Merge}}$ | Request | Alternative term for student submissions, merged into `Request` as *(FR01, FR02, US01, UC01)* use the term request. |
+| Employer decisions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Selection outcome recorded by employers merged into `Decision`, distinguished by decision type *(BR05)* |
+| Progress reviews | 🟠 $\color{orange}{\textsf{Merge}}$ | Review | Review activity, capturing new information without erasing history. Merged into `Review` |
+| Employer Selection | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Employer selection outcome, merged into the core `Decision` class, distinguished by decision type *(BR05, BR06)* |
+| Academic Approval | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | College approval outcome, merged into core `Decision` class distinguished by decision type *(BR05, BR06)* |
+| Visible Vacancy | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Stakeholder term for open placement positions, merged into `Opportunity` to maintain a single agreed term. |
+| Provisional Allocations | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Capacity hold, merged into core `Placement` class *(BR08, Q4)*. |
+| Current Confirmed Position | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Active agreed placement, merged into core `Placement` class *(BR06)*. |
+| Earlier Decisions and Versions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Historical decision records, merged into `Decision` version history handling *(BR06, NFR04)*. |
+| Planned Activity | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Work component within a placement, merged into core `Action` class. |
+| Formal Decision | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Recorded outcome, merged into `Decision` *(BR07)*. |
+| New Actions | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Tasks created as review outcomes, merged into `Action` class |
+| Revised Arrangements | 🟠 $\color{orange}{\textsf{Merge}}$ | Operational Change | Updated placement conditions resulting from reviews. |
+| Earlier Evidence | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Evidence of earlier decisions and versions, merged into `Decison` version history alongside earlier decisions *(BR06, NFR04)*. |
+| Coordinator | 🟠 $\color{orange}{\textsf{Merge}}$ | Staff | Staff role tracking unallocated requests and capacity (SH5), merged into `Staff`. |
+| Provisional Arrangements | 🟠 $\color{orange}{\textsf{Merge}}$ | Placement | Capacity, merged into core `Placement` state. |
+| Capacity Conflicts | 🟠 $\color{orange}{\textsf{Merge}}$ | Conflict | Overlapping placement demands. |
+| Overdue Actions | 🟠 $\color{orange}{\textsf{Merge}}$ | Action | Overdue tasks. |
+| Vacancy | 🟠 $\color{orange}{\textsf{Merge}}$ | Opportunity | Coordinator term for open placement positions, merged into `Opportunity` to maintain a single agreed term. |
+| Service User | 🟠 $\color{orange}{\textsf{Merge}}$ | Student | Stakeholder term for requester, merged into `Student` *(A6)* |
+| Administrator | 🟠 $\color{orange}{\textsf{Merge}}$ | Staff | Primary actor monitoring provisional allocations *(SH9)*|
+| Original Request | 🟠 $\color{orange}{\textsf{Merge}}$ | Request | Administrator term for student submission. |
+| Earlier Decision | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Reviewers term referenced during reviews, merged into `Decision` for version history. |
+| Versions | 🟠 $\color{orange}{\textsf{Merge}}$ | Decision | Historical revisions linked to placement records, merged into `Decision` version history *(FR03, BR06)* |
 
 <br>
 
 ## Removed as Operations, Outputs, or Implementation Details
--
+
+- Kerry College Placement Office
+- Coordinates
+- Recorded
+- Files
+- Email Threads
+- Students (Duplicate)
+- Express
+- Provide
+- Programme (Duplicate)
+- Opportunity (Duplicate)
+- Arrive
+- Several Channels
+- Distinguish
+- Applied
+- Another Person or Organisation
+- Assist
+- Shared
+- Matching
+- Considers
+- Separate Decisions
+- Depends on
+- People
+- Remain
+- Missing
+- Affect
+- Staff (Duplicate)
+- Preserve
+- Retaining Evidence
+- Record
+- Decisions (Duplicate)
+- Notes
+- Messages
+- Spreadsheets
+- Operational Change (Duplicate)
+- Silence
+- Approval (Duplicate)
+- Generate
+- Escalation
+- Overwritten
+- Circumstances Change
+- Needs
+- Information
+- External Partners
+- Receive
+- Summary Reporting
+- Needed
+- Management
+- Funders
+- Exposing
+- Unnecessary
+- Connectivity
+- Unreliable
+- Off-site Work
+- Initial Scope
+- Service Coordination
+- Specialist Professional Systems
+- Financial Accounting
+- Unrelated Public Website Functions
+- Outside Scope
+- Coordinator (Duplicate)
+- Need (Duplicate)
+- Know
+- Decision (Duplicate)
+- Outside Organisation
+- Provisional Arrangements (Duplicate)
+- Block
+- Partner Representative
+- Required
+- Role (Duplicate)
+- Complete Case History
+- Reviewer
+- Added
+- Erasing
+- Manager
+- Policy or Decision
+- Clarification Required
+- Priority (Duplicate)
+- Exceptions (Duplicate)
+- Authority Required (Duplicate)
+- Acts for Requester
+- Provisional Allocations (Duplicate)
+- Expire
+- Become Confirmed
+- Approve Changes
+- Withdrawal (Duplicate)
+- Reviews (Duplicate)
+- Outstanding Actions (Duplicate)
+- Related
+- Partners (Duplicate)
+
+<br>
+<br>
+
+### Reference Table
+
+| Candidate | Decision | Final Term or Destination | Justification |
+| :--- | :---: | :--- | :--- |
+| Kerry College Placement Office | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Names the overarching organisation and defines the business and system boundary. Not a domain object. |
+| Coordinates | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing business process activities rather than a domain entity. |
+| Recorded | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb indicating history preservation rules rather than a standalone concept. |
+| Files | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal tracking mechanism used in manual processes. |
+| Email threads | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal communication channel causing fragmented tracking. |
+| Students | 🔴 $\color{red}{\textsf{Remove}}$ | Student | Duplicate entry, see `Student` *(P1S1)* |
+| Express | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing student submission behaviour. |
+| Provide | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing student submission actions. |
+| Programme | 🔴 $\color{red}{\textsf{Remove}}$ | Programme | Duplicate entry, see `Programme` *(P1S1)* |
+| Opportunity | 🔴 $\color{red}{\textsf{Remove}}$ | Opportunity | Duplicate entry, see `Opportunity` *(P1S1)* |
+| Arrive | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing incoming request submissions. |
+| Several Channels | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Current process detail, the service provides one intake route *(PR2)*. |
+| Distinguish | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb describing the difference between an operational change and a formal decison *(BR07)*. |
+| Applied | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing rule application. |
+| Another Person or Organisation | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder assisting students, not directly interacting with the system boundary. |
+| Assist | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing action. |
+| Shared | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Action describing information disclosure by role *(CS3)*. |
+| Matching | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Core business process evaluated by the system. Evaluation logic rather than a domain class. |
+| Considers | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing matching evaluation. |
+| Separate Decisions | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Statement describing independent decision outcomes *(BR05)* |
+| Depends on | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing capacity depenency. |
+| People | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | General category covering roles (Supervisor, Student, Staff), does not require another identity. |
+| Remain | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing state duration. |
+| Missing | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing missing information. |
+| Affect | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing knock-on effect. |
+| Staff | 🔴 $\color{red}{\textsf{Remove}}$ | Staff | Duplicate, see `Staff` *(P2S4)* |
+| Preserve | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb indicating history preservation. |
+| Retaining Evidence | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Operation, history kept in `Decision` *(BR06)* |
+| Staff | 🔴 $\color{red}{\textsf{Remove}}$ | Staff | Duplicate, see `Staff` *(P2S4)* |
+| Record | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb indicating history preservation. |
+| Decisions | 🔴 $\color{red}{\textsf{Remove}}$ | Decision | Duplicate, see `Decisions` *(P2S7)* |
+| Notes | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal recording method targeted for replacement *(PR1)* |
+| Messages | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal communication method targeted for replacement *(PR1)* |
+| Spreadsheets | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Informal tracking method targeted for replacement *(PR1)* |
+| Distinguish | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb describing distinguishing the difference between operational changes and formal decisons *(BR07)*. |
+| Operational Change | 🔴 $\color{red}{\textsf{Remove}}$ | Operational Change | Duplicate, see `Changes` *(P3S6)* |
+| Silence | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Business rule, silence must not be treated as approval *(BR07)*. |
+| Approval | 🔴 $\color{red}{\textsf{Remove}}$ | Approval | Duplicate, see *(P2S2)* |
+| Generate | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb indicating creation of action items. |
+| Escalation | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Review outcome event referring a matter for further action. |
+| Overwritten | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb indicating deletion or overwriting. |
+| Circumstances Change | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Operational event triggering updates. |
+| Needs | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb expressing stakeholder requirements. |
+| Information | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Broad domain concept, too general to be a class. |
+| External Partners | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder *(SH6)* classified as out of scope in task 2. |
+| Receive | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing information access. |
+| Summary Reporting | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Generated from existing records. |
+| Needed | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing stakeholder requirements. |
+| Management | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder *(SH7)* does not interact directly with the system. |
+| Funders | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder *(SH8)* does not interact directly with the system. |
+| Exposing | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing disclosure. |
+| Unnecessary | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Descriptive term describing redundant details. |
+| Connectivity | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Condition handled as a quality requirement *(NFR03, CS2)* |
+| Unreliable | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Describes connection state, part of system quality *(NFR03, CS2)* |
+| Off-site work | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Enviornment context affecting record updates. |
+| Initial Scope | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Defines initial release deliverables. |
+| Service Coordination | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Names the scope boundary, not a domain concep. |
+| Specialist Professional Systems | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Excluded external system. |
+| Financial Accounting | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Excluded external system. |
+| Unrelated Public Website Functions | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Excluded external system. |
+| Outside Scope | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Excluded external system. |
+| Coordinator | 🔴 $\color{red}{\textsf{Remove}}$ | Staff | Duplicate entry, see `Coordinator` *(P5S1)* |
+| Need | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Duplicate, see Needs *(P5S1)* |
+| Know | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing user awareness. |
+| Information | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Duplicate, see `Information` *(P5S1)* |
+| Decision | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Duplicate, see `Decisions` *(P2S7)* |
+| Outside Organisation | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder, does not interact with the system boundary. |
+| Provisional Arrangements | 🔴 $\color{red}{\textsf{Remove}}$ | Placement | Duplicate, see `Provisional Arrangements` *(P5S1)* |
+| Block | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb indicating unreleased provisional allocations. |
+| Partner Representative | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder *(SH6)*, does not interact directly within the system boundary. |
+| Required | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing necessity. |
+| Role | 🔴 $\color{red}{\textsf{Remove}}$ | Role | Duplicate, see `Role` *(P5S2)*. |
+| Complete Case History | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Derived output generated from existing records. |
+| Reviewer | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder, does not interact directly with the system boundary. |
+| Added | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Functional verb describing addition of notes. |
+| Erasing | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Verb indicating deletion or overwriting. |
+| Manager | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage stakeholder, does not interact directly with the system boundary. |
+| Need | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Duplicate, see `Needs` *(P5S1)* |
+| Policy or Decision | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Section heading, general concept covering rules and approvals. |
+| Clarification Required | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Section heading highlighting open questions. |
+| Priority | 🔴 $\color{red}{\textsf{Remove}}$ | Priority | Duplicate, see `Priorities` *(P2S5)*. |
+| Exceptions | 🔴 $\color{red}{\textsf{Remove}}$ | Exception | Duplicate, see `Exceptions` *(P2S5)* |
+| Applied | 🔴 $\color{red}{\textsf{Remove}}$ | Applied | Duplicate, see `Applied` *(P2S5)* |
+| Authority Required | 🔴 $\color{red}{\textsf{Remove}}$ | Authority | Duplicate, see `Authority` *(P2S7)* |
+| Acts for Requester | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Offstage relationship *(SH3)*, does not interact with the system boundary. |
+| Provisional Allocations | 🔴 $\color{red}{\textsf{Remove}}$ | Placement | Duplicate, see `Provisional Allocations` *(P3S5)* |
+| Expire | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | State transition event where a provisional allocation releases *(Q4, BR08)* |
+| Become Confirmed | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | State transition event where a provisional allocation becomes confirmed *(Q4, BR08)* |
+| Approve Changes | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Authorisation approving modifications *(Q5)* |
+| Withdrawal | 🔴 $\color{red}{\textsf{Remove}}$ | Attribute of `Request` / `Placement` | Duplicate, see `Withdrawal` *(P6S6)*. |
+| Reviews | 🔴 $\color{red}{\textsf{Remove}}$ | Review | Duplicate, see `Reviews` *(P4S5)* |
+| Outstanding Actions | 🔴 $\color{red}{\textsf{Remove}}$ | Action | Duplicate, see `Outstanding Actions` *(P4S1)* |
+| Related | 🔴 $\color{red}{\textsf{Remove}}$ | Out of Scope | Association linking versions, reviews, and actions *(Q6)* |
+| Shared | 🔴 $\color{red}{\textsf{Remove}}$ | Shared | Duplicate, see `Shared` *(P2S7)* |
+| Staff | 🔴 $\color{red}{\textsf{Remove}}$ | Staff | Duplicate, see `Staff` *(P2S4)* |
+| Partners |🔴 $\color{red}{\textsf{Remove}}$ | Partners | Duplicate, see `External Partners` *(P5S2)* |
+| Funders | 🔴 $\color{red}{\textsf{Remove}}$ | Funders | Duplicate, see `Funders` *(P5S3)* |

@@ -211,3 +211,7 @@ The service will apply standardised status definitions across teams, helping ens
     Q7. Which information may be shared with staff, partners and funders?
     
     Q8. Is a placement supervisor a college staff member, an employer contact, or can it be either?
+
+    Q9. Does "approval" of an advertised opportunity mean the same as academic approval of a placement, or is it a separate approval?
+
+    Q10. Should a match be recorded as its own outcome, or is it the point at which a request satisfies all the important requirements?

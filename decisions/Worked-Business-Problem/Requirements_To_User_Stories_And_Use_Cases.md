@@ -431,54 +431,9 @@ No user story in the initial release has them using the service directly. Theref
 <br>
 
 # Task 4: Use-Case Diagram
-<details>
-    <summary>PlantUML Source Code</summary>
+Source: [`diagrams/use-case-diagram.puml`](../../diagrams/use-case-diagram.puml)
 
-```plantuml
-@startuml
-    left to right direction
-    actor Student
-    actor "Placement Staff" as Staff
-    actor Employer
-    actor Administrator
-    actor "Placement Coordinator" as Coordinator
-
-    rectangle "Student Work Placement Coordination Service" {
-        usecase "Submit Placement Request" as UC01
-        usecase "View Request Status" as UC02
-        usecase "View Placement Record" as UC03
-        usecase "Apply Priority Rules" as UC04
-        usecase "Verify Third-Party Permission" as UC05
-        usecase "Record Selection Decision" as UC06
-        usecase "Record Academic Approval" as UC07
-        usecase "Release Stalled Allocation" as UC08
-        usecase "View Provisional Opportunities" as UC09
-        usecase "Set Activity Status" as UC10
-        usecase "Evaluate Change Dependencies" as UC11
-        usecase "Record Off-Site Progress Updates" as UC12
-    }
-
-    Student -- UC01
-    Student -- UC02
-
-    Staff -- UC03
-    Staff -- UC04
-    Staff -- UC05
-    Staff -- UC07
-    Staff -- UC10
-    Staff -- UC12
-
-    Employer -- UC06
-
-    Administrator -- UC08
-
-    Coordinator -- UC09
-    Coordinator -- UC11
-@enduml
-```
-</details>
-
-![Use-case Diagram](../../diagrams/Student-Work-Placement-Coordination.png)
+![Use-case Diagram](../../diagrams/use-case-diagram.png)
 
 
 # Task 5: Traceability
