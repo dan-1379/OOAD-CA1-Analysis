@@ -132,9 +132,9 @@ And the request is not shown as ready for a decision
 | **Primary Actor** | Student |
 | **Preconditions** | The student is identified by the service, and the target placement opportunity is open for requests. |
 | **Trigger** | The student decides to request a particular open placement opportunity. |
-| **Postcondition(Minimal Guarantee)** | No placement request is shown as ready for a decision without the required programme evidence. If the student abandons the submission halfway through, no partial request is recorded. |
-| **Postcondition(Success Guarantee)** | The placement request containing preferences and programme evidence is recorded against the student in the single shared placement record, and the current request status can be viewed by the student. |
-| **Open Issue(s)** | 1. What makes a placement opportunity open for requests and who decides when it opens? <br><br> 2. What placement preference information and programme evidence are required before a request is ready for a decison? <br><br> 3. Is a request submitted without the required programme evidence recorded and held as awaiting evidence, or is it rejected? <br><br> 4. What authority or verification is required if a third-party representative acts on behalf of the student? |
+| **Postcondition(Minimal Guarantee)** | No placement request is shown as ready for a decision without the required programme evidence. If the student abandons the submission halfway through, no partial request is recorded. If the submission is incomplete, the student is told what evidence is missing. |
+| **Postcondition(Success Guarantee)** | The placement request containing preferences and programme evidence is recorded against the student in the single shared placement record, confirmation of receipt is shown, and the current request status can be viewed by the student. |
+| **Open Issue(s)** | 1. What makes a placement opportunity open for requests and who decides when it opens? <br><br> 2. What placement preference information and programme evidence are required before a request is ready for a decision? <br><br> 3. Is a request submitted without the required programme evidence recorded and held as awaiting evidence, or is it rejected? *(Working assumption: the request is held with status 'awaiting evidence' until the evidence is supplied. To be confirmed with stakeholders.)* <br><br> 4. What authority or verification is required if a third-party representative acts on behalf of the student? |
 
 <br>
 <br>
@@ -148,7 +148,7 @@ And the request is not shown as ready for a decision
 | **3** | The student supplies the programme evidence required for the request. |
 | **4** | The system validates that the submission meets the evidence requirements of the students programme. |
 | **5** | The student confirms the request details. |
-| **6** | The system records the placement request against the student in the single shared placement record. |
+| **6** | The system records the placement request against the student in the single shared placement record, with status ready for decison. |
 | **7** | The system confirms to the student that the request has been received and shows the current status. |
 
 <br>
@@ -183,3 +183,31 @@ The success and minimal guarantees are defined in the use-case header. Each path
 - **5a (cancellation):** no request is recorded. *(Minimal guarantee only)*
 
 On every path, no request is shown as *ready for decision* without the required programme evidence (BR01).
+
+<br>
+<br>
+
+# Task 6: From Paths and Rules to Focused Examples
+
+> [!NOTE]
+> The following key was used for this table:
+> 
+> S - Student
+> 
+> OP - Opportunity
+> 
+> P - Programme
+> 
+> E - Evidence
+
+| Scenario ID | Source | Concrete Example | Reason |
+| :--- | :--- | :--- | :--- |
+| SC1 | Main Success Scenario | S1, open opportunity OP7, preferences and evidence E1 + E2 supplied | Representative success |
+| SC2 | Extension 4a | E2 missing, then supplied before confirming | Recoverable missing evidence |
+| SC3 | Extension 4b | E2 missing and cannot be supplied | Request held as awaiting evidence |
+| SC4 | BR01 | E1 + E2 supplied, E1 only supplied | Exact evidence boundary |
+| SC5 | Extension 5a | Student cancels before confirming | Cancellation, nothing recorded |
+
+# Task 7: Gherkin Scenarios
+
+Source: [`features/submit-placement-request.feature`](../../features/submit-placement-request.feature)
