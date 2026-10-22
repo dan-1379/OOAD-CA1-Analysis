@@ -543,3 +543,11 @@ Genuine removals that appear twice (Distinguish, Applied, Shared, Information, F
 That’s 89 bullets from your 97 rows: 71 genuine removals and 18 duplicates.
 
 The (Duplicate) items aren’t really “removed”, because they were kept, merged or converted at their first appearance. For the final list, you might prefer to leave them out of the Removed heading entirely, or give them their own small sub-heading (“Duplicate entries”). Then the Removed list only shows terms you actually rejected.
+
+
+# Project Referencing Linking
+Additionally, I want to be forthcoming in my usage of AI to assist me in associated statements I write with earlier evidence. This can be seen throught the entire project with the references beside statements or justifications e.g. *(FR01)*. These statements were written by me, with a lot of the referencing links being assisted with Claude.
+
+The reason I did this was due to a considerably large body of earlier evidence I would have had to otherwise review to extract any references to confirm my statements. Due to time constraints and other projects, I decided this the best course of action as it allowed me to trace statements to evidence that would otherwise have taken considerably longer to locate.
+
+For this project, I pasted the entirety of my files into Claude. I subsequently would write the tables and content, and would utilise AI to assist me in referencing content in these files.
