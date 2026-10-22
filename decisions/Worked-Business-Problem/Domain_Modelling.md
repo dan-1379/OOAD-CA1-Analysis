@@ -66,7 +66,7 @@
 |  | status *(added)* | 🟢 $\color{green}{\textsf{Keep}}$ | One value from an agreed set (advertised, provisional, confirmed, closed). An opportunity may be advertised while details are still provisional *(P2S2)*, and only confirmed opportunities count as available capacity *(US09, FR09)*. |
 |  | Dates | 🟢 $\color{green}{\textsf{Keep}}$ | Kept as `startDate` and `endDate`. Dates may still be provisional *(P2S2)*. |
 |  | Duties | 🟢 $\color{green}{\textsf{Keep}}$ | Describes the opening and may be provisional *(P2S2)*. Employer confirms duties *(SH4)*. |
-|  | Provisional | 🟢 $\color{green}{\textsf{Keep}}$ | Kept as a `status` value because the coordinator must see which details are still provisional *(US09)*. |
+|  | Provisional | 🟢 $\color{green}{\textsf{Keep}}$ | Kept as a `status` value **and** as `provisionalDetails`, because the coordinator must see *which* details (dates, duties, approval) are still provisional *(P2S2, US09)*. |
 |  | Employer Requirements | 🟢 $\color{green}{\textsf{Keep}}$ | Matching consideration set by the employer *(P3S1, BR04)*. |
 |  | Location | 🟢 $\color{green}{\textsf{Keep}}$ | Matching consideration *(P3S1, BR04)*. |
 |  | Capacity | 🟢 $\color{green}{\textsf{Keep}}$ | Number of places offered. Only confirmed capacity counts as available *(US09, FR09)*. Capacity depends on people, places, resources and timing *(P3S3)*, but how it is calculated is not agreed, so only the resulting number is held here (see Open Questions). |
@@ -152,7 +152,7 @@
 | **Review** | reviewDate *(added)* | 🟢 $\color{green}{\textsf{Keep}}$ | Keeps the order of reviews so earlier information is not lost *(BR06)*. |
 |  | New Information | 🟢 $\color{green}{\textsf{Keep}}$ | Information added at a review without erasing earlier information *(P6S5)*. |
 |  | outcome *(added)* | 🟢 $\color{green}{\textsf{Keep}}$ | No further action, new actions, revised arrangements, or escalation *(P4S5)*. |
-| **Match** | Important Requirements | 🔴 $\color{red}{\textsf{Remove}}$ | Match is not modelled as a class until Q10 is answered (see Task 4). The requirements are already attributes of `Programme`, `Opportunity` and `Request`, and BR04 becomes a constraint. |
+| **Match** | Important Requirements | 🔴 $\color{red}{\textsf{Remove}}$ | Match is not modelled as a class until Q10 is answered. The requirements are already attributes of `Programme`, `Opportunity` and `Request`, and BR04 becomes a constraint. |
 |  | Satisfied | 🔴 $\color{red}{\textsf{Remove}}$ | A derived condition (true when every important requirement is met), not a stored value. |
 
 <br>
@@ -246,7 +246,6 @@
 |  |  | Operational Change |  |  |
 | **Conflict** |  | Placement |  |  |
 |  |  | Opportunity |  |  |
-|  |  | Scenario |  |  |
 | **Operational Change** |  | Placement |  |  |
 |  |  | Action |  |  |
 |  |  | Decision |  |  |
@@ -329,7 +328,7 @@ Each association appeared twice in the table above (once from each class), so du
 | Employer *makes* Decision | 0..1 | 0..* | Each Decision is made by zero or one Employer. An Employer makes zero or many Decisions. | Only selection decisions have an employer *(FR06)*. Academic approvals have none. |
 | Agreement *governs* Placement | 0..1 | 1 | Each Agreement governs exactly one Placement. A Placement is governed by zero or one Agreement. | Zero while provisional. Agreements record confirmed terms *(A1)*. |
 | Request *results in* Placement | 1 | 0..1 | Each Placement comes from exactly one Request. A Request results in zero or one Placement. | Zero while a request is still an expression of interest or awaiting evidence *(P2S4)*. A released or withdrawn placement keeps its status, so it is not replaced *(BR06)*. |
-| Request *requires* Action | 0..1 | 0..* | Each Action belongs to zero or one Request. A Request requires zero or many Actions. | *(P5S1, P2S4)*. Zero because placement-stage actions belong to the placement. Each Action belongs to exactly one Request **or** one Placement (see note). |
+| Request *requires* Action | 0..1 | 0..* | Each Action belongs to zero or one Request. A Request requires zero or many Actions. | *(P5S1, P2S4)*. Zero because placement-stage actions belong to the placement. Each Action belongs to exactly one Request **or** one Placement. |
 | Staff *records* Decision | 0..1 | 0..* | Each Decision is recorded by zero or one Staff member. A Staff member records zero or many Decisions. | Academic approvals are recorded by staff *(FR07)*. Whether staff also record selections on an employer's behalf is open *(US06 Q3)*. |
 | Staff *is responsible for* Action | 1 | 0..* | Each Action has exactly one responsible Staff member. A Staff member is responsible for zero or many Actions. | *(US10 AC2)* "the person responsible". Exactly one, so ownership is never unclear *(PR7)*. |
 | Decision *concerns* Placement | 0..* | 1 | Each Decision concerns exactly one Placement. A Placement is the subject of zero or many Decisions. | Zero before any decision. At least one selection and one approval before proceeding *(BR05)*, plus earlier versions *(BR06)*. "Silence is not approval" *(BR07)*, so zero must be allowed. |
@@ -350,6 +349,27 @@ Each association appeared twice in the table above (once from each class), so du
 
 | Information to Retain | Best Owning Concept | Why |
 | :--- | :--- | :--- |
+| Date a student submitted a request | Request (`submittedDate`) | Describes one submission, not the student *(FR01)*. Needed to see stalled requests *(P6S3)*. |
+| Current request stage and what it is waiting on | Request (`status`, `waitingOn`) | Stage changes through the request's lifecycle *(P2S4)*. The student must see what it is waiting on *(FR02, US02 AC4)*. |
+| Evidence each programme requires | Programme (`evidenceRequirements`) | Set per programme *(A5)*. Compared with `Request.evidence` to apply BR01. |
+| Priority rule applied to a request | Request (`priorityRuleApplied`), provisional | *(US04 AC3)*. The rules themselves are not agreed *(Q2)*. |
+| Exception to a priority rule, its reason and who granted it | Not modelled yet (candidate `Exception`) | *(US04 AC4)* needs a reason and a staff member, which suggests its own record. Kept provisional until Q2 is answered. |
+| Employer selection and academic approval (outcome, date, basis) | Decision | Two separate decisions, both needed for a placement to proceed *(P3S2, BR05)*. |
+| Earlier decisions when a decision is revised | Decision (*supersedes*) | The new decision is added and points to the one it replaces, so the basis of the earlier one is kept *(BR06, NFR04, P6S5)*. |
+| When a provisional allocation was made | Placement (`allocationDate`) | Needed to apply the stalled threshold and release it *(BR08, FR08, Q4)*. |
+| Whether a placement is provisional, confirmed, stalled, released or withdrawn, and why | Placement (`status`, `statusReason`) | One standard status set *(FR10)* with consistent reasons for delay, withdrawal and incomplete outcomes *(P6S6)*. |
+| Which opportunity details are still provisional | Opportunity (`status`, `provisionalDetails`) | Provisional opportunities are not counted as confirmed capacity *(US09)*. |
+| Confirmed placement terms | Agreement | Recorded separately from legal contracts *(A1)*. |
+| Who is responsible for the next action and when it is due | Action (`dueDate`) + association to Staff | *(US03 AC4, US10 AC2, P5S1)*. |
+| Follow-ups on a request before a placement exists (e.g. chase missing evidence, coordinator to decide) | Action, linked to Request | Overdue actions include request-stage work *(P5S1)*. A request may never get a placement (0..1), so these cannot hang off Placement. |
+| Date of a status change | Action (`statusChangedDate`) | *(US10 AC3)*. If the full history of status changes must be kept, a separate status-change record will be needed. |
+| Why an action was delayed, withdrawn or left incomplete | Action (`statusReason`) | Consistent reasons across actions as well as placements *(P6S6)*. |
+| A change to arrangements (not a decision) | OperationalChange | Must be kept separate from a formal decision *(BR07)*. |
+| New information and outcome from a progress review | Review | Added without erasing earlier information *(P6S5)*. May generate actions or revised arrangements *(P4S5)*. |
+| When a conflict was identified and whether it is resolved | Conflict (`identifiedDate`, `status`) | The coordinator needs to see open conflicts and how long they have been open *(P5S1)*. |
+| Which arrangements are linked | Placement (*is linked to*) | Needed to see knock-on effects before a change *(FR11, US11)*. |
+| Third-party permission and each disclosure | Not modelled yet (candidate `Authority`) | *(FR05, US05 AC4, BR03)*. What counts as permission is not agreed *(Q3)*. |
+| Off-site updates waiting to sync | Not part of the domain model | A reliability concern *(NFR03, CS2)* for design, not a business concept. |
 
 
 <br>
@@ -357,59 +377,6 @@ Each association appeared twice in the table above (once from each class), so du
 
 # Task 5: Draw the First Complete Domain Model
 
-## PlantUML Starting Template
-```plantuml
-@startuml 
-left to right direction 
-hide methods 
-skinparam classAttributeIconSize 0 
- 
-class Student { 
-  studentNumber 
-} 
- 
-class StudentOrganisation { 
-  organisationName 
-} 
- 
-class Activity { 
-  activityCode 
-  title 
-  capacity 
-  status 
-} 
- 
-class ActivitySession { 
-  sessionDate 
-  startTime 
-} 
- 
-class Registration { 
-  requestDate 
-  status 
-} 
- 
-class WaitingListEntry { 
-  requestDate 
-  status 
-} 
- 
-class AttendanceRecord { 
-  attendanceStatus 
-} 
- 
-class Room { 
-  roomNumber 
-} 
- 
-StudentOrganisation "1" -- "0..*" Activity : organises 
-Activity "1" -- "1..*" ActivitySession : comprises 
-Student "1" -- "0..*" Registration : submits 
-Activity "1" -- "0..*" Registration : receives 
-Student "1" -- "0..*" WaitingListEntry : joins 
-Activity "1" -- "0..*" WaitingListEntry : has 
-Registration "1" -- "0..*" AttendanceRecord : has 
-ActivitySession "1" -- "0..*" AttendanceRecord : records 
-Room "1" -- "0..*" ActivitySession : hosts 
-@enduml 
-```
+Source: [`diagrams/domain-model.puml`](../../diagrams/domain-model.puml)
+
+![Domain-model Diagram](../../diagrams/domain-model.png)
