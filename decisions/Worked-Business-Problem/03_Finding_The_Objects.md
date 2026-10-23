@@ -1,10 +1,68 @@
+<!-- TOC --><a name="finding-the-objects"></a>
 # FINDING THE OBJECTS
 
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [FINDING THE OBJECTS](#finding-the-objects)
+- [Task 1: Initial Candidate Extraction](#task-1-initial-candidate-extraction)
+  - [Organisation and Current Service](#organisation-and-current-service)
+  - [Requests, Eligibility, and Preparation](#requests-eligibility-and-preparation)
+  - [Allocation and Coordination](#allocation-and-coordination)
+  - [Progress, Review, and Exceptions](#progress-review-and-exceptions)
+  - [Information, Reporting, and Scope](#information-reporting-and-scope)
+  - [Stakeholder Evidence](#stakeholder-evidence)
+  - [Unresolved Matters](#unresolved-matters)
+- [Task 2: Classify the Candidates](#task-2-classify-the-candidates)
+  - [Classification Guide](#classification-guide)
+  - [Organisation and Current Service](#organisation-and-current-service-1)
+  - [Requests, Eligibility, and Preparation](#requests-eligibility-and-preparation-1)
+  - [Allocation and Coordination](#allocation-and-coordination-1)
+  - [Progress, Review, and Exceptions](#progress-review-and-exceptions-1)
+  - [Information, Reporting, and Scope](#information-reporting-and-scope-1)
+  - [Stakeholder Evidence](#stakeholder-evidence-1)
+  - [Unresolved Matters](#unresolved-matters-1)
+- [Task 3: Refine the Candidate List](#task-3-refine-the-candidate-list)
+  - [Keep, Merge, Convert, and Remove Decisions](#keep-merge-convert-and-remove-decisions)
+    - [Organisation and Current Service](#organisation-and-current-service-2)
+    - [Requests, Eligibility, and Preparation](#requests-eligibility-and-preparation-2)
+    - [Allocation and Coordination](#allocation-and-coordination-2)
+    - [Progress, Review, and Exceptions](#progress-review-and-exceptions-2)
+    - [Information, Reporting, and Scope](#information-reporting-and-scope-2)
+    - [Stakeholder Evidence](#stakeholder-evidence-2)
+    - [Unresolved Matters](#unresolved-matters-2)
+  - [Terms Requiring Clarification](#terms-requiring-clarification)
+    - [Organisation and Current Service](#organisation-and-current-service-3)
+    - [Requests, Eligibility, and Preparation](#requests-eligibility-and-preparation-3)
+    - [Allocation and Coordination](#allocation-and-coordination-3)
+    - [Progress, Review, and Exceptions](#progress-review-and-exceptions-3)
+    - [Information, Reporting, and Scope](#information-reporting-and-scope-3)
+    - [Stakeholder Evidence](#stakeholder-evidence-3)
+    - [Unresolved Matters](#unresolved-matters-3)
+  - [Workings: Single Table](#workings-single-table)
+- [Task 4: Domain Glossary](#task-4-domain-glossary)
+  - [Additional Possible Glossary Concepts](#additional-possible-glossary-concepts)
+- [Task 5: Trace Retained Concepts to Evidence](#task-5-trace-retained-concepts-to-evidence)
+- [Final Candidate List](#final-candidate-list)
+  - [Retained](#retained)
+    - [Reference Table](#reference-table)
+  - [Provisionally Retained](#provisionally-retained)
+    - [Reference Table](#reference-table-1)
+  - [Converted to Attributes or Values](#converted-to-attributes-or-values)
+    - [Reference Table](#reference-table-2)
+  - [Merged](#merged)
+    - [Reference Table](#reference-table-3)
+  - [Removed as Operations, Outputs, or Implementation Details](#removed-as-operations-outputs-or-implementation-details)
+    - [Reference Table](#reference-table-4)
+
+<!-- TOC end -->
+
 <br>
 <br>
 
+<!-- TOC --><a name="task-1-initial-candidate-extraction"></a>
 # Task 1: Initial Candidate Extraction
 
+<!-- TOC --><a name="organisation-and-current-service"></a>
 ## Organisation and Current Service
 
 > [!NOTE]
@@ -32,6 +90,7 @@
 
 <br>
 
+<!-- TOC --><a name="requests-eligibility-and-preparation"></a>
 ## Requests, Eligibility, and Preparation
 
 > [!NOTE]
@@ -74,6 +133,7 @@
 
 <br>
 
+<!-- TOC --><a name="allocation-and-coordination"></a>
 ## Allocation and Coordination
 
 > [!NOTE]
@@ -116,6 +176,7 @@
 
 <br>
 
+<!-- TOC --><a name="progress-review-and-exceptions"></a>
 ## Progress, Review, and Exceptions
 
 > [!NOTE]
@@ -158,6 +219,7 @@
 
 <br>
 
+<!-- TOC --><a name="information-reporting-and-scope"></a>
 ## Information, Reporting, and Scope
 
 > [!NOTE]
@@ -198,6 +260,7 @@
 
 <br>
 
+<!-- TOC --><a name="stakeholder-evidence"></a>
 ## Stakeholder Evidence
 
 > [!NOTE]
@@ -247,6 +310,7 @@
 
 <br>
 
+<!-- TOC --><a name="unresolved-matters"></a>
 ## Unresolved Matters
 
 > [!NOTE]
@@ -290,8 +354,10 @@
 <br>
 
 
+<!-- TOC --><a name="task-2-classify-the-candidates"></a>
 # Task 2: Classify the Candidates
 
+<!-- TOC --><a name="classification-guide"></a>
 ## Classification Guide
 
 | Classification | Question | Examples |
@@ -305,6 +371,7 @@
 <br>
 <br>
 
+<!-- TOC --><a name="organisation-and-current-service-1"></a>
 ## Organisation and Current Service
 
 | Candidate | Classification | Reason |
@@ -328,6 +395,7 @@
 
 <br>
 
+<!-- TOC --><a name="requests-eligibility-and-preparation-1"></a>
 ## Requests, Eligibility, and Preparation
 
 | Candidate | Classification | Reason |
@@ -365,6 +433,7 @@
 
 <br>
 
+<!-- TOC --><a name="allocation-and-coordination-1"></a>
 ## Allocation and Coordination
 
 | Candidate | Classification | Reason |
@@ -402,6 +471,7 @@
 
 <br>
 
+<!-- TOC --><a name="progress-review-and-exceptions-1"></a>
 ## Progress, Review, and Exceptions
 
 | Candidate | Classification | Reason |
@@ -439,6 +509,7 @@
 
 <br>
 
+<!-- TOC --><a name="information-reporting-and-scope-1"></a>
 ## Information, Reporting, and Scope
 
 | Candidate | Classification | Reason |
@@ -474,6 +545,7 @@
 
 <br>
 
+<!-- TOC --><a name="stakeholder-evidence-1"></a>
 ## Stakeholder Evidence
 
 | Candidate | Classification | Reason |
@@ -515,6 +587,7 @@
 
 <br>
 
+<!-- TOC --><a name="unresolved-matters-1"></a>
 ## Unresolved Matters
 
 | Candidate | Classification | Reason |
@@ -547,8 +620,10 @@
 <br>
 <br>
 
+<!-- TOC --><a name="task-3-refine-the-candidate-list"></a>
 # Task 3: Refine the Candidate List
 
+<!-- TOC --><a name="keep-merge-convert-and-remove-decisions"></a>
 ## Keep, Merge, Convert, and Remove Decisions
 > [!NOTE]
 > For readability, the following key is used for decisions in the tables:
@@ -558,6 +633,7 @@
 > - 🔴 $\color{red}{\textsf{Remove}}$
 > - 🔵 $\color{blue}{\textsf{Keep Provisionally}}$
 
+<!-- TOC --><a name="organisation-and-current-service-2"></a>
 ### Organisation and Current Service
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -581,6 +657,7 @@
 
 <br>
 
+<!-- TOC --><a name="requests-eligibility-and-preparation-2"></a>
 ### Requests, Eligibility, and Preparation
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -618,6 +695,7 @@
 
 <br>
 
+<!-- TOC --><a name="allocation-and-coordination-2"></a>
 ### Allocation and Coordination
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -655,6 +733,7 @@
 
 <br>
 
+<!-- TOC --><a name="progress-review-and-exceptions-2"></a>
 ### Progress, Review, and Exceptions
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -692,6 +771,7 @@
 
 <br>
 
+<!-- TOC --><a name="information-reporting-and-scope-2"></a>
 ### Information, Reporting, and Scope
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -727,6 +807,7 @@
 
 <br>
 
+<!-- TOC --><a name="stakeholder-evidence-2"></a>
 ### Stakeholder Evidence
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -768,6 +849,7 @@
 
 <br>
 
+<!-- TOC --><a name="unresolved-matters-2"></a>
 ### Unresolved Matters
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -799,6 +881,7 @@
 
 <br>
 
+<!-- TOC --><a name="terms-requiring-clarification"></a>
 ## Terms Requiring Clarification
 The following terms were marked to be kept provisionally and require further clarification:
 
@@ -825,6 +908,7 @@ The following terms were marked to be kept provisionally and require further cla
 
 Taking the current tables, removing the candidates marked `Remove` and `Keep Provisionally`, and sorted each table from `Keep` to `Merge` to `Convert`:
 
+<!-- TOC --><a name="organisation-and-current-service-3"></a>
 ### Organisation and Current Service
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -842,6 +926,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="requests-eligibility-and-preparation-3"></a>
 ### Requests, Eligibility, and Preparation
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -863,6 +948,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="allocation-and-coordination-3"></a>
 ### Allocation and Coordination
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -889,6 +975,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="progress-review-and-exceptions-3"></a>
 ### Progress, Review, and Exceptions
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -912,6 +999,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="information-reporting-and-scope-3"></a>
 ### Information, Reporting, and Scope
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -928,6 +1016,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="stakeholder-evidence-3"></a>
 ### Stakeholder Evidence
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -952,6 +1041,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="unresolved-matters-3"></a>
 ### Unresolved Matters
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -963,6 +1053,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="workings-single-table"></a>
 ## Workings: Single Table
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -1059,6 +1150,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="task-4-domain-glossary"></a>
 # Task 4: Domain Glossary
 
 | Concept | Concise Domain Definition | Related Concepts | Evidence |
@@ -1081,6 +1173,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="additional-possible-glossary-concepts"></a>
 ## Additional Possible Glossary Concepts
 
 - **Supervisor:** A role assigned to a placement, which may be a college staff member or an employer contact *(Q8)*.
@@ -1100,6 +1193,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="task-5-trace-retained-concepts-to-evidence"></a>
 # Task 5: Trace Retained Concepts to Evidence
 
 | Retained Concept | Requirement, Rule, Scenario, Phrase, or Use-Case | Why the Concept is Needed
@@ -1122,8 +1216,10 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="final-candidate-list"></a>
 # Final Candidate List
 
+<!-- TOC --><a name="retained"></a>
 ## Retained
 - Student
 - Programme
@@ -1143,6 +1239,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="reference-table"></a>
 ### Reference Table
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -1164,6 +1261,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="provisionally-retained"></a>
 ## Provisionally Retained
 - Supervisor
 - Approval
@@ -1176,6 +1274,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="reference-table-1"></a>
 ### Reference Table
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -1190,6 +1289,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="converted-to-attributes-or-values"></a>
 ## Converted to Attributes or Values
 - Supervisor Allocation
 - Preferences
@@ -1277,6 +1377,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="reference-table-2"></a>
 ### Reference Table
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -1333,6 +1434,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="merged"></a>
 ## Merged
 > [!NOTE]
 > **Opportunity:** Work-placement Opportunities, Visible Vacancy, Vacancy
@@ -1358,6 +1460,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="reference-table-3"></a>
 ### Reference Table
 
 | Candidate | Decision | Final Term or Destination | Justification |
@@ -1390,6 +1493,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 
 <br>
 
+<!-- TOC --><a name="removed-as-operations-outputs-or-implementation-details"></a>
 ## Removed as Operations, Outputs, or Implementation Details
 
 - Kerry College Placement Office
@@ -1485,6 +1589,7 @@ Taking the current tables, removing the candidates marked `Remove` and `Keep Pro
 <br>
 <br>
 
+<!-- TOC --><a name="reference-table-4"></a>
 ### Reference Table
 
 | Candidate | Decision | Final Term or Destination | Justification |

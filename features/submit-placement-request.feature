@@ -1,8 +1,8 @@
 """
 UC01 - SUBMIT PLACEMENT REQUEST
 ===============================
-Used https://cucumber.io/docs/gherkin/reference/ of how to write gherkin and what extras i could include such as
-background, rule, and example table
+Used the Cucumber docs for how to write gherkin and what extras i could include such as
+background, rule, and example table (Cucumber, 2026)
 """
 
 @UC01 @FR01 @US01

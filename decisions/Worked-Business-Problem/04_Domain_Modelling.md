@@ -1,8 +1,24 @@
+<!-- TOC --><a name="domain-modelling"></a>
 # DOMAIN MODELLING
 
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [DOMAIN MODELLING](#domain-modelling)
+- [Reference Table](#reference-table)
+- [Task 1: Select Essential Attributes](#task-1-select-essential-attributes)
+- [Task 2: Identify and Name Associations](#task-2-identify-and-name-associations)
+  - [Reference Table: Each Concept in Class A paired to their respective Related Concepts](#reference-table-each-concept-in-class-a-paired-to-their-respective-related-concepts)
+  - [Candidate Associations](#candidate-associations)
+- [Task 3: Assign and Justify Multiplicities](#task-3-assign-and-justify-multiplicities)
+- [Task 4: Validate Transactions and Historical Records](#task-4-validate-transactions-and-historical-records)
+- [Task 5: Draw the First Complete Domain Model](#task-5-draw-the-first-complete-domain-model)
+
+<!-- TOC end -->
+
 <br>
 <br>
 
+<!-- TOC --><a name="reference-table"></a>
 # Reference Table
 
 > [!NOTE]
@@ -39,6 +55,7 @@
 <br>
 <br>
 
+<!-- TOC --><a name="task-1-select-essential-attributes"></a>
 # Task 1: Select Essential Attributes
 
 > [!NOTE]
@@ -158,6 +175,7 @@
 <br>
 <br>
 
+<!-- TOC --><a name="task-2-identify-and-name-associations"></a>
 # Task 2: Identify and Name Associations
 
 > [!NOTE]
@@ -206,6 +224,7 @@
 <br>
 <br>
 
+<!-- TOC --><a name="reference-table-each-concept-in-class-a-paired-to-their-respective-related-concepts"></a>
 ## Reference Table: Each Concept in Class A paired to their respective Related Concepts
 
 | Class A | Association Name or Sentence | Class B | Evidence | Keep? | 
@@ -271,6 +290,7 @@
 <br>
 <br>
 
+<!-- TOC --><a name="candidate-associations"></a>
 ## Candidate Associations
 Each association appeared twice in the table above (once from each class), so duplicates were removed. Each pair is listed once, under whichever class appears first.
 
@@ -315,6 +335,7 @@ Each association appeared twice in the table above (once from each class), so du
 <br>
 <br>
 
+<!-- TOC --><a name="task-3-assign-and-justify-multiplicities"></a>
 # Task 3: Assign and Justify Multiplicities
 
 `ClassA` `"x"` -- `"y"` `ClassB`: the value x beside Class A is read from the point of view of one Class B instance. The value y beside Class B is read from the point of view of one Class A instance.
@@ -345,6 +366,7 @@ Each association appeared twice in the table above (once from each class), so du
 <br>
 <br>
 
+<!-- TOC --><a name="task-4-validate-transactions-and-historical-records"></a>
 # Task 4: Validate Transactions and Historical Records
 
 | Information to Retain | Best Owning Concept | Why |
@@ -375,6 +397,7 @@ Each association appeared twice in the table above (once from each class), so du
 <br>
 <br>
 
+<!-- TOC --><a name="task-5-draw-the-first-complete-domain-model"></a>
 # Task 5: Draw the First Complete Domain Model
 
 Source: [`diagrams/domain-model.puml`](../../diagrams/domain-model.puml)

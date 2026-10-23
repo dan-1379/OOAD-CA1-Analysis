@@ -1,8 +1,75 @@
+<!-- TOC --><a name="requirements-to-user-stories-and-use-cases"></a>
 # REQUIREMENTS TO USER STORIES AND USE CASES
 
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [REQUIREMENTS TO USER STORIES AND USE CASES](#requirements-to-user-stories-and-use-cases)
+- [Task 1: Develop User Stories](#task-1-develop-user-stories)
+- [Task 2: Acceptance Criteria](#task-2-acceptance-criteria)
+  - [Selected Story: US01](#selected-story-us01)
+    - [Acceptance Criteria](#acceptance-criteria)
+    - [Given-When-Then](#given-when-then)
+    - [Questions Revealed](#questions-revealed)
+  - [Selected Story: US02](#selected-story-us02)
+    - [Acceptance Criteria](#acceptance-criteria-1)
+    - [Given-When-Then](#given-when-then-1)
+    - [Questions Revealed](#questions-revealed-1)
+  - [Selected Story: US03](#selected-story-us03)
+    - [Acceptance Criteria](#acceptance-criteria-2)
+    - [Given-When-Then](#given-when-then-2)
+    - [Questions Revealed](#questions-revealed-2)
+  - [Selected Story: US04](#selected-story-us04)
+    - [Acceptance Criteria](#acceptance-criteria-3)
+    - [Given-When-Then](#given-when-then-3)
+    - [Questions Revealed](#questions-revealed-3)
+  - [Selected Story: US05](#selected-story-us05)
+    - [Acceptance Criteria](#acceptance-criteria-4)
+    - [Given-When-Then](#given-when-then-4)
+    - [Questions Revealed](#questions-revealed-4)
+  - [Selected Story: US06](#selected-story-us06)
+    - [Acceptance Criteria](#acceptance-criteria-5)
+    - [Given-When-Then](#given-when-then-5)
+    - [Questions Revealed](#questions-revealed-5)
+  - [Selected Story: US07](#selected-story-us07)
+    - [Acceptance Criteria](#acceptance-criteria-6)
+    - [Questions Revealed](#questions-revealed-6)
+  - [Selected Story: US08](#selected-story-us08)
+    - [Acceptance Criteria](#acceptance-criteria-7)
+    - [Questions Revealed](#questions-revealed-7)
+  - [Selected Story: US09](#selected-story-us09)
+    - [Acceptance Criteria](#acceptance-criteria-8)
+    - [Questions Revealed](#questions-revealed-8)
+  - [Selected Story: US10](#selected-story-us10)
+    - [Acceptance Criteria](#acceptance-criteria-9)
+    - [Questions Revealed](#questions-revealed-9)
+  - [Selected Story: US11](#selected-story-us11)
+    - [Acceptance Criteria](#acceptance-criteria-10)
+    - [Questions Revealed](#questions-revealed-10)
+  - [Selected Story: US12](#selected-story-us12)
+    - [Acceptance Criteria](#acceptance-criteria-11)
+    - [Questions Revealed](#questions-revealed-11)
+- [Task 3: Identify Actors and Use Cases](#task-3-identify-actors-and-use-cases)
+  - [Stakeholder Analysis](#stakeholder-analysis)
+  - [Actor or Stakeholder Catalogue](#actor-or-stakeholder-catalogue)
+  - [Actor Decisions](#actor-decisions)
+    - [Student and Service User](#student-and-service-user)
+    - [Placement Staff, Coordinator, Administrator](#placement-staff-coordinator-administrator)
+    - [Third-Party Representative](#third-party-representative)
+    - [Management and Funders](#management-and-funders)
+    - [External Partners](#external-partners)
+    - [Reviewer](#reviewer)
+    - [Data-Protection Officer](#data-protection-officer)
+    - [Supervisor](#supervisor)
+  - [Use-Case Catalogue](#use-case-catalogue)
+- [Task 4: Use-Case Diagram](#task-4-use-case-diagram)
+- [Task 5: Traceability](#task-5-traceability)
+
+<!-- TOC end -->
+
 <br>
 <br>
 
+<!-- TOC --><a name="task-1-develop-user-stories"></a>
 # Task 1: Develop User Stories
 
 | Story ID | Requirement | Role-Goal-Benefit User Story |
@@ -23,11 +90,14 @@
 <br>
 <br>
 
+<!-- TOC --><a name="task-2-acceptance-criteria"></a>
 # Task 2: Acceptance Criteria
 
+<!-- TOC --><a name="selected-story-us01"></a>
 ## Selected Story: US01
 > **US01:** As a student, I want to submit my placement preferences and programme evidence so that my request can be assessed for a placement decision.
 
+<!-- TOC --><a name="acceptance-criteria"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -41,6 +111,7 @@
 | **AC7** | The student can view the current status of the request. |
 
 
+<!-- TOC --><a name="given-when-then"></a>
 ### Given-When-Then
 
 ```gherkin
@@ -52,6 +123,7 @@ And the student is shown that the request has been received
 And the student can view the current status of the request
 ```
 
+<!-- TOC --><a name="questions-revealed"></a>
 ### Questions Revealed
 
 1. What makes a placement opportunity open for requests, and who decides when it opens?
@@ -61,9 +133,11 @@ And the student can view the current status of the request
 
 <br>
 
+<!-- TOC --><a name="selected-story-us02"></a>
 ## Selected Story: US02
 > **US02:** As a student, I want to view the current status of my placement request so that I know whether my application is waiting on information, a decision, or an outside organisation.
 
+<!-- TOC --><a name="acceptance-criteria-1"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -75,6 +149,7 @@ And the student can view the current status of the request
 | **AC5** | When the request status changes, the student sees the updated status. |
 | **AC6** | A request with no recorded decision is not shown as approved. |
 
+<!-- TOC --><a name="given-when-then-1"></a>
 ### Given-When-Then
 
 ```gherkin
@@ -86,6 +161,7 @@ And the student can see that the request is waiting on information
 And the request is not shown as ready for a decision
 ```
 
+<!-- TOC --><a name="questions-revealed-1"></a>
 ### Questions Revealed
 
 1. What status values will students see, and are they the same as the ones for internal staff?
@@ -95,9 +171,11 @@ And the request is not shown as ready for a decision
 
 <br>
 
+<!-- TOC --><a name="selected-story-us03"></a>
 ## Selected Story: US03
 > **US03:** As a placement staff member, I want to view a single shared record for each placement so that I do not have to search across separate records.
 
+<!-- TOC --><a name="acceptance-criteria-2"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -109,6 +187,7 @@ And the request is not shown as ready for a decision
 | **AC5** | An update made by a staff member is visible to other staff members viewing the same record. | 
 | **AC6** | Historical decisions remain visible in the record when new information is added. | 
 
+<!-- TOC --><a name="given-when-then-2"></a>
 ### Given-When-Then
 
 ```gherkin
@@ -121,6 +200,7 @@ And the supervisor allocation is shown in the same record
 And the placement's current status and owner are displayed
 ```
 
+<!-- TOC --><a name="questions-revealed-2"></a>
 ### Questions Revealed
 
 1. What minimum information must every placement record contain?
@@ -130,9 +210,11 @@ And the placement's current status and owner are displayed
 
 <br>
 
+<!-- TOC --><a name="selected-story-us04"></a>
 ## Selected Story: US04
 > **US04:** As a placement staff member, I want to apply priority rules for student placement applications so that I treat each student application consistently.
 
+<!-- TOC --><a name="acceptance-criteria-3"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -143,6 +225,7 @@ And the placement's current status and owner are displayed
 | **AC4** | An exception to a priority rule is recorded with its reason and the staff member who granted the exception. |
 | **AC5** | Recording an exception for one application does not change the priority of other applications. |
 
+<!-- TOC --><a name="given-when-then-3"></a>
 ### Given-When-Then
 
 ```gherkin
@@ -153,6 +236,7 @@ Then both applications receive the same priority
 And the rule applied is recorded against the application
 ```
 
+<!-- TOC --><a name="questions-revealed-3"></a>
 ### Questions Revealed
 
 1. What circumstances should give an application priority?
@@ -162,9 +246,11 @@ And the rule applied is recorded against the application
 
 <br>
 
+<!-- TOC --><a name="selected-story-us05"></a>
 ## Selected Story: US05
 > **US05:** As a placement staff member, I want to verify third-party authorisation permissions so that I do not accidentally disclose any sensitive placement information.
 
+<!-- TOC --><a name="acceptance-criteria-4"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -174,6 +260,7 @@ And the rule applied is recorded against the application
 | **AC3** | Detailed placement information or decisions are not disclosed to a third party without recorded permission. |
 | **AC4** | Each disclosure to a third party is recorded against the student's request. |
 
+<!-- TOC --><a name="given-when-then-4"></a>
 ### Given-When-Then
 
 ```gherkin
@@ -184,6 +271,7 @@ Then placement staff can see that no permission is recorded
 And the decision is not disclosed to the third party
 ```
 
+<!-- TOC --><a name="questions-revealed-4"></a>
 ### Questions Revealed
 
 1. What evidence counts as valid permission for a third party to act for a student?
@@ -193,9 +281,11 @@ And the decision is not disclosed to the third party
 
 <br>
 
+<!-- TOC --><a name="selected-story-us06"></a>
 ## Selected Story: US06
 > **US06:** As an employer, I want to record selection decisions for student applications so that the placement application can proceed once academic approval is also recorded.
 
+<!-- TOC --><a name="acceptance-criteria-5"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -207,6 +297,7 @@ And the decision is not disclosed to the third party
 | **AC5** | Once the employer selection and academic approval are recorded, the placement is shown as able to proceed. |
 | **AC6** | An application with no recorded employer decision is not treated as selected. |
 
+<!-- TOC --><a name="given-when-then-5"></a>
 ### Given-When-Then
 
 ```gherkin
@@ -219,6 +310,7 @@ And the placement is not shown as able to proceed
 And the placement is shown as awaiting academic approval
 ```
 
+<!-- TOC --><a name="questions-revealed-5"></a>
 ### Questions Revealed
 
 1. Can an employer change or withdraw a selection decision after it has been recorded?
@@ -228,9 +320,11 @@ And the placement is shown as awaiting academic approval
 
 <br>
 
+<!-- TOC --><a name="selected-story-us07"></a>
 ## Selected Story: US07
 > **US07:** As a placement staff member, I want to record academic approval decisions for placement so that a placement application can proceed once the employer's selection is also recorded.
 
+<!-- TOC --><a name="acceptance-criteria-6"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -240,15 +334,18 @@ And the placement is shown as awaiting academic approval
 | **AC3** | A placement whose academic approval is refused is not shown as able to proceed. |
 | **AC4** | A placement with no recorded academic decision is not treated as approved. |
 
+<!-- TOC --><a name="questions-revealed-6"></a>
 ### Questions Revealed
 
 1. Who has the authority to give academic approval for placement?
 
 <br>
 
+<!-- TOC --><a name="selected-story-us08"></a>
 ## Selected Story: US08
 > **US08:** As an administrator, I want to release stalled provisional allocations so that a placement is free for other students.
 
+<!-- TOC --><a name="acceptance-criteria-7"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -256,15 +353,18 @@ And the placement is shown as awaiting academic approval
 | **AC1** | The administrator can see which provisional allocations have stalled. |
 | **AC2** | Once a stalled provisional allocation is released, the placement is shown as available for other students. |
 
+<!-- TOC --><a name="questions-revealed-7"></a>
 ### Questions Revealed
 
 1. Should the student be warned before their provisional allocation is released, and given a chance to supply missing information?
 
 <br>
 
+<!-- TOC --><a name="selected-story-us09"></a>
 ## Selected Story: US09
 > **US09:** As a placement coordinator, I want to view provisional placement opportunities so that I don't count provisional places as confirmed capacity, overstating what is available.
 
+<!-- TOC --><a name="acceptance-criteria-8"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -274,15 +374,18 @@ And the placement is shown as awaiting academic approval
 | **AC3** | Provisional opportunities are not counted as confirmed capacity. |
 | **AC4** | When an opportunity is confirmed, it is shown as confirmed and counted as available capacity. |
 
+<!-- TOC --><a name="questions-revealed-8"></a>
 ### Questions Revealed
 
 1. Can students be matched to a provisional opportunity, or only express interest until it is confirmed?
 
 <br>
 
+<!-- TOC --><a name="selected-story-us10"></a>
 ## Selected Story: US10
 > **US10:** As a placement staff member, I want to set an agreed activity status so that everyone can see what's awaiting action and who is responsible.
 
+<!-- TOC --><a name="acceptance-criteria-9"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -292,15 +395,18 @@ And the placement is shown as awaiting academic approval
 | **AC3** | A status change records the date and the staff member who made it. |
 | **AC4** | A status change on its own is not recorded as a formal decision. |
 
+<!-- TOC --><a name="questions-revealed-9"></a>
 ### Questions Revealed
 
 1. Should a reason be recorded when an activity is set to a status, and should those reasons come from an agreed list?
 
 <br>
 
+<!-- TOC --><a name="selected-story-us11"></a>
 ## Selected Story: US11
 > **US11:** As a placement coordinator, I want to view the dependencies between connected placement arrangements so that I can see the knock-on effects prior to making changes.
 
+<!-- TOC --><a name="acceptance-criteria-10"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -310,15 +416,18 @@ And the placement is shown as awaiting academic approval
 | **AC3** | After a change is recorded, the affected linked arrangements are marked for review. |
 | **AC4** | An arrangement with no linked arrangements is shown as having none. |
 
+<!-- TOC --><a name="questions-revealed-10"></a>
 ### Questions Revealed
 
 1. What links arrangements, a shared supervisor, location, resource, or time for example?
 
 <br>
 
+<!-- TOC --><a name="selected-story-us12"></a>
 ## Selected Story: US12
 > **US12:** As a placement staff member, I want to record progress updates off-site so that updates aren't lost or re-entered at a later stage.
 
+<!-- TOC --><a name="acceptance-criteria-11"></a>
 ### Acceptance Criteria
 
 | ID | Observable Acceptance Condition |
@@ -328,6 +437,7 @@ And the placement is shown as awaiting academic approval
 | **AC3** | The staff member can see which of their updates have not yet reached the shared record. |
 | **AC4** | An off-site update does not overwrite a change made to the same record by another staff member. |
 
+<!-- TOC --><a name="questions-revealed-11"></a>
 ### Questions Revealed
 
 1. If two staff members update the same placement while one is off-site, how should the conflict be resolved, and who decides this?
@@ -335,8 +445,10 @@ And the placement is shown as awaiting academic approval
 <br>
 <br>
 
+<!-- TOC --><a name="task-3-identify-actors-and-use-cases"></a>
 # Task 3: Identify Actors and Use Cases
 
+<!-- TOC --><a name="stakeholder-analysis"></a>
 ## Stakeholder Analysis
 
 | ID  | Stakeholder | Goals |
@@ -354,6 +466,7 @@ And the placement is shown as awaiting academic approval
 | **SH11** | **Data-Protection Officer** | Ensure placement information is shared only with authorised parties and only as much as each role requires. | Detailed student information or decisions being disclosed without the required authority, or summary reporting exposing unnecessary personal or commercially sensitive information. |
 | **SH12** | **Supervisor** | Know which placements they are allocated to and be informed when an allocation changes. |
 
+<!-- TOC --><a name="actor-or-stakeholder-catalogue"></a>
 ## Actor or Stakeholder Catalogue
 
 | Actor or Stakeholder | Type | Goal or Interest | Direct Interaction |
@@ -372,32 +485,40 @@ And the placement is shown as awaiting academic approval
 | Supervisor *(A9)* | Offstage Stakeholder | Ensure supervisor allocations are recorded accurately and that changes affecting them are visible | No |
 
 
+<!-- TOC --><a name="actor-decisions"></a>
 ## Actor Decisions
 
+<!-- TOC --><a name="student-and-service-user"></a>
 ### Student and Service User
 An assumption was made that the service user is a student *(A6)*. A quote from the service user (*"I need to know whether I am waiting for information, a decision, or an outside organisation"*) *(P6S2)* suggests an individual whose own placement request is in progress, which describes the student. Therefore, a single Student actor will cover both terms. 
 
+<!-- TOC --><a name="placement-staff-coordinator-administrator"></a>
 ### Placement Staff, Coordinator, Administrator
 Placement staff, coordinators, and administrators all work within the placement office, but have different goals. The staff process records *(P4S1)*, the coordinator oversees provisional opportunities and dependencies *(P5S1, P3S6)*, and the administrator releases stalled allocations *(P6S3)*. They are therefore kept as separate actors, each with its own goals and use cases matching the user stories.
 
+<!-- TOC --><a name="third-party-representative"></a>
 ### Third-Party Representative
 Placement staff verify permissions and the third party contacts staff not the service *(US05, FR05)*. Therefore, third-party representatives are designated as offstage stakeholders. Their interest in not being wrongly refused or delayed, and in student information not being disclosed without authority is still protected *(BR03, NFR02)*.
 
+<!-- TOC --><a name="management-and-funders"></a>
 ### Management and Funders
 Summary reporting for management and funders is a recognised need *(P5S3)*, with Manager stating: "We need consistent reasons for delay, withdrawal and incomplete outcomes." *(P6S6)*. Reporting was not prioritised within the functional requirements for the initial release, so no user story has either party using the service directly.
 
 Therefore, both the management and funders are designated as offstage stakeholders. Their interest in reliable reporting is still protected through *(NFR01, CS3, P6S6, FR10)*.
 
+<!-- TOC --><a name="external-partners"></a>
 ### External Partners
 External partners should receive only the information required for their role *(P5S2)*, with the partner representative stating: "I need the information required for my role, not the complete case history." *(P6S4)*. 
 
 The partner representative is assumed to be an external partner *(A7)*. As no user story in the initial release has external partners using the service directly, they are designated offstage stakeholders. Their interest in receiving role-relevant information is still protected through *(NFR01)* and *(CS3)*
 
+<!-- TOC --><a name="reviewer"></a>
 ### Reviewer
 The reviewer's concern is that: "New information should be added without erasing the basis of earlier decision." *(P6S5)*. However, no user story in the initial release has the reviewer using the service directly. Therefore, the reviewer is designated as an offstage stakeholder.
 
 Their interest in preserving earlier decisions is still protected through *(BR06)* and *(NFR04)*, which apply to every update made by placement staff.
 
+<!-- TOC --><a name="data-protection-officer"></a>
 ### Data-Protection Officer
 The scenario does not name a data-protection role, but raises several concerns about who may receive information and how much *(P2S7, P5S2, P5S3)*, which no listed stakeholder is responsible for.
 
@@ -405,11 +526,13 @@ A data-protection officer is therefore assumed to exist *(A8)*, who will set or 
 
 Their interest is protected through *(NFR01, NFR02, BR03, CS3)*, with the question of what information can be shared and to who *(Q7)* directed to them.
 
+<!-- TOC --><a name="supervisor"></a>
 ### Supervisor
 The scenario mentions supervisor allocation as part of each placement *(P1S2)*, and capacity depends on the people involved *(P3S3)*. Supervisors are assumed to be allocated to placements by placement staff *(A9)*.
 
 No user story in the initial release has them using the service directly. Therefore, they are designated as offstage stakeholders. Whether or not a supervisor is a college staff member or an employer contact is unresolved *(Q8)*, and will impact the domain model.
 
+<!-- TOC --><a name="use-case-catalogue"></a>
 ## Use-Case Catalogue
 
 | ID | Use Case | Primary Actor | Meaningful Outcome | Source Requirement |
@@ -430,12 +553,14 @@ No user story in the initial release has them using the service directly. Theref
 <br>
 <br>
 
+<!-- TOC --><a name="task-4-use-case-diagram"></a>
 # Task 4: Use-Case Diagram
 Source: [`diagrams/use-case-diagram.puml`](../../diagrams/use-case-diagram.puml)
 
 ![Use-case Diagram](../../diagrams/use-case-diagram.png)
 
 
+<!-- TOC --><a name="task-5-traceability"></a>
 # Task 5: Traceability
 
 | Business Problem or Stakeholder Goal | Requirement | User Story | Acceptance Evidence | Use Case |

@@ -1,8 +1,30 @@
+<!-- TOC --><a name="stakeholders-and-requirements"></a>
 # STAKEHOLDERS AND REQUIREMENTS
 
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [STAKEHOLDERS AND REQUIREMENTS](#stakeholders-and-requirements)
+- [Step 1: Extract facts about the current situation](#step-1-extract-facts-about-the-current-situation)
+- [Step 2: Separate Symptoms, Problems, and Consequences](#step-2-separate-symptoms-problems-and-consequences)
+- [Step 3: Worked Business Problem Statement](#step-3-worked-business-problem-statement)
+- [Step 4: Worked System-Purpose Statement](#step-4-worked-system-purpose-statement)
+- [Step 5: Worked Scope](#step-5-worked-scope)
+- [Step 6: Worked Stakeholder Analysis](#step-6-worked-stakeholder-analysis)
+- [Step 7: Worked Functional Requirements](#step-7-worked-functional-requirements)
+- [Step 8: Worked Non-Functional Requirements](#step-8-worked-non-functional-requirements)
+- [Step 9: Rules, Assumptions, Constraints, and Risks](#step-9-rules-assumptions-constraints-and-risks)
+  - [Business Rule](#business-rule)
+  - [Assumptions](#assumptions)
+  - [Constraints](#constraints)
+  - [Risks](#risks)
+- [Step 10: Stakeholder Clarification Questions](#step-10-stakeholder-clarification-questions)
+
+<!-- TOC end -->
+
 <br>
 <br>
 
+<!-- TOC --><a name="step-1-extract-facts-about-the-current-situation"></a>
 # Step 1: Extract facts about the current situation
 
 | Ref | Evidence from the scenario | What the evidence tells you
@@ -30,6 +52,7 @@
 <br>
 <br>
 
+<!-- TOC --><a name="step-2-separate-symptoms-problems-and-consequences"></a>
 # Step 2: Separate Symptoms, Problems, and Consequences
 
 | PR ID | Ref | Observation or Symptom | Underlying Problem | Likely Consequence |
@@ -48,6 +71,7 @@
 <br>
 <br>
 
+<!-- TOC --><a name="step-3-worked-business-problem-statement"></a>
 # Step 3: Worked Business Problem Statement
 
 Kerry College Placement Office currently manages student placement opportunities, applications, decisions, agreements, supervisor allocations, and progress reviews across separate files, email threads, notes, messages, and spreadsheets **(P1S2, P4S1)**. Due to placement information being spread across several records with no single shared record showing a placement's full position **(P1S2, P4S1)**, records may become duplicated or conflicting, and staff may waste time searching across records. 
@@ -63,6 +87,7 @@ These issues increase operational difficulties, placing an extra burden on staff
 <br>
 <br>
 
+<!-- TOC --><a name="step-4-worked-system-purpose-statement"></a>
 # Step 4: Worked System-Purpose Statement
 
 The proposed Student Work Placement Coordination Service will support placement staff, students, employers, coordinators, and administrators, while protecting the interests of third-party representatives and managers, in coordinating placement opportunities, applications, decisions, agreements, supervisor allocations, and progress reviews. 
@@ -76,6 +101,7 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 <br>
 
+<!-- TOC --><a name="step-5-worked-scope"></a>
 # Step 5: Worked Scope
 | ID | In Scope for the Initial Release | Ref | ID |  Out of Scope for the Initial Release | Ref |
 | :-- | :-- | :-- | :-- | :-- | :-- |
@@ -92,6 +118,7 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 <br>
 
+<!-- TOC --><a name="step-6-worked-stakeholder-analysis"></a>
 # Step 6: Worked Stakeholder Analysis
 
 | ID | Ref | Stakeholder | Goals | Concerns | Influence | Expected Interactions |
@@ -115,6 +142,7 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 <br>
 
+<!-- TOC --><a name="step-7-worked-functional-requirements"></a>
 # Step 7: Worked Functional Requirements
 
 | ID | Functional Requirement | MoSCoW | Source / Rationale |
@@ -135,6 +163,7 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 <br>
 
+<!-- TOC --><a name="step-8-worked-non-functional-requirements"></a>
 # Step 8: Worked Non-Functional Requirements
 
 | ID | Ref | Quality Category | Measurable Requirement | Rationale |
@@ -147,8 +176,10 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 <br>
 
+<!-- TOC --><a name="step-9-rules-assumptions-constraints-and-risks"></a>
 # Step 9: Rules, Assumptions, Constraints, and Risks
 
+<!-- TOC --><a name="business-rule"></a>
 ## Business Rule
 | ID | Ref | Category | Statement |
 | :--- | :--- |  :--- | :--- |
@@ -161,6 +192,7 @@ The service will apply standardised status definitions across teams, helping ens
 | **BR07** | P4S4 | Rule  | A formal decision must be distinguished from an operational change, with silence not taken as approval. |
 | **BR08** | P3S5, P6S3, FR08 | Rule | Provisional allocations that remain stalled past the agreed threshold must be reviewed and released. *(Q4)* |
 
+<!-- TOC --><a name="assumptions"></a>
 ## Assumptions
 | ID | Ref | Category | Statement |
 | :--- | :--- |  :--- | :--- |
@@ -175,6 +207,7 @@ The service will apply standardised status definitions across teams, helping ens
 | **A9** | P1S2 | Assumption | Each placement has an allocated supervisor whose allocation is recorded and managed by placement staff. |
 
 
+<!-- TOC --><a name="constraints"></a>
 ## Constraints
 | ID | Ref | Category | Statement |
 | :--- | :--- |  :--- | :--- |
@@ -183,6 +216,7 @@ The service will apply standardised status definitions across teams, helping ens
 | **CS3** | P5S2, P5S3 | Constraint | External partners and funders must access only placement information relevant to their role, excluding unnecessary personal or commercially sensitive details. |
 | **CS4** | P1S2, P4S1 | Constraint | The service starts from records currently held in separate files. |
 
+<!-- TOC --><a name="risks"></a>
 ## Risks
 | ID | Ref | Category | Statement |
 | :--- | :--- |  :--- | :--- |
@@ -194,6 +228,7 @@ The service will apply standardised status definitions across teams, helping ens
 <br>
 <br>
 
+<!-- TOC --><a name="step-10-stakeholder-clarification-questions"></a>
 # Step 10: Stakeholder Clarification Questions
 
     Q1. What information is required before a request is ready for decision?

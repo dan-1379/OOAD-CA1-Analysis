@@ -1,6 +1,25 @@
+<!-- TOC --><a name="ai-usage"></a>
 # AI Usage
 
-## Business Problem Statement - Step 2: Separate Symptoms, Problems, and Consequences
+# Table of Contents
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [AI Usage](#ai-usage)
+- [Table of Contents](#table-of-contents)
+- [Business Problem Statement - Step 2: Separate Symptoms, Problems, and Consequences](#business-problem-statement---step-2-separate-symptoms-problems-and-consequences)
+- [Business Problem Statement - Step 2: Separate Symptoms, Problems, and Consequences](#business-problem-statement---step-2-separate-symptoms-problems-and-consequences-1)
+- [Finding the Objects, Step 3: Readability Key](#finding-the-objects-step-3-readability-key)
+- [Finding the Objects, Final Step: Grouping Converted Words](#finding-the-objects-final-step-grouping-converted-words)
+- [Finding the Objects, Final Step: Grouping Merged Words](#finding-the-objects-final-step-grouping-merged-words)
+- [Finding the Objects, Final Step: Removed Words Bullet Points](#finding-the-objects-final-step-removed-words-bullet-points)
+- [Requirements Catalogue: Verification Evidence](#requirements-catalogue-verification-evidence)
+- [Traceability Matrix: What goes into it](#traceability-matrix-what-goes-into-it)
+- [README Project Key](#readme-project-key)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="business-problem-statement-step-2-separate-symptoms-problems-and-consequences"></a>
+# Business Problem Statement - Step 2: Separate Symptoms, Problems, and Consequences
 
 **PROMPT**
 <br>
@@ -96,7 +115,8 @@ which information may be shared with staff, partners and funders.
 <br>
 <br>
 
-## Business Problem Statement - Step 2: Separate Symptoms, Problems, and Consequences
+<!-- TOC --><a name="business-problem-statement-step-2-separate-symptoms-problems-and-consequences-1"></a>
+# Business Problem Statement - Step 2: Separate Symptoms, Problems, and Consequences
 
 **PROMPT**
 Step 2: Separate Symptoms, Problems, and Consequences
@@ -119,6 +139,7 @@ Close. Work from your Step 1 table rather than the annotations, because Step 1 h
 <br>
 <br>
 
+<!-- TOC --><a name="finding-the-objects-step-3-readability-key"></a>
 # Finding the Objects, Step 3: Readability Key
 **PROMPT** Is there a way to make a coloured key in Markdown — green for keep, orange for merge, orange yellow for convert, red for remove, and blue for requires clarification.
 
@@ -134,10 +155,9 @@ Close. Work from your Step 1 table rather than the annotations, because Step 1 h
 <br>
 <br>
 
+<!-- TOC --><a name="finding-the-objects-final-step-grouping-converted-words"></a>
 # Finding the Objects, Final Step: Grouping Converted Words
 **PROMPT** based on the reference table i am using, can you extract the attributes that i have said are attributes of each of the below and make the list accordingly
-
-based on the reference table i am using, can you extract the attributes that i have said are attributes of each of the below and make the list accordingly
 
 | Candidate | Decision | Final Term or Destination | Justification |
 | :--- | :---: | :--- | :--- |
@@ -269,6 +289,7 @@ Placement and Request share a lot: Incomplete, Essential Information, Incomplete
 <br>
 <br>
 
+<!-- TOC --><a name="finding-the-objects-final-step-grouping-merged-words"></a>
 # Finding the Objects, Final Step: Grouping Merged Words
 **PROMPT**
 
@@ -335,6 +356,7 @@ That’s 25 rows in total, merged into 10 concepts.
 <br>
 <br>
 
+<!-- TOC --><a name="finding-the-objects-final-step-removed-words-bullet-points"></a>
 # Finding the Objects, Final Step: Removed Words Bullet Points
 **PROMPT**
 can you also take my combined table of removed words, and put them into bullet points. for the ones that are duplicates, can you have them only occur once and say (Duplicate) after them. please put them into bullet points 
@@ -544,10 +566,95 @@ That’s 89 bullets from your 97 rows: 71 genuine removals and 18 duplicates.
 
 The (Duplicate) items aren’t really “removed”, because they were kept, merged or converted at their first appearance. For the final list, you might prefer to leave them out of the Removed heading entirely, or give them their own small sub-heading (“Duplicate entries”). Then the Removed list only shows terms you actually rejected.
 
+<!-- TOC --><a name="requirements-catalogue-verification-evidence"></a>
+# Requirements Catalogue: Verification Evidence
 
-# Project Referencing Linking
-Additionally, I want to be forthcoming in my usage of AI to assist me in associated statements I write with earlier evidence. This can be seen throught the entire project with the references beside statements or justifications e.g. *(FR01)*. These statements were written by me, with a lot of the referencing links being assisted with Claude.
+**PROMPT**
+in the brief when it asks for verification in the requirements catalogue, what does this mean and how do you write these
 
-The reason I did this was due to a considerably large body of earlier evidence I would have had to otherwise review to extract any references to confirm my statements. Due to time constraints and other projects, I decided this the best course of action as it allowed me to trace statements to evidence that would otherwise have taken considerably longer to locate.
+**RESPONSE**
+Verification answers the question: *once the service exists, how will we know this requirement has been met?* It supports the brief's quality criterion that requirements must be **testable**. If a verification method cannot be written, the requirement is probably too vague.
 
-For this project, I pasted the entirety of my files into Claude. I subsequently would write the tables and content, and would utilise AI to assist me in referencing content in these files.
+Four standard verification methods (IADT):
+
+| Method | Meaning | Good for |
+| :--- | :--- | :--- |
+| **Test** | Run a defined check with set inputs and compare the result to the expected outcome | Behaviour with a clear pass or fail |
+| **Demonstration** | Show the capability working, without precise measurement | Visible capabilities |
+| **Inspection** | Examine records, documents or outputs | Data or records that must exist or be retained |
+| **Analysis** | Reason or calculate from evidence without running anything | Things that cannot easily be tested directly |
+
+Suggested pattern: **method + what is checked + what counts as a pass**, linked to an existing artefact (acceptance criteria or Gherkin scenario) where possible.
+
+- Weak: "Testing." (no subject, no pass condition)
+- Better: "Acceptance test of US02 AC1–AC6." (linked to criteria that define a pass)
+- Strong: "Test that every disclosure attempt without recorded permission is refused." (method, subject and pass condition)
+
+Additional guidance:
+- Reuse existing acceptance criteria and Gherkin scenarios as verification evidence.
+- Measurable NFRs are verified by checking the stated measure directly (e.g. "100% … 0 lost").
+- Keep verification at analysis level: state *what* is checked, not *how* a test system would be built.
+
+<br>
+<br>
+
+<!-- TOC --><a name="traceability-matrix-what-goes-into-it"></a>
+# Traceability Matrix: What goes into it
+
+**PROMPT**
+what should go into the traceability matrix?
+
+The brief’s description:
+
+Traceability matrix: principal chains from problem/stakeholder goal to requirement, Gherkin/use case and domain concept. Quality check: no major Must Have requirement is isolated.
+
+The lecture notes describe the same idea as a reasoning chain (p. 235): Evidence → Requirement → Use case → Scenario → Example.
+
+So each row follows one requirement from why it exists (evidence, problem, stakeholder) to how it’s realised (rule, story, use case, Gherkin) and what it concerns (domain classes).
+
+Columns
+
+One row per requirement: FR01–FR12, then NFR01–NFR04.
+
+markdown
+| Requirement | MoSCoW | Evidence | Problem | Stakeholder | Rule | User Story | Use Case | Gherkin | Domain Concepts |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+
+Evidence and Problem: your Problems and Consequences table (PR1–PR10 with P-refs) and the Target Problem column you added to the requirements. Stakeholder: the Source / Rationale column (SH IDs).
+Rule: your BR table. Most rules cite the FR or P-ref they relate to, e.g. BR05 → FR06/FR07, BR08 → FR08, BR03 → FR05.
+User Story: US01–US12, which line up with FR01–FR12.
+Use Case: your catalogue. UC numbers match FR numbers.
+Gherkin: only FR01 has scenarios. Every other row gets “—”, which is expected because the brief asks for scenarios from one use case.
+Domain concepts: the classes each requirement involves, e.g. FR06 → Decision, Employer, Placement; FR08 → Placement (allocationDate, status); FR10 → Action, Placement (status).
+NFRs: usually no user story or use case. Link them to the rule, constraint and concept they protect, e.g. NFR04 → BR06 → Decision (supersedes).
+
+<br>
+<br>
+
+<!-- TOC --><a name="readme-project-key"></a>
+# README Project Key
+
+**PROMPT**
+based on all of my files, could you create a key e.g. PR for problem in a table 
+
+**RESPONSE**
+Here’s every ID prefix used across your files, in roughly the order they appear in the dossier:
+
+| Prefix | Meaning |
+| :--- | :--- |
+| P#S# | Scenario evidence (paragraph and sentence) |
+| PR | Problem |
+| IS | In-scope function |
+| OS | Out-of-scope function |
+| SH | Stakeholder |
+| FR | Functional requirement |
+| NFR | Non-functional requirement |
+| BR | Business rule |
+| A | Assumption |
+| CS | Constraint |
+| RS | Risk |
+| Q | Clarification question |
+| US | User story |
+| AC | Acceptance criterion |
+| UC | Use case |
+| SC | Gherkin scenario |
