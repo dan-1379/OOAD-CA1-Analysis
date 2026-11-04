@@ -1,0 +1,87 @@
+# ============================================================
+#  CA2 group repository – .gitignore
+# ============================================================
+
+# ---------- Obsidian ----------
+# Each person's vault settings, open tabs and plugins stay local.
+# This stops your layout changes from showing up as commits or
+# causing merge conflicts for teammates who don't use Obsidian.
+.obsidian/
+.trash/
+
+# If the whole group ends up using Obsidian and you want to share
+# settings, delete ".obsidian/" above and use these lines instead:
+# .obsidian/workspace.json
+# .obsidian/workspace-mobile.json
+# .obsidian/workspaces.json
+# .obsidian/plugins/*/data.json
+
+# ---------- Diagrams ----------
+# Do NOT ignore *.png – the brief requires the exported image to be
+# committed next to each .puml source.
+*.puml.bak
+
+# ---------- Word / Office lock and temp files ----------
+~$*
+*.tmp
+*.wbk
+
+# ---------- Operating systems ----------
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+.Trashes
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*~
+
+# ---------- Editors and IDEs ----------
+.idea/
+*.iml
+.vs/
+*.suo
+*.user
+*.userprefs
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# ---------- Secrets and local config ----------
+.env
+.env.*
+*.local
+
+# ============================================================
+#  CA3 language profile – keep the section for the profile you
+#  pick in 12-technology-decision-record and delete the others.
+# ============================================================
+
+# ---------- Java (Maven / Gradle) ----------
+target/
+build/
+.gradle/
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+hs_err_pid*
+
+# ---------- C# (.NET) ----------
+bin/
+obj/
+TestResults/
+*.nupkg
+packages/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
