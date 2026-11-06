@@ -1,24 +1,23 @@
 # 13 – Project and Contribution Evidence
 
-| Field | Value |
-|---|---|
-| Artefact ID | CA2-13 |
-| Owner | |
-| Version / status | v0.1 – Draft |
-| Last updated | YYYY-MM-DD |
+| Field           | Value                        |
+| --------------- | ---------------------------- |
+| Artefact ID     | CA2-13                       |
+| Owner           | Bartlomiej Jedrzejowski      |
+| Last updated    | 2026-11-06 (YYYY-MM-DD)      |
 | Brief reference | CA2 §4.4, §5, §6, §10, §12.1 |
 
 > **Quality check (CA2 §7):** Supports authorship, review and balanced participation.
 
 ## 1. Links
 
-| Item | Link |
-|---|---|
-| Group repository | |
-| Project board (Trello / Planner) | |
-| CA2 baseline tag | |
-| Product Backlog (authoritative location) | |
-| AI interaction log | `docs/ai-use-log.md` |
+| Item                                     | Link                                                                                         |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Group repository                         | ([Repo](https://github.com/dan-1379/OOAD-CA1-Analysis))                                      |
+| Project board (Trello / Planner)         |                                                                                              |
+| CA2 baseline tag                         |                                                                                              |
+| Product Backlog (authoritative location) |                                                                                              |
+| AI interaction log                       | ([AI Log](https://github.com/dan-1379/OOAD-CA1-Analysis/blob/main/CA2/references/AI-Log.md)) |
 
 ## 2. Scrum-light artefacts
 

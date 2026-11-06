@@ -8,7 +8,7 @@
 | Version / status | v0.1 – Draft |
 | Last updated | YYYY-MM-DD |
 | Inputs from | [01 Suitability matrix](01-scenario-suitability-matrix.md) |
-| Feeds into | [03 Baseline](03-revised-analysis-baseline.md) |
+| Feeds into | [03 Baseline](College/OOAD_CA2/OOAD-CA1-Analysis/CA2/UC03%20-%20View%20Placement%20Record/03-revised-analysis-baseline.md) |
 | Brief reference | CA2 §2 (step 5), §7 |
 
 > **Quality check (CA2 §7):** Shows genuine evaluation rather than adopting one CA1 unchanged.

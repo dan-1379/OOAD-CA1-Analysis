@@ -7,12 +7,12 @@ An in-depth analysis was conducted on each of the scenarios in order to select a
 
 ## Candidate Scenarios
 
-| Team Member | Scenario | Repository Link |
-| --- | --- | --- |
-| Eoin Mannix | [ Scenario 02 - Kerry Mobile Library Support Service](./references/scenarios/02_Kerry_Mobile_Library_Support_Service.md) | [OOAD-ca1-analysis](https://github.com/EoinMannix/OOAD-ca1-analysis) |
-| Bartlomiej Jedrzejowski | [Scenario 03 - Volunteer Transport Coordination Service](./references/scenarios/03_Volunteer_Transport_Coordination_Service.md) | [VolunteerTransportCoordination_Scenario3_OOAD](https://github.com/Bart-Jed/VolunteerTransportCoordination_Scenario3_OOAD) |
-| Isabelle Lynch | [Scenario 05 - Rural Health Appointment Transport Service](./references/scenarios/05_Rural_Health_Appointment_Transport_Service.md) | [RuralHealthAppointmentTransportService](https://github.com/isabellelynch/RuralHealthAppointmentTransportService) |
-| Daniel Courtney | [Scenario 28 - Student Work-Placement Coordination Service](./references/scenarios/28_Student_Work_Placement_Coordination_Service.md) | [OOAD-CA1-Analysis](https://github.com/dan-1379/OOAD-CA1-Analysis) |
+| Team Member             | Scenario                                                                                                                              | Repository Link                                                                                                            |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Eoin Mannix             | [ Scenario 02 - Kerry Mobile Library Support Service](./references/scenarios/02_Kerry_Mobile_Library_Support_Service.md)              | [OOAD-ca1-analysis](https://github.com/EoinMannix/OOAD-ca1-analysis)                                                       |
+| Bartlomiej Jedrzejowski | [Scenario 03 - Volunteer Transport Coordination Service](./references/scenarios/03_Volunteer_Transport_Coordination_Service.md)       | [VolunteerTransportCoordination_Scenario3_OOAD](https://github.com/Bart-Jed/VolunteerTransportCoordination_Scenario3_OOAD) |
+| Isabelle Lynch          | [Scenario 05 - Rural Health Appointment Transport Service](./references/scenarios/05_Rural_Health_Appointment_Transport_Service.md)   | [RuralHealthAppointmentTransportService](https://github.com/isabellelynch/RuralHealthAppointmentTransportService)          |
+| Daniel Courtney         | [Scenario 28 - Student Work-Placement Coordination Service](./references/scenarios/28_Student_Work_Placement_Coordination_Service.md) | [OOAD-CA1-Analysis](https://github.com/dan-1379/OOAD-CA1-Analysis)                                                         |
 
 <br>
 
