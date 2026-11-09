@@ -1,8 +1,6 @@
 SAAD71000  |  CA1 Scenario 28 
 
-# **CA1 Scenario 28: Student Work-Placement Coordination** 
-
-# **Service** 
+# **CA1 Scenario 28: Student Work-Placement Coordination Service** 
 
 **Scenario CA1-28-SWPCS  |  Kerry College Placement Office** 
 

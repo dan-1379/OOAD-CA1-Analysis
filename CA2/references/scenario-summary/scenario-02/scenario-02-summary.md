@@ -2,7 +2,9 @@
 
 **Analysed by:** Daniel Courtney
 
-**Full CA1:** [ Scenario 02 - Kerry Mobile Library Support Service](../scenarios/02_Kerry_Mobile_Library_Support_Service.md)
+**Reviewed by:**
+
+**Full CA1:** [ Scenario 02 - Kerry Mobile Library Support Service](../../scenarios/02_Kerry_Mobile_Library_Support_Service.md)
 
 <br>
 
@@ -74,7 +76,7 @@ Information about the routes, requests, loads and disruptions is spread across s
 
 | Use Case | Primary Actor | Outcome |
 | --- | --- | --- |
-| UC01 Plan Route | Route coordinator |  A route is recorded with its ordered stops|
+| UC01 Plan Route | Route coordinator |  A route is recorded with its ordered stops |
 | UC02 Adjust Route Visit | Route coordinator | The stop order for one visit is changed, or a stop is paused |
 | UC03 Record Request | Branch staff member | A request is recorded and linked to one RouteVisit |
 | UC04 Prepare and Verify Visit Load | Mobile-library staff member | Every item on the load list is loaded or reported |
@@ -85,7 +87,7 @@ Information about the routes, requests, loads and disruptions is spread across s
 
 **Use case model:**
 
-![use-case-model](image.png)
+![use-case-model](../scenario-02/scenario-02-use-case-model.png)
 
 <br>
 
@@ -136,7 +138,7 @@ Information about the routes, requests, loads and disruptions is spread across s
 
 **Domain model**
 
-![domain-model](image-1.png)
+![domain-model](../scenario-02/scenario-02-domain-model.png)
 
 <br>
 
@@ -144,20 +146,51 @@ Information about the routes, requests, loads and disruptions is spread across s
 
 **Candidate slices**
 
-| Slice | Event | Rules | State | Depends on |
-| --- | --- | --- | --- | --- |
-| A |
-| B |
-| C |
-| D |
+| Slice | Event | Rules | Outcome |
+| --- | --- | --- | --- |
+| A | Prepare and Verify Visit Load (UC04) | *BR03*: items for a stop must be linked to the correct route and loaded before departure | Every item on the load list is loaded or reported |
+| B | Record Visit Status (UC05) | BR05: a delayed visit must be told apart from a cancelled visit | A stop is recorded as on time, delayed, moved or cancelled and those affected are told about it.
+| C | Release Requested Item (UC07) | BR04: an item reserved for another borrower must not be given out | Requested material is given to the borrower, or the person who collected it is recorded |
+| D | Reconcile Offline Transactions (UC08) | Offline transactions must be entered without duplicates (in scope; CS2) | Offline loans and returns are entered without duplicates | 
 
 <br>
 
 ## 5. Testability
 
+**Gherkin coverage:** [from CA1: X feature files, X scenarios; which cover failure and boundary cases]
+
+**Rules with clear pass/fail outcomes:**
+- BR03: an item is either loaded before departure or reported.
+- BR04: a reserved item is either released to the right borrower or refused.
+- BR05: a visit is recorded as delayed or cancelled, never both.
+- No duplicate offline transactions: a repeated transaction is either rejected or accepted.
+
+**Boundary cases:**
+- An item on the load list is not found at departure time.
+- A borrower asks for an item reserved for someone else.
+- A stop changes from delayed to cancelled on the same day.
+- The same offline loan is submitted twice during reconciliation.
+- A loan is recorded at a stop with no connection.
+
+**Open questions that block tests:**
+
+| Question | What it blocks |
+| :--- | :--- |
+| Q2 | Who may collect on a borrower's behalf, so the collection permission rule in slice C cannot be fully tested yet |
+| FR09 (provisional) | Who must be notified of a visit change, and how, in slice B |
+
 <br>
 
 ## 6. Comparability
+
+| Slice | Rules | State changes | Failure handling | Relative size |
+| :--- | :--- | :--- | :--- | :--- |
+| A – Prepare and Verify Visit Load | BR03 | LoadListEntry loaded or missing | Item not found before departure | Medium |
+| B – Record Visit Status | BR05 | StopVisit status; Notification created | Invalid status change; no one to notify | Medium |
+| C – Release Requested Item | BR04, collection permission (Q2) | Request fulfilled; Loan created | Reserved for another borrower; no permission to collect | Medium–Large |
+| D – Reconcile Offline Transactions | No duplicates (CS2) | Offline transactions recorded | Duplicate transaction; external system unavailable | Large |
+
+The four slices each apply at least one rule and change state, so none is read-only. Slice D is the heaviest, because duplicate detection and the external system interface add work. Slice C depends on Q2 being answered. UC01 Plan Route and UC03 Record Request were not chosen, because they mainly record data and would be noticeably thinner than these four.
 
 <br>
 
@@ -165,4 +198,8 @@ Information about the routes, requests, loads and disruptions is spread across s
 
 **Strengths:**
 
-**Weaknesses**
+Strong, traceable analysis with meaningful use cases, uncertainty handling and credible staged Git evidence.
+
+**Weaknesses:**
+
+Improve measurable quality requirements, model request allocation and notification recipients explicitly, and review Request-Item multiplicity and collection permission. Add a clearer quantitative boundary example and use more essential use-case wording.

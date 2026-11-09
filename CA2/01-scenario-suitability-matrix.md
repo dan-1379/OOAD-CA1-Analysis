@@ -31,7 +31,7 @@ An in-depth analysis was conducted on each of the scenarios in order to select a
 
 ## Suitability Matrix
 
-> [!NOTE]
+> [!NOTE] 
 > The following scoring scale was used:
 > - 1 = weak
 > - 2 = adequate

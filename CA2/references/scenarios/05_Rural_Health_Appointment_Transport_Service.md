@@ -1,8 +1,6 @@
 SAAD71000  |  CA1 Scenario 05 
 
-# **CA1 Scenario 05: Rural Health Appointment Transport** 
-
-# **Service** 
+# **CA1 Scenario 05: Rural Health Appointment Transport Service** 
 
 ### **Scenario CA1-05-RHATS  |  South Kerry Community Travel Network** 
 
