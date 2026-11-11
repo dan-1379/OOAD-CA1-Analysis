@@ -31,11 +31,69 @@ An in-depth analysis was conducted on each of the scenarios in order to select a
 
 ## Suitability Matrix
 
+### Scoring Guide
+
 > [!NOTE]
-> The following scoring scale was used:
-> - 1 = weak
-> - 2 = adequate
-> - 3 = strong
+> Each member scores every scenario except their own, using the guide below. Every score must be backed by evidence from that scenario's CA1, such as rule, use case, requirement or question IDs, so that the selection is transparent.
+
+### General scale
+
+| Score | Meaning |
+| :---: | :--- |
+| **1 – Weak** | The criterion is mostly not met. Evidence is missing, vague or blocked by unresolved questions. Choosing this scenario would need significant new analysis. |
+| **2 – Adequate** | The criterion is partly met. There is usable evidence, but with clear gaps, assumptions or unresolved questions that the group would need to work around. |
+| **3 – Strong** | The criterion is clearly met. There is specific, confirmed evidence in the CA1, with few or no gaps. |
+
+### Criterion descriptors
+
+| Criterion | 1 – Weak | 2 – Adequate | 3 – Strong |
+| :--- | :--- | :--- | :--- |
+| **Scope** | Boundary unclear; fewer than four meaningful use cases, or so many that it cannot be designed in four weeks. | Boundary mostly clear; enough use cases for four members, but some exclusions are unconfirmed policies or the size is uneven. | Clear in-scope and out-of-scope lists with reasons; enough requirements and use cases for four members without inventing new ones. |
+| **Behaviour** | Mostly storing and viewing data; few or no rules that change an outcome. | Some rules change outcomes, but several are assumed or unconfirmed; limited state changes or failure paths. | Several confirmed rules that change outcomes; records move through clear states; meaningful alternative and failure paths. |
+| **OO Potential** | Fewer than 8 concepts, or concepts that are really attributes, actors or screens; no transaction or history concept. | 8–15 concepts, but some are weak (e.g. actors modelled as classes) or associations are poorly justified. | 8–15 distinct concepts with clear responsibilities; at least one transaction or history concept; associations justified from both ends. |
+| **Sliceability** | Fewer than four use cases that change state or apply rules; slices depend heavily on each other. | Four possible slices, but some overlap, rely on assumed rules or are blocked by open questions. | Four or more independent slices, each with its own input, rule, state change and outcome; dependencies can be replaced by interfaces and fakes. |
+| **Testability** | Rules are vague or unconfirmed; little or no Gherkin; outcomes hard to observe. | Some rules have clear pass/fail outcomes; limited Gherkin coverage; several open questions affect tests. | Most rules have clear pass/fail outcomes; boundary cases are easy to state; Gherkin exists for key use cases; few open questions block tests. |
+| **Comparability** | Slices differ greatly in size, e.g. read-only slices next to rule-heavy ones. | Slices are similar in type, but one is clearly larger or smaller than the others. | All four slices have a similar mix of rules, state changes and failure handling, and similar overall size. |
+
+### How to record a score
+
+Write the score followed by a short piece of evidence, for example:
+
+> `3 – 8 rules, 6 change outcomes (BR01, BR03, BR05–BR08), requests move through stages (P2S4)`
+
+Where members' scores for the same cell differ by more than 1, the group discusses it and records the agreed score in the final matrix.
+
+<br>
+
+**Criterion Rating - Dan**
+
+| Criterion | Scenario 02 | Scenario 03 | Scenario 05 |
+| --- | --- | --- | --- |
+| Scope | **3** - Clear boundary. 13 FRs, 5 measurable NFRs, 8 use cases. Three constraints (CN1–CN3) limit the release, and the library management system sits outside as an external actor. Enough work for four people. | **2** - 13 FRs, 4 measurable NFRs and 12 use cases, which is plenty of work. Several exclusions are unconfirmed policies rather than boundaries: eligibility, membership, priority, journey sharing and waiting time. Two use cases (UC-08, UC-09) have no FR behind them. | **3** - Clear and well-managed boundary: 14 FRs, 6 measurable NFRs, 9 use cases, 10 constraints. Unresolved policies are moved into 17 deferred requirements (DFR01–DFR17) rather than left vague. |
+| Behaviour | **3** - Three of five business rules change an outcome (BR03, BR04, BR05), and more behaviour is spread across the FRs (FR07, FR10, FR12). Records move through clear states: stop visit status, item status, request decision, offline loans. The detailed use case (UC04) has five extensions. | **3** - Three confirmed rules change outcomes (BR-01, BR-02, BR-03). Journeys move through clear stages (FR-13). The detailed use case (UC-04) has six extensions and two exceptions. | **3** - 11 business rules, most of which change outcomes (BR03–BR06, BR08, BR09, BR11). The detailed use case (UC03) has three alternatives and four exceptions. Outward and return stages carry their own status. |
+| OO Potential | **3** - 14 concepts, four of which are named as transactions. Two classes are honestly flagged as provisional. Keeps some ID attributes that would need removing in CA2. | **2** - 12 classes with useful transaction and history concepts (Offer, Journey, DriverCheck). Coordinator is modelled as a class, which is an actor rather than a domain concept. Some multiplicity reasons only explain one end. | **3** - 12 classes with several event and history concepts (JourneyStage, ContactAttempt, ChangeRecord, Cancellation). Multiplicities are read from both ends and linked to FRs, assumptions and use case steps. |
+| Sliceability | **2** - More candidate slices than most scenarios, with several use cases applying rules and changing state. But most of the strongest slices touch an open question (Q1, Q2, Q3, Q6). | **2** - Good candidates, but UC-04 and UC-07 share the same suitability matching, and UC-05 rests on assumed rules (BR-06, BR-07). | **3** - Four slices: UC01, UC03, UC07, UC02. The open policies are deferred explicitly, so the first-release slices can be defined and tested without waiting for answers. |
+| Testability | **2** - Three feature files with five scenarios covering UC03, UC04, UC05 and UC07, including failure and rule cases. NFRs are measurable. But there is no Gherkin for the offline use cases (UC06, UC08), and four of the nine open questions affect rules. | **2** - One feature file with three scenarios: a success, a failure and a good boundary case. All four NFRs are measurable with a stated verification method. But 11 open questions, five of which affect rules (Q-01, Q-02, Q-05, Q-07, Q-10). | **2** - One feature file with five scenarios, including an outline with three boundary cases. Good quality, but it covers only one user story (US03), there are 22 open questions, and BR02 and BR10 are hard to test. |
+| Comparability | **3** - Choosing UC03, UC04, UC05 and UC07 gives four slices of similar size, each with one or two rules, a state change and failure handling. | **2** - UC-04 is the largest slice. The remaining candidates are medium, so any four would include one noticeably heavier slice. | **2** - UC03 is the heaviest slice. Any four would include one noticeably larger slice. |
+| **Total (out of 18)** | **16** | **13** | **16** |
+
+<br>
+
+**Criterion Rating - Eoin**
+
+| Criterion | Scenario 03 | Scenario 05 | Scenario 28 |
+| --- | --- | --- | --- |
+| Scope |  |  |  |
+| Behaviour |  |  |  |
+| OO Potential |  |  |  |
+| Sliceability |  |  |  |
+| Testability |  |  |  |
+| Comparability |  |  |  |
+| **Total (out of 18)** | 0 | 0 | 0 |
+
+<br>
+
+**Criterion Rating - Isabelle**
 
 | Criterion | Scenario 02 | Scenario 03 | Scenario 05 | Scenario 28 |
 | --- | --- | --- | --- | --- |
@@ -46,6 +104,20 @@ An in-depth analysis was conducted on each of the scenarios in order to select a
 | Testability |  |  |  |  |
 | Comparability |  |  |  |  |
 | **Total (out of 18)** | 0 | 0 | 0 | 0 |
+
+<br>
+
+**Criterion Rating - Bart**
+
+| Criterion | Scenario 02 | Scenario 05 | Scenario 28 |
+| --- | --- | --- | --- |
+| Scope |  |  |  |
+| Behaviour |  |  |  |
+| OO Potential |  |  |  |
+| Sliceability |  |  |  |
+| Testability |  |  |  |
+| Comparability |  |  |  |
+| **Total (out of 18)** | 0 | 0 | 0 |
 
 <br>
 
