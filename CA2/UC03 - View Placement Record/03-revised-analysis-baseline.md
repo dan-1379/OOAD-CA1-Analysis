@@ -40,15 +40,15 @@
 
 ### 2.2 In scope
 
-| ID | Function |
-|---|---|
-| | |
+| ID  | Function |
+| --- | -------- |
+|     |          |
 
 ### 2.3 Out of scope
 
 | Item | Reason |
-|---|---|
-| | |
+| ---- | ------ |
+|      |        |
 
 ### 2.4 Dependencies
 
@@ -69,54 +69,54 @@
 ### 3.3 Actor-goal table
 
 | Actor | Goal | Use case |
-|---|---|---|
-| | | |
+| ----- | ---- | -------- |
+|       |      |          |
 
 ## 4. Requirements
 
 ### 4.1 Functional requirements
 
 | FR ID | Requirement | Source / rationale | MoSCoW | Verification | Change from CA1 |
-|---|---|---|---|---|---|
-| | | | | | |
+| ----- | ----------- | ------------------ | ------ | ------------ | --------------- |
+|       |             |                    |        |              |                 |
 
 ### 4.2 Non-functional requirements
 
 | NFR ID | Quality | Measurable criterion | Source | MoSCoW | Verification |
-|---|---|---|---|---|---|
-| | | | | | |
+| ------ | ------- | -------------------- | ------ | ------ | ------------ |
+|        |         |                      |        |        |              |
 
 ## 5. Business rules
 
 | BR ID | Rule | Source / evidence | Status (Confirmed / Assumed) | Related FR |
-|---|---|---|---|---|
-| | | | | |
+| ----- | ---- | ----------------- | ---------------------------- | ---------- |
+|       |      |                   |                              |            |
 
 ## 6. Assumptions, constraints, risks and questions
 
 ### 6.1 Assumptions
 
 | A ID | Assumption | Why needed | Confirm with |
-|---|---|---|---|
-| | | | |
+| ---- | ---------- | ---------- | ------------ |
+|      |            |            |              |
 
 ### 6.2 Constraints
 
 | C ID | Constraint | Source |
-|---|---|---|
-| | | |
+| ---- | ---------- | ------ |
+|      |            |        |
 
 ### 6.3 Risks
 
 | R ID | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|---|
-| | | | | |
+| ---- | ---- | ---------- | ------ | ---------- |
+|      |      |            |        |            |
 
 ### 6.4 Open questions
 
 | Q ID | Question | Why it matters | Owner |
-|---|---|---|---|
-| | | | |
+| ---- | -------- | -------------- | ----- |
+|      |          |                |       |
 
 ## 7. Use cases
 
@@ -126,22 +126,22 @@
 ### 7.2 Use-case catalogue
 
 | UC ID | Name | Primary actor | Goal | Priority | Related FR |
-|---|---|---|---|---|---|
-| | | | | | |
+| ----- | ---- | ------------- | ---- | -------- | ---------- |
+|       |      |               |      |          |            |
 
 ### 7.3 Detailed use cases
 
 #### UC-03 – [View Placement Record](../../CA1/report/06-Use-Case-Model)
 
-| Field                              | Content                |
-| ---------------------------------- | --------------------- |
-| Primary actor                      | Placement Sta          |
-| Supporting actors                                           |
-| Stakeholders and interests                                  |
-| Preconditions                                               |
-| Trigger                                                     |
-| Postconditions (success guaran                              |
-| Related                      FR03, BR06, US03, PR1 , US03,  |
+| Field                      | Content                       |
+| -------------------------- | ----------------------------- |
+| Primary actor              | Placement Staff               |
+| Supporting actors          |                               |
+| Stakeholders and interests |                               |
+| Preconditions              |                               |
+| Trigger                    |                               |
+| Postconditions             |                               |
+| Related                    | FR03, BR06, US03, PR1 , US03, |
 
 **Main success scenario**
 
@@ -161,9 +161,9 @@
 
 Feature files are kept in `features/`.
 
-| SC ID | Feature file | Scenario | Type (Success / Alternative / Failure / Boundary) | UC | FR / BR |
-|---|---|---|---|---|---|
-| | | | | | |
+| SC ID | Feature file | Scenario | Type (Success / Alternative / Failure / Boundary) | UC  | FR / BR |
+| ----- | ------------ | -------- | ------------------------------------------------- | --- | ------- |
+|       |              |          |                                                   |     |         |
 
 ## 9. Refined domain model
 
@@ -173,18 +173,18 @@ Feature files are kept in `features/`.
 
 ### 9.2 Changes from CA1 domain model
 
-| Change | Reason | DR |
-|---|---|---|
-| | | |
+| Change | Reason | DR  |
+| ------ | ------ | --- |
+|        |        |     |
 
 ### 9.3 Glossary
 
 | Term | Definition | Synonyms to avoid | Model element |
-|---|---|---|---|
-| | | | |
+| ---- | ---------- | ----------------- | ------------- |
+|      |            |                   |               |
 
 ## 10. Traceability matrix
 
-| SG | FR / NFR | BR | UC | SC | Domain concept | SSD / CO |
-|---|---|---|---|---|---|---|
-| | | | | | | |
+| SG  | FR / NFR | BR  | UC  | SC  | Domain concept | SSD / CO |
+| --- | -------- | --- | --- | --- | -------------- | -------- |
+|     |          |     |     |     |                |          |
