@@ -95,15 +95,15 @@ Where members' scores for the same cell differ by more than 1, the group discuss
 
 **Criterion Rating - Isabelle**
 
-| Criterion | Scenario 02 | Scenario 03 | Scenario 05 | Scenario 28 |
+| Criterion | Scenario 02 | Scenario 03 | Scenario 28 |
 | --- | --- | --- | --- | --- |
-| Scope |  |  |  |  |
-| Behaviour |  |  |  |  |
-| OO Potential |  |  |  |  |
-| Sliceability |  |  |  |  |
-| Testability |  |  |  |  |
-| Comparability |  |  |  |  |
-| **Total (out of 18)** | 0 | 0 | 0 | 0 |
+| Scope | **3** - Clear in-scope and out-of-scope lists. Three constraints (CS1 to CS3) limit the release to two vehicles and the library management system is kept outside as a supporting actor. There are 8 use cases. The boundary is clear and has reasons and there are enough use cases for four members without having to invent new ones. | **3** - Nine in-scope capabilities (IS1 to IS9) are each traced to a problem ID. Six exclusions (OS1 to OS6) are traced to sceanrio text or assumptions. There are 12FR, 4NFR, 12 use cases and 4 constraints. Every boundary has a stated reason and there is more than enough work for four members. |  |
+| Behaviour | **2** - Only 3 of the 5 rules change an outcome (BR03, BR04, BR05). BR01 (usual day and time) and BR02 (paused stop stays on the route) describe data rather than decisions. StopVisit and LoadListEntry have clear states. There are fewer rules that change outcomes than in the other scenarios and the behaviour is mostly limited to visit status and loading. | **3** - 8 rules, 6 of which change outcomes (BR01, BR03, BR05 to BR08). A request moves from awaiting evidence to ready for decision. A placement moves from provisional to proceeding or released. BR07 means silence is not treated as approval. Most rules are confirmed and drive clear state changes, even though BR02 and BR08 rely on open questions Q2 and Q4. |  |
+| OO Potential | **2** - 14 concepts with four transaction concepts (Loan, RouteVisit, StopVisit, LoadListEntry). CollectionPermission and Notification are provisional and the Request to Item multiplicity is flagged for review. Association reasons only explain one end, for example "A borrower may make no requests or many". The descriptor requires associations justified from both ends. | **2** - 13 concepts, plus Match, which is deferred (Q10). The decision "supersedes" chain is a strong history concept (BR06, NFR04). Supervisor (SH12) has no class even though supervisor allocations are in scope (IS6). Third-party permission (BR03) is not modelled as a class. Associations reasons are mostly one-ended. |  |
+| Sliceability | **2** - Four candidates slices (UC04, UC05, UC07, UC08) each applying a rule and changing state. Slice C is blocked by Q2 (who can collect for a borrower). Slice B's notification rule is provisional (FR09). Slice D's rule comes from a constraint (CS2) rather than a confirmed business rule. This matches the descriptor wording "rely on assumed rules or blocked by open questions". | **2** - Four well-specified slices (UC01, UC07, UC08, UC05) each with full Event, Rule, State and Depends-on columns. Three of the four slices rely on open questions. Slice C needs Q4 (the stalled threshold), slice D needs Q3 (third-party authority) and slice B needs Q5 and Q9. Each would need a working assumption before it could be built. |  |
+| Testability | **2** - BR03, BR04, BR05 and the no duplicates rule all have clear pass/fail outcomes. There are 5 boundary cases such as the same offline loan being submitted twice. The Gherkin coverage line is still a placeholder. There is no quantitative boundary such as a date or capacity limit. Q2 and FR09 block tests in slices B and C. | One feature file for UC01 with 5 scenarios (SC01 to SC05). They cover success, recovery, failure, a boundary Scenario Outline and cancellation. Six rules have clear pass/fail outcomes, plus date boundaries for BR08. Gherkin exists for a key use case, and Q1 already has a working assumption. Q2 only blocks UC04, which is not one of the chosen slices. |  |
+| Comparability | **2** - All four slices apply a rule and change state so none is read-only. Slice D is large because of duplicate detection and the external system interface. Slice C is medium to large, while A and B are medium. The sizes are uneven. | Slices A, C and D are medium, each with one or two rules, a state change and two or three failure cases. Slice B is only slightly heavier (medium to large) because of the version history (BR06). All four slices have a similar mix of rules, state changes and failure handling, and none is read-only. |  |
+| **Total (out of 18)** | 13 | 15 | 0 |
 
 <br>
 
