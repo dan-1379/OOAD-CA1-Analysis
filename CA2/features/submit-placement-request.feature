@@ -1,5 +1,5 @@
 # UC01 - SUBMIT PLACEMENT REQUEST
-# Carried over from the Scenario 28 CA1 (Daniel Courtney, 2026) and revised for the CA2 baseline.
+# Carried over from the Scenario 28 CA1 (Courtney, 2026) and revised for the CA2 baseline.
 # Conventions: scenarios grouped under Rule: blocks naming the business rule (PA02),
 # Scenario Outline for boundary values (PA03), Linked to: line for traceability (PA05).
 # Gherkin syntax from the Cucumber documentation (Cucumber, 2026).
