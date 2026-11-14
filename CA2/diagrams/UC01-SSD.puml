@@ -1,0 +1,40 @@
+@startuml ssd-01-submit-placement-request
+' SSD-01 - UC01 Submit Placement Request
+' Black-box view: the system is a single lifeline.
+' Linked to: UC01, FR01, BR01, US01, SC01-SC05
+title SSD-01 – UC01 Submit Placement Request
+
+actor ":Student" as S
+participant ":Placement Coordination System" as Sys
+participant ":Academic Records" as AR <<external>>
+
+S -> Sys : startRequest(opportunity)
+Sys -> AR : getRequiredEvidence(programme)
+AR --> Sys : requiredEvidence
+Sys --> S : request started, required evidence listed
+
+S -> Sys : enterPreferences(preferences)
+Sys --> S : preferences recorded
+
+loop for each evidence item the student supplies
+  S -> Sys : addEvidence(evidenceItem)
+  Sys --> S : evidence added, missing evidence listed (BR01)
+end
+note right of S
+  4a: if evidence is missing, the student
+  is told what is missing and can add it
+  (SC02). Resume at step 4.
+end note
+
+alt student confirms
+  S -> Sys : confirmRequest()
+  alt all required evidence supplied (BR01)
+    Sys --> S : receipt, status "ready for decision" (SC01, SC04)
+  else required evidence still missing (4b)
+    Sys --> S : receipt, status "awaiting evidence", missing evidence listed (SC03, SC04)
+  end
+else student cancels (5a)
+  S -> Sys : cancelRequest()
+  Sys --> S : submission cancelled, nothing recorded (SC05)
+end
+@enduml
