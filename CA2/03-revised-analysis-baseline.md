@@ -53,12 +53,12 @@ The initial release covers service coordination and records for the Kerry Colleg
 
 ### Constraints
 
-Constraints now record their type and impact as well as their source (changed: PA04).
+Constraints now record their type and impact as well as their source (changed: PA02).
 
 | ID | Constraint | Type | Source | Impact |
 | --- | --- | --- | --- | --- |
 | **CS1** | The initial release is limited to service coordination and records. | Scope | [P5S5](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Bounds the in-scope list ([IS1–IS9](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions)) and excludes [OS1–OS3](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) |
-| **CS2** | The service must accommodate off-site staff operations where connectivity may be unrelaible | Environmental | [P5S4](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Off-site progress must be recorded without a connection and reach the shared record later ([IS9](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions), [FR12](../CA1/requirements/04-Requirements-Catalogue.md#functional-requirements), [NFR03](../CA1/requirements/04-Requirements-Catalogue.md#non-functional-requirements)) |
+| **CS2** | The service must accommodate off-site staff operations where connectivity may be unreliable | Environmental | [P5S4](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Off-site progress must be recorded without a connection and reach the shared record later ([IS9](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions), [FR12](../CA1/requirements/04-Requirements-Catalogue.md#functional-requirements), [NFR03](../CA1/requirements/04-Requirements-Catalogue.md#non-functional-requirements)) |
 | **CS3** | External partners and funders must access only placement information relevant to their role, excluding unnecessary personal or commercially sensitive details. | Legal / data | [P5S2](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P5S3](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Restricts what is shared and reported ([NFR01](../CA1/requirements/04-Requirements-Catalogue.md#non-functional-requirements), [NFR02](../CA1/requirements/04-Requirements-Catalogue.md#non-functional-requirements), [BR03](../CA1/report/05-Rules-Uncertainty-Register.md#business-rules), [Q7](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions)) |
 | **CS4** | The service starts from records currently held in separate files. | Transition | [P1S2](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P4S1](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Existing records must be brought into the single shared placement record ([IS1](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions)) |
 
@@ -127,16 +127,16 @@ The functional and non-functional requirements are carried over from the CA1 wit
 
 | ID | Functional Requirement | MoSCoW | Source / Rationale | Problem | Verification | Change |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **FR01** | The system shall allow a student to submit placement preferences and programme evidence. | Must | Student ([SH1](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS2](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR2](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Gherkin scenarios [SC01–SC05](../CA1/features/submit-placement-request.feature) | - |
+| **FR01** | The system shall allow a student to submit placement preferences and programme evidence. | Must | Student ([SH1](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS2](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR2](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Gherkin scenarios [SC01–SC05](./features/submit-placement-request.feature) | - |
 | **FR02** | The system shall allow a student to view the current status of their placement request. | Must | Student ([SH1](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS2](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR2](../CA1/report/01-Scenario-Interpretation.md#problems--consequences), [PR7](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Acceptance testing of [US02 AC1–AC6](../CA1/requirements/user-stories.md#selected-story-us02) | - |
 | **FR03** | The system shall maintain a single shared record for each placement. | Must | Placement Staff ([SH2](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS1](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR1](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Demonstration of single placement record across all status transitions | - |
 | FR04 | *Moved to Deferred Requirements.* | — | — | [PR3](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | — | Deferred: [RC03](./02-reconciliation-and-expansion-record.md), [EX03](./02-reconciliation-and-expansion-record.md#group-expansions) |
 | **FR05** | The system shall allow placement staff to verify third-party authorisation permissions before disclosing placement information. | Must | Placement Staff ([SH2](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), Third-Party Representative ([SH3](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS4](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR4](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Inspection of permissions records before disclosure | Uses the [Q3](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions) working assumption (changed: [RC04](./02-reconciliation-and-expansion-record.md#scope-and-requirements), [EX01](./02-reconciliation-and-expansion-record.md#group-expansions)) |
 | **FR06** | The system shall allow employers to record selection decisions for student applicants. | Must | Employer ([SH4](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS5](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR10](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Acceptance testing of employer selection decision recording | - |
 | **FR07** | The system shall allow placement staff to record college academic approval decisions for placements. | Must | Placement Staff ([SH2](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS5](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR10](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Acceptance testing of college approval decision recording | - |
-| **FR08** | The system shall allow the administrator to release stalled provisional allocations. | Must | Administrator ([SH9](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS6](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR5](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Acceptance testing of capacity release upon reaching threshold ([Q4](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions)) | "Allocations" renamed to "provisional placements" (changed: [RC11](./02-reconciliation-and-expansion-record.md#use-cases)). Threshold from the [Q4](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions) working assumption (changed: [RC07](./02-reconciliation-and-expansion-record.md#business-rules), [EX02](./02-reconciliation-and-expansion-record.md#group-expansions)) |
+| **FR08** | The system shall allow the administrator to release stalled provisional placements. | Must | Administrator ([SH9](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS6](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR5](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Acceptance testing of capacity release upon reaching threshold ([Q4](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions)) | "Allocations" renamed to "provisional placements" (changed: [RC11](./02-reconciliation-and-expansion-record.md#use-cases)). Threshold from the [Q4](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions) working assumption (changed: [RC07](./02-reconciliation-and-expansion-record.md#business-rules), [EX02](./02-reconciliation-and-expansion-record.md#group-expansions)) |
 | **FR09** | The system shall allow the placement coordinator to view provisional placement opportunities. | Could | Placement Coordinator ([SH5](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS6](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR6](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Demonstration that provisional opportunities are identified separately from confirmed ones | - |
-| **FR10** | The system shall allow placement staff to set an activity status from the agreed set of standardised values. | Must | Placement Staff ([SH2](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS8](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR7](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Inspection of status selection against the agreed status vocabulary | "Activity" renamed to "action" (changed: [RC11](./02-reconciliation-and-expansion-record.md#use-cases)) |
+| **FR10** | The system shall allow placement staff to set an action status from the agreed set of standardised values. | Must | Placement Staff ([SH2](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS8](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR7](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Inspection of status selection against the agreed status vocabulary | "Activity" renamed to "action" (changed: [RC11](./02-reconciliation-and-expansion-record.md#use-cases)) |
 | **FR11** | The system shall display dependencies between connected placement arrangements. | Should | Employer ([SH4](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), Placement Coordinator ([SH5](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS7](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR8](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Demonstration that linked arrangements are shown before a change is made | - |
 | **FR12** | The system shall allow off-site staff to record progress updates when connectivity is unreliable. | Must | Placement Staff ([SH2](../CA1/decisions/Worked-Business-Problem/01_Stakeholders_And_Requirements.md#step-6-worked-stakeholder-analysis)), [IS9](../CA1/report/02-Purpose-Scope-Boundary.md#in-scope-and-out-of-scope-functions) | [PR9](../CA1/report/01-Scenario-Interpretation.md#problems--consequences) | Acceptance test: updates recorded off-site appear in the shared record once connectivity returns | - |
 
@@ -171,12 +171,12 @@ The rules, assumptions, risks and questions are carried over from the CA1 regist
 | --- | --- | --- | --- | --- |
 | **BR01** | [P2S1](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P2S4](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | A request must include the evidence required by the student's programme before it is ready for a decision. | Confirmed, evidence set per programme ([A5](../CA1/report/05-Rules-Uncertainty-Register.md#assumptions)) | - |
 | **BR02** | [P2S5](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Priority and exception handling for applications must follow agreed, documented guidelines rather than inconsistent practice. | Deferred ([Q2](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions)) | Deferred with [FR04](../CA1/requirements/04-Requirements-Catalogue.md#functional-requirements) (deferred: [RC03](./02-reconciliation-and-expansion-record.md#scope-and-requirements)) |
-| **BR03** | [P2S7](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Staff must verify and record third-party permissions prior to the disclosure of any detailed student placement information or decisions. | Confirmed, authority from [A10](../CA1/report/05-Rules-Uncertainty-Register.md#assumptions) | Uses the [Q3](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions) working assumption (changed: [RC04](./02-reconciliation-and-expansion-record.md#scope-and-requirements), [EX01](./02-reconciliation-and-expansion-record.md#group-expansions)) |
+| **BR03** | [P2S7](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Staff must verify and record third-party permissions prior to the disclosure of any detailed student placement information or decisions. | Provisional, authority from [A10](#assumptions) (DR-004 proposed) | Uses the [Q3](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions) working assumption (changed: [RC04](./02-reconciliation-and-expansion-record.md#scope-and-requirements), [EX01](./02-reconciliation-and-expansion-record.md#group-expansions)) |
 | **BR04** | [P3S1](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P3S4](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P6S1](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | A vacancy must not be treated as a match unless programme outcomes, student interests, employer requirements, location, capacity, and potential conflicts have all been satisfied. | Confirmed | Match stays deferred (accepted: [RC08](./02-reconciliation-and-expansion-record.md#business-rules)) |
 | **BR05** | [P3S2](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | A placement cannot proceed unless both employer selection and academic approval are recorded. | Confirmed | - |
 | **BR06** | [P3S7](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P4S6](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P6S5](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Staff must preserve the current confirmed position, while retaining evidence of earlier decision making. | Confirmed | - |
 | **BR07** | [P4S4](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | A formal decision must be distinguished from an operational change, with silence not taken as approval. | Confirmed | - |
-| **BR08** | [P3S5](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P6S3](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [FR08](../CA1/requirements/04-Requirements-Catalogue.md#functional-requirements) | Provisional allocations that remain stalled past the agreed threshold must be reviewed and released. | Confirmed, threshold from [A11](../CA1/report/02-Purpose-Scope-Boundary.md#assumptions) | "Allocations" renamed to "provisional placements" (changed: [RC11](./02-reconciliation-and-expansion-record.md#use-cases)). Threshold from the [Q4](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions) working assumption (changed: [RC07](./02-reconciliation-and-expansion-record.md#business-rules), [EX02](./02-reconciliation-and-expansion-record.md#group-expansions)) |
+| **BR08** | [P3S5](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P6S3](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [FR08](../CA1/requirements/04-Requirements-Catalogue.md#functional-requirements) | Provisional placements that remain stalled past the agreed threshold must be reviewed and released. | Provisional, threshold from [A11](#assumptions) (DR-005 proposed) | "Allocations" renamed to "provisional placements" (changed: [RC11](./02-reconciliation-and-expansion-record.md#use-cases)). Threshold from the [Q4](../CA1/report/05-Rules-Uncertainty-Register.md#clarification-questions) working assumption (changed: [RC07](./02-reconciliation-and-expansion-record.md#business-rules), [EX02](./02-reconciliation-and-expansion-record.md#group-expansions)) |
 
 <br>
 
@@ -203,7 +203,7 @@ The rules, assumptions, risks and questions are carried over from the CA1 regist
 | ID | Ref | Statement | Change |
 | :--- | :--- |  :--- | :--- |
 | **RS1** | [P1S2](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P4S1](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Historical placement records may conflict or be incomplete when moved into the new single shared record. | - |
-| **RS2** | [P2S5](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P2S7](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Staff may continue handling cases inconsistently without agreed priority criteria and third-party authorisation rules. | Partly reduced: authorisation now has a working assumption ([A10]()). Priority remains deferred ([Q2]()) |
+| **RS2** | [P2S5](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md), [P2S7](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Staff may continue handling cases inconsistently without agreed priority criteria and third-party authorisation rules. | Partly reduced: authorisation now has a working assumption ([A10](#assumptions)). Priority remains deferred ([Q2](#clarification-questions)) |
 | **RS3** | [P4S2](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | Task ownership may remain unclear without adopting standardised status definitions. | - |
 | **RS4** | [P5S4](../CA1/decisions/Scenario-Annotation/Annotated-Scenario.md) | If connectivity fails during off-site work, progress updates recorded may not reach the shared record. | - |
 
@@ -216,11 +216,11 @@ The status of each question after reconciliation. Full detail is in the [Reconci
 | ID | Question | Status |
 | --- | --- | --- |
 | **Q1** | What information is required before a request is ready for decision? | Working assumption ([A5](../CA1/report/05-Rules-Uncertainty-Register.md#assumptions)) | 
-| **Q2** | How should eligibility, priority and exceptions should be applied? | Deferred ([FR04](../CA1/requirements/04-Requirements-Catalogue.md#functional-requirements), [BR02](../CA1/report/05-Rules-Uncertainty-Register.md#business-rules)) |
-| **Q3** | What authority is required when another person acts for the requester? | Working assumption ([A10](../CA1/report/05-Rules-Uncertainty-Register.md#assumptions)), [DR-004](./decisions/decision-log.md#decision-log) |
-| **Q4** | When should provisional allocations should expire or become confirmed? | Working assumption ([A11](../CA1/report/05-Rules-Uncertainty-Register.md#assumptions), [DR-005](./decisions/decision-log.md#decision-log)) |
+| **Q2** | How should eligibility, priority and exceptions be applied? | Deferred ([FR04](../CA1/requirements/04-Requirements-Catalogue.md#functional-requirements), [BR02](../CA1/report/05-Rules-Uncertainty-Register.md#business-rules)) |
+| **Q3** | What authority is required when another person acts for the requester? | Working assumption (proposed) ([A10](#assumptions), [DR-004](./decisions/decision-log.md)) |
+| **Q4** | When should provisional allocations expire or become confirmed? | Working assumption (proposed) ([A11](#assumptions), [DR-005](./decisions/decision-log.md)) |
 | **Q5** | Who may approve changes, substitutions or withdrawal? | Open |
-| **Q6** | How should versions, reviews and outstanding actions should be related? | Provisional (domain model) |
+| **Q6** | How should versions, reviews and outstanding actions be related? | Provisional (domain model) |
 | **Q7** | Which information may be shared with staff, partners and funders? | Open |
 | **Q8** | Is a placement supervisor a college staff member, an employer contact, or can it be either? | Provisional (Supervisor concept) |
 | **Q9** | Does "approval" of an advertised opportunity mean the same as academic approval of a placement, or is it a separate approval? | Open |
@@ -247,17 +247,17 @@ The system boundary is the **Student Work-Placement Coordination Service**. Stud
 | **UC03** - **View Placement Record** | Placement Staff | A single placement record is displayed showing all associated details without searching across separate records. | FR03 | Read-only | Not used as a CA3 slice (accepted: RC09) |
 | **UC04** - **Apply Priority Rules** | Placement Staff | Student applications are prioritised consistently, using agreed guidelines, and with the applied rule recorded. | FR04 | Deferred | Deferred with FR04 and BR02 (deferred: RC03) |
 | **UC05** - **Verify Third-Party Permission** | Placement Staff | Placement information is disclosed to a third-party only where the required permission is recorded. | FR05 | Changes state | Uses the Q3 working assumption (changed: RC04) |
-| **UC06** - **Record Selection Decision** | Employer | The employer selection decision for a student application is recorded. | FR06 | Changes state | Shares the BR05 proceed rule with UC07 through one interface (changed: RC10) |
-| **UC07** - **Record Academic Approval** | Placement Staff | The college academic approval decision is recorded for a placement. | FR07 | Changes state | Shares the BR05 proceed rule with UC06 through one interface (changed: RC10) |
-| **UC08** - **Release Stalled Allocation** | Administrator | A stalled provisional allocation is cleared, freeing up capacity for other students. | FR08 | Changes state | Renamed from "Release Stalled Allocation" (changed: RC11). Threshold from the Q4 working assumption (changed: RC07) |
+| **UC06** - **Record Selection Decision** | Employer | The employer selection decision for a student application is recorded. | FR06 | Changes state | Will share the BR05 proceed rule with UC07 through one interface if taken forward (changed: RC10) |
+| **UC07** - **Record Academic Approval** | Placement Staff | The college academic approval decision is recorded for a placement. | FR07 | Changes state | Will share the BR05 proceed rule with UC06 through one interface if taken forward (changed: RC10) |
+| **UC08** - **Release Stalled Provisional Placement** | Administrator | A stalled provisional placement is released, freeing up capacity for other students. | FR08 | Changes state | Renamed from "Release Stalled Allocation" (changed: RC11). Threshold from the proposed Q4 working assumption (changed: RC07) |
 | **UC09** - **View Provisional Opportunities** | Placement Coordinator | Provisional opportunities are identified and not counted as confirmed capacity. | FR09 | Read-only | Not used as a CA3 slice (accepted: RC09) |
-| **UC10** - **Set Activity Status** | Placement Staff | The status of a placement activity is updated using an agreed, standardised term. | FR10 | Changes state | Renamed from "Set Activity Status" (changed: RC11) |
+| **UC10** - **Set Action Status** | Placement Staff | The status of a placement action is updated using an agreed, standardised term. | FR10 | Changes state | Renamed from "Set Activity Status" (changed: RC11) |
 | **UC11** - **Evaluate Change Dependencies** | Placement Coordinator | Connected arrangements are viewed to assess knock-on impacts before making changes. | FR11 | Read-only | Not used as a CA3 slice (accepted: RC09) |
 | **UC12** - **Record Off-Site Progress Updates** | Placement Staff | Progress updates recorded without a reliable connection reach the shared record once the connection returns. | FR12 | Changes state | - |
 
 <br>
 
-The use cases marked **Changes state** are the candidates for CA3 slices. The final four are chosen in the [Prioritised Implementation Catalogue](./04-prioritised-implementation-catalogue.md).
+The use cases marked **Changes state** were the candidates for CA3 slices. UC01 was selected in the [Prioritised Implementation Catalogue](./04-prioritised-implementation-catalogue.md) (DR-003).
 
 <br>
 
@@ -273,13 +273,13 @@ The diagram is updated from the CA1 version to show the renamed use cases (UC08,
 
 ### Detailed Use Cases
 
-Each detailed use case separates extensions (the goal is still reached) from exceptions (the goal fails), and lists the open questions behind each step (added: PA07).
+Each detailed use case separates extensions (the goal is still reached) from exceptions (the goal fails), and lists the open questions behind each step (added: PA04).
 
 
 | Use case | Status | Link |
 | :--- | :--- | :--- |
-| UC01 Submit Placement Request | Carried over from the CA1 (main success scenario, alternative 4a, exceptions 4b and 5a) | [UC01](../CA1/report/06-Use-Case-Model.md#detailed-use-case-preconditions-trigger-success-flow-alternatives-exceptions-postconditions) |
-| Other selected use cases | To be written in Iteration 2 for each use case chosen in the implementation catalogue (added: RC12) | — |
+| UC01 Submit Placement Request | Revised to the extensions/exceptions layout (changed: RC12, PA04) | [UC01](./use-cases/UC01-submit-placement-request.md) |
+| Other use cases | Written only if taken forward (DR-003) | — |
 
 <br>
 
@@ -317,8 +317,7 @@ All twelve stories have observable acceptance criteria, and US01–US06 also hav
 | US08 | "Allocation" reworded to "provisional placement". The threshold in the criteria refers to the working assumption A11 (DR-005) |
 | US10 | "Activity" reworded to "action" |
 
-Acceptance criteria for the stories chosen as CA3 slices will be refined into Gherkin feature files during Iteration 2 (added: RC12).
-
+UC01's acceptance criteria are refined in its Gherkin feature file. Criteria for other stories are refined only if their use case is taken forward (DR-003).
 <br>
 
 ## 7. Gherkin
@@ -336,7 +335,7 @@ All CA2 feature files follow the conventions already used in the CA1 feature fil
 | `Rule:` blocks | Group scenarios under the business rule they test, or the use case guarantee they protect | `Rule: BR01 - A request must include the evidence required…` |
 | `Background:` | Shared starting state for every scenario in the feature | Student S1 enrolled on programme P1 |
 | `Scenario Outline` with `Examples` | Boundary values tested in one table | Evidence complete vs one item missing (SC04) |
-| Day-before boundary | Dates tested just before, at and after a threshold (adopted: PA06) | A provisional placement that becomes stalled the day before review |
+| Day-before boundary | Dates tested just before, at and after a threshold (adopted: PA03) | A provisional placement that becomes stalled the day before review |
 
 <br>
 
@@ -344,8 +343,7 @@ All CA2 feature files follow the conventions already used in the CA1 feature fil
 
 | Feature file | Use case | Scenarios | Rules covered | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| [`submit-placement-request.feature`](features/submit-placement-request.feature) | UC01 | SC1 main success, SC2 missing evidence supplied (4a), SC3 held as awaiting evidence (4b), SC4 evidence boundary outline, SC05 cancelled before confirming (5a) | BR01 | Carried over from the CA1 |
-| One feature file per use case selected for CA3 | Chosen in the [implementation catalogue](./04-prioritised-implementation-catalogue.md) | Success, alternative, failure and boundary scenarios | The rules each use case enforces | To be written in Iteration 2 (added: RC12) |
+| [`submit-placement-request.feature`](features/submit-placement-request.feature) | UC01 | SC01 main success, SC02 missing evidence supplied (4a), SC03 held as awaiting evidence (4b), SC04 evidence boundary outline, SC05 cancelled before confirming (5a) | BR01 | Revised (CL23, CL24) |
 
 <br>
 
@@ -404,7 +402,7 @@ The 19 associations from the [CA1 domain model](../CA1/report/09-Domain-Model.md
 
 ### Transactions
 
-Transaction and history concepts record something that happened, and link the concepts involved (added: PA09).
+Transaction and history concepts record something that happened, and link the concepts involved (added: PA06).
 
 | Transaction | What it links | Requirement |
 | :--- | :--- | :--- |
@@ -427,9 +425,9 @@ Source: [`diagrams/domain-model.puml`](./diagrams/domain-model.puml)
 
 ## 9. Traceability Matrix
 
-    Problem → requirement → user story → use case → Gherkin → domain concept
+*Problem → requirement → user story → use case → Gherkin → domain concept*
 
-Each requirement traces from its scenario evidence and problem, through stakeholders and rules, to the user story, use case, Gherkin and domain concepts that realise it. The matrix is carried over from the CA1, with the reconciliation changes applied. Gherkin for the use cases chosen as CA3 slices is added during Iteration 2.
+Each requirement traces from its scenario evidence and problem, through stakeholders and rules, to the user story, use case, Gherkin and domain concepts that realise it. The matrix is carried over from the CA1, with the reconciliation changes applied. Gherkin for other use cases is added only if they are taken forward (DR-003).
 
 | Requirement | MoSCoW | Evidence | Problem | Stakeholder | Rule / Constraint / Assumption | User Story | Use Case | Gherkin | Domain Concepts | Change |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -454,8 +452,6 @@ Each requirement traces from its scenario evidence and problem, through stakehol
 
 ## 10. Change Log
 
-Every change from the CA1, with its RC, PA or EX ID
-
 Every change from the Scenario 28 CA1 is listed below, with the decision that caused it. Items not listed are carried over unchanged.
 
 | # | Section | Change | Caused by | Items affected |
@@ -463,7 +459,7 @@ Every change from the Scenario 28 CA1 is listed below, with the decision that ca
 | **CL01** | Scope | IS3 marked as partly deferred (priority and exception rules) | RC03, EX03 | IS3 |
 | **CL02** | Scope | IS4 now relies on the Q3 working assumption | RC04, EX01 | IS4 |
 | **CL03** | Scope | IS6 now covers supervisor allocation through the Supervisor concept, and the stalled threshold through the Q4 working assumption | RC07, RC14, EX02 | IS6 |
-| **CL04** | Scope | Constraints given type and impact columns | PA04 | CS1–CS4 |
+| **CL04** | Scope | Constraints given type and impact columns | PA02 | CS1–CS4 |
 | **CL05** | Scope | Typo fixed ("unrelaible" → "unreliable") | Housekeeping | CS2 |
 | **CL06** | Stakeholders and Actors | "Set activity status" and "release stalled allocations" reworded in actor goals | RC11 | Placement Staff, Administrator |
 | **CL07** | Requirements | FR04 moved to Deferred Requirements, keeping its ID | RC03, EX03, PA01 | FR04 |
@@ -479,17 +475,17 @@ Every change from the Scenario 28 CA1 is listed below, with the decision that ca
 | **CL17** | Use Cases | UC08 renamed to Release Stalled Provisional Placement, and UC10 to Set Action Status | RC11 | UC08, UC10, use case diagram |
 | **CL18** | Use Cases | UC04 marked as deferred | RC03 | UC04, use case diagram |
 | **CL19** | Use Cases | Read-only use cases marked as unsuitable for CA3 slices | RC09 | UC02, UC03, UC09, UC11 |
-| **CL20** | Use Cases | UC06 and UC07 share the BR05 proceed rule through one interface | RC10 | UC06, UC07 |
-| **CL21** | Use Cases | Detailed use case layout separates extensions from exceptions, with open issues per step | PA07 | Detailed use cases |
+| **CL20** | Use Cases | UC06 and UC07 to share the BR05 proceed rule through one interface if taken forward | RC10 | UC06, UC07 |
+| **CL21** | Use Cases | Detailed use case layout separates extensions from exceptions, with open issues per step | PA04 | Detailed use cases |
 | **CL22** | User Stories | US08 and US10 renamed, US04 deferred, and acceptance criteria for US05, US08 and US10 updated | RC03, RC04, RC07, RC11 | US04, US05, US08, US10 |
 | **CL23** | Gherkin | Invalid `"""` block before `Feature:` replaced with comments, so the file runs | Housekeeping | submit-placement-request.feature |
 | **CL24** | Gherkin | Scenario tags made consistent (`@SC1`–`@SC4`, `@SC05` → `@SC01`–`@SC05`) | Housekeeping | submit-placement-request.feature, traceability matrix |
-| **CL25** | Gherkin | Day-before boundary pattern adopted for date thresholds | PA06 | Future feature files (BR08) |
+| **CL25** | Gherkin | Day-before boundary pattern adopted for date thresholds | PA03 | Future feature files (BR08) |
 | **CL26** | Domain Model | ID attributes removed (studentNumber, programmeCode, staffNumber) | RC13 | Student, Programme, Staff |
 | **CL27** | Domain Model | `priorityRuleApplied` removed with BR02 | RC03 | Request |
 | **CL28** | Domain Model | Supervisor added as a provisional class. Placement's `supervisor` attribute replaced by the *is supervised by* association | RC14, EX04 | Supervisor, Placement |
 | **CL29** | Domain Model | Permission added, with *grants* and *records* associations | RC15, EX05 | Permission, Student, Staff |
 | **CL30** | Domain Model | Association reasons checked and rewritten where only one end was explained | RC17 | Associations |
-| **CL31** | Domain Model | Transactions table added | PA09 | Domain model |
-| **CL32** | Domain Model | External academic records reached through an interface with a fake adapter | PA08 | Programme, architecture contract |
+| **CL31** | Domain Model | Transactions table added | PA06 | Domain model |
+| **CL32** | Domain Model | External academic records reached through an interface with a fake adapter | PA05 | Programme, architecture contract |
 | **CL33** | Traceability | Matrix updated for every change above, with a Change column | All | Traceability matrix |

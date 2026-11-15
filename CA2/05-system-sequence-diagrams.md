@@ -28,9 +28,11 @@ Only UC01 is designed in CA2 (DR-003), so there is one SSD. It covers the main s
 **Story:** US01
 **Owner:** Isabelle Lynch
 
-### Diagram 
+### Diagram
 
-Source: `diagrams/UC01-SSD.puml`
+![SSD-01 UC01 Submit Placement Request](./diagrams/UC01-SSD.png)
+
+Source: [`diagrams/UC01-SSD.puml`](./diagrams/UC01-SSD.puml)
 
 ### System Boundary and Actors 
 
@@ -38,7 +40,7 @@ Source: `diagrams/UC01-SSD.puml`
 | --- | --- | --- |
 | Student | Primary Actor | Starts the request, supplies preferences and evidence, then confirms or cancels. |
 | Placement Coordination System | System under design (black box) | Receives every system event and returns the outcome. |
-| Academic Records | Supporting actor, external system | Supplies the evidence each programme requires (assumption A3). It is outside the system boundary and is reached through an interface with a fake for testing (PA08). | 
+| Academic Records | Supporting actor, external system | Supplies the evidence each programme requires (assumption A3). It is outside the system boundary and is reached through an interface with a fake for testing (PA05). | 
 
 
 ### System Events 
