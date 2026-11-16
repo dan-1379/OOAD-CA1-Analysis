@@ -134,6 +134,21 @@ Each member scored the three scenarios they did not author, using the scoring gu
 
 <br>
 
+No two raters' scores for the same criterion differed by more than 1, so no scores needed to be discussed and adjusted. The final matrix below uses the average of each criterion across that scenario's raters.
+
+| Criterion | Scenario 02 | Scenario 03 | Scenario 05 | Scenario 28 |
+| --- | :---: | :---: | :---: | :---: |
+| Scope | 3.0 | 2.0 | 3.0 | 3.0 |
+| Behaviour | 2.7 | 3.0 | 3.0 | 3.0 |
+| OO Potential | 2.3 | 2.0 | 3.0 | 2.7 |
+| Sliceability | 2.0 | 2.0 | 3.0 | 2.0 |
+| Testability | 2.0 | 2.0 | 2.0 | 2.7 |
+| Comparability | 2.3 | 2.0 | 2.0 | 2.3 |
+| **Total (out of 18)** | **14.3** | **13.0** | **16.0** | **15.7** |
+| Raters | Dan, Isabelle, Bart | Dan, Eoin | Dan, Eoin, Bart | Eoin, Isabelle, Bart |
+
+<br>
+
 **The group selected Scenario 28.** 
 
 Because the totals could not separate the two highest scoring scenarios (05, 28), the group agreed to decide on the criteria that matter most for CA3, where each member is graded on their own slice.
@@ -146,17 +161,20 @@ Scenario 28 already has a complete feature file for UC01 covering success, recov
 
 Scenario 28's candidate slices are closer in size. In Scenario 05, UC03 Assign Driver and Vehicle is clearly heavier than the other slices, which would make members' CA3 workloads uneven.
 
+> [!NOTE]
+> **Later decision:** After the scenario was selected, the group chose to design one use case in depth, UC01 Submit Placement Request, rather than one use case per member. This is recorded in [DR-003](decisions/decision-log.md) and the [Prioritised Implementation Catalogue](04-prioritised-implementation-catalogue.md). The testability reason above still applies directly, as UC01 is the use case with the complete feature file. The comparability reason now applies to how the work on UC01 is divided, so that each member's CA3 slice remains of similar size.
+
 <br>
 
 **Weaknesses the group accepts and how they will be managed:**
 
-**Sliceability** 
+**Sliceability**
 
-Two candidate slices depend on open questions: the stalled-allocation threshold (Q4) and third-party authority (Q3). The group will record working assumptions for both as decision records in Iteration 1, or adopt the answers given in the lecturer's expansion brief.
+Two candidate slices depended on open questions: the stalled-allocation threshold (Q4, UC08) and third-party authority (Q3, UC05). The group planned to record working assumptions for both in Iteration 1. This was carried into Iteration 2, and with UC01 later selected as the use case to design ([DR-003](decisions/decision-log.md)), neither question now blocks the CA2 design. Both remain recorded as proposed decisions ([DR-004, DR-005](decisions/decision-log.md)) in case UC05 or UC08 is taken forward later.
 
 **OO Potential.** 
 
-One rater noted that Supervisor and third-party permission are not modelled. Both will be reviewed in the revised analysis baseline, and the CA1 ID attributes (studentNumber, staffNumber) will be removed.
+One rater noted that Supervisor and third-party permission were not modelled. Both were added to the revised analysis baseline (RC14, RC15), and the CA1 ID attributes (studentNumber, programmeCode, staffNumber) were removed (RC13).
 
 <br>
 
