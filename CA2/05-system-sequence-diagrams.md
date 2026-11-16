@@ -85,4 +85,5 @@ The system's call to Academic Records (getRequiredEvidence(programme)) is not a 
 4. A request without all required evidence is held, not rejected. This follows the working assumption for Q1 (RC05) and the CA1 assumption behind extension 4b.
 5. Third parties acting for a student are out of scope for this SSD (Q3, outside UC01 under DR-003). The student is the only primary actor.
 6. Parameter types are left abstract. Exact types and DTOs are agreed in the architecture contract and the names here must stay in step with it.
+7. Between `startRequest` and `confirmRequest` the request is in progress. It exists in the system but is not part of the shared placement record until it is confirmed. `cancelRequest` discards it which is how the minimal guarantee holds.
 
