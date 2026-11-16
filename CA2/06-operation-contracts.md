@@ -107,4 +107,17 @@ No new classes, attributes or associations are needed so the domain model is unc
 | BR01 is enforced in exactly one place | Yes: only CO4 sets r.status and only to "ready for decision" when every required evidence item is present. CO3 explicitly leaves the status unchanged |
 | The success guarantee holds on the main success path | Yes: CO4 records r against the Student with status "ready for decision" and shows a receipt and status (SC01, SC02) |
 | Exception 4b ends with an incomplete request held, not rejected | Yes: CO4 sets status "awaiting evidence" and lists the missing items in r.waitingOn (SC03, SC04) |
-| The minimal guarantee holds when the student cancels | Yes: CO5
+| The minimal guarantee holds when the student cancels | Yes: CO5 deletes r and breaks its associations so no partial request is recorded (SC05) |
+| Every SC04 boundary row has a defined outcome | Yes: E1, E2 and E3 or E1 and E2 meet the requirements so "ready for decision". E1 only or no evidence items do not so "awaiting evidence". |
+
+
+## Notes and Assumptions
+
+1. In-progress request. A request is created when the student starts (CO1) so that preferences and evidence have somewhere to be held. Until confirmRequest, it is in progress: it is not part of the shared placement record and has no status visible to the student or staff. It only enters the shared record in CO4. This is how the minimal guarantee ("no partial request is recorded") holds alongside creating r in CO1.
+2. Evidence as an attribute. Evidence is held as the `evidence` attribute of Request, as in the domain model, not as a separate class. `evidence` is treated as a list of items so addEvidence is recorded as an attribute modification. An Evidence class can be added later if CA3 needs to store more about each item, such as an upload date or verification status.
+3. Evidence requirements come from outside the system. Programme.evidenceRequirements is supplied by Academic Records (A3) through an interface with fake for testing (PA05). The contracts read it but never change it. Each programme sets its own requirements (A5, the working assumption for Q1).
+4. Extra evidence is accepted. Evidence that is not required by the programme (E3 in SC04) is still added to r.evidence and does not stop the request reaching "ready for decision".
+5. Held, not rejected. A request confirmed without all required evidence is held as "awaiting evidence" rather than rejected. This follows the working assumption for Q1 (RC05) and open issue OI3.
+6. Opportunity being open is a precondition. What makes an opportunity open is open issue OI1. If the group adds a "not open" exception, CO1 gains a failure outcome and SSD-01 gains a matching branch.
+7. Interests. The domain model also lists `interests` on Request. UC01 and SC01-SC05 do not separate interests from preferences, so they are treated as part of `preferences` in CO2.
+8. Parameter types are left abstract. Exact types and DTOs are agreed in the architecture contract (10) and the names here must stay in step with it.
