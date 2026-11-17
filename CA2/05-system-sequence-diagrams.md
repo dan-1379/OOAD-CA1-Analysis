@@ -5,7 +5,7 @@
 | Artefact ID | CA2-05 |
 | Owner | Isabelle Lynch |
 | Reviewer | Eoin Mannix |
-| Feeds into | 06 Operations contracts, 09 Object-interaction sequence diagrams |
+| Feeds into | 06 Operation contracts, 09 Object-interaction sequence diagrams |
 
 ## Purpose
 
@@ -17,7 +17,7 @@ Only UC01 is designed in CA2 (DR-003), so there is one SSD. It covers the main s
 
 | SSD ID | Use Case | Paths Covered | Gherkin Scenarios | Actors | System Events | Diagram |
 | --- | --- | --- | --- | --- | --- | --- |
-| SSD-01 | UC01 Submit Placement Request | Main success sceanrio, 4a, 4b, 5a | SC01 - SC05 | Student (primary), Academic Records (supporting, external) | startRequest, enterPreferences, addEvidence, confirmRequest, cancelRequest | UC01-SSD |
+| SSD-01 | UC01 Submit Placement Request | Main success scenario, 4a, 4b, 5a | SC01 - SC05 | Student (primary), Academic Records (supporting, external) | startRequest, enterPreferences, addEvidence, confirmRequest, cancelRequest | UC01-SSD |
 
 ## SSD-01-UC01 Submit Placement Request
 
@@ -53,7 +53,7 @@ Source: [`diagrams/UC01-SSD.puml`](./diagrams/UC01-SSD.puml)
 | 4 | confirmRequest() | - | Receipt and request status: *ready for decision* if all required evidence is supplied, otherwise *awaiting evidence* with the missing items listed | 5-7, 4b |
 | 5 | cancelRequest() | - | Submission cancelled, nothing recorded | 5a |
 
-The system's call to Academic Records (getRequiredEvidence(programme)) is not a system event because the student does not trigger it directly. It is shown so the external dependancy is visible at the boundary. It becomes an interface in the architecture contract.
+The system's call to Academic Records (getRequiredEvidence(programme)) is not a system event because the student does not trigger it directly. It is shown so the external dependency is visible at the boundary. It becomes an interface in the architecture contract.
 
 
 ### Alternatives and Failures Shown
@@ -70,9 +70,9 @@ The system's call to Academic Records (getRequiredEvidence(programme)) is not a 
 
 | Check | Result |
 | --- | --- |
-| Every step of the main success scenario appears as a system event or a returned outcome | Yes: steps 1,2,3,5 are systems events, steps 4,6,7 are the system's returned outcomes |
+| Every step of the main success scenario appears as a system event or a returned outcome | Yes: steps 1,2,3,5 are system events, steps 4,6,7 are the system's returned outcomes |
 | Every extension and exception appears as a fragment | Yes: 4a(`loop`), 4b(`inner alt`), 5a(`outer alt`) |
-| Every Gherkin scenario can be traced to a path in the diagram | Yes: SC01-SC05 are labelled on the returned outcomes |
+| Every Gherkin scenario can be traced to a path in the diagram | Yes: SC01, SC03, SC04 and SC05 are labelled on the returned outcomes and SC02 on the 4a note after the `loop` |
 | BR01 is visible where it changes the outcome | Yes: the guard on the `inner alt` and the missing evidence list returned by `addEvidence` | 
 | The minimal guarantee holds on every path | Yes: no path returns *ready for decision* without the required evidence and cancelling records nothing |
 
@@ -86,4 +86,5 @@ The system's call to Academic Records (getRequiredEvidence(programme)) is not a 
 5. Third parties acting for a student are out of scope for this SSD (Q3, outside UC01 under DR-003). The student is the only primary actor.
 6. Parameter types are left abstract. Exact types and DTOs are agreed in the architecture contract and the names here must stay in step with it.
 7. Between `startRequest` and `confirmRequest` the request is in progress. It exists in the system but is not part of the shared placement record until it is confirmed. `cancelRequest` discards it which is how the minimal guarantee holds.
+8. Cancelling is allowed at any point while the request is in progress (after `startRequest`, after `enterPreferences` or during the evidence `loop`), as the CO5 precondition allows. The diagram shows it once, as the alternative to `confirmRequest`, to keep it readable. Every cancel point has the same outcome: nothing is recorded.
 
