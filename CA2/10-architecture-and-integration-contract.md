@@ -29,10 +29,12 @@ Package view
 
 ## 3. Shared types
 
-| Type            | Kind (enum / value object / identifier) | Values or fields | Rule it supports | Used in     |
-| --------------- | --------------------------------------- | ---------------- | ---------------- | ----------- |
-| `RequestStatus` | enum                                    |                  | BR01             | COx, OSD-04 |
-|                 |                                         |                  |                  |             |
+| Type            | Kind       | Values or fields                                                 | Rule it supports | Used in                                                                                                                |
+| --------------- | ---------- | ---------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `RequestStatus` | enum       | `awaiting evidence`,`ready for decision`                         | BR01             | CO4, OSD-04, SC01-SC04                                                                                                 |
+| `EvidenceItem`  | Identifier | `E1`,`E2`,`E3` (feature file background), compared by identifier | BR01             | `Request.evidence`, `Programme.evidenceRequirements`, `addEvidence(evidenceItem)`, `getRequiredEvidence` return value. |
+| `waitingOn`     | pending    | pending                                                          | FR02, BR01       | CO4                                                                                                                    |
+
 
 <br>
 
@@ -40,13 +42,13 @@ Package view
 
 ### IF-01 – `<EvidenceRequirementsProvider>`
 
-| Field                    | Content     |
-| ------------------------ | ----------- |
-| Purpose                  |             |
-| Used by (class from 08)  |             |
-| Realised by              |             |
-| Why an interface (GRASP) |             |
-| Appears in               | OSD-04, COx |
+| Field                    | Content                                                                                                                          |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| Purpose                  | Supplies the evidence items a programme requires                                                                                 |
+| Used by (class from 08)  | Application layer controller                                                                                                     |
+| Realised by              | `AcademicRecordsAdapter`                                                                                                         |
+| Why an interface (GRASP) | Protected Variations: academic records are an external system (A3) that the college may change, so only the adapter would change |
+| Appears in               | SSD-01, OSD-04, OSD-01, CO1 (output), CO3/CO4 (read)                                                                             |
 
 |Operation|Input|Output|Errors|
 |---|---|---|---|
