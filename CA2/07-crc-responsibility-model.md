@@ -165,3 +165,48 @@ This table shows, for each contract, which object receives the operation and whi
 evidenceItem added to r.evidence, status unchanged |
 | CO4 `confirmRequest()` | Handler | 1. `Request.confirm(clock.today())` sets submittedDate, asks `EvidenceRequirements.isMetBy(evidence)` (BR01), and sets status and waitingOn. <br>2. `RequestRepository.save(r)` records r in the shared record. <br>3. `Request.createReceipt()` returns the `Receipt`. <br>4. Handler clears the in-progress request. | submittedDate, status and waitingOn set, r in the shared record |
 | CO5 `cancelRequest()` | Handler | 1. Handler discards r. r was never saved, so nothing is recorded and its links to the Student and Opportunity go with it. | Associations broken, r deleted |
+
+
+## GRASP Decisions and Alternatives Considered
+
+| Decision | Chosen | Alternative Rejected | Reason |
+| --- | --- | --- | --- |
+| Who applies BR01 | `Request.confirm()`, using `EvidenceRequirements` | A separate `EvidenceValidator` service or the handler | The Request holds the evidence, so it is the Information Expert. A separate validator would pull logic out of the Request, and the handler doing it would make it a bloated controller. |
+| Who creates the Request | `Student` | The handler | Creator favours the class that records and has the data for the new object. The domain says a Student *submits* Requests. |
+| Where the evidence requirements come from | Read once at startRequest and held by the Request | Read again from the port at each addEvidence and at confirm | Matches SSD-01 where `getRequiredEvidence` is called only after startRequest. Means the requirements a student is told about at the start are the ones their request is checked against |
+| How the external system is reached | `ProgrammeEvidencePort` with a fake adapter | Calling Academic Records directly from `Request` or the handler | Protected Variations: the domain never depends on the external system and every CA3 slice can be tested with the fake (PA05) |
+| How cancellation records nothing | Only confirmed requests are saved | Saving the request at startRequest and deleting it on cancel | Nothing has to be undone so the minimal guarantee cannot be broken by a failed delete (DR-008) | 
+| Where the date comes from | `Clock` interface | Reading the system clock inside `Request` | Tests can fix the date and check submittedDate |
+
+## GRASP Patterns Used
+
+| Pattern | Where it is applied |
+| --- | --- |
+| Information Expert | `Request` (evidence, missing items, status, BR01), `EvidenceRequirements` (comparison), `Opportunity` (open), `Student` (programme) |
+| Creator | `Student` creates `Request`, `Request` creates `Receipt` |
+| Controller | `SubmitPlacementRequestHandler` receives all five system operations |
+| Low Coupling | Domain classes do not know about repositories, the port or the clock. Only the handler talks to them |
+| High Cohesion | Storage, external access and dates are kept out of `Request` in their own classes |
+| Pure Fabrication | Repositories, fake adapter, `Receipt` |
+| Indirection | `ProgrammeEvidencePort` sits between the system and Academic Records |
+| Protected Variations | `ProgrammeEvidencePort` and `Clock` protect the domain from external change |
+
+## How the Responsibilities Match the Contracts
+
+| Check | Result |
+| --- | --- |
+| Every postcondition in CO1-CO5 is made true by a named object | Yes: see Responsibility Assignment by System Operation |
+| Every system operation is received by one controller | Yes: `SubmitPlacementRequestHandler` | 
+| BR01 is applied in exactly one place | Yes: `Request.confirm().addEvidence` only reports missing items and never sets the status | 
+| The minimal guarantee holds | Yes: only `RequestRepository.save()` puts a request in the shared record and it is called only from confirmRequest |
+| No design class depends directly on an external system | Yes: Academic Records is reached only through `ProgrammeEvidencePort` |
+| Each external dependency in 04 has a fake | Yes: fake evidence adapter, in-memory repositories, fixed clock |
+
+## Responsibilities by Proposed CA3 Slice
+
+This follows the proposed split in DR-007 and changes if that split changes.
+
+| Slice | Main Class and Responsibilities |
+| --- | --- |
+| A - Start request | Handler `startRequest`, `Student` creating `Request`, `Opportunity.isOpen()`, `ProgrammeEvidencePort` and fake adapter |
+| B - Capture preferences and evidence | `Request.recordPreferences()`, `Request.addEvidence()`, `Request.missingEvidence()`, `EvidenceRequirements.missingFrom()` |
