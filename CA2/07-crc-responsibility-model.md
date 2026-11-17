@@ -210,3 +210,15 @@ This follows the proposed split in DR-007 and changes if that split changes.
 | --- | --- |
 | A - Start request | Handler `startRequest`, `Student` creating `Request`, `Opportunity.isOpen()`, `ProgrammeEvidencePort` and fake adapter |
 | B - Capture preferences and evidence | `Request.recordPreferences()`, `Request.addEvidence()`, `Request.missingEvidence()`, `EvidenceRequirements.missingFrom()` |
+| C - Confirm Request | `Request.confirm()`, `EvidenceRequirements.isMetBy()`, `RequestStatus`, `Receipt`, `Clock` |
+| D - Cancel and Record | Handler `confirmRequest` and `cancelRequest` flow, `RequestRepository` and in-memory implementation, in-progress request handling |
+
+
+## Notes and Assumptions
+
+1. Only UC01 is modelled. Following DR-003, only classes with a responsibility in UC01 have CRC cards. Other domain classes get cards when their use cases are deigned.
+2. Programme is outside the system. The domain model's Programme class is not a software class here because academic records stay in existing systems (A3). The system only reads a programme's evidence requirements, held in `EvidenceRequirements`. 
+3. In-progress status is internal. `RequestStatus` includes *in progress* so a Request always has a valid status but it is never visible to students or staff because in-progress requests are not saved (DR-008).
+4. Evidence stays an attribute. Evidence is a list held by `Request`, as in the domain model and 06 Note 2. No Evidence class is added.
+5. What makes an apportunity open is still open (OI1). `Opportunity.isOpen()` currently uses the opportunity's status. If the group agrees a fuller rule, only this method changes.
+6. Method names are provisional. Names such as `recordPreferences`, `missingFrom` and `isMetBy` are proposals for 08 and 09. Exact signatures and types are agreed in the architecture contract (10).
