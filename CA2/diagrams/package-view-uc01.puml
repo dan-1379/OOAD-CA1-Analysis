@@ -1,0 +1,42 @@
+@startuml
+title Package view – UC01 Submit Placement Request
+hide members
+hide circle
+
+package "Presentation" as P {
+  note "No user interface is designed\nin CA2 (brief §1)" as N1
+}
+
+package "Application" as A {
+  class Controller
+}
+
+package "Domain" as D {
+  class Request
+  class Student
+  class Programme
+  class Opportunity
+  enum RequestStatus
+}
+
+package "Ports / Interfaces" as PI {
+  interface ProgrammeEvidencePort
+  interface RequestStore
+}
+
+package "Infrastructure" as I {
+  class AcademicRecordsAdapter
+  class RequestStoreImpl
+}
+
+' Dependencies point inwards (see §2.1)
+P ..> A : system events
+A ..> D
+A ..> PI
+PI ..> D : uses Request
+I ..> D
+
+' Infrastructure implements the ports
+AcademicRecordsAdapter ..|> ProgrammeEvidencePort
+RequestStoreImpl ..|> RequestStore
+@enduml

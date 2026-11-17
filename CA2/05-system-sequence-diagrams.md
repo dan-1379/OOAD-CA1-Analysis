@@ -1,11 +1,11 @@
 # 05 - System Sequence Diagrams
 
-| Field | Value |
-| --------------- | -------------------------------------------------- |
-| Artefact ID | CA2-05 |
-| Owner | Isabelle Lynch |
-| Reviewer | Eoin Mannix |
-| Feeds into | 06 Operations contracts, 09 Object-interaction sequence diagrams |
+| Field       | Value                                                            |
+| ----------- | ---------------------------------------------------------------- |
+| Artefact ID | CA2-05                                                           |
+| Owner       | Isabelle Lynch                                                   |
+| Reviewer    | Eoin Mannix                                                      |
+| Feeds into  | 06 Operations contracts, 09 Object-interaction sequence diagrams |
 
 ## Purpose
 

@@ -20,7 +20,10 @@ Package view
 
 ### 2.1 Dependency rules - GRASP (General Responsibility Assignment Software Patterns)
 
-- 
+- **Dependencies point inwards.** The Domain layer depends on no other layer, so BR01 is enforced in the same way regardless of where evidence requirements come from or how requests are stored (Low Coupling, Layers pattern).
+- **Presentation only speaks to the Application layer.** The five system operations from the SSD arrive at one controller, so the screens contain no business rules (GRASP Controller, Model–View Separation).
+- **The Application layer uses ports, never infrastructure.** The controller asks `ProgrammeEvidencePort` for requirements without knowing it is Academic Records. If the college changes systems, only the adapter changes (Protected Variations).
+- **Infrastructure implements ports, and nothing depends on infrastructure.** The Academic Records adapter and the store implementation can be swapped without touching the domain or the controller (Indirection).
 
 <br>
 
