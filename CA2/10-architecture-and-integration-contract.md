@@ -16,13 +16,13 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 
 ![Package view](diagrams/package-view-uc01.png)
 
-| Layer / package    | Responsibility                                                         | Contains                                                                                                                                    | May depend on                   | Must not depend on                        |
-| ------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ----------------------------------------- |
-| Presentation       | Show screens and take student's input                                  | Nothing designed, no UI in CA2 scope                                                                                                        | Application                     | Domain, Ports, Infrastructure             |
-| Application        | Coordinates work and receives the five system operations from the SSD. | `SubmitPlacementRequestHandler` (see [07](./07-crc-responsibility-model.md))                                                                | Domain, Ports                   | Presentation, Infrastructure              |
-| Domain             | Holds business data and enforces BR01.                                 | `Request`, `Student`, `Opportunity`, `EvidenceRequirements`, `Receipt`, `RequestStatus`                                                     | None                            | All other layers                          |
-| Ports / Interfaces | Describes what the design needs from outside, without saying how.      | `ProgrammeEvidencePort` (IF-01), `RequestRepository` (IF-02), `StudentRepository` (IF-03), `OpportunityRepository` (IF-04), `Clock` (IF-05) | Domain                          | Application, Presentation, Infrastructure |
-| Infrastructure     | Connects to real outside systems (named, not built).                   | `AcademicRecordsAdapter`, repository implementations, system clock                                                                          | Ports (implements them), Domain | Application, Presentation                 |
+| Layer / package    | Responsibility                                                         | Contains                                                                                                                                                | May depend on                   | Must not depend on                        |
+| ------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ----------------------------------------- |
+| Presentation       | Show screens and take student's input                                  | Nothing designed, no UI in CA2 scope                                                                                                                    | Application                     | Domain, Ports, Infrastructure             |
+| Application        | Coordinates work and receives the five system operations from the SSD. | `SubmitPlacementRequestHandler` (see [07](./07-crc-responsibility-model.md))                                                                            | Domain, Ports                   | Presentation, Infrastructure              |
+| Domain             | Holds business data and enforces BR01.                                 | `Request`, `Student`, `Opportunity`, `EvidenceRequirements`, `Receipt`, `RequestStatus`                                                                 | None                            | All other layers                          |
+| Ports / Interfaces | Describes what the design needs from outside, without saying how.      | `ProgrammeEvidencePort` (IF-01), `RequestRepository` (IF-02), `StudentRepository` (IF-03), `OpportunityRepository` (IF-04), `Clock` (IF-05)             | Domain                          | Application, Presentation, Infrastructure |
+| Infrastructure     | Connects to real outside systems (named, not built).                   | `AcademicRecordsAdapter`, `PlacementRecordRequestRepository`, `PlacementRecordStudentRepository`, `PlacementRecordOpportunityRepository`, `SystemClock` | Ports (implements them), Domain | Application, Presentation                 |
 
 ### 2.1 Dependency rules
 
@@ -56,9 +56,9 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 | Why an interface | Protected Variations: academic records are an external system (A3) that the college may change, so only the adapter would change |
 | Appears in       | SSD-01, OSD-01, CO1 (output)                                                                                                     |
 
-| Operation                        | Input                         | Output                 | Errors |
-| -------------------------------- | ----------------------------- | ---------------------- | ------ |
-| `getRequiredEvidence(programme)` | Student's programme reference | `EvidenceRequirements` | `TBC`  |
+| Operation                        | Input                         | Output                 | Errors                         |
+| -------------------------------- | ----------------------------- | ---------------------- | ------------------------------ |
+| `getRequiredEvidence(programme)` | Student's programme reference | `EvidenceRequirements` | `ACADEMIC_RECORDS_UNAVAILABLE` |
 
 ### IF-02 – `RequestRepository`
 
@@ -70,9 +70,9 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 | Why an interface | Pure Fabrication: no domain class is a natural home for storage, so a separate class holds it. `Request` stays focused on its own responsibilities (evidence, status, BR01) (High Cohesion) and does not depend on how requests are stored (Low Coupling). |
 | Appears in       | OSD-04, CO4                                                                                                                                                                                                                                                |
 
-| Operation       | Input                   | Output | Errors |
-| --------------- | ----------------------- | ------ | ------ |
-| `save(request)` | The confirmed `Request` | none   | `TBC`  |
+| Operation       | Input                   | Output | Errors        |
+| --------------- | ----------------------- | ------ | ------------- |
+| `save(request)` | The confirmed `Request` | none   | `CANNOT_SAVE` |
 
 ### IF-03 – `StudentRepository`
 
@@ -80,41 +80,41 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 | ---------------- | --------------------------------------------------------------------------------------- |
 | Purpose          | Finds the identified student by reference.                                              |
 | Used by          | `SubmitPlacementRequestHandler`                                                         |
-| Realised by      | `PlacementRecordRequestRepository`                                                      |
+| Realised by      | `PlacementRecordStudentRepository`                                                      |
 | Why an interface | Pure Fabrication: no domain class should know how students are looked up (Low Coupling) |
-| Appears in       | OSD-01, CO1 (precondition)                                                              |
+| Appears in       | OSD-01, CO1 (precondition), pending 07 update.                                          |
 
-| Operation                     | Input             | Output | Errors |
-| ----------------------------- | ----------------- | ------ | ------ |
-| `findByReference(studentRef)` | Student reference |        | `TBC`  |
+| Operation                     | Input             | Output    | Errors              |
+| ----------------------------- | ----------------- | --------- | ------------------- |
+| `findByReference(studentRef)` | Student reference | `Student` | `STUDENT_NOT_FOUND` |
 
 ### IF-04 – `OpportunityRepository`
 
-| Field                    | Content                                                                                      |
-| ------------------------ | -------------------------------------------------------------------------------------------- |
-| Purpose                  | Finds the requested opportunity by reference.                                                |
-| Used by                  | `SubmitPlacementRequestHandler`                                                              |
-| Realised by              | `PlacementRecordRequestRepository`                                                           |
-| Why an interface (GRASP) | Pure Fabrication: no domain class should know how opportunities are looked up (Low Coupling) |
-| Appears in               | OSD-01, CO1 (step 1)                                                                         |
+| Field            | Content                                                                                      |
+| ---------------- | -------------------------------------------------------------------------------------------- |
+| Purpose          | Finds the requested opportunity by reference.                                                |
+| Used by          | `SubmitPlacementRequestHandler`                                                              |
+| Realised by      | `PlacementRecordOpportunityRepository`                                                       |
+| Why an interface | Pure Fabrication: no domain class should know how opportunities are looked up (Low Coupling) |
+| Appears in       | OSD-01, CO1 (step 1)                                                                         |
 
-| Operation | Input | Output | Errors |
-| --------- | ----- | ------ | ------ |
-|           |       |        |        |
+| Operation                         | Input                 | Output        | Errors                  |
+| --------------------------------- | --------------------- | ------------- | ----------------------- |
+| `findByReference(opportunityRef)` | Opportunity reference | `Opportunity` | `OPPORTUNITY_NOT_FOUND` |
 
 ### IF-05 – `Clock`
 
-| Field                    | Content       |
-| ------------------------ | ------------- |
-| Purpose                  |               |
-| Used by (class from 08)  |               |
-| Realised by              |               |
-| Why an interface (GRASP) |               |
-| Appears in               | OSD-04, CO-xx |
+| Field            | Content                                                                                                                                    |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Purpose          | Supplies the current date.                                                                                                                 |
+| Used by          | `SubmitPlacementRequestHandler`                                                                                                            |
+| Realised by      | `SystemClock`                                                                                                                              |
+| Why an interface | Protected Variations: the date is an external concern so the handler depends on this interface rather than on the operating system's clock |
+| Appears in       | OSD-04, CO4                                                                                                                                |
 
-| Operation | Input | Output | Errors |
-| --------- | ----- | ------ | ------ |
-|           |       |        |        |
+| Operation | Input | Output       | Errors |
+| --------- | ----- | ------------ | ------ |
+| `today()` | none  | Current date | none   |
 
 <br>
 
@@ -122,23 +122,31 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 
 ### 5.1 Inputs and outputs per system operation
 
-| System operation (from 05)      | Input | Output / result   | Contract |
-| ------------------------------- | ----- | ----------------- | -------- |
-| `startRequest(opportunity)`     |       |                   | CO1      |
-| `enterPreferences(preferences)` |       |                   | CO2      |
-| `addEvidence(evidenceItem)`     |       |                   | CO3      |
-| `confirmRequest()`              |       | Returns `Receipt` | CO4      |
-| `cancelRequest()`               |       |                   | CO5      |
+| System operation (from 05)      | Input                  | Output / result                                            | Contract |
+| ------------------------------- | ---------------------- | ---------------------------------------------------------- | -------- |
+| `startRequest(opportunity)`     | Opportunity reference. | `EvidenceRequirements`.                                    | CO1      |
+| `enterPreferences(preferences)` | Student's preferences. | Acknowledgement that the preferences were recorded.        | CO2      |
+| `addEvidence(evidenceItem)`     | One `EvidenceItem`     | List of `EvidenceItem`s still missing (empty if complete)  | CO3      |
+| `confirmRequest()`              | none                   | `Receipt`.                                                 | CO4      |
+| `cancelRequest()`               | none                   | Acknowledges submission cancellation. Nothing is recorded. | CO5      |
 
 ### 5.2 Result convention
+The rule:
+What happens on an error:
+The key distinction:
+Why:
 
-<!-- How an operation reports success vs a controlled failure, e.g. a result object with outcome + reason vs throwing exceptions. State the choice and why (DR-010). --> <br>
 
 ## 6. Error conventions
 
-| Error                  | Meaning | Raised by (operation) | Rule / extension  | Gherkin |
-| ---------------------- | ------- | --------------------- | ----------------- | ------- |
-| `OPPORTUNITY_NOT_OPEN` |         |                       | UC01 precondition |         |
+| Error                          | Meaning                                                                                                        | Raised by                                                            | Source                               | Gherkin |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------ | ------- |
+| `STUDENT_NOT_FOUND`            | The system cannot find the student. Possibly doesn't exist                                                     | `startRequest`                                                       | UC01 precondition. CO1 precondition. | none    |
+| `ACADEMIC_RECORDS_UNAVAILABLE` | The system cannot reach Academic Records                                                                       | `startRequest`                                                       | none (new in 10, comes from A3)      | none    |
+| `NO_REQUEST_IN_PROGRESS`       | There is no request in progress (e.g. `addEvidence` called before `startRequest`)                              | `enterPreferences`, `addEvidence`, `confirmRequest`, `cancelRequest` | CO2–CO5 preconditions.               | none    |
+| `CANNOT_SAVE`                  | The shared placement record could not be written to. No `Receipt` is issued and the request stays in progress. | `confirmRequest`                                                     | UC01 minimal guarantee. CO4.         | none    |
+| `OPPORTUNITY_NOT_FOUND`        | The system cannot find the opportunity. Possibly doesn't exist                                                 | `startRequest`                                                       | UC01 precondition. CO1 precondition. | none    |
+| `OPPORTUNITY_NOT_OPEN`         | Opportunity exists but is not open for requests.                                                               | Not raised in UC01. Reserved until OI1 is resolved.                  | UC01 precondition. Open issue OI1.   | none    |
 
 
 <br>
