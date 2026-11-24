@@ -1,4 +1,10 @@
 # 10 – Design Structure and Shared Interfaces
+| Field        | Value                   |
+| ------------ | ----------------------- |
+| Owner        | Bartlomiej Jedrzejowski |
+| Reviewer     | Daniel Courtney         |
+| Last updated | 2026-11-24              |
+
 
 ## 1. Purpose
 
@@ -6,19 +12,19 @@ This file shows the layered structure of the UC01 `Submit Placement Request` des
 
 ## 2. Package / layer view
 
-Source: `diagrams/package-view-uc01.puml`
+Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 
-Package view
+![Package view](diagrams/package-view-uc01.png)
 
-| Layer / package    | Responsibility                                                       | Contains (classes from 08)                                                    | May depend on                   | Must not depend on                        |
-| ------------------ | -------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------- | ----------------------------------------- |
-| Presentation       | Show screens and take student's input                                | Nothing designed, no UI in CA2 scope                                          | Application                     | Domain, Ports, Infrastructure             |
-| Application        | Coordinate work and receive five system operations from the SSD.     | The controller. See [07](./07-crc-responsibility-model.md)                    | Domain, Ports                   | Presentation, Infrastructure              |
-| Domain             | Hold business data and enforce BR01.                                 | Classes:<br>`Request`, `Student`, `Programme`, `Opportunity`, `RequestStatus` | None                            | All other Layers                          |
-| Ports / Interfaces | Describe what the design needs from the outside, without saying how. | `ProgrammeEvidencePort`(IF-01) and Request Store (IF-02, once agreed).        | Domain                          | Application, Presentation, Infrastructure |
-| Infrastructure     | Connect to real outside systems                                      | Academic Records adapter and request store implementation                     | Ports (Implements them), Domain | Application, Presentation                 |
+| Layer / package    | Responsibility                                                         | Contains                                                                                                                                    | May depend on                   | Must not depend on                        |
+| ------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ----------------------------------------- |
+| Presentation       | Show screens and take student's input                                  | Nothing designed, no UI in CA2 scope                                                                                                        | Application                     | Domain, Ports, Infrastructure             |
+| Application        | Coordinates work and receives the five system operations from the SSD. | `SubmitPlacementRequestHandler` (see [07](./07-crc-responsibility-model.md))                                                                | Domain, Ports                   | Presentation, Infrastructure              |
+| Domain             | Holds business data and enforces BR01.                                 | `Request`, `Student`, `Opportunity`, `EvidenceRequirements`, `Receipt`, `RequestStatus`                                                     | None                            | All other layers                          |
+| Ports / Interfaces | Describes what the design needs from outside, without saying how.      | `ProgrammeEvidencePort` (IF-01), `RequestRepository` (IF-02), `StudentRepository` (IF-03), `OpportunityRepository` (IF-04), `Clock` (IF-05) | Domain                          | Application, Presentation, Infrastructure |
+| Infrastructure     | Connects to real outside systems (named, not built).                   | `AcademicRecordsAdapter`, repository implementations, system clock                                                                          | Ports (implements them), Domain | Application, Presentation                 |
 
-### 2.1 Dependency rules - GRASP (General Responsibility Assignment Software Patterns)
+### 2.1 Dependency rules
 
 - **Dependencies point inwards.** The Domain layer depends on no other layer, so BR01 is enforced in the same way regardless of where evidence requirements come from or how requests are stored (Low Coupling, Layers pattern).
 - **Presentation only speaks to the Application layer.** The five system operations from the SSD arrive at one controller, so the screens contain no business rules (GRASP Controller, Model–View Separation).
@@ -29,44 +35,86 @@ Package view
 
 ## 3. Shared types
 
-| Type            | Kind       | Values or fields                                                 | Rule it supports | Used in                                                                                                                |
-| --------------- | ---------- | ---------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `RequestStatus` | enum       | `awaiting evidence`,`ready for decision`                         | BR01             | CO4, OSD-04, SC01-SC04                                                                                                 |
-| `EvidenceItem`  | Identifier | `E1`,`E2`,`E3` (feature file background), compared by identifier | BR01             | `Request.evidence`, `Programme.evidenceRequirements`, `addEvidence(evidenceItem)`, `getRequiredEvidence` return value. |
-| `waitingOn`     | pending    | pending                                                          | FR02, BR01       | CO4                                                                                                                    |
+| Type            | Kind       | Values or fields                                                                                     | Rule it supports | Used in                                                                                                                    |
+| --------------- | ---------- | ---------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `RequestStatus` | enum       | `in progress` (internal, never shown – 06 CO1, 07 note 3), `awaiting evidence`, `ready for decision` | BR01             | CO1, CO3, CO4, OSD-04, SC01–SC04                                                                                           |
+| `EvidenceItem`  | identifier | `E1`, `E2`, `E3` (feature file Background), compared by identifier                                   | BR01             | `Request.evidence`, `EvidenceRequirements`, `addEvidence(evidenceItem)`, `getRequiredEvidence` result, CO3, CO4, SC02–SC04 |
+| `waitingOn`     | pending    | pending – see issue #<n>                                                                             | FR02, BR01       | CO4                                                                                                                        |
 
 
 <br>
 
 ## 4. Interface catalogue
 
-### IF-01 – `<EvidenceRequirementsProvider>`
+### IF-01 – `ProgrammeEvidencePort`
 
-| Field                    | Content                                                                                                                          |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| Purpose                  | Supplies the evidence items a programme requires                                                                                 |
-| Used by (class from 08)  | Application layer controller                                                                                                     |
-| Realised by              | `AcademicRecordsAdapter`                                                                                                         |
-| Why an interface (GRASP) | Protected Variations: academic records are an external system (A3) that the college may change, so only the adapter would change |
-| Appears in               | SSD-01, OSD-04, OSD-01, CO1 (output), CO3/CO4 (read)                                                                             |
+| Field            | Content                                                                                                                          |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Purpose          | Supplies the evidence items a programme requires                                                                                 |
+| Used by          | `SubmitPlacementRequestHandler`                                                                                                  |
+| Realised by      | `AcademicRecordsAdapter`                                                                                                         |
+| Why an interface | Protected Variations: academic records are an external system (A3) that the college may change, so only the adapter would change |
+| Appears in       | SSD-01, OSD-01, CO1 (output)                                                                                                     |
 
-|Operation|Input|Output|Errors|
-|---|---|---|---|
-|||||
+| Operation                        | Input                         | Output                 | Errors |
+| -------------------------------- | ----------------------------- | ---------------------- | ------ |
+| `getRequiredEvidence(programme)` | Student's programme reference | `EvidenceRequirements` | `TBC`  |
 
-### IF-02 – `<PlacementRequestStore>`
+### IF-02 – `RequestRepository`
 
-|Field|Content|
-|---|---|
-|Purpose||
-|Used by (class from 08)||
-|Realised by||
-|Why an interface (GRASP)||
-|Appears in|OSD-04, CO-xx|
+| Field            | Content                                                                                                                                                                                                                                                    |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Purpose          | Stores confirmed requests in the single shared placement record.                                                                                                                                                                                           |
+| Used by          | `SubmitPlacementRequestHandler`                                                                                                                                                                                                                            |
+| Realised by      | `PlacementRecordRequestRepository`                                                                                                                                                                                                                         |
+| Why an interface | Pure Fabrication: no domain class is a natural home for storage, so a separate class holds it. `Request` stays focused on its own responsibilities (evidence, status, BR01) (High Cohesion) and does not depend on how requests are stored (Low Coupling). |
+| Appears in       | OSD-04, CO4                                                                                                                                                                                                                                                |
 
-|Operation|Input|Output|Errors|
-|---|---|---|---|
-|||||
+| Operation       | Input                   | Output | Errors |
+| --------------- | ----------------------- | ------ | ------ |
+| `save(request)` | The confirmed `Request` | none   | `TBC`  |
+
+### IF-03 – `StudentRepository`
+
+| Field            | Content                                                                                 |
+| ---------------- | --------------------------------------------------------------------------------------- |
+| Purpose          | Finds the identified student by reference.                                              |
+| Used by          | `SubmitPlacementRequestHandler`                                                         |
+| Realised by      | `PlacementRecordRequestRepository`                                                      |
+| Why an interface | Pure Fabrication: no domain class should know how students are looked up (Low Coupling) |
+| Appears in       | OSD-01, CO1 (precondition)                                                              |
+
+| Operation                     | Input             | Output | Errors |
+| ----------------------------- | ----------------- | ------ | ------ |
+| `findByReference(studentRef)` | Student reference |        | `TBC`  |
+
+### IF-04 – `OpportunityRepository`
+
+| Field                    | Content                                                                                      |
+| ------------------------ | -------------------------------------------------------------------------------------------- |
+| Purpose                  | Finds the requested opportunity by reference.                                                |
+| Used by                  | `SubmitPlacementRequestHandler`                                                              |
+| Realised by              | `PlacementRecordRequestRepository`                                                           |
+| Why an interface (GRASP) | Pure Fabrication: no domain class should know how opportunities are looked up (Low Coupling) |
+| Appears in               | OSD-01, CO1 (step 1)                                                                         |
+
+| Operation | Input | Output | Errors |
+| --------- | ----- | ------ | ------ |
+|           |       |        |        |
+
+### IF-05 – `Clock`
+
+| Field                    | Content       |
+| ------------------------ | ------------- |
+| Purpose                  |               |
+| Used by (class from 08)  |               |
+| Realised by              |               |
+| Why an interface (GRASP) |               |
+| Appears in               | OSD-04, CO-xx |
+
+| Operation | Input | Output | Errors |
+| --------- | ----- | ------ | ------ |
+|           |       |        |        |
 
 <br>
 
@@ -74,13 +122,13 @@ Package view
 
 ### 5.1 Inputs and outputs per system operation
 
-| System operation (from 05)      | Input | Output / result | Contract |
-| ------------------------------- | ----- | --------------- | -------- |
-| `startRequest(opportunity)`     |       |                 | CO1      |
-| `enterPreferences(preferences)` |       |                 | CO2      |
-| `addEvidence(evidenceItem)`     |       |                 | CO3      |
-| `confirmRequest()`              |       |                 | CO4      |
-| `cancelRequest()`               |       |                 | CO5      |
+| System operation (from 05)      | Input | Output / result   | Contract |
+| ------------------------------- | ----- | ----------------- | -------- |
+| `startRequest(opportunity)`     |       |                   | CO1      |
+| `enterPreferences(preferences)` |       |                   | CO2      |
+| `addEvidence(evidenceItem)`     |       |                   | CO3      |
+| `confirmRequest()`              |       | Returns `Receipt` | CO4      |
+| `cancelRequest()`               |       |                   | CO5      |
 
 ### 5.2 Result convention
 
