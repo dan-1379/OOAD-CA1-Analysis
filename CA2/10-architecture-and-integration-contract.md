@@ -39,7 +39,7 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 | --------------- | ---------- | ---------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `RequestStatus` | enum       | `in progress` (internal, never shown – 06 CO1, 07 note 3), `awaiting evidence`, `ready for decision` | BR01             | CO1, CO3, CO4, OSD-04, SC01–SC04                                                                                           |
 | `EvidenceItem`  | identifier | `E1`, `E2`, `E3` (feature file Background), compared by identifier                                   | BR01             | `Request.evidence`, `EvidenceRequirements`, `addEvidence(evidenceItem)`, `getRequiredEvidence` result, CO3, CO4, SC02–SC04 |
-| `waitingOn`     | pending    | pending – see issue #<n>                                                                             | FR02, BR01       | CO4                                                                                                                        |
+| `waitingOn`     | pending    | pending                                                                                              | FR02, BR01       | CO4                                                                                                                        |
 
 
 <br>
@@ -150,18 +150,17 @@ Normal outcomes of each system operation are returned as the outputs listed in �
 
 ## 7. Decisions and rejected alternatives
 
-| DR     | Decision                                                               | Rejected alternative                         | Reason                                                              |
-| ------ | ---------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------- |
-| DR-010 | Named errors signalled for failures. Normal outcomes returned instead. | Return a result object from every operation. | This keeps the outputs simple, and matches the operation contracts. |
-| DR-011 | Keep `Clock` as a port.                                                | The handler reads the system date directly.  | Protected Variations.                                               |
+| DR     | Decision                                                       | Rejected alternative                         | Reason                                                                                                                                         |
+| ------ | -------------------------------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| DR-010 | Named errors signalled for failures. Normal outcomes returned. | Return a result object from every operation. | This keeps the outputs simple, and matches the operation contracts.                                                                            |
+| DR-011 | Keep `Clock` as a port.                                        | The handler reads the system date directly.  | Protected Variations: the date source is an external concern, so the handler depends on an interface rather than the operating system's clock. |
 
 <br>
 
 ## 8. Assumptions and limitations
 
-<!-- Feeds the design evaluation. e.g. evidence requirements come from outside the system (A3, A5); store is abstract because persistence is out of scope for CA2. -->
 - Evidence requirements come from outside the system (A3, A5)
-- Storage is abstract.
-- `ACADEMIC_RECORDS_UNAVAILABLE` isn't covered by any rule or use-case extensions. (New in 10)
+- Storage is abstract, because of how the shared placement record is kept out of scope for CA2.
+- `ACADEMIC_RECORDS_UNAVAILABLE`: the error is signalled, but no recovery (retry or manual entry) is designed. (New in 10)
 - None of the errors in section 6 have Gherkin scenarios.
 - `waitingOn` is pending the defect fix, and the `StudentRepository` lookup is pending the 07 update.

@@ -1,42 +1,55 @@
-@startuml
+@startuml package-view-uc01
 title Package view – UC01 Submit Placement Request
 hide members
 hide circle
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam shadowing false
 
 package "Presentation" as P {
   note "No user interface is designed\nin CA2 (brief §1)" as N1
 }
 
 package "Application" as A {
-  class Controller
+  class SubmitPlacementRequestHandler
 }
 
 package "Domain" as D {
   class Request
   class Student
-  class Programme
   class Opportunity
+  class EvidenceRequirements
+  class Receipt
   enum RequestStatus
 }
 
 package "Ports / Interfaces" as PI {
   interface ProgrammeEvidencePort
-  interface RequestStore
+  interface RequestRepository
+  interface StudentRepository
+  interface OpportunityRepository
+  interface Clock
 }
 
-package "Infrastructure" as I {
+package "Infrastructure\n(named, not built)" as I {
   class AcademicRecordsAdapter
-  class RequestStoreImpl
+  class PlacementRecordRequestRepository
+  class PlacementRecordStudentRepository
+  class PlacementRecordOpportunityRepository
+  class SystemClock
 }
 
 ' Dependencies point inwards (see §2.1)
-P ..> A : system events
-A ..> D
-A ..> PI
-PI ..> D : uses Request
-I ..> D
+P .down.> A : system events
+A .down.> D
+A .right.> PI
+PI .down.> D : uses domain types
+I .down.> D
 
 ' Infrastructure implements the ports
 AcademicRecordsAdapter ..|> ProgrammeEvidencePort
-RequestStoreImpl ..|> RequestStore
+PlacementRecordRequestRepository ..|> RequestRepository
+PlacementRecordStudentRepository ..|> StudentRepository
+PlacementRecordOpportunityRepository ..|> OpportunityRepository
+SystemClock ..|> Clock
 @enduml
