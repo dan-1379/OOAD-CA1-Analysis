@@ -131,10 +131,7 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 | `cancelRequest()`               | none                   | Acknowledges submission cancellation. Nothing is recorded. | CO5      |
 
 ### 5.2 Result convention
-The rule:
-What happens on an error:
-The key distinction:
-Why:
+Normal outcomes of each system operation are returned as the outputs listed in §5.1. When a precondition is broken or an outside system fails, the operation stops, signals one of the named errors in §6, and no state is changed. *Awaiting evidence* (4b) and *cancelled* (5a) are normal outcomes, not errors. This keeps the outputs simple (`confirmRequest` returns a plain `Receipt`) and matches the operation contracts, where a broken precondition means the operation does not run and none of its postconditions happen.
 
 
 ## 6. Error conventions
@@ -153,12 +150,18 @@ Why:
 
 ## 7. Decisions and rejected alternatives
 
-|DR|Decision|Rejected alternative|Reason|
-|---|---|---|---|
-|DR-010||||
+| DR     | Decision                                                               | Rejected alternative                         | Reason                                                              |
+| ------ | ---------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------- |
+| DR-010 | Named errors signalled for failures. Normal outcomes returned instead. | Return a result object from every operation. | This keeps the outputs simple, and matches the operation contracts. |
+| DR-011 | Keep `Clock` as a port.                                                | The handler reads the system date directly.  | Protected Variations.                                               |
 
 <br>
 
 ## 8. Assumptions and limitations
 
 <!-- Feeds the design evaluation. e.g. evidence requirements come from outside the system (A3, A5); store is abstract because persistence is out of scope for CA2. -->
+- Evidence requirements come from outside the system (A3, A5)
+- Storage is abstract.
+- `ACADEMIC_RECORDS_UNAVAILABLE` isn't covered by any rule or use-case extensions. (New in 10)
+- None of the errors in section 6 have Gherkin scenarios.
+- `waitingOn` is pending the defect fix, and the `StudentRepository` lookup is pending the 07 update.
