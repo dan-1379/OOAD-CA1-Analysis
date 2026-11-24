@@ -1,4 +1,4 @@
-# SCENARIO SUITABILITY MATRIX
+# 01 - SCENARIO SUITABILITY MATRIX
 
 ## Purpose
 An in-depth analysis was conducted on each of the scenarios in order to select a single scenario for CA2. Each scenario was thoroughly evaluated based on the criteria for the suitability matrix and a transparent selection and approval was recorded.
@@ -123,7 +123,79 @@ Where members' scores for the same cell differ by more than 1, the group discuss
 
 # Recommendation
 
+Each member scored the three scenarios they did not author, using the scoring guide above. The averaged totals were:
+
+| Scenario | Average (out of 18) | Raters |
+| --- | :---: | --- |
+| 02 – Kerry Mobile Library Support Service | 14.3 | Dan, Isabelle, Bart |
+| 03 – Volunteer Transport Coordination Service | 13.0 | Dan, Eoin |
+| 05 – Rural Health Appointment Transport Service | 16.0 | Dan, Eoin, Bart |
+| 28 – Student Work-Placement Coordination Service | 15.7 | Eoin, Isabelle, Bart |
+
+<br>
+
+No two raters' scores for the same criterion differed by more than 1, so no scores needed to be discussed and adjusted. The final matrix below uses the average of each criterion across that scenario's raters.
+
+| Criterion | Scenario 02 | Scenario 03 | Scenario 05 | Scenario 28 |
+| --- | :---: | :---: | :---: | :---: |
+| Scope | 3.0 | 2.0 | 3.0 | 3.0 |
+| Behaviour | 2.7 | 3.0 | 3.0 | 3.0 |
+| OO Potential | 2.3 | 2.0 | 3.0 | 2.7 |
+| Sliceability | 2.0 | 2.0 | 3.0 | 2.0 |
+| Testability | 2.0 | 2.0 | 2.0 | 2.7 |
+| Comparability | 2.3 | 2.0 | 2.0 | 2.3 |
+| **Total (out of 18)** | **14.3** | **13.0** | **16.0** | **15.7** |
+| Raters | Dan, Isabelle, Bart | Dan, Eoin | Dan, Eoin, Bart | Eoin, Isabelle, Bart |
+
+<br>
+
+**The group selected Scenario 28.** 
+
+Because the totals could not separate the two highest scoring scenarios (05, 28), the group agreed to decide on the criteria that matter most for CA3, where each member is graded on their own slice.
+
+**Testability** 
+
+Scenario 28 already has a complete feature file for UC01 covering success, recovery, failure, a boundary Scenario Outline and cancellation, and all twelve user stories have observable acceptance criteria. Its main rule (BR01) can be tested now because Q1 already has a working assumption.
+
+**Comparability** 
+
+Scenario 28's candidate slices are closer in size. In Scenario 05, UC03 Assign Driver and Vehicle is clearly heavier than the other slices, which would make members' CA3 workloads uneven.
+
+> [!NOTE]
+> **Later decision:** After the scenario was selected, the group chose to design one use case in depth, UC01 Submit Placement Request, rather than one use case per member. This is recorded in [DR-003](decisions/decision-log.md) and the [Prioritised Implementation Catalogue](04-prioritised-implementation-catalogue.md). The testability reason above still applies directly, as UC01 is the use case with the complete feature file. The comparability reason now applies to how the work on UC01 is divided, so that each member's CA3 slice remains of similar size.
+
+<br>
+
+**Weaknesses the group accepts and how they will be managed:**
+
+**Sliceability**
+
+Two candidate slices depended on open questions: the stalled-allocation threshold (Q4, UC08) and third-party authority (Q3, UC05). The group planned to record working assumptions for both in Iteration 1. This was carried into Iteration 2, and with UC01 later selected as the use case to design ([DR-003](decisions/decision-log.md)), neither question now blocks the CA2 design. Both remain recorded as proposed decisions ([DR-004, DR-005](decisions/decision-log.md)) in case UC05 or UC08 is taken forward later.
+
+**OO Potential.** 
+
+One rater noted that Supervisor and third-party permission were not modelled. Both were added to the revised analysis baseline (RC14, RC15), and the CA1 ID attributes (studentNumber, programmeCode, staffNumber) were removed (RC13).
+
+<br>
+
+**Runner-up:** 
+
+Scenario 05 was the strongest alternative, with the best sliceability of any scenario thanks to its explicit deferred requirements (DFR01–DFR17). It was not selected because its slices are less evenly sized and its Gherkin covers a single user story.
+
+Scenario 28 was authored by Dan, who did not score it. The decision is recorded in DR-001.
+
 <br>
 
 
 # Final Approval
+
+| Item | Detail |
+| --- | --- |
+| Selected scenario | Scenario 28 – Student Work-Placement Coordination Service |
+| Recommended by | Dan Courtney, Eoin Mannix, Isabelle Lynch, Bartlomiej Jedrzejowski |
+| Group decision date | November 9th, 2026 |
+| Approved by | Andrew Shields |
+| Approval date | November 9th, 2026 |
+| Expansion brief | None. Scenario 28 was approved as presented. |
+| Decision records | [DR-001](decisions/decision-log.md), [DR-002](decisions/decision-log.md) |
+|  |  |

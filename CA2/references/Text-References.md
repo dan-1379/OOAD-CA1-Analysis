@@ -4,7 +4,7 @@ The scenario evaluations in this matrix draw on the individual CA1 requirements 
 
 | In-Text Citation | Full Reference |
 | --- | --- |
-| *(Mannix, 2026)* | Mannix, E. (2026, November 6). OOAD-ca1-analysis. Retrieved from Github: https://github.com/EoinMannix/OOAD-ca1-analysis |
-| *(Jedrzejowski, 2026)* | Jedrzejowski, B. (2026, November 06). VolunteerTransportCoordination_Scenario3_OOAD. Retrieved from Github: https://github.com/Bart-Jed/VolunteerTransportCoordination_Scenario3_OOAD |
-| *(Lynch, 2026)* | Lynch, I. (2026, November 6). RuralHealthAppointmentTransportService. Retrieved from Github: https://github.com/isabellelynch/RuralHealthAppointmentTransportService |
-| *(Courtney, 2026)* | Courtney, D. (2026, November 6). OOAD-CA1-Analysis. Retrieved from Github: https://github.com/dan-1379/OOAD-CA1-Analysis |
+| *(Mannix, 2026)* | Mannix, E. (2026). OOAD-ca1-analysis. Retrieved from Github: https://github.com/EoinMannix/OOAD-ca1-analysis |
+| *(Jedrzejowski, 2026)* | Jedrzejowski, B. (2026). VolunteerTransportCoordination_Scenario3_OOAD. Retrieved from Github: https://github.com/Bart-Jed/VolunteerTransportCoordination_Scenario3_OOAD |
+| *(Lynch, 2026)* | Lynch, I. (2026). RuralHealthAppointmentTransportService. Retrieved from Github: https://github.com/isabellelynch/RuralHealthAppointmentTransportService |
+| *(Courtney, 2026)* | Courtney, D. (2026). OOAD-CA1-Analysis. Retrieved from Github: https://github.com/dan-1379/OOAD-CA1-Analysis |
