@@ -1,18 +1,11 @@
 # 05 - System Sequence Diagrams
 
-| Field       | Value                                                            |
-| ----------- | ---------------------------------------------------------------- |
-| Artefact ID | CA2-05                                                           |
-| Owner       | Isabelle Lynch                                                   |
-| Reviewer    | Eoin Mannix                                                      |
-| Feeds into  | 06 Operations contracts, 09 Object-interaction sequence diagrams |
 | Field | Value |
-| --------------- | -------------------------------------------------- |
+| --- | --- |
 | Artefact ID | CA2-05 |
 | Owner | Isabelle Lynch |
 | Reviewer | Eoin Mannix |
 | Feeds into | 06 Operation contracts, 09 Object-interaction sequence diagrams |
->>>>>>> main/main
 
 ## Purpose
 
@@ -94,4 +87,3 @@ The system's call to Academic Records (getRequiredEvidence(programme)) is not a 
 6. Parameter types are left abstract. Exact types and DTOs are agreed in the architecture contract and the names here must stay in step with it.
 7. Between `startRequest` and `confirmRequest` the request is in progress. It exists in the system but is not part of the shared placement record until it is confirmed. `cancelRequest` discards it which is how the minimal guarantee holds.
 8. Cancelling is allowed at any point while the request is in progress (after `startRequest`, after `enterPreferences` or during the evidence `loop`), as the CO5 precondition allows. The diagram shows it once, as the alternative to `confirmRequest`, to keep it readable. Every cancel point has the same outcome: nothing is recorded.
-
