@@ -1,0 +1,25 @@
+@startuml sd-02-enter-preferences
+' SD-02 - enterPreferences (CO2)
+' Linked to: UC01 step 2, SSD-01, CO2, 07 CRC, DCD-01
+title SD-02 – enterPreferences(preferences) (CO2)
+
+skinparam sequenceMessageAlign left
+autonumber
+
+participant ":StudentUI" as UI <<UI layer>>
+participant ":SubmitPlacement\nRequestHandler" as H <<controller>>
+participant "r : Request" as R
+
+UI -> H : enterPreferences(preferences)
+activate H
+H -> R : recordPreferences(preferences)
+activate R
+note right of R
+  CO2 postcondition:
+  r.preferences = preferences
+end note
+R --> H
+deactivate R
+H --> UI : preferences recorded
+deactivate H
+@enduml

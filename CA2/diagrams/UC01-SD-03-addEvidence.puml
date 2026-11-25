@@ -1,0 +1,43 @@
+@startuml sd-03-add-evidence
+' SD-03 - addEvidence (CO3)
+' Linked to: UC01 steps 3, 4 and extension 4a, SSD-01 loop, CO3, BR01, SC02
+title SD-03 – addEvidence(evidenceItem) (CO3)
+
+skinparam sequenceMessageAlign left
+autonumber
+
+participant ":StudentUI" as UI <<UI layer>>
+participant ":SubmitPlacement\nRequestHandler" as H <<controller>>
+participant "r : Request" as R
+participant "req : EvidenceRequirements" as ER
+
+UI -> H : addEvidence(evidenceItem)
+activate H
+
+H -> R : addEvidence(evidenceItem)
+activate R
+note right of R
+  CO3 postcondition:
+  evidenceItem added to r.evidence.
+  r.status is not changed (stays IN_PROGRESS).
+end note
+R --> H
+deactivate R
+
+H -> R : missingEvidence()
+activate R
+R -> ER : missingFrom(evidence)
+activate ER
+ER --> R : missing
+deactivate ER
+R --> H : missing
+deactivate R
+
+H --> UI : missing
+deactivate H
+note right of UI
+  4a: if missing is not empty the student is told
+  which items are missing and can add them (SC02).
+  If missing is empty the evidence is complete.
+end note
+@enduml

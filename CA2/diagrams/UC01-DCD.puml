@@ -1,0 +1,158 @@
+@startuml dcd-01-submit-placement-request
+' DCD-01 - Design class diagram for UC01 Submit Placement Request
+' Linked to: 06 CO1-CO5, 07 CRC cards, 09 SD-01 to SD-05, FR01, BR01
+' Types are provisional until the architecture contract (10) and technology decision record (12).
+title DCD-01 – UC01 Submit Placement Request
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+hide empty members
+
+package "Application (use case controller)" {
+  class SubmitPlacementRequestHandler {
+    - studentId : String
+    + SubmitPlacementRequestHandler(studentId, students, opportunities, evidence, requests, clock)
+    + startRequest(opportunityId : String) : List<String>
+    + enterPreferences(preferences : String) : void
+    + addEvidence(evidenceItem : String) : List<String>
+    + confirmRequest() : Receipt
+    + cancelRequest() : void
+  }
+}
+
+package "Domain" {
+  class Student {
+    - studentId : String
+    - name : String
+    - programmeId : String
+    + getStudentId() : String
+    + getProgrammeId() : String
+    + startRequest(opportunity : Opportunity, requirements : EvidenceRequirements) : Request
+  }
+
+  class Opportunity {
+    - opportunityId : String
+    - title : String
+    - status : String
+    + getOpportunityId() : String
+    + getTitle() : String
+    + isOpen() : boolean
+  }
+
+  class Request {
+    - preferences : String
+    - evidence : List<String>
+    - submittedDate : LocalDate [0..1]
+    - status : RequestStatus
+    - waitingOn : List<String>
+    + Request(student : Student, opportunity : Opportunity, requirements : EvidenceRequirements)
+    + recordPreferences(preferences : String) : void
+    + addEvidence(evidenceItem : String) : void
+    + missingEvidence() : List<String>
+    + confirm(today : LocalDate) : void
+    + createReceipt() : Receipt
+    + getStatus() : RequestStatus
+    + getWaitingOn() : List<String>
+    + getStudent() : Student
+  }
+
+  class EvidenceRequirements <<value object>> {
+    - programmeId : String
+    - requiredItems : Set<String>
+    + getRequiredItems() : List<String>
+    + missingFrom(supplied : List<String>) : List<String>
+    + isMetBy(supplied : List<String>) : boolean
+  }
+
+  enum RequestStatus <<enumeration>> {
+    IN_PROGRESS
+    READY_FOR_DECISION
+    AWAITING_EVIDENCE
+  }
+
+  class Receipt <<value object>> {
+    - opportunityTitle : String
+    - submittedDate : LocalDate
+    - status : RequestStatus
+    - missingEvidence : List<String>
+    + Receipt(opportunityTitle : String, submittedDate : LocalDate, status : RequestStatus, missingEvidence : List<String>)
+  }
+}
+
+package "Ports (interfaces)" {
+  interface ProgrammeEvidencePort {
+    + getRequiredEvidence(programmeId : String) : EvidenceRequirements
+  }
+  interface RequestRepository {
+    + save(request : Request) : void
+    + findByStudent(studentId : String) : List<Request>
+  }
+  interface StudentRepository {
+    + findById(studentId : String) : Student
+  }
+  interface OpportunityRepository {
+    + findById(opportunityId : String) : Opportunity
+  }
+  interface Clock {
+    + today() : LocalDate
+  }
+}
+
+package "Test adapters (fakes)" {
+  class FakeProgrammeEvidenceAdapter {
+    - requirementsByProgramme : Map<String, EvidenceRequirements>
+    + getRequiredEvidence(programmeId : String) : EvidenceRequirements
+  }
+  class InMemoryRequestRepository {
+    - requests : List<Request>
+  }
+  class InMemoryStudentRepository {
+    - students : Map<String, Student>
+  }
+  class InMemoryOpportunityRepository {
+    - opportunities : Map<String, Opportunity>
+  }
+  class FixedClock {
+    - date : LocalDate
+  }
+}
+
+' Controller to ports (held as fields, injected through the constructor)
+SubmitPlacementRequestHandler --> "1" StudentRepository : students
+SubmitPlacementRequestHandler --> "1" OpportunityRepository : opportunities
+SubmitPlacementRequestHandler --> "1" ProgrammeEvidencePort : evidence
+SubmitPlacementRequestHandler --> "1" RequestRepository : requests
+SubmitPlacementRequestHandler --> "1" Clock : clock
+
+' Controller to the request it holds between operations (DR-008)
+SubmitPlacementRequestHandler --> "0..1" Request : inProgress
+
+' Domain associations (navigable from Request only, see 08 Note 2)
+Request --> "1" Student : student
+Request --> "1" Opportunity : opportunity
+Request --> "1" EvidenceRequirements : requirements
+
+' Creation (Creator, 07)
+Student ..> Request : <<create>>
+Request ..> Receipt : <<create>>
+
+' Fakes implement the ports
+FakeProgrammeEvidenceAdapter ..|> ProgrammeEvidencePort
+InMemoryRequestRepository ..|> RequestRepository
+InMemoryStudentRepository ..|> StudentRepository
+InMemoryOpportunityRepository ..|> OpportunityRepository
+FixedClock ..|> Clock
+
+note bottom of Request
+  <b>BR01</b> status becomes READY_FOR_DECISION only in
+  confirm(), and only when requirements.isMetBy(evidence).
+  Otherwise AWAITING_EVIDENCE with waitingOn set to the
+  missing items. addEvidence() never changes status.
+end note
+
+note bottom of SubmitPlacementRequestHandler
+  Only confirmRequest() calls requests.save().
+  cancelRequest() discards inProgress, so nothing
+  is recorded (minimal guarantee, DR-008).
+end note
+@enduml
