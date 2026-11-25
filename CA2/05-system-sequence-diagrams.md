@@ -1,7 +1,7 @@
 # 05 - System Sequence Diagrams
 
 | Field | Value |
-| --------------- | -------------------------------------------------- |
+| --- | --- |
 | Artefact ID | CA2-05 |
 | Owner | Isabelle Lynch |
 | Reviewer | Eoin Mannix |
@@ -34,16 +34,16 @@ Only UC01 is designed in CA2 (DR-003), so there is one SSD. It covers the main s
 
 Source: [`diagrams/UC01-SSD.puml`](./diagrams/UC01-SSD.puml)
 
-### System Boundary and Actors 
+### System Boundary and Actors
 
 | Lifeline | Type | Role in UC01 |
 | --- | --- | --- |
 | Student | Primary Actor | Starts the request, supplies preferences and evidence, then confirms or cancels. |
 | Placement Coordination System | System under design (black box) | Receives every system event and returns the outcome. |
-| Academic Records | Supporting actor, external system | Supplies the evidence each programme requires (assumption A3). It is outside the system boundary and is reached through an interface with a fake for testing (PA05). | 
+| Academic Records | Supporting actor, external system | Supplies the evidence each programme requires (assumption A3). It is outside the system boundary and is reached through an interface with a fake for testing (PA05). |
 
 
-### System Events 
+### System Events
 
 | # | System event (operation) | Parameters | Returned Outcome | UC01 Step |
 | --- | --- | --- | --- | --- |
@@ -62,7 +62,7 @@ The system's call to Academic Records (getRequiredEvidence(programme)) is not a 
 | --- | --- | --- | --- | --- |
 | `loop` | Repeated for each evidence item the student supplies | After each item the system lists any evidence still missing so the student can add it | 4a (goal still reached) | SC02 |
 | `inner alt` (first branch) | All evidence required by the programme has been supplied (BR01) | Request recorded with status *ready for decision*, receipt shown | Main success scenario | SC01, SC04 |
-| `inner alt` (second branch) | Required evidence is still missing when the student confirms | Request recorded with status *awaiting evidence*, receipt shown with the missing evidence listed | 4b (goal fails) | SC03, SC04 | 
+| `inner alt` (second branch) | Required evidence is still missing when the student confirms | Request recorded with status *awaiting evidence*, receipt shown with the missing evidence listed | 4b (goal fails) | SC03, SC04 |
 | `outer alt` (second branch) | Student cancels instead of confirming | Nothing is recorded (minimal guarantee) | 5a (goal fails) | SC05 |
 
 
@@ -73,11 +73,11 @@ The system's call to Academic Records (getRequiredEvidence(programme)) is not a 
 | Every step of the main success scenario appears as a system event or a returned outcome | Yes: steps 1,2,3,5 are system events, steps 4,6,7 are the system's returned outcomes |
 | Every extension and exception appears as a fragment | Yes: 4a(`loop`), 4b(`inner alt`), 5a(`outer alt`) |
 | Every Gherkin scenario can be traced to a path in the diagram | Yes: SC01, SC03, SC04 and SC05 are labelled on the returned outcomes and SC02 on the 4a note after the `loop` |
-| BR01 is visible where it changes the outcome | Yes: the guard on the `inner alt` and the missing evidence list returned by `addEvidence` | 
+| BR01 is visible where it changes the outcome | Yes: the guard on the `inner alt` and the missing evidence list returned by `addEvidence` |
 | The minimal guarantee holds on every path | Yes: no path returns *ready for decision* without the required evidence and cancelling records nothing |
 
 
-### Notes and Assumptions 
+### Notes and Assumptions
 
 1. Separate `addEvidence` event. Evidence is supplied one item at a time so the system can tell the student what is still missing after each item (step 4 and extension 4a). Taking all evidence in a single event would hide extension 4a inside one call.
 2. Validation happens at confirmation as well as after each item. `addEvidence` reports what is missing so the student can act but the status is decided only by `confirmRequest()`. This keeps BR01 in one place: the decision about *ready for decision* versus *awaiting evidence*.
@@ -87,4 +87,3 @@ The system's call to Academic Records (getRequiredEvidence(programme)) is not a 
 6. Parameter types are left abstract. Exact types and DTOs are agreed in the architecture contract and the names here must stay in step with it.
 7. Between `startRequest` and `confirmRequest` the request is in progress. It exists in the system but is not part of the shared placement record until it is confirmed. `cancelRequest` discards it which is how the minimal guarantee holds.
 8. Cancelling is allowed at any point while the request is in progress (after `startRequest`, after `enterPreferences` or during the evidence `loop`), as the CO5 precondition allows. The diagram shows it once, as the alternative to `confirmRequest`, to keep it readable. Every cancel point has the same outcome: nothing is recorded.
-
