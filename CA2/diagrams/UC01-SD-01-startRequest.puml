@@ -1,0 +1,69 @@
+@startuml sd-01-start-request
+' SD-01 - startRequest (CO1)
+' Linked to: UC01 step 1, SSD-01, CO1, 07 CRC, DCD-01
+title SD-01 – startRequest(opportunityId) (CO1)
+
+skinparam sequenceMessageAlign left
+autonumber
+
+participant ":StudentUI" as UI <<UI layer>>
+participant ":SubmitPlacement\nRequestHandler" as H <<controller>>
+participant ":StudentRepository" as SR <<port>>
+participant ":OpportunityRepository" as OR <<port>>
+participant ":ProgrammeEvidencePort" as EP <<port>>
+participant "s : Student" as S
+participant "op : Opportunity" as OP
+participant "req : EvidenceRequirements" as ER
+
+UI -> H : startRequest(opportunityId)
+activate H
+
+H -> SR : findById(studentId)
+activate SR
+SR --> H : s
+deactivate SR
+
+H -> OR : findById(opportunityId)
+activate OR
+OR --> H : op
+deactivate OR
+note right of OR
+  Being open is a precondition (CO1, OI1).
+  op.isOpen() is not called in UC01 (07 Note 5).
+end note
+
+H -> S : getProgrammeId()
+activate S
+S --> H : programmeId
+deactivate S
+
+H -> EP : getRequiredEvidence(programmeId)
+activate EP
+EP --> H : req
+deactivate EP
+
+H -> S : startRequest(op, req)
+activate S
+create "r : Request" as R
+S -> R : <<create>> Request(s, op, req)
+activate R
+note right of R
+  CO1 postconditions:
+  r created; r linked to s and op;
+  r.status = IN_PROGRESS
+end note
+R --> S
+deactivate R
+S --> H : r
+deactivate S
+
+H -> H : inProgress = r
+
+H -> ER : getRequiredItems()
+activate ER
+ER --> H : requiredItems
+deactivate ER
+
+H --> UI : requiredItems
+deactivate H
+@enduml

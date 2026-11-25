@@ -1,0 +1,67 @@
+@startuml sd-04-confirm-request
+' SD-04 - confirmRequest (CO4)
+' Linked to: UC01 steps 5-7 and exception 4b, SSD-01 inner alt, CO4, BR01, SC01-SC04
+title SD-04 – confirmRequest() (CO4)
+
+skinparam sequenceMessageAlign left
+autonumber
+
+participant ":StudentUI" as UI <<UI layer>>
+participant ":SubmitPlacement\nRequestHandler" as H <<controller>>
+participant ":Clock" as C <<port>>
+participant "r : Request" as R
+participant "req : EvidenceRequirements" as ER
+participant ":RequestRepository" as RR <<port>>
+
+UI -> H : confirmRequest()
+activate H
+
+H -> C : today()
+activate C
+C --> H : today
+deactivate C
+
+H -> R : confirm(today)
+activate R
+R -> R : submittedDate = today
+R -> ER : isMetBy(evidence)
+activate ER
+ER --> R : met
+deactivate ER
+
+alt met (BR01: all required evidence supplied)
+  R -> R : status = READY_FOR_DECISION
+  R -> R : waitingOn = empty
+else not met (4b)
+  R -> ER : missingFrom(evidence)
+  activate ER
+  ER --> R : missing
+  deactivate ER
+  R -> R : status = AWAITING_EVIDENCE
+  R -> R : waitingOn = missing
+end
+R --> H
+deactivate R
+
+H -> RR : save(r)
+activate RR
+note right of RR
+  The only call to save() in UC01.
+  r enters the shared placement record
+  (FR03, DR-008).
+end note
+RR --> H
+deactivate RR
+
+H -> R : createReceipt()
+activate R
+create "rc : Receipt" as RC
+R -> RC : <<create>> Receipt(opportunity.getTitle(), submittedDate, status, waitingOn)
+R --> H : rc
+deactivate R
+
+H -> H : inProgress = null
+
+H --> UI : rc
+deactivate H
+@enduml
