@@ -1,7 +1,7 @@
 @startuml sd-01-start-request
-' SD-01 - startRequest (CO1)
+' OSD-01 - startRequest (CO1)
 ' Linked to: UC01 step 1, SSD-01, CO1, 07 CRC, DCD-01
-title SD-01 – startRequest(opportunityId) (CO1)
+title OSD-01 – startRequest(opportunity) (CO1)
 
 skinparam sequenceMessageAlign left
 autonumber
@@ -13,17 +13,16 @@ participant ":OpportunityRepository" as OR <<port>>
 participant ":ProgrammeEvidencePort" as EP <<port>>
 participant "s : Student" as S
 participant "op : Opportunity" as OP
-participant "req : EvidenceRequirements" as ER
 
-UI -> H : startRequest(opportunityId)
+UI -> H : startRequest(opportunity)
 activate H
 
-H -> SR : findById(studentId)
+H -> SR : findByReference(studentRef)
 activate SR
 SR --> H : s
 deactivate SR
 
-H -> OR : findById(opportunityId)
+H -> OR : findByReference(opportunityRef)
 activate OR
 OR --> H : op
 deactivate OR
@@ -34,10 +33,10 @@ end note
 
 H -> S : getProgrammeId()
 activate S
-S --> H : programmeId
+S --> H : programme
 deactivate S
 
-H -> EP : getRequiredEvidence(programmeId)
+H -> EP : getRequiredEvidence(programme)
 activate EP
 EP --> H : req
 deactivate EP
@@ -59,11 +58,6 @@ deactivate S
 
 H -> H : inProgress = r
 
-H -> ER : getRequiredItems()
-activate ER
-ER --> H : requiredItems
-deactivate ER
-
-H --> UI : requiredItems
+H --> UI : req
 deactivate H
 @enduml

@@ -1,6 +1,6 @@
 @startuml dcd-01-submit-placement-request
 ' DCD-01 - Design class diagram for UC01 Submit Placement Request
-' Linked to: 06 CO1-CO5, 07 CRC cards, 09 SD-01 to SD-05, FR01, BR01
+' Linked to: 06 CO1-CO5, 07 CRC cards, 09 OSD-01 to OSD-05, 10 IF-01 to IF-05, FR01, BR01
 ' Types are provisional until the architecture contract (10) and technology decision record (12).
 title DCD-01 – UC01 Submit Placement Request
 
@@ -12,7 +12,7 @@ package "Application (use case controller)" {
   class SubmitPlacementRequestHandler {
     - studentId : String
     + SubmitPlacementRequestHandler(studentId, students, opportunities, evidence, requests, clock)
-    + startRequest(opportunityId : String) : List<String>
+    + startRequest(opportunity : String) : EvidenceRequirements
     + enterPreferences(preferences : String) : void
     + addEvidence(evidenceItem : String) : List<String>
     + confirmRequest() : Receipt
@@ -81,17 +81,17 @@ package "Domain" {
 
 package "Ports (interfaces)" {
   interface ProgrammeEvidencePort {
-    + getRequiredEvidence(programmeId : String) : EvidenceRequirements
+    + getRequiredEvidence(programme : String) : EvidenceRequirements
   }
   interface RequestRepository {
     + save(request : Request) : void
     + findByStudent(studentId : String) : List<Request>
   }
   interface StudentRepository {
-    + findById(studentId : String) : Student
+    + findByReference(studentRef : String) : Student
   }
   interface OpportunityRepository {
-    + findById(opportunityId : String) : Opportunity
+    + findByReference(opportunityRef : String) : Opportunity
   }
   interface Clock {
     + today() : LocalDate
@@ -101,7 +101,7 @@ package "Ports (interfaces)" {
 package "Test adapters (fakes)" {
   class FakeProgrammeEvidenceAdapter {
     - requirementsByProgramme : Map<String, EvidenceRequirements>
-    + getRequiredEvidence(programmeId : String) : EvidenceRequirements
+    + getRequiredEvidence(programme : String) : EvidenceRequirements
   }
   class InMemoryRequestRepository {
     - requests : List<Request>
