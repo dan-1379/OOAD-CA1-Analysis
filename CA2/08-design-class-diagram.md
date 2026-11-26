@@ -5,7 +5,7 @@
 | Artefact ID | CA2-08 |
 | Owner | Eoin Mannix |
 | Reviewer | Isabelle Lynch |
-| Feeds into | 09 Object-interaction sequence diagrams, 10 Architecture and integration contract, 11 CA3 slice specifications |
+| Feeds into | 09 Object-interaction sequence diagrams, 10 Architecture and integration contract |
  
 ## Purpose
  
@@ -72,7 +72,7 @@ Source: [`diagrams/UC01-DCD.puml`](./diagrams/UC01-DCD.puml)
 | Dashed line with a hollow triangle | The class implements that interface |
 | `<<value object>>` | Can't be changed once it's made |
  
-The types are written Java-style (`String`, `List<String>`, `LocalDate`) to keep things clear. They get confirmed in 10 and 12, and if we use a different language they just get swapped for that language's versions.
+The types are written Java-style (`String`, `List<String>`, `LocalDate`) to keep things clear. They are confirmed in 10 and 12, and if we use a different language they just get swapped for that language's versions.
  
 Links between classes are only shown as lines, not repeated as fields inside boxes, so nothing shows up twice.
  
@@ -94,7 +94,7 @@ In practice:
 - The fakes plug into the ports, so the handler never knows whether it's using a fake or the real thing.
 This makes testing easy. You can check BR01 just by calling `Request.confirm()` and `FixedClock` means the dates come out the same every run. If Academic Records ever changes, only its adapter has to change.
  
-The real adapters (database, system clock, Academic Records) use the same ports. They aren't drawn because UC01 is built and tested with the fakes. We pick the real ones in 10 and 12.
+The real adapters (database, system clock, Academic Records) use the same ports. They aren't drawn because UC01 is built and tested with the fakes. They are named in 10.
  
 ## Class Specifications
  
@@ -295,7 +295,7 @@ These are simple in-memory versions of the ports that only exist so we can test 
 | `InMemoryRequestRepository` | `RequestRepository` | Starts empty. Tests check what ends up in it |
 | `FixedClock` | `Clock` | One fixed date, so results are the same every run |
  
-The real versions (a database, the system clock and an Academic Records adapter) use the same ports. They get picked in 10 and 12.
+The real versions (a database, the system clock and an Academic Records adapter) use the same ports. They are named in 10.
  
 ## Associations and Navigability
  
@@ -332,6 +332,6 @@ The arrows only go one way where possible. Two-way links mean two objects you ha
 3. **Preferences are one string.** We don't know their structure yet, so they can become their own class later without affecting anything else.
 4. **No request ID yet.** UC01 doesn't need one, but UC02 will need to find a single request, so expect a `requestId` then.
 5. **One request at a time.** What happens if `startRequest` is called while one is already in progress isn't defined. The simplest option is to reject it. That gets agreed in 10.
-6. **In-progress handling depends on DR-008**, which is still proposed. If it's not accepted, `inProgress` moves out of the handler and `RequestRepository` needs a delete method.
+6. **In-progress handling follows DR-008** (accepted). The request is held in the handler until it is confirmed, so `RequestRepository` never needs a delete method.
 7. **Names and types aren't final.** They get confirmed in 10 and this file has to stay in step with it.
  

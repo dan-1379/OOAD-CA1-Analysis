@@ -1,7 +1,7 @@
 @startuml dcd-01-submit-placement-request
 ' DCD-01 - Design class diagram for UC01 Submit Placement Request
 ' Linked to: 06 CO1-CO5, 07 CRC cards, 09 OSD-01 to OSD-05, 10 IF-01 to IF-05, FR01, BR01
-' Types are provisional until the architecture contract (10) and technology decision record (12).
+' Types are provisional until the architecture contract (10).
 title DCD-01 – UC01 Submit Placement Request
 
 skinparam classAttributeIconSize 0

@@ -109,7 +109,7 @@ Software-only classes are added where no domain class is a good home for a respo
 | --- | --- |
 | Return the evidence requirements for a programme (`getRequiredEvidence(programme)` in SSD-01) | `EvidenceRequirements` |
 
-**GRASP:** Protected Variations and Indirection. Academic Records is an external system (A3) that may change or be unavailable. Hiding it behind an interface means the domain classes never depend on it and a fake can be used in tests and in CA3 slices (PA05).
+**GRASP:** Protected Variations and Indirection. Academic Records is an external system (A3) that may change or be unavailable. Hiding it behind an interface means the domain classes never depend on it and a fake can be used in tests (PA05).
 
 ### FakeProgrammeEvidenceAdapter
 
@@ -180,7 +180,7 @@ This table shows, for each contract, which object receives the operation and whi
 | Who applies BR01 | `Request.confirm()`, using `EvidenceRequirements` | A separate `EvidenceValidator` service or the handler | The Request holds the evidence, so it is the Information Expert. A separate validator would pull logic out of the Request, and the handler doing it would make it a bloated controller. |
 | Who creates the Request | `Student` | The handler | Creator favours the class that records and has the data for the new object. The domain says a Student *submits* Requests. |
 | Where the evidence requirements come from | Read once at startRequest and held by the Request | Read again from the port at each addEvidence and at confirm | Matches SSD-01 where `getRequiredEvidence` is called only after startRequest. Means the requirements a student is told about at the start are the ones their request is checked against |
-| How the external system is reached | `ProgrammeEvidencePort` with a fake adapter | Calling Academic Records directly from `Request` or the handler | Protected Variations: the domain never depends on the external system and every CA3 slice can be tested with the fake (PA05) |
+| How the external system is reached | `ProgrammeEvidencePort` with a fake adapter | Calling Academic Records directly from `Request` or the handler | Protected Variations: the domain never depends on the external system and the design can be tested with the fake (PA05) |
 | How cancellation records nothing | Only confirmed requests are saved | Saving the request at startRequest and deleting it on cancel | Nothing has to be undone so the minimal guarantee cannot be broken by a failed delete (DR-008) | 
 | Where the date comes from | `Clock` interface | Reading the system clock inside `Request` | Tests can fix the date and check submittedDate |
 
@@ -208,18 +208,6 @@ This table shows, for each contract, which object receives the operation and whi
 | No design class depends directly on an external system | Yes: Academic Records is reached only through `ProgrammeEvidencePort` |
 | Each external dependency in 04 has a fake | Yes: fake evidence adapter, in-memory repositories, fixed clock |
 
-## Responsibilities by Proposed CA3 Slice
-
-This follows the proposed split in DR-007 and changes if that split changes.
-
-| Slice | Main Class and Responsibilities |
-| --- | --- |
-| A - Start request | Handler `startRequest`, `Student` creating `Request`, `StudentRepository` and `OpportunityRepository` with in-memory implementations, `ProgrammeEvidencePort` and fake adapter |
-| B - Capture preferences and evidence | `Request.recordPreferences()`, `Request.addEvidence()`, `Request.missingEvidence()`, `EvidenceRequirements.missingFrom()` |
-| C - Confirm Request | `Request.confirm()`, `EvidenceRequirements.isMetBy()`, `RequestStatus`, `Receipt`, `Clock` |
-| D - Cancel and Record | Handler `confirmRequest` and `cancelRequest` flow, `RequestRepository` and in-memory implementation, in-progress request handling |
-
-
 ## Notes and Assumptions
 
 1. Only UC01 is modelled. Following DR-003, only classes with a responsibility in UC01 have CRC cards. Other domain classes get cards when their use cases are designed.
@@ -229,4 +217,4 @@ This follows the proposed split in DR-007 and changes if that split changes.
 5. What makes an opportunity open is still open (OI1). Following 05 Note 3 and 06 Note 6, being open is a precondition, so the handler does not call `Opportunity.isOpen()` in UC01. The method is kept on `Opportunity` (Information Expert) so that if the group adds a "not open" exception, the handler calls it in CO1 and SSD-01 gains a matching failure branch. `isOpen()` would use the opportunity's status until a fuller rule is agreed.
 6. Method names are provisional. Names such as `recordPreferences`, `missingFrom` and `isMetBy` are proposals for 08 and 09. Exact signatures and types are agreed in the architecture contract (10).
 7. Design-level link to evidence requirements. `Request` holds the `EvidenceRequirements` read at startRequest. This link is a design decision, not a domain-model association, so it does not contradict 06 ("the domain model is unchanged"). It is shown in the design class diagram (08).
-8. In-progress handling depends on DR-008, which is still *Proposed* in the decision log. If it is not accepted, the CO4 and CO5 rows and the `RequestRepository` card need to change.
+8. In-progress handling follows DR-008 (accepted). Only confirmed requests are saved, which is why the CO4 and CO5 rows and the `RequestRepository` card are designed this way.

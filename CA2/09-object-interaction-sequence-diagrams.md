@@ -5,7 +5,7 @@
 | Artefact ID | CA2-09 |
 | Owner | Eoin Mannix |
 | Reviewer | Isabelle Lynch |
-| Feeds into | 10 Architecture and integration contract, 11 CA3 slice specifications |
+| Feeds into | 10 Architecture and integration contract |
  
  
 ## Purpose
@@ -19,13 +19,13 @@ There's one sequence diagram per system operation, so each one lines up with one
  
 ## Diagram Index
  
-| SD ID | System operation | Contract | UC01 flow | Gherkin | Diagram | CA3 slice (DR-007) |
+| SD ID | System operation | Contract | UC01 flow | Gherkin | Diagram |
 | --- | --- | --- | --- | --- | --- | --- |
-| OSD-01 | `startRequest(opportunity)` | CO1 | Step 1 | SC01 - SC05 | [UC01-SD-01-startRequest](./diagrams/UC01-SD-01-startRequest.puml) | A - Start request |
-| OSD-02 | `enterPreferences(preferences)` | CO2 | Step 2 | SC01 - SC05 | [UC01-SD-02-enterPreferences](./diagrams/UC01-SD-02-enterPreferences.puml) | B - Capture preferences and evidence |
-| OSD-03 | `addEvidence(evidenceItem)` | CO3 | Steps 3, 4, 4a | SC02 | [UC01-SD-03-addEvidence](./diagrams/UC01-SD-03-addEvidence.puml) | B - Capture preferences and evidence |
-| OSD-04 | `confirmRequest()` | CO4 | Steps 5 - 7, 4b | SC01 - SC04 | [UC01-SD-04-confirmRequest](./diagrams/UC01-SD-04-confirmRequest.puml) | C - Confirm request, and D (save) |
-| OSD-05 | `cancelRequest()` | CO5 | 5a | SC05 | [UC01-SD-05-cancelRequest](./diagrams/UC01-SD-05-cancelRequest.puml) | D - Cancel and record |
+| OSD-01 | `startRequest(opportunity)` | CO1 | Step 1 | SC01 - SC05 | [UC01-SD-01-startRequest](./diagrams/UC01-SD-01-startRequest.puml) |
+| OSD-02 | `enterPreferences(preferences)` | CO2 | Step 2 | SC01 - SC05 | [UC01-SD-02-enterPreferences](./diagrams/UC01-SD-02-enterPreferences.puml) |
+| OSD-03 | `addEvidence(evidenceItem)` | CO3 | Steps 3, 4, 4a | SC02 | [UC01-SD-03-addEvidence](./diagrams/UC01-SD-03-addEvidence.puml) |
+| OSD-04 | `confirmRequest()` | CO4 | Steps 5 - 7, 4b | SC01 - SC04 | [UC01-SD-04-confirmRequest](./diagrams/UC01-SD-04-confirmRequest.puml) |
+| OSD-05 | `cancelRequest()` | CO5 | 5a | SC05 | [UC01-SD-05-cancelRequest](./diagrams/UC01-SD-05-cancelRequest.puml) |
  
  
 ## How to read the diagrams
@@ -169,12 +169,12 @@ Every message sent to an object is a method on its class in the design class dia
  
 ## Notes and Assumptions
  
-1. **One diagram per contract.** Each one starts with the handler getting one system operation, like in Larman (2005). That keeps them small and each CA3 slice can point at the diagrams it builds.
+1. **One diagram per contract.** Each one starts with the handler getting one system operation, like in Larman (2005). That keeps each one small and traceable to a single contract.
 2. **The UI is a placeholder.** `:StudentUI` stands for whatever sends the operations: a web page, an API endpoint or a test. It gets decided in 10.
 3. **The student is already identified.** The handler is created for one student (`studentId`), which is the CO1 precondition. Logging in isn't part of UC01.
 4. **One request at a time.** What happens if `startRequest` is called while one is already in progress isn't defined in UC01. The simplest option is to reject it. That gets agreed in 10.
 5. **Calling things out of order.** Calling something like `addEvidence` before `startRequest` breaks the contract preconditions. The handler signals `NO_REQUEST_IN_PROGRESS` (10, section 6).
 6. **Repository failures aren't shown.** If `save(r)` fails, the handler keeps hold of `r` so the student can try again. The handler signals `CANNOT_SAVE` (10, section 6).
-7. **In-progress handling depends on DR-008**, which is still proposed. If it's not accepted, OSD-01 gets a `save(r)` call and OSD-05 gets a delete call.
+7. **In-progress handling follows DR-008** (accepted). The request is only saved in OSD-04, so OSD-01 has no `save(r)` and OSD-05 has no delete call.
 8. **Names and types aren't final.** They have to stay in step with 08 and the architecture contract (10).
  
