@@ -8,8 +8,6 @@
 
 ## Product Goal
  
-> *Draft – to be agreed by the group.*
->
 > Give the Kerry College Placement Office one reliable, shared view of every placement request and placement, so students know what their request is waiting on, staff apply the same rules every time, and earlier decisions are never lost.
  
 The Product Goal states the value the service is meant to deliver. The work towards it is ordered in the Product Backlog.
@@ -18,12 +16,12 @@ The Product Goal states the value the service is meant to deliver. The work towa
 
 ## Team
  
-| Member | Scenario analysed in CA1 | CA3 slice |
+| Member | Scenario analysed in CA1 | CA2 files owned |
 | :--- | :--- | :--- |
-| Daniel Courtney | 28 – Student Work-Placement Coordination Service | *To be agreed in the [implementation catalogue](04-prioritised-implementation-catalogue.md)* |
-| Eoin Mannix | 02 – Kerry Mobile Library Support Service | *To be agreed* |
-| Isabelle Lynch | 05 – Rural Health Appointment Transport Service | *To be agreed* |
-| Bartlomiej Jedrzejowski | 03 – Volunteer Transport Coordination Service | *To be agreed* |
+| Daniel Courtney | 28 – Student Work-Placement Coordination Service | 01-04 |
+| Eoin Mannix | 02 – Kerry Mobile Library Support Service | 08, 09 |
+| Isabelle Lynch | 05 – Rural Health Appointment Transport Service | 05, 06, 07 |
+| Bartlomiej Jedrzejowski | 03 – Volunteer Transport Coordination Service | 10 |
  
 <br>
 
@@ -31,11 +29,8 @@ The Product Goal states the value the service is meant to deliver. The work towa
  
 | Area | Link |
 | :--- | :--- |
-| Project board | *[Add Trello board link]* |
-| Product Backlog | *[Add Product Backlog]* |
 | Definition of Done | [definition-of-done.md](definition-of-done.md) |
 | Decision log | [decisions/decision-log.md](decisions/decision-log.md) |
-| Iteration records (goals, reviews, retrospectives) | [records/](records/) |
 | AI declaration and shared AI log | [references/AI-Log.md](references/AI-Log.md) |
 | Text references | [references/Text-References.md](references/Text-References.md) |
 | CA1 analysis (Scenario 28) | [CA1/](../CA1/) |
@@ -44,7 +39,7 @@ The Product Goal states the value the service is meant to deliver. The work towa
 
 ## Design Dossier
  
-The dossier is read in order. Files 01–04 and the shared design files apply to the whole group. Files inside each use case folder are owned by one member.
+The dossier is read in order. Files 01–04 and the shared design files apply to the whole group. Files 05, 06 and 09 cover UC01 only and are kept at the CA2 root (DR-009).
  
 | # | Artefact | Scope | File |
 | :--- | :--- | :--- | :--- |
@@ -52,15 +47,12 @@ The dossier is read in order. Files 01–04 and the shared design files apply to
 | 02 | Reconciliation and expansion record | Group | [02-reconciliation-and-expansion-record.md](02-reconciliation-and-expansion-record.md) |
 | 03 | Revised analysis baseline | Group | [03-revised-analysis-baseline.md](03-revised-analysis-baseline.md) |
 | 04 | Prioritised implementation catalogue | Group | [04-prioritised-implementation-catalogue.md](04-prioritised-implementation-catalogue.md) |
-| 05 | System sequence diagram | Per use case | `use-cases/<use case>/05-system-sequence-diagram.md` |
-| 06 | Operation contracts | Per use case | `use-cases/<use case>/06-operation-contracts.md` |
+| 05 | System sequence diagram | UC01 | [05-system-sequence-diagrams.md](05-system-sequence-diagrams.md) |
+| 06 | Operation contracts | UC01 | [06-operation-contracts.md](06-operation-contracts.md) |
 | 07 | CRC and responsibility model | Group | [07-crc-responsibility-model.md](07-crc-responsibility-model.md) |
 | 08 | Design class diagram | Group | [08-design-class-diagram.md](08-design-class-diagram.md) |
-| 09 | Object-interaction sequence diagram | Per use case | `use-cases/<use case>/09-object-interaction-sequence-diagram.md` |
+| 09 | Object-interaction sequence diagrams | UC01 | [09-object-interaction-sequence-diagrams.md](09-object-interaction-sequence-diagrams.md) |
 | 10 | Architecture and integration contract | Group | [10-architecture-and-integration-contract.md](10-architecture-and-integration-contract.md) |
-| 11 | CA3 slice specification | Per use case | `use-cases/<use case>/11-ca3-slice-specification.md` |
-| 12 | Technology decision record | Group | [12-technology-decision-record.md](12-technology-decision-record.md) |
-| 13 | Project and contribution evidence | Group, plus one statement per member | [13-project-and-contribution-evidence.md](13-project-and-contribution-evidence.md) |
  
 <br>
 
@@ -70,13 +62,11 @@ The dossier is read in order. Files 01–04 and the shared design files apply to
 CA2/
 ├── README.md                       this file
 ├── definition-of-done.md
-├── 01–13                           group design files
-├── use-cases/
-│   └── UCxx-<name>/                one folder per selected use case
+├── 01–10                           design dossier files
+├── use-cases/                      UC01 detailed use case
 ├── features/                       Gherkin .feature files
 ├── diagrams/                       PlantUML .puml sources and exported .png files
 ├── decisions/                      decision log
-├── records/                        iteration goals, reviews and retrospectives
 └── references/                     scenario briefs, scenario summaries, AI log, text references
 ```
  

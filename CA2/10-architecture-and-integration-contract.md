@@ -1,9 +1,8 @@
-# 10 – Design Structure and Shared Interfaces
+# 10 – Architecture and Integration Contract
 | Field        | Value                   |
 | ------------ | ----------------------- |
 | Owner        | Bartlomiej Jedrzejowski |
 | Reviewer     | Daniel Courtney         |
-| Last updated | 2026-11-24              |
 
 
 ## 1. Purpose
@@ -39,7 +38,7 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 | --------------- | ---------- | ---------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `RequestStatus` | enum       | `in progress` (internal, never shown – 06 CO1, 07 note 3), `awaiting evidence`, `ready for decision` | BR01             | CO1, CO3, CO4, OSD-04, SC01–SC04                                                                                           |
 | `EvidenceItem`  | identifier | `E1`, `E2`, `E3` (feature file Background), compared by identifier                                   | BR01             | `Request.evidence`, `EvidenceRequirements`, `addEvidence(evidenceItem)`, `getRequiredEvidence` result, CO3, CO4, SC02–SC04 |
-| `waitingOn`     | pending    | pending                                                                                              | FR02, BR01       | CO4                                                                                                                        |
+| `waitingOn` | list | The `EvidenceItem`s still missing when the request is confirmed. Empty when the request is *ready for decision* | FR02, BR01 | CO4, OSD-04, SC03, SC04 |
 
 
 <br>
@@ -82,7 +81,7 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 | Used by          | `SubmitPlacementRequestHandler`                                                         |
 | Realised by      | `PlacementRecordStudentRepository`                                                      |
 | Why an interface | Pure Fabrication: no domain class should know how students are looked up (Low Coupling) |
-| Appears in       | OSD-01, CO1 (precondition), pending 07 update.                                          |
+| Appears in       | OSD-01, CO1 (precondition)                                                              |
 
 | Operation                     | Input             | Output    | Errors              |
 | ----------------------------- | ----------------- | --------- | ------------------- |
@@ -163,4 +162,3 @@ Normal outcomes of each system operation are returned as the outputs listed in �
 - Storage is abstract, because of how the shared placement record is kept out of scope for CA2.
 - `ACADEMIC_RECORDS_UNAVAILABLE`: the error is signalled, but no recovery (retry or manual entry) is designed. (New in 10)
 - None of the errors in section 6 have Gherkin scenarios.
-- `waitingOn` is pending the defect fix, and the `StudentRepository` lookup is pending the 07 update.

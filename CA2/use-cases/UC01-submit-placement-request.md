@@ -68,7 +68,7 @@ On every path, no request is shown as *ready for decision* without the required 
 | # | Issue | Question | Affects | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | OI1 | What makes an opportunity open for requests, and who decides when it opens? | Not in the question register | Precondition, step 1 | Open |
-| OI2 | What preferences and programme evidence are required before a request is ready for a decision? | Q1 | Steps 3–4, BR01 | Working assumption: each programme sets its own evidence requirements (AC5, RC05) |
+| OI2 | What preferences and programme evidence are required before a request is ready for a decision? | Q1 | Steps 3–4, BR01 | Working assumption: each programme sets its own evidence requirements (A5, RC05) |
 | OI3 | Is a request without the required evidence held as *awaiting evidence* or rejected? | Q1 | 4b | Working assumption: held as *awaiting evidence* |
 | OI4 | What authority is needed if a third party submits on the student's behalf? | Q3 | Primary actor | Out of UC01 scope (DR-003) |
 

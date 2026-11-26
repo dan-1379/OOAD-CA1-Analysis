@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This catalogue ranks the twelve Scenario 28 use cases against agreed criteria and records which use case is taken forward into detailed design and CA3. The group has chosen to design one use case in depth, **UC01 Submit Placement Request**, with every member contributing to its design. The selection, and how CA3 slices are divided between members, is recorded in [DR-003](decisions/decision-log.md).
+This catalogue ranks the twelve Scenario 28 use cases against agreed criteria and records which use case is taken forward into detailed design. The group has chosen to design one use case in depth, **UC01 Submit Placement Request**, with every member contributing to its design. The selection is recorded in [DR-003](decisions/decision-log.md).
 
 <br>
 
@@ -13,7 +13,7 @@ Each candidate use case was assessed against the following criteria:
 | # | Criterion | Source |
 | :--- | :--- | :--- |
 | **CR-1** | Receives a system event or input, applies at least one business rule, changes state and produces an observable outcome (vertical) | Brief section 8 |
-| **CR-2** | Has enough behaviour (alternatives, failures, rules) to give every member meaningful design work | Brief section 2 (scope), CA3 slice specifications |
+| **CR-2** | Has enough behaviour (alternatives, failures, rules) to give every member meaningful design work | Brief section 2 (scope) |
 | **CR-3** | Can be built and tested independently, with dependencies replaced by interfaces, fakes and fixtures | Brief sections 8–9 |
 | **CR-4** | Is not blocked by an unanswered question, or has a working assumption recorded | [Reconciliation record](02-reconciliation-and-expansion-record.md#open-questions-carried-forward) |
 | **CR-5** | Delivers clear business value against a recorded problem | [Revised baseline](03-revised-analysis-baseline.md) (PR1–PR10) |
@@ -47,16 +47,16 @@ Each candidate use case was assessed against the following criteria:
 
 <br>
 
-## Member Contributions and CA3 Slices
+## Member Contributions
 
-The brief requires one independently owned, vertical CA3 slice per member. This table records how the group divides UC01 so that each member's slice can be built, tested and demonstrated on its own.
+The design of UC01 was divided by artefact. Each file has one owner and a reviewer who did not write it, shown in the file's header table.
 
-| Member | Design contribution in CA2 | CA3 slice |
+| Member | Owned | Reviewed |
 | :--- | :--- | :--- |
-| Daniel Courtney | | |
-| Eoin Mannix | | |
-| Isabelle Lynch | | |
-| Bartlomiej Jedrzejowski | | |
+| Daniel Courtney | 01–04, README, decision log, repository setup | 10 |
+| Isabelle Lynch | 05 SSD, 06 operation contracts, 07 CRC model | 08, 09 |
+| Eoin Mannix | 08 design class diagram, 09 sequence diagrams | 05, 06, 07 |
+| Bartlomiej Jedrzejowski | 10 architecture and integration contract | 10 |
 
 <br>
 
@@ -82,7 +82,7 @@ The order in which the UC01 design is produced, so each artefact builds on the o
    
     4. Object-interaction sequence diagrams for the main success scenario and the 4a, 4b and 5a paths.
    
-    5. Architecture and integration contract, then the CA3 slice specifications.
+    5. Architecture and integration contract.
 
 <br>
 
@@ -100,4 +100,4 @@ The order in which the UC01 design is produced, so each artefact builds on the o
 
 ## Comparability Check
 
-*To be completed once member contributions are agreed:* how the work on UC01 is divided so that each member's CA3 slice is similar in size, with its own rules, state changes and failure handling.
+Each member owns design artefacts of similar weight. 05–07 carry the behavioural design, 08–09 the structural and interaction design, and 10 the architecture. 01–04 cover selection and the baseline. Every file was reviewed by a member who did not write it.
