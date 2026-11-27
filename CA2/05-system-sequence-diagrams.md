@@ -104,7 +104,7 @@ The SSD only draws the paths in the detailed use case. The architecture contract
 | startRequest | `STUDENT_NOT_FOUND`, `OPPORTUNITY_NOT_FOUND`, `ACADEMIC_RECORDS_UNAVAILABLE` | The first two break UC01 preconditions (student identified, opportunity exists). The third is a failure of the supporting actor, which UC01 does not cover (A3, 10 section 8) |
 | enterPreferences | `NO_REQUEST_IN_PROGRESS` | Breaks the CO2 precondition. The SSD order makes it impossible on the paths shown |
 | addEvidence | `NO_REQUEST_IN_PROGRESS` | Breaks the CO3 precondition |
-| confirmRequest | `NO_REQUEST_IN_PROGRESS`, `CANNOT_SAVE` | `CANNOT_SAVE` means the shared record could not be written. No receipt is issued and the request stays in progress so the student can confirm again (09 Note 6) |
+| confirmRequest | `NO_REQUEST_IN_PROGRESS`, `CANNOT_SAVE` | `CANNOT_SAVE` means the shared record could not be written. No receipt is issued, the request is not recorded and it stays as the handler's in-progress request so the student can confirm again (10 section 6, 09 Note 6) |
 | cancelRequest | `NO_REQUEST_IN_PROGRESS` | Breaks the CO5 precondition |
 
 `OPPORTUNITY_NOT_OPEN` is reserved in 10 but is not raised in UC01 while OI1 is open (see Note 3).

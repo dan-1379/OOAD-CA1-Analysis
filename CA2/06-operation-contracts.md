@@ -22,7 +22,7 @@ What the student is shown (receipts, lists of missing evidence) is not a state c
 
 `getRequiredEvidence(programme)` is the system's call to Academic Records. It has no contract because the student does not trigger it and it changes no state.
 
-Each contract also has an Errors row. This lists the named errors from the architecture contract ([10, section 6](10-architecture-and-integration-contract.md#6-error-conventions)) that the operation can signal. Under DR-010, when an error is signalled the operation stops and **none of its postconditions happen**.
+Each contract also has an Errors row. This lists the named errors from the architecture contract ([10, section 6](10-architecture-and-integration-contract.md#6-error-conventions)) that the operation can signal. Under DR-010, when an error is signalled the operation stops and **nothing is recorded in the shared placement record**. For every error except `CANNOT_SAVE`, none of the operation's postconditions happen either (see CO4).
 
 ## Contract Index
 
@@ -85,7 +85,7 @@ Each contract also has an Errors row. This lists the named errors from the archi
 | Postconditions | r.submittedDate became the current date (*attribute modification*). <br>If r.evidence contains every item in the evidenceRequirements of the Student's Programme (BR01): <br>• r.status changed from *in progress* to "ready for decision" (*attribute modification*) <br>• r.waitingOn became empty (*attribute modification*) <br>Otherwise (4b): <br>• r.status changed from *in progress* to "awaiting evidence" (*attribute modification*) <br>• r.waitingOn became the list of required evidence items missing from r.evidence (*attribute modification*) |
 | Output | A receipt showing that the request was received and its status. If the status is "awaiting evidence", the missing evidence items are listed. |
 | Rules | BR01, applied here and nowhere else. |
-| Errors | `NO_REQUEST_IN_PROGRESS` if no request is in progress. <br>`CANNOT_SAVE` if the shared placement record cannot be written. No receipt is issued and r stays in progress, so the student can confirm again (09 Note 6). Confirming again works out every postcondition from scratch, so a retry is safe. |
+| Errors | `NO_REQUEST_IN_PROGRESS` if no request is in progress. <br>`CANNOT_SAVE` if the shared placement record cannot be written. No receipt is issued and r is not recorded. Because `confirm()` runs before the save (OSD-04), r's submittedDate, status and waitingOn have already been set, but r stays as the handler's in-progress request and never reaches the shared record (10 section 6, 09 Note 6). The student can confirm again. Confirming again works out every postcondition from scratch, so a retry is safe. |
 | Example (Background) | With r.evidence [E1, E2]: status "ready for decision", waitingOn empty (SC01). <br>With r.evidence [E1]: status "awaiting evidence", waitingOn [E2] (SC03). |
 
 ## CO5: `cancelRequest`
@@ -162,7 +162,7 @@ No new classes, attributes or associations are needed, so the domain model is un
 | The success guarantee holds on the main success path | Yes: CO4 sets r's status to "ready for decision" and shows a receipt and status (SC01, SC02). Saving r to the shared record is a design step (`RequestRepository`, 07) |
 | Exception 4b ends with an incomplete request held, not rejected | Yes: CO4 sets status "awaiting evidence" and lists the missing items in r.waitingOn (SC03, SC04) |
 | The minimal guarantee holds when the student cancels | Yes: CO5 deletes r and breaks its associations so no partial request is recorded (SC05) |
-| The minimal guarantee holds when an error is signalled | Yes: under DR-010 no postconditions happen, so a failed operation never leaves a partial or wrongly-statused request in the shared record |
+| The minimal guarantee holds when an error is signalled | Yes: under DR-010 nothing is recorded in the shared record when an error is signalled, so a failed operation never leaves a partial or wrongly-statused request there. After `CANNOT_SAVE`, r's status is only held by the handler and is never shown to staff |
 | Every SC04 boundary row has a defined outcome | Yes: "E1, E2 and E3" and "E1 and E2" meet the requirements, so the status is "ready for decision". "E1 only" and "no evidence items" do not, so the status is "awaiting evidence" with waitingOn [E2] and [E1, E2] |
 | Every `Then` step in SC01 - SC05 is met by a postcondition or output | Yes: see Gherkin Outcomes Traced to Contracts |
 

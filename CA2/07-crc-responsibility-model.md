@@ -239,7 +239,7 @@ The named errors are agreed in the architecture contract (10, section 6, DR-010)
 | `OPPORTUNITY_NOT_FOUND` | `OpportunityRepository` | startRequest | No Request created |
 | `ACADEMIC_RECORDS_UNAVAILABLE` | `ProgrammeEvidencePort` | startRequest | No Request created |
 | `NO_REQUEST_IN_PROGRESS` | Handler (`inProgress` is empty) | enterPreferences, addEvidence, confirmRequest, cancelRequest | Nothing changes |
-| `CANNOT_SAVE` | `RequestRepository` | confirmRequest | Handler keeps r in progress and issues no receipt, so the student can confirm again (09 Note 6) |
+| `CANNOT_SAVE` | `RequestRepository` | confirmRequest | r is not recorded and no receipt is issued. r has already been confirmed in memory, but the handler keeps it as the in-progress request so the student can confirm again (10 section 6, 09 Note 6) |
 | `OPPORTUNITY_NOT_OPEN` | `Opportunity.isOpen()` would decide it | Not raised in UC01 | Reserved until OI1 is resolved (Note 5) |
 
 The handler passes the port errors on and does not decide them itself, so it stays a thin controller. Domain objects never signal errors in UC01, because none of their operations can fail once the handler has checked a request is in progress.
