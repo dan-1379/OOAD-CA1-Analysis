@@ -1,5 +1,12 @@
 # 01 - SCENARIO SUITABILITY MATRIX
 
+| Field | Value |
+| --- | --- |
+| Artefact ID | CA2-01 |
+| Owner | Daniel Courtney |
+| Reviewer | Bartlomiej Jedrzejowski |
+| Feeds into | [02 Reconciliation and expansion record](02-reconciliation-and-expansion-record.md), [DR-001](decisions/decision-log.md) |
+
 ## Purpose
 An in-depth analysis was conducted on each of the scenarios in order to select a single scenario for CA2. Each scenario was thoroughly evaluated based on the criteria for the suitability matrix and a transparent selection and approval was recorded.
 

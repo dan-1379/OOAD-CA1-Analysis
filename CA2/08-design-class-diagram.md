@@ -72,7 +72,7 @@ Source: [`diagrams/UC01-DCD.puml`](./diagrams/UC01-DCD.puml)
 | Dashed line with a hollow triangle | The class implements that interface |
 | `<<value object>>` | Can't be changed once it's made |
  
-The types are written Java-style (`String`, `List<String>`, `LocalDate`) to keep things clear. They are confirmed in 10 and 12, and if we use a different language they just get swapped for that language's versions.
+The types are written Java-style (`String`, `List<String>`, `LocalDate`) to keep things clear. They are confirmed in 10 and if we use a different language they just get swapped for that language's versions.
  
 Links between classes are only shown as lines, not repeated as fields inside boxes, so nothing shows up twice.
  
@@ -331,7 +331,7 @@ The arrows only go one way where possible. Two-way links mean two objects you ha
 2. **Programme isn't a class.** It lives in Academic Records (A3). We only keep `programmeId` and the requirements we read through the port.
 3. **Preferences are one string.** We don't know their structure yet, so they can become their own class later without affecting anything else.
 4. **No request ID yet.** UC01 doesn't need one, but UC02 will need to find a single request, so expect a `requestId` then.
-5. **One request at a time.** What happens if `startRequest` is called while one is already in progress isn't defined. The simplest option is to reject it. That gets agreed in 10.
+5. **One request at a time.** What happens if `startRequest` is called while one is already in progress isn't defined. The simplest option is to reject it. This is left open for a later use case and is also listed in 05 (Note 10) and 06 (Note 9).
 6. **In-progress handling follows DR-008** (accepted). The request is held in the handler until it is confirmed, so `RequestRepository` never needs a delete method.
-7. **Names and types aren't final.** They get confirmed in 10 and this file has to stay in step with it.
+7. **Names and types are agreed.** They match 10, and this file has to stay in step with it.
  

@@ -1,5 +1,12 @@
 # 04 - Prioritised Implementation Catalogue
 
+| Field | Value |
+| --- | --- |
+| Artefact ID | CA2-04 |
+| Owner | Daniel Courtney |
+| Reviewer | Bartlomiej Jedrzejowski |
+| Feeds into | [05 System sequence diagrams](05-system-sequence-diagrams.md), [DR-003](decisions/decision-log.md) |
+
 ## Purpose
 
 This catalogue ranks the twelve Scenario 28 use cases against agreed criteria and records which use case is taken forward into detailed design. The group has chosen to design one use case in depth, **UC01 Submit Placement Request**, with every member contributing to its design. The selection is recorded in [DR-003](decisions/decision-log.md).
@@ -56,7 +63,7 @@ The design of UC01 was divided by artefact. Each file has one owner and a review
 | Daniel Courtney | 01–04, README, decision log, repository setup | 10 |
 | Isabelle Lynch | 05 SSD, 06 operation contracts, 07 CRC model | 08, 09 |
 | Eoin Mannix | 08 design class diagram, 09 sequence diagrams | 05, 06, 07 |
-| Bartlomiej Jedrzejowski | 10 architecture and integration contract | 10 |
+| Bartlomiej Jedrzejowski | 10 architecture and integration contract | 01-04 |
 
 <br>
 
