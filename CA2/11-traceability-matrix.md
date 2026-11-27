@@ -19,7 +19,7 @@ Only UC01 is designed in CA2 ([DR-003](decisions/decision-log.md)), so the use-c
 
 | Use case | Backlog | Story and requirement | Rules and assumptions | Gherkin | SSD | Contracts | CRC and GRASP | Interaction design | Design classes | Structure | Decisions |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [UC01 Submit Placement Request](use-cases/UC01-submit-placement-request.md) |  | US01, FR01 | BR01, A3, A5 | [SC01 - SC05](features/submit-placement-request.feature) | [SSD-01](05-system-sequence-diagrams.md) | [CO1 - CO5](06-operation-contracts.md) | [07](07-crc-responsibility-model.md): 12 CRC cards, 8 GRASP decisions | [OSD-01 - OSD-05](09-object-interaction-sequence-diagrams.md) | [DCD-01](08-design-class-diagram.md): `SubmitPlacementRequestHandler`, `Student`, `Opportunity`, `Request`, `EvidenceRequirements`, `RequestStatus`, `Receipt` | [10](10-architecture-and-integration-contract.md): IF-01 - IF-05 | DR-003, DR-006, DR-008, DR-010, DR-011 |
+| [UC01 Submit Placement Request](use-cases/UC01-submit-placement-request.md) | [04](04-prioritised-implementation-catalogue.md#selected-use-case): rank 1, Must, DR-003 | US01, FR01 | BR01, A3, A5 | [SC01 - SC05](features/submit-placement-request.feature) | [SSD-01](05-system-sequence-diagrams.md) | [CO1 - CO5](06-operation-contracts.md) | [07](07-crc-responsibility-model.md): 12 CRC cards, 8 GRASP decisions | [OSD-01 - OSD-05](09-object-interaction-sequence-diagrams.md) | [DCD-01](08-design-class-diagram.md): `SubmitPlacementRequestHandler`, `Student`, `Opportunity`, `Request`, `EvidenceRequirements`, `RequestStatus`, `Receipt` | [10](10-architecture-and-integration-contract.md): IF-01 - IF-05 | DR-003, DR-006, DR-008, DR-010, DR-011 |
 
 <br>
 

@@ -18,7 +18,7 @@ The Product Goal states the value the service is meant to deliver. The work towa
  
 | Member | Scenario analysed in CA1 | CA2 files owned |
 | :--- | :--- | :--- |
-| Daniel Courtney | 28 – Student Work-Placement Coordination Service | 01-04 |
+| Daniel Courtney | 28 – Student Work-Placement Coordination Service | 01-04, 11, 12 |
 | Eoin Mannix | 02 – Kerry Mobile Library Support Service | 08, 09 |
 | Isabelle Lynch | 05 – Rural Health Appointment Transport Service | 05, 06, 07 |
 | Bartlomiej Jedrzejowski | 03 – Volunteer Transport Coordination Service | 10 |
@@ -29,6 +29,7 @@ The Product Goal states the value the service is meant to deliver. The work towa
  
 | Area | Link |
 | :--- | :--- |
+| Design dossier (overview and rationale) | [design-dossier.md](design-dossier.md) |
 | Definition of Done | [definition-of-done.md](definition-of-done.md) |
 | Decision log | [decisions/decision-log.md](decisions/decision-log.md) |
 | AI declaration and shared AI log | [references/AI-Log.md](references/AI-Log.md) |
@@ -39,7 +40,7 @@ The Product Goal states the value the service is meant to deliver. The work towa
 
 ## Design Dossier
  
-The dossier is read in order. Files 01–04 and the shared design files apply to the whole group. Files 05, 06 and 09 cover UC01 only and are kept at the CA2 root (DR-009).
+The dossier is read in order. Files 01–04 and the shared design files apply to the whole group. Files 05, 06 and 09 cover UC01 only and are kept at the CA2 root (DR-009). Files 11 and 12 trace and evaluate the finished UC01 design (DR-014).
  
 | # | Artefact | Scope | File |
 | :--- | :--- | :--- | :--- |
@@ -53,6 +54,8 @@ The dossier is read in order. Files 01–04 and the shared design files apply to
 | 08 | Design class diagram | Group | [08-design-class-diagram.md](08-design-class-diagram.md) |
 | 09 | Object-interaction sequence diagrams | UC01 | [09-object-interaction-sequence-diagrams.md](09-object-interaction-sequence-diagrams.md) |
 | 10 | Architecture and integration contract | Group | [10-architecture-and-integration-contract.md](10-architecture-and-integration-contract.md) |
+| 11 | Traceability matrix | UC01 | [11-traceability-matrix.md](11-traceability-matrix.md) |
+| 12 | Design evaluation | UC01 | [12-design-evaluation.md](12-design-evaluation.md) |
  
 <br>
 
@@ -61,8 +64,9 @@ The dossier is read in order. Files 01–04 and the shared design files apply to
 ```
 CA2/
 ├── README.md                       this file
+├── design-dossier.md               overview and rationale for the whole design
 ├── definition-of-done.md
-├── 01–10                           design dossier files
+├── 01–12                           design dossier files
 ├── use-cases/                      UC01 detailed use case
 ├── features/                       Gherkin .feature files
 ├── diagrams/                       PlantUML .puml sources and exported .png files
