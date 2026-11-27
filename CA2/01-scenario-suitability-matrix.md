@@ -205,4 +205,3 @@ Scenario 28 was authored by Dan, who did not score it. The decision is recorded 
 | Approval date | November 9th, 2026 |
 | Expansion brief | None. Scenario 28 was approved as presented. |
 | Decision records | [DR-001](decisions/decision-log.md), [DR-002](decisions/decision-log.md) |
-|  |  |

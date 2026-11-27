@@ -1,5 +1,12 @@
 # UC01 – Submit Placement Request (Detailed Use Case)
 
+| Field | Value |
+| --- | --- |
+| Artefact ID | CA2-UC01 |
+| Owner | Daniel Courtney |
+| Reviewer | Isabelle Lynch |
+| Feeds into | 05 System sequence diagram, 06 Operation contracts, 11 Traceability matrix |
+
 Revised from the Scenario 28 CA1 detailed use case for the CA2 baseline. Layout adopted from Scenario 03 (PA04): extensions are paths where the goal is still reached, exceptions are paths where the goal fails and each open issue names the question behind it.
 
 | Field | Content |
