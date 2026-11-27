@@ -34,11 +34,11 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 
 ## 3. Shared types
 
-| Type            | Kind       | Values or fields                                                                                     | Rule it supports | Used in                                                                                                                    |
-| --------------- | ---------- | ---------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `RequestStatus` | enum       | `in progress` (internal, never shown – 06 CO1, 07 note 3), `awaiting evidence`, `ready for decision` | BR01             | CO1, CO3, CO4, OSD-04, SC01–SC04                                                                                           |
-| `EvidenceItem`  | identifier | `E1`, `E2`, `E3` (feature file Background), compared by identifier                                   | BR01             | `Request.evidence`, `EvidenceRequirements`, `addEvidence(evidenceItem)`, `getRequiredEvidence` result, CO3, CO4, SC02–SC04 |
-| `waitingOn` | list | The `EvidenceItem`s still missing when the request is confirmed. Empty when the request is *ready for decision* | FR02, BR01 | CO4, OSD-04, SC03, SC04 |
+| Type            | Kind | Values or fields                                                                                                        | Rule it supports | Used in                                                                                                                        |
+| --------------- | ---- | ----------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `RequestStatus` | enum | `in progress` (internal, never shown – 06 CO1, 07 note 3), `awaiting evidence`, `ready for decision`                    | BR01             | CO1, CO3, CO4, OSD-04, SC01–SC04                                                                                               |
+| `EvidenceItem`  | list | `E1`, `E2`, `E3` (feature file Background), compared by identifier                                                      | BR01             | `Request.evidence`, `EvidenceRequirements`, `addEvidence(evidenceItem)`, `getRequiredEvidence` result, CO3, CO4, SC02–SC04, 08 |
+| `waitingOn`     | list | The list of `EvidenceItem`s still missing when the request is confirmed. Empty when the request is *ready for decision* | FR02, BR01       | CO4, OSD-04, SC03, SC04                                                                                                        |
 
 
 <br>
@@ -130,19 +130,19 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 | `cancelRequest()`               | none                   | Acknowledges submission cancellation. Nothing is recorded. | CO5      |
 
 ### 5.2 Result convention
-Normal outcomes of each system operation are returned as the outputs listed in §5.1. When a precondition is broken or an outside system fails, the operation stops, signals one of the named errors in §6, and no state is changed. *Awaiting evidence* (4b) and *cancelled* (5a) are normal outcomes, not errors. This keeps the outputs simple (`confirmRequest` returns a plain `Receipt`) and matches the operation contracts, where a broken precondition means the operation does not run and none of its postconditions happen.
+Normal outcomes of each system operation are returned as the outputs listed in S5.1. When a precondition is broken or an outside system fails, the operation stops, signals one of the named errors in S6, and nothing is recorded in the shared placement record. *Awaiting evidence* (4b) and *cancelled* (5a) are normal outcomes, not errors. This keeps the outputs simple (`confirmRequest` returns a plain `Receipt`) and matches the operation contracts, where a broken precondition means the operation does not run and none of its postconditions happen.
 
 
 ## 6. Error conventions
 
-| Error                          | Meaning                                                                                                        | Raised by                                                            | Source                               | Gherkin |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------ | ------- |
-| `STUDENT_NOT_FOUND`            | The system cannot find the student. Possibly doesn't exist                                                     | `startRequest`                                                       | UC01 precondition. CO1 precondition. | none    |
-| `ACADEMIC_RECORDS_UNAVAILABLE` | The system cannot reach Academic Records                                                                       | `startRequest`                                                       | none (new in 10, comes from A3)      | none    |
-| `NO_REQUEST_IN_PROGRESS`       | There is no request in progress (e.g. `addEvidence` called before `startRequest`)                              | `enterPreferences`, `addEvidence`, `confirmRequest`, `cancelRequest` | CO2–CO5 preconditions.               | none    |
-| `CANNOT_SAVE`                  | The shared placement record could not be written to. No `Receipt` is issued and the request stays in progress. | `confirmRequest`                                                     | UC01 minimal guarantee. CO4.         | none    |
-| `OPPORTUNITY_NOT_FOUND`        | The system cannot find the opportunity. Possibly doesn't exist                                                 | `startRequest`                                                       | UC01 precondition. CO1 precondition. | none    |
-| `OPPORTUNITY_NOT_OPEN`         | Opportunity exists but is not open for requests.                                                               | Not raised in UC01. Reserved until OI1 is resolved.                  | UC01 precondition. Open issue OI1.   | none    |
+| Error                          | Meaning                                                                                                                                                     | Raised by                                                            | Source                               | Gherkin |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------ | ------- |
+| `STUDENT_NOT_FOUND`            | The system cannot find the student. Possibly doesn't exist                                                                                                  | `startRequest`                                                       | UC01 precondition. CO1 precondition. | none    |
+| `ACADEMIC_RECORDS_UNAVAILABLE` | The system cannot reach Academic Records                                                                                                                    | `startRequest`                                                       | none (new in 10, comes from A3)      | none    |
+| `NO_REQUEST_IN_PROGRESS`       | There is no request in progress (e.g. `addEvidence` called before `startRequest`)                                                                           | `enterPreferences`, `addEvidence`, `confirmRequest`, `cancelRequest` | CO2–CO5 preconditions.               | none    |
+| `CANNOT_SAVE`                  | The shared placement record could not be written to. No `Receipt` is issued, and the request is not recorded and remains the handler's in-progress request. | `confirmRequest`                                                     | UC01 minimal guarantee. CO4.         | none    |
+| `OPPORTUNITY_NOT_FOUND`        | The system cannot find the opportunity. Possibly doesn't exist                                                                                              | `startRequest`                                                       | UC01 precondition. CO1 precondition. | none    |
+| `OPPORTUNITY_NOT_OPEN`         | Opportunity exists but is not open for requests.                                                                                                            | Not raised in UC01. Reserved until OI1 is resolved.                  | UC01 precondition. Open issue OI1.   | none    |
 
 
 <br>
@@ -159,6 +159,5 @@ Normal outcomes of each system operation are returned as the outputs listed in �
 ## 8. Assumptions and limitations
 
 - Evidence requirements come from outside the system (A3, A5)
-- Storage is abstract, because of how the shared placement record is kept out of scope for CA2.
+- Storage is abstract, because how the shared placement record is kept is out of scope for CA2 (no implementation).
 - `ACADEMIC_RECORDS_UNAVAILABLE`: the error is signalled, but no recovery (retry or manual entry) is designed. (New in 10)
-- None of the errors in section 6 have Gherkin scenarios.
