@@ -1,7 +1,7 @@
 @startuml sd-05-cancel-request
-' SD-05 - cancelRequest (CO5)
+' OSD-05 - cancelRequest (CO5)
 ' Linked to: UC01 exception 5a, SSD-01 outer alt, CO5, minimal guarantee, SC05
-title SD-05 – cancelRequest() (CO5)
+title OSD-05 – cancelRequest() (CO5)
 
 skinparam sequenceMessageAlign left
 autonumber

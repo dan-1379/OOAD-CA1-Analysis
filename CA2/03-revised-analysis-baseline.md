@@ -1,5 +1,12 @@
 # 03 – Revised Analysis Baseline
 
+| Field | Value |
+| --- | --- |
+| Artefact ID | CA2-03 |
+| Owner | Daniel Courtney |
+| Reviewer | Bartlomiej Jedrzejowski |
+| Feeds into | [04 Prioritised implementation catalogue](04-prioritised-implementation-catalogue.md), [05 System sequence diagrams](05-system-sequence-diagrams.md), [06 Operation contracts](06-operation-contracts.md), [07 CRC and responsibility model](07-crc-responsibility-model.md) |
+
 ## Purpose
 
 This document is the agreed CA2 analysis baseline for Scenario 28 – Student Work-Placement Coordination Service. It was produced by applying the decisions in the [Reconciliation and Expansion Record](02-reconciliation-and-expansion-record.md) to the original Scenario 28 CA1 analysis. It covers the agreed scope, stakeholders, requirements, business rules, use cases, user stories, Gherkin and domain model, using the same identifiers as the CA1 so that every item stays traceable.

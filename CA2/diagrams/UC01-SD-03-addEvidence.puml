@@ -1,7 +1,7 @@
 @startuml sd-03-add-evidence
-' SD-03 - addEvidence (CO3)
+' OSD-03 - addEvidence (CO3)
 ' Linked to: UC01 steps 3, 4 and extension 4a, SSD-01 loop, CO3, BR01, SC02
-title SD-03 – addEvidence(evidenceItem) (CO3)
+title OSD-03 – addEvidence(evidenceItem) (CO3)
 
 skinparam sequenceMessageAlign left
 autonumber

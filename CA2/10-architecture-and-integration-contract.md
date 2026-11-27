@@ -1,8 +1,12 @@
 # 10 – Architecture and Integration Contract
+
+
 | Field        | Value                   |
 | ------------ | ----------------------- |
+| Artefact ID  | CA2-10                  |
 | Owner        | Bartlomiej Jedrzejowski |
 | Reviewer     | Daniel Courtney         |
+| Feeds into   | Shared names and types used by 05, 06, 07, 08 and 09 |
 
 
 ## 1. Purpose
@@ -36,7 +40,7 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 
 | Type            | Kind       | Values or fields                                                                                     | Rule it supports | Used in                                                                                                                    |
 | --------------- | ---------- | ---------------------------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `RequestStatus` | enum       | `in progress` (internal, never shown – 06 CO1, 07 note 3), `awaiting evidence`, `ready for decision` | BR01             | CO1, CO3, CO4, OSD-04, SC01–SC04                                                                                           |
+| `RequestStatus` | enum       | `IN_PROGRESS` (internal, never shown – 06 CO1, 07 note 3), `AWAITING_EVIDENCE`, `READY_FOR_DECISION` | BR01             | CO1, CO3, CO4, OSD-04, SC01–SC04                                                                                           |
 | `EvidenceItem`  | identifier | `E1`, `E2`, `E3` (feature file Background), compared by identifier                                   | BR01             | `Request.evidence`, `EvidenceRequirements`, `addEvidence(evidenceItem)`, `getRequiredEvidence` result, CO3, CO4, SC02–SC04 |
 | `waitingOn` | list | The `EvidenceItem`s still missing when the request is confirmed. Empty when the request is *ready for decision* | FR02, BR01 | CO4, OSD-04, SC03, SC04 |
 
@@ -72,6 +76,7 @@ Source: [`diagrams/package-view-uc01.puml`](diagrams/package-view-uc01.puml)
 | Operation       | Input                   | Output | Errors        |
 | --------------- | ----------------------- | ------ | ------------- |
 | `save(request)` | The confirmed `Request` | none   | `CANNOT_SAVE` |
+| `findByStudent(studentId)` | Student reference | List of that student's confirmed `Request`s | none |
 
 ### IF-03 – `StudentRepository`
 

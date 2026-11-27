@@ -1,7 +1,7 @@
 @startuml sd-04-confirm-request
-' SD-04 - confirmRequest (CO4)
+' OSD-04 - confirmRequest (CO4)
 ' Linked to: UC01 steps 5-7 and exception 4b, SSD-01 inner alt, CO4, BR01, SC01-SC04
-title SD-04 – confirmRequest() (CO4)
+title OSD-04 – confirmRequest() (CO4)
 
 skinparam sequenceMessageAlign left
 autonumber

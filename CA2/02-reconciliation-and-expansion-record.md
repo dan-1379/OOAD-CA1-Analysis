@@ -1,5 +1,12 @@
 # 02 – Reconciliation and Expansion Record
 
+| Field | Value |
+| --- | --- |
+| Artefact ID | CA2-02 |
+| Owner | Daniel Courtney |
+| Reviewer | Bartlomiej Jedrzejowski |
+| Feeds into | [03 Revised analysis baseline](03-revised-analysis-baseline.md), [DR-006](decisions/decision-log.md) |
+
 ## Purpose
 
 Scenario 28 - Student Work-Placement Coordination Service was selected for CA2 following the [scenario suitability matrix](./01-scenario-suitability-matrix.md) and lecturer approval ([DR-001](decisions/decision-log.md), [DR-002](decisions/decision-log.md)).
